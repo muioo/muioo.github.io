@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="git操作 Git 全局设置(以expert-message-craw为例): 1 2 git config --global user.name &#34;wangbanglei&#34; git config --global user.email &#34;13682781+wangbanglei@user.noreply.gitee.com&#34; 创建 git 仓库: 1 2 3 4 5 6 7 8 mkdir expert-message-crawl cd expert-message-crawl #如果想在本地代码上传到git仓库，在本地 1、git init 2、git add . 3、git commit -m &#34;...&#34; 4、 git remote add origin https://gitee.com/wangbanglei/expert-message-crawl.git 5、git push -u origin &#34;master&#34; 已有仓库? 1 2 3 4 cd existing_git_repo git remote add origin https://gitee.com/wangbanglei/expert-message-crawl.git # 从仓库中拉取代码到本地 git pull origin master 更新本地仓库 1 git pull --rebase 仓库地址 [分支名/master] 推送到仓库 1 git push [仓库地址] [分支名/master] 要在两台电脑间协作开发（类似公司多设备办公），可以通过 「主分支 + 功能分支」 的 Git 分支策略来管理，既保证代码安全，又能顺畅同步。以下是具体步骤：\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前端开发规则（vue+ts） 您是一位精通TypeScript、Node.js、Vite、Vue.js、Vue Router、Pinia、VueUse、Headless UI、Element Plus和Tailwind CSS的专家，对这些技术中的最佳实践和性能优化技巧有深刻理解。 代码风格与结构 编写简洁、可维护且技术准确的TypeScript代码，并提供相关示例。\n">
 <title></title>
 
 <link rel='canonical' href='http://localhost:1313/p/'>
 
 <link rel="stylesheet" href="/scss/style.min.833d6eed45de56f48306bf57268d5b8cdfc8a60e8e7bdc99810464fcd033f7c6.css"><meta property='og:title' content="">
-<meta property='og:description' content="git操作 Git 全局设置(以expert-message-craw为例): 1 2 git config --global user.name &#34;wangbanglei&#34; git config --global user.email &#34;13682781+wangbanglei@user.noreply.gitee.com&#34; 创建 git 仓库: 1 2 3 4 5 6 7 8 mkdir expert-message-crawl cd expert-message-crawl #如果想在本地代码上传到git仓库，在本地 1、git init 2、git add . 3、git commit -m &#34;...&#34; 4、 git remote add origin https://gitee.com/wangbanglei/expert-message-crawl.git 5、git push -u origin &#34;master&#34; 已有仓库? 1 2 3 4 cd existing_git_repo git remote add origin https://gitee.com/wangbanglei/expert-message-crawl.git # 从仓库中拉取代码到本地 git pull origin master 更新本地仓库 1 git pull --rebase 仓库地址 [分支名/master] 推送到仓库 1 git push [仓库地址] [分支名/master] 要在两台电脑间协作开发（类似公司多设备办公），可以通过 「主分支 + 功能分支」 的 Git 分支策略来管理，既保证代码安全，又能顺畅同步。以下是具体步骤：\n">
+<meta property='og:description' content="前端开发规则（vue+ts） 您是一位精通TypeScript、Node.js、Vite、Vue.js、Vue Router、Pinia、VueUse、Headless UI、Element Plus和Tailwind CSS的专家，对这些技术中的最佳实践和性能优化技巧有深刻理解。 代码风格与结构 编写简洁、可维护且技术准确的TypeScript代码，并提供相关示例。\n">
 <meta property='og:url' content='http://localhost:1313/p/'>
 <meta property='og:site_name' content='muioo blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' />
 <meta name="twitter:title" content="">
-<meta name="twitter:description" content="git操作 Git 全局设置(以expert-message-craw为例): 1 2 git config --global user.name &#34;wangbanglei&#34; git config --global user.email &#34;13682781+wangbanglei@user.noreply.gitee.com&#34; 创建 git 仓库: 1 2 3 4 5 6 7 8 mkdir expert-message-crawl cd expert-message-crawl #如果想在本地代码上传到git仓库，在本地 1、git init 2、git add . 3、git commit -m &#34;...&#34; 4、 git remote add origin https://gitee.com/wangbanglei/expert-message-crawl.git 5、git push -u origin &#34;master&#34; 已有仓库? 1 2 3 4 cd existing_git_repo git remote add origin https://gitee.com/wangbanglei/expert-message-crawl.git # 从仓库中拉取代码到本地 git pull origin master 更新本地仓库 1 git pull --rebase 仓库地址 [分支名/master] 推送到仓库 1 git push [仓库地址] [分支名/master] 要在两台电脑间协作开发（类似公司多设备办公），可以通过 「主分支 + 功能分支」 的 Git 分支策略来管理，既保证代码安全，又能顺畅同步。以下是具体步骤：\n">
+<meta name="twitter:description" content="前端开发规则（vue+ts） 您是一位精通TypeScript、Node.js、Vite、Vue.js、Vue Router、Pinia、VueUse、Headless UI、Element Plus和Tailwind CSS的专家，对这些技术中的最佳实践和性能优化技巧有深刻理解。 代码风格与结构 编写简洁、可维护且技术准确的TypeScript代码，并提供相关示例。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -267,19 +267,13 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#git操作">git操作</a>
+    <li>
       <ol>
-        <li><a href="#一分支策略设计适合个人多设备协作">一、分支策略设计（适合个人多设备协作）</a></li>
-        <li><a href="#二具体操作步骤两台电脑分别执行">二、具体操作步骤（两台电脑分别执行）</a>
-          <ol>
-            <li><a href="#步骤-1初始化仓库第一台电脑">步骤 1：初始化仓库（第一台电脑）</a></li>
-            <li><a href="#步骤-2第一台电脑开发并提交代码">步骤 2：第一台电脑开发并提交代码</a></li>
-            <li><a href="#步骤-3第二台电脑拉取代码并继续开发">步骤 3：第二台电脑拉取代码并继续开发</a></li>
-            <li><a href="#步骤-4后续同步代码两台电脑都要做">步骤 4：后续同步代码（两台电脑都要做）</a></li>
-          </ol>
-        </li>
-        <li><a href="#三冲突解决如果出现代码冲突">三、冲突解决（如果出现代码冲突）</a></li>
-        <li><a href="#四合并主分支代码合并别人的代码">四、合并主分支代码（合并别人的代码）</a></li>
+        <li><a href="#代码风格与结构">代码风格与结构</a></li>
+        <li><a href="#命名约定">命名约定</a></li>
+        <li><a href="#typescript使用">TypeScript使用</a></li>
+        <li><a href="#语法与格式化">语法与格式化</a></li>
+        <li><a href="#ui与样式">UI与样式</a></li>
       </ol>
     </li>
   </ol>
@@ -325,7 +319,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -340,246 +334,25 @@
     <section class="article-content">
     
     
-    <h2 id="git操作">git操作
-</h2><ul>
-<li><strong>Git 全局设置(以expert-message-craw为例):</strong></li>
+    <h1 id="前端开发规则vuets">前端开发规则（vue+ts）
+</h1><ul>
+<li>您是一位精通TypeScript、Node.js、Vite、Vue.js、Vue Router、Pinia、VueUse、Headless UI、Element Plus和Tailwind CSS的专家，对这些技术中的最佳实践和性能优化技巧有深刻理解。</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;wangbanglei&#34;</span>
-</span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;13682781+wangbanglei@user.noreply.gitee.com&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
-<li><strong>创建 git 仓库:</strong></li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir expert-message-crawl
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> expert-message-crawl
-</span></span><span class="line"><span class="cl"><span class="c1">#如果想在本地代码上传到git仓库，在本地 </span>
-</span></span><span class="line"><span class="cl">1、git init 
-</span></span><span class="line"><span class="cl">2、git add . 
-</span></span><span class="line"><span class="cl">3、git commit -m <span class="s2">&#34;...&#34;</span> 
-</span></span><span class="line"><span class="cl">4、 git remote add origin https://gitee.com/wangbanglei/expert-message-crawl.git 
-</span></span><span class="line"><span class="cl">5、git push -u origin <span class="s2">&#34;master&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
-<li><strong>已有仓库?</strong></li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> existing_git_repo
-</span></span><span class="line"><span class="cl">git remote add origin https://gitee.com/wangbanglei/expert-message-crawl.git
-</span></span><span class="line"><span class="cl"><span class="c1"># 从仓库中拉取代码到本地</span>
-</span></span><span class="line"><span class="cl">git pull origin master
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
-<li><strong>更新本地仓库</strong></li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git pull --rebase 仓库地址 <span class="o">[</span>分支名/master<span class="o">]</span> 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
-<li><strong>推送到仓库</strong></li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git push <span class="o">[</span>仓库地址<span class="o">]</span> <span class="o">[</span>分支名/master<span class="o">]</span> 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>要在两台电脑间协作开发（类似公司多设备办公），可以通过 <strong>「主分支 + 功能分支」</strong> 的 Git 分支策略来管理，既保证代码安全，又能顺畅同步。以下是具体步骤：</p>
-<h3 id="一分支策略设计适合个人多设备协作">一、分支策略设计（适合个人多设备协作）
-</h3><p>参考公司常用的 <strong>「主分支 + 开发分支」</strong> 模式（简单易维护）：</p>
-<ul>
-<li><strong><code>main</code> 分支</strong>：存放稳定的「已完成功能」代码（相当于生产环境代码）；</li>
-<li><strong><code>dev</code> 分支</strong>：日常开发的主分支（两台电脑都基于这个分支开发，同步代码）；</li>
-<li>（可选）<strong>临时功能分支</strong>：如果开发单个功能（比如 “订单支付模块”），可以从<code>dev</code>切出<code>feature/pay</code>分支，完成后合并回<code>dev</code>。</li>
-</ul>
-<h3 id="二具体操作步骤两台电脑分别执行">二、具体操作步骤（两台电脑分别执行）
-</h3><h4 id="步骤-1初始化仓库第一台电脑">步骤 1：初始化仓库（第一台电脑）
-</h4><ol>
+<h3 id="代码风格与结构">代码风格与结构
+</h3><ul>
 <li>
-<p>本地仓库关联远程仓库（已关联可跳过）：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote add origin https://github.com/你的账号/OrderManagementSystem.git
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
+<p>编写简洁、可维护且技术准确的TypeScript代码，并提供相关示例。</p>
+</li>
 <li>
-<p>创建并切换到dev开发分支：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 从main分支切出dev分支（首次创建）</span>
-</span></span><span class="line"><span class="cl">git checkout -b dev
-</span></span><span class="line"><span class="cl"><span class="c1"># 推送dev分支到远程仓库（让第二台电脑能拉取）</span>
-</span></span><span class="line"><span class="cl">git push -u origin dev
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ol>
-<h4 id="步骤-2第一台电脑开发并提交代码">步骤 2：第一台电脑开发并提交代码
-</h4><ol>
+<p>如果文件已存在，则在已存在的文件上修改代码</p>
+</li>
 <li>
-<p>在dev分支修改代码后，提交并推送到远程：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 确保当前在dev分支</span>
-</span></span><span class="line"><span class="cl">git checkout dev
-</span></span><span class="line"><span class="cl"><span class="c1"># 提交代码</span>
-</span></span><span class="line"><span class="cl">git add .
-</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;完成订单列表页面开发&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 推送到远程dev分支</span>
-</span></span><span class="line"><span class="cl">git push origin dev
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ol>
-<h4 id="步骤-3第二台电脑拉取代码并继续开发">步骤 3：第二台电脑拉取代码并继续开发
-</h4><ol>
+<p>使用函数式和声明式编程模式；避免使用类。</p>
+</li>
 <li>
-<p>克隆仓库（首次操作）：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/你的账号/OrderManagementSystem.git
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> OrderManagementSystem
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
+<p>目录结构遵循如下的结构</p>
+</li>
 <li>
-<p>拉取远程的dev分支并切换：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 拉取远程所有分支信息
-</span></span><span class="line"><span class="cl">git fetch origin
-</span></span><span class="line"><span class="cl"># 切换到dev分支（自动关联远程dev）
-</span></span><span class="line"><span class="cl">git checkout dev
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p>开发后提交代码（和第一台电脑操作相同）:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git add .
-</span></span><span class="line"><span class="cl">git commit -m &#34;优化订单筛选功能&#34;
-</span></span><span class="line"><span class="cl">git push origin dev
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ol>
-<h4 id="步骤-4后续同步代码两台电脑都要做">步骤 4：后续同步代码（两台电脑都要做）
-</h4><p>每次开始开发前，<strong>先拉取远程<code>dev</code>分支的最新代码</strong>，避免冲突：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git checkout dev
-</span></span><span class="line"><span class="cl">git pull origin dev  # 拉取远程最新代码到本地dev
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="三冲突解决如果出现代码冲突">三、冲突解决（如果出现代码冲突）
-</h3><p>如果两台电脑修改了同一文件的同一部分，<code>git pull</code>会提示冲突，解决步骤：</p>
-<ol>
-<li>
-<p>打开冲突文件，找到类似以下的标记：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-</span></span><span class="line"><span class="cl">你本地的代码
-</span></span><span class="line"><span class="cl">=======
-</span></span><span class="line"><span class="cl">远程的代码
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ol>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>远程分支名</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -593,40 +366,45 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">2. 手动修改文件，保留需要的代码，删除冲突标记；
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">3. 提交解决后的代码：
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">```bash
-</span></span><span class="line"><span class="cl">git add 冲突文件名
-</span></span><span class="line"><span class="cl">git commit -m &#34;解决订单列表页面的代码冲突&#34;
-</span></span><span class="line"><span class="cl">git push origin dev
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">- src/
+</span></span><span class="line"><span class="cl">	- api/ <span class="c1"># 统一管理接口请求 如 user.ts 封装用户 CRUD 接口</span>
+</span></span><span class="line"><span class="cl">    - components/ <span class="c1"># 公共组件库，存放可复用的 UI 组件</span>
+</span></span><span class="line"><span class="cl">    - router/ <span class="c1"># 定义项目的路由规则</span>
+</span></span><span class="line"><span class="cl">    - views/ <span class="c1"># 页面级组件，对应路由的 “页面”,如user页面，目录结构为 views/user/index.vue</span>
+</span></span><span class="line"><span class="cl">    - static/ <span class="c1"># 存放图片、字体、全局样式文件，不需要编译的静态文件</span>
+</span></span><span class="line"><span class="cl">    - store/ <span class="c1"># 用 Pinia 管理全局状态</span>
+</span></span><span class="line"><span class="cl">    - utils/ <span class="c1"># 工具函数</span>
+</span></span><span class="line"><span class="cl">    - types/ <span class="c1"># 存放接口请求 / 响应、组件 props 等的类型声明文件</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="四合并主分支代码合并别人的代码">四、合并主分支代码（合并别人的代码）
-</h3><p>场景 dev分支 有人修改了代码，并且测试功能无误  需要在master主分支合并</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 切换到dev分支 拉取最新提交的代码</span>
-</span></span><span class="line"><span class="cl">git checkout dev
-</span></span><span class="line"><span class="cl">git pull 
-</span></span><span class="line"><span class="cl"><span class="c1"># 切换到mster分支 </span>
-</span></span><span class="line"><span class="cl">git checkout master
-</span></span><span class="line"><span class="cl"><span class="c1"># 合并代码</span>
-</span></span><span class="line"><span class="cl">git merge dev
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
+</div></li>
+</ul>
+<h3 id="命名约定">命名约定
+</h3><ul>
+<li>目录使用小写字母和短横线（例如：<code>components/auth-wizard</code>）。</li>
+<li>倾向于使用命名导出函数。</li>
+</ul>
+<h3 id="typescript使用">TypeScript使用
+</h3><ul>
+<li>所有代码均使用TypeScript；优先选择接口而非类型，因其可扩展性和合并能力。</li>
+<li>避免使用枚举；改用映射以获得更好的类型安全性和灵活性。</li>
+<li>使用带有TypeScript接口的函数式组件。</li>
+</ul>
+<h3 id="语法与格式化">语法与格式化
+</h3><ul>
+<li>对于纯函数，使用<code>function</code>关键字以利用提升和清晰性。</li>
+<li>始终使用Vue Composition API的<code>script setup</code>风格。</li>
+<li>使用VueUse处理常见的组合式函数和工具函数。</li>
+<li>利用ref、reactive和computed进行响应式状态管理</li>
+<li>实现自定义组合式函数以复用逻辑。</li>
+<li>API 调用必须包含错误处理，所有 API 响应遵循统一格式</li>
+<li>提交前必须通过全部测试</li>
+</ul>
+<h3 id="ui与样式">UI与样式
+</h3><ul>
+<li>样式采用Tailwind css</li>
+</ul>
+
 </section>
 
 
