@@ -1,20 +1,111 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="To use this feature, add links section to frontmatter.\nThis page&rsquo;s frontmatter:\n1 2 3 4 5 6 7 8 9 links: - title: GitHub description: GitHub is the world&#39;s largest software development platform. website: https://github.com image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png - title: TypeScript description: TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. website: https://www.typescriptlang.org image: ts-logo-128.jpg image field accepts both local and external images.\n">
 <title>相关链接</title>
 
-<link rel='canonical' href='http://localhost:1313/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5/'>
+<link rel='canonical' href='http://localhost:8080/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5/'>
 
 <link rel="stylesheet" href="/scss/style.min.eefcd09a5fda4d15b29ce694fa033d54bdecb5baeb3d6f5abca9cc696e7585a7.css"><meta property='og:title' content="相关链接">
 <meta property='og:description' content="To use this feature, add links section to frontmatter.\nThis page&rsquo;s frontmatter:\n1 2 3 4 5 6 7 8 9 links: - title: GitHub description: GitHub is the world&#39;s largest software development platform. website: https://github.com image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png - title: TypeScript description: TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. website: https://www.typescriptlang.org image: ts-logo-128.jpg image field accepts both local and external images.\n">
-<meta property='og:url' content='http://localhost:1313/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5/'>
+<meta property='og:url' content='http://localhost:8080/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5/'>
 <meta property='og:site_name' content='muioo blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Page' />
 <meta name="twitter:title" content="相关链接">
 <meta name="twitter:description" content="To use this feature, add links section to frontmatter.\nThis page&rsquo;s frontmatter:\n1 2 3 4 5 6 7 8 9 links: - title: GitHub description: GitHub is the world&#39;s largest software development platform. website: https://github.com image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png - title: TypeScript description: TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. website: https://www.typescriptlang.org image: ts-logo-128.jpg image field accepts both local and external images.\n">
     <link rel="shortcut icon" href="/favicon.ico" />
-<script src="https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0/dist/autoload.js"></script>
+<script>
+    
+
+
+
+
+const live2d_path = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/';
+
+
+
+
+function loadExternalResource(url, type) {
+  return new Promise((resolve, reject) => {
+    let tag;
+
+    if (type === 'css') {
+      tag = document.createElement('link');
+      tag.rel = 'stylesheet';
+      tag.href = url;
+    }
+    else if (type === 'js') {
+      tag = document.createElement('script');
+      tag.type = 'module';
+      tag.src = url;
+    }
+    if (tag) {
+      tag.onload = () => resolve(url);
+      tag.onerror = () => reject(url);
+      document.head.appendChild(tag);
+    }
+  });
+}
+
+(async () => {
+  
+  
+  
+
+  
+  
+  const OriginalImage = window.Image;
+  window.Image = function(...args) {
+    const img = new OriginalImage(...args);
+    img.crossOrigin = "anonymous";
+    return img;
+  };
+  window.Image.prototype = OriginalImage.prototype;
+  
+  
+  await Promise.all([
+    loadExternalResource(live2d_path + 'waifu.css', 'css'),
+    loadExternalResource(live2d_path + 'waifu-tips.js', 'js')
+  ]);
+  
+  
+  initWidget({
+    waifuPath: live2d_path + 'waifu-tips.json',
+    
+    cubism2Path: live2d_path + 'live2d.min.js',
+    cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
+    tools: ['hitokoto', 'asteroids', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
+    logLevel: 'warn',
+    drag: false,
+  });
+})();
+
+console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #ff5450; font-size: large; color: #eee;', '');
+
+
+
+
+
+</script>
+
+
+<style>
+#waifu {
+    left: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+
+#waifu-tips {
+    left: auto !important;
+    right: 0 !important;
+}
+
+#waifu-tool {
+    left: auto !important;
+    right: 0 !important;
+}
+</style>
         
         <script src="https://unpkg.com/swup@4"></script>
         <style>
@@ -150,13 +241,13 @@
 
 
                 
-                <span>主页</span>
+                <span>主页 | Home</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/%E5%85%B3%E4%BA%8E/' >
+            <a href='/%E5%85%B3%E4%BA%8E-about/' >
                 
                 
                 
@@ -169,7 +260,7 @@
 
 
                 
-                <span>关于</span>
+                <span>关于 | About</span>
             </a>
         </li>
         
@@ -189,7 +280,7 @@
 
 
                 
-                <span>归档</span>
+                <span>归档 | archives</span>
             </a>
         </li>
         
@@ -517,9 +608,18 @@
         
         
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" defer></script>
 
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" defer></script>
+
+
+<style>
+.aplayer.aplayer-fixed {
+    left: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+</style>
 
 <meting-js
     server="netease"
@@ -528,54 +628,68 @@
     fixed="true"
     listFolded="true"
     volume="0.5"
-    autoplay="false"
     preload="auto"
 >
 </meting-js>
 
 <script>
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    setTimeout(function() {
+function initAutoPlay() {
+    const observer = new MutationObserver(function(mutations, obs) {
         const aplayerElement = document.querySelector('.aplayer');
-        if (!aplayerElement) return;
-
-        const ap = aplayerElement.aplayer;
-        if (!ap) return;
-
         
-        const playPromise = ap.play();
+        if (aplayerElement && window.APlayer && aplayerElement.aplayer) {
+            obs.disconnect();
+            const ap = aplayerElement.aplayer;
+            console.log('检测到 APlayer 已初始化');
 
-        if (playPromise !== undefined) {
-            playPromise.then(() => {
-                
-                console.log('音乐自动播放成功');
-            }).catch(error => {
-                
-                console.log('浏览器阻止了自动播放，尝试静音播放');
-                ap.audio.muted = true;
-                ap.play();
+            
+            const playMusic = () => {
+                const playPromise = ap.play();
+                if (playPromise) {
+                    playPromise.then(() => {
+                        console.log('音乐自动播放成功');
+                    }).catch(error => {
+                        console.log('浏览器阻止了自动播放，等待用户交互');
+                        
+                        const playOnInteraction = function() {
+                            ap.play().then(() => {
+                                console.log('用户交互后开始播放');
+                            }).catch(e => {
+                                console.log('播放失败:', e);
+                            });
+                            
+                            document.removeEventListener('click', playOnInteraction);
+                            document.removeEventListener('touchstart', playOnInteraction);
+                            document.removeEventListener('keydown', playOnInteraction);
+                        };
+                        document.addEventListener('click', playOnInteraction);
+                        document.addEventListener('touchstart', playOnInteraction);
+                        document.addEventListener('keydown', playOnInteraction);
+                    });
+                }
+            };
 
-                
-                const unmuteOnInteraction = function() {
-                    ap.audio.muted = false;
-                    ap.play();
-                    console.log('用户交互后取消静音');
-                    
-                    document.removeEventListener('click', unmuteOnInteraction);
-                    document.removeEventListener('touchstart', unmuteOnInteraction);
-                    document.removeEventListener('keydown', unmuteOnInteraction);
-                };
-
-                
-                document.addEventListener('click', unmuteOnInteraction);
-                document.addEventListener('touchstart', unmuteOnInteraction);
-                document.addEventListener('keydown', unmuteOnInteraction);
-            });
+            
+            ap.on('ready', playMusic);
+            
+            setTimeout(playMusic, 1000);
         }
-    }, 1000);
-});
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', initAutoPlay);
+
+
+if (typeof swup !== 'undefined') {
+    swup.hooks.on('page:view', initAutoPlay);
+}
 </script>
 
         
