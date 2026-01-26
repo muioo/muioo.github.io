@@ -8,11 +8,11 @@
         <language>en-us</language>
         <copyright>muioo</copyright>
         <lastBuildDate>Fri, 23 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Git 操作笔记（协作&#43;常用命令）</title>
-        <link>http://localhost:1313/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+        <title>【Git命令】Git 操作笔记（协作&#43;常用命令）</title>
+        <link>http://localhost:1313/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+        <guid>http://localhost:1313/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
         <description>&lt;h2 id=&#34;git操作&#34;&gt;git操作
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Git 全局设置(以expert-message-craw为例):&lt;/strong&gt;&lt;/li&gt;
@@ -285,10 +285,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global https.proxy https://127.0.0.1:7890
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note.png&#34;
 	width=&#34;675&#34;
 	height=&#34;254&#34;
-	srcset=&#34;http://localhost:1313/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note_hu_6a776fc7b830fc5a.png 480w, http://localhost:1313/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note_hu_141aaceec6b7cf22.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note_hu_6a776fc7b830fc5a.png 480w, http://localhost:1313/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note_hu_141aaceec6b7cf22.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;git-note&#34;
