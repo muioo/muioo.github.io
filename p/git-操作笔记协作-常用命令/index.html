@@ -282,6 +282,7 @@
         <li><a href="#四合并主分支代码合并别人的代码">四、合并主分支代码（合并别人的代码）</a></li>
       </ol>
     </li>
+    <li><a href="#git配置代理">git配置代理</a></li>
   </ol>
 </nav>
         </div>
@@ -571,9 +572,7 @@
 </div>
 </div><h3 id="三冲突解决如果出现代码冲突">三、冲突解决（如果出现代码冲突）
 </h3><p>如果两台电脑修改了同一文件的同一部分，<code>git pull</code>会提示冲突，解决步骤：</p>
-<ol>
-<li>
-<p>打开冲突文件，找到类似以下的标记：</p>
+<p>1.打开冲突文件，找到类似以下的标记：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -588,24 +587,7 @@
 </span></span><span class="line"><span class="cl">远程的代码
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-</ol>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>远程分支名</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -613,19 +595,13 @@
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 远程分支名</span>
 </span></span><span class="line"><span class="cl">2. 手动修改文件，保留需要的代码，删除冲突标记；
-</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">3. 提交解决后的代码：
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">```bash
 </span></span><span class="line"><span class="cl">git add 冲突文件名
-</span></span><span class="line"><span class="cl">git commit -m &#34;解决订单列表页面的代码冲突&#34;
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;解决订单列表页面的代码冲突&#34;</span>
 </span></span><span class="line"><span class="cl">git push origin dev
 </span></span></code></pre></td></tr></table>
 </div>
@@ -649,6 +625,17 @@
 </span></span><span class="line"><span class="cl">git checkout master
 </span></span><span class="line"><span class="cl"><span class="c1"># 合并代码</span>
 </span></span><span class="line"><span class="cl">git merge dev
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="git配置代理">git配置代理
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git config --global http.proxy http://127.0.0.1:7890
+</span></span><span class="line"><span class="cl">git config --global https.proxy https://127.0.0.1:7890
 </span></span></code></pre></td></tr></table>
 </div>
 </div>

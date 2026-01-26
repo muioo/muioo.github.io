@@ -8,11 +8,11 @@
         <language>en-us</language>
         <copyright>muioo</copyright>
         <lastBuildDate>Fri, 23 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Git 操作笔记（多设备协作&#43;常用命令）</title>
-        <link>http://localhost:1313/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+        <title>Git 操作笔记（协作&#43;常用命令）</title>
+        <link>http://localhost:1313/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+        <guid>http://localhost:1313/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
         <description>&lt;h2 id=&#34;git操作&#34;&gt;git操作
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Git 全局设置(以expert-message-craw为例):&lt;/strong&gt;&lt;/li&gt;
