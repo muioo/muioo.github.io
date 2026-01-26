@@ -470,17 +470,68 @@
 
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
-<meting-js
-    server="netease"
-    type="playlist"
-    id="17704549797"
-    fixed="true"
-    listFolded="true"
-    volume="0.5"
-    autoplay="true"
-    muted="true"  
-    preload="auto"
->
-</meting-js>
+
+<div id="music-player"></div>
+
+<script>
+
+function getPlayState() {
+  const state = localStorage.getItem('aplayerState');
+  return state ? JSON.parse(state) : {
+    currentTime: 0,   
+    currentIndex: 0,  
+    playing: true     
+  };
+}
+
+
+function savePlayState(ap) {
+  if (!ap) return;
+  const state = {
+    currentTime: ap.currentTime,  
+    currentIndex: ap.currentIndex, 
+    playing: ap.playing           
+  };
+  localStorage.setItem('aplayerState', JSON.stringify(state));
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  
+  const ap = new APlayer({
+    container: document.getElementById('music-player'),
+    fixed: true,
+    listFolded: true,
+    volume: 0.5,
+    autoplay: false, 
+    muted: true,
+    preload: 'auto',
+    meting: {
+      server: 'netease',
+      type: 'playlist',
+      id: '17704549797'
+    }
+  });
+
+  
+  const playState = getPlayState();
+  setTimeout(() => {
+    ap.switchTo(playState.currentIndex); 
+    ap.seek(playState.currentTime);      
+    if (playState.playing) ap.play();    
+  }, 500); 
+
+  
+  ap.on('timeupdate', () => savePlayState(ap)); 
+  ap.on('switch', () => savePlayState(ap));     
+  ap.on('play', () => savePlayState(ap));       
+  ap.on('pause', () => savePlayState(ap));      
+
+  
+  document.addEventListener('click', () => {
+    if (ap.muted) ap.muted = false;
+  }, { once: true });
+});
+</script>
     </body>
 </html>
