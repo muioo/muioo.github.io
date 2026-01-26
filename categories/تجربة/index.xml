@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>تجربة on muioo blog</title>
-        <link>http://localhost:1313/categories/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9/</link>
+        <link>https://muioo.github.io/categories/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9/</link>
         <description>Recent content in تجربة on muioo blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <copyright>muioo</copyright><atom:link href="http://localhost:1313/categories/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9/index.xml" rel="self" type="application/rss+xml" />
+        <copyright>muioo</copyright><atom:link href="https://muioo.github.io/categories/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>
