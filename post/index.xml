@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on muioo blog</title>
-        <link>https://muioo.github.io/post/</link>
+        <link>http://localhost:1313/post/</link>
         <description>Recent content in Posts on muioo blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Mon, 26 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://muioo.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Claude Code 前端开发规则1</title>
-        <link>https://muioo.github.io/p/claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</link>
+        <lastBuildDate>Mon, 26 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>【Claude Code 规则】Claude Code 前端开发规则1</title>
+        <link>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</guid>
+        <guid>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</guid>
         <description>&lt;h1 id=&#34;前端规则设计1&#34;&gt;前端规则设计1
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -148,11 +148,11 @@
 </description>
         </item>
         <item>
-        <title>Claude Code 前端开发规则2</title>
-        <link>https://muioo.github.io/p/claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</link>
+        <title>【Claude Code 规则】Claude Code 前端开发规则2</title>
+        <link>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</guid>
+        <guid>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</guid>
         <description>&lt;h1 id=&#34;前端设计规则2vuets&#34;&gt;前端设计规则2（vue+ts）
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;您是一位精通TypeScript、Node.js、Vite、Vue.js、Vue Router、Pinia、VueUse、Headless UI、Element Plus和Tailwind CSS的专家，对这些技术中的最佳实践和性能优化技巧有深刻理解。&lt;/li&gt;
@@ -226,11 +226,11 @@
 </description>
         </item>
         <item>
-        <title>FastAPI 后端开发规则</title>
-        <link>https://muioo.github.io/p/fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</link>
+        <title>【Claude Code 规则】FastAPI 后端开发规则</title>
+        <link>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</guid>
+        <guid>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</guid>
         <description>&lt;h1 id=&#34;后端开发规则fastapi&#34;&gt;后端开发规则（fastapi）
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;您是一位精通 Python、FastAPI 和可扩展 API 开发的专家。&lt;/li&gt;
@@ -381,10 +381,10 @@
         </item>
         <item>
         <title>Git 操作笔记（协作&#43;常用命令）</title>
-        <link>https://muioo.github.io/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+        <link>http://localhost:1313/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+        <guid>http://localhost:1313/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
         <description>&lt;h2 id=&#34;git操作&#34;&gt;git操作
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Git 全局设置(以expert-message-craw为例):&lt;/strong&gt;&lt;/li&gt;
@@ -657,10 +657,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global https.proxy https://127.0.0.1:7890
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://muioo.github.io/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note.png&#34;
 	width=&#34;675&#34;
 	height=&#34;254&#34;
-	srcset=&#34;https://muioo.github.io/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note_hu_6a776fc7b830fc5a.png 480w, https://muioo.github.io/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note_hu_141aaceec6b7cf22.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note_hu_6a776fc7b830fc5a.png 480w, http://localhost:1313/p/git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note_hu_141aaceec6b7cf22.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;git-note&#34;

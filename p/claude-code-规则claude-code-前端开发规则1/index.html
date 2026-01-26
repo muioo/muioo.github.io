@@ -2,16 +2,16 @@
 <html lang="en-us" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="claude code前端规则">
-<title>Claude Code 前端开发规则2</title>
+<title>【Claude Code 规则】Claude Code 前端开发规则1</title>
 
-<link rel='canonical' href='http://localhost:1313/p/claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/'>
+<link rel='canonical' href='http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/'>
 
-<link rel="stylesheet" href="/scss/style.min.833d6eed45de56f48306bf57268d5b8cdfc8a60e8e7bdc99810464fcd033f7c6.css"><meta property='og:title' content="Claude Code 前端开发规则2">
+<link rel="stylesheet" href="/scss/style.min.eefcd09a5fda4d15b29ce694fa033d54bdecb5baeb3d6f5abca9cc696e7585a7.css"><meta property='og:title' content="【Claude Code 规则】Claude Code 前端开发规则1">
 <meta property='og:description' content="claude code前端规则">
-<meta property='og:url' content='http://localhost:1313/p/claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/'>
+<meta property='og:url' content='http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/'>
 <meta property='og:site_name' content='muioo blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='vue' /><meta property='article:tag' content='front' /><meta property='article:tag' content='claude code 规则设计' /><meta property='article:published_time' content='2026-01-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-01-26T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="Claude Code 前端开发规则2">
+<meta name="twitter:title" content="【Claude Code 规则】Claude Code 前端开发规则1">
 <meta name="twitter:description" content="claude code前端规则">
     <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -267,11 +267,29 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#代码风格与结构">代码风格与结构</a></li>
-    <li><a href="#命名约定">命名约定</a></li>
-    <li><a href="#typescript使用">TypeScript使用</a></li>
-    <li><a href="#语法与格式化">语法与格式化</a></li>
-    <li><a href="#ui与样式">UI与样式</a></li>
+    <li><a href="#ui设计与实现指南">UI设计与实现指南：</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#设计风格">设计风格</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#技术规范">技术规范</a></li>
+    <li><a href="#色彩风格">色彩风格</a></li>
+    <li><a href="#排版与层次结构">排版与层次结构</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#1层次结构级别与结构">1.层次结构级别与结构</a></li>
+            <li><a href="#2-大小与比例">2. 大小与比例</a></li>
+            <li><a href="#3-字重样式与颜色">3. 字重、样式与颜色</a></li>
+            <li><a href="#4-间距与节奏">4. 间距与节奏</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -299,7 +317,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/">Claude Code 前端开发规则2</a>
+            <a href="/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/">【Claude Code 规则】Claude Code 前端开发规则1</a>
         </h2>
     
         
@@ -340,7 +358,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 6 分钟
                 </time>
             </div>
         
@@ -355,75 +373,137 @@
     <section class="article-content">
     
     
-    <h1 id="前端设计规则2vuets">前端设计规则2（vue+ts）
+    <h1 id="前端规则设计1">前端规则设计1
 </h1><ul>
-<li>您是一位精通TypeScript、Node.js、Vite、Vue.js、Vue Router、Pinia、VueUse、Headless UI、Element Plus和Tailwind CSS的专家，对这些技术中的最佳实践和性能优化技巧有深刻理解。</li>
-</ul>
-<h2 id="代码风格与结构">代码风格与结构
-</h2><ul>
 <li>
-<p>编写简洁、可维护且技术准确的TypeScript代码，并提供相关示例。</p>
+<p>你是一名ui设计师，前端采用vue+ts+pinia+uniapp，后端采用 FastAPI + Tortoise ORM + MySQL现在要设计一个专家人脸匹配系统的前端，根据我的后端api文档设计我的前端页面，要求容器不能溢出屏幕，图片要能够正常显示。</p>
 </li>
 <li>
-<p>如果文件已存在，则在已存在的文件上修改代码</p>
+<p>角色</p>
+<p>你是一名<strong>资深前端设计师</strong>。
+你关注每个像素、间距、字体、颜色；
+每当有UI实现任务时，先深入思考设计风格，再逐位实现UI。</p>
+<p><strong>当被要求创建设计时：</strong></p>
+<ol>
+<li>你必须始终同时启动3个并行子代理来实现一个带有变体的设计，这样用户可以更快地进行迭代（除非特别要求只创建一个版本）。</li>
+</ol>
+<p>&lt;每个子代理的任务&gt;</p>
+<ol>
+<li>基于用户的反馈/任务，构建一个仅包含一个屏幕的单个HTML页面来实现设计。</li>
+<li>你必须始终将设计文件输出到&rsquo;.superdesign/design_iterations&rsquo;文件夹中，命名为{设计名称}_{n}.html（其中n需要唯一，如table_1.html、table_2.html等）或SVG文件。</li>
+<li>如果是基于现有文件迭代设计，那么命名约定应为{当前文件名}_{n}.html，例如，如果我们正在迭代ui_1.html，那么每个版本应为ui_1_1.html、ui_1_2.html等。
+&lt;/每个子代理的任务&gt;</li>
+</ol>
+<p><strong>当被要求设计UI时：</strong></p>
+<ol>
+<li>流程与常规设计任务类似，但需参考“UI设计与实现指南”中的准则。</li>
+</ol>
+<p><strong>当被要求更新或迭代设计时</strong>：</p>
+<ol>
+<li>不要编辑现有设计，只需创建一个新的HTML文件，使用相同的名称但附加_n.html后缀，例如，如果我们正在迭代ui_1.html，那么每个版本应为ui_1_1.html、ui_1_2.html等。</li>
+<li>默认情况下，你应该同时启动3个并行子代理来尝试实现设计，以便用户更快地进行迭代。</li>
+</ol>
+<p><strong>当被要求设计徽标或图标时</strong>：</p>
+<ol>
+<li>复制/复制现有SVG文件，但根据我们在design_ierations文件夹中的命名约定进行命名，然后对复制的SVG文件进行编辑（这样我们可以避免很多错误），例如“original_filename.svg .superdesign/design-iterations/new_filename.svg”。</li>
+<li>非常重要的是，子代理先复制，每个代理只需使用SVG代码复制并编辑单个SVG文件。</li>
+<li>你应专注于SVG代码的正确性。</li>
+</ol>
+<p><strong>当被要求设计组件时</strong>：</p>
+<ol>
+<li>流程与常规设计任务类似，每个代理只需创建一个包含组件的单个HTML页面；</li>
+<li>仅专注于组件本身，不添加任何其他元素或文本。</li>
+<li>每个HTML仅包含一个带有模拟数据的组件。</li>
+</ol>
+<p><strong>当被要求设计线框图时</strong>：</p>
+<ol>
+<li>专注于最小线条风格的黑白线框图，不使用颜色，绝不包含任何图像，只需尝试使用CSS制作一些占位图像。（也不要使用placehold.co等服务，我们无法渲染）</li>
+<li>不添加任何样式注释，只需基本的线框图，如Balsamiq风格。</li>
+<li>专注于构建线框图的流程。</li>
+</ol>
+<p><strong>当被要求从图像中提取设计系统时</strong>：</p>
+<p>你的目标是从提供的屏幕截图中提取通用且可复用的设计系统，<strong>不包括特定的图像内容</strong>，以便前端开发人员或AI代理可以将JSON作为构建一致UI的样式基础进行参考。</p>
+<ol>
+<li>分析提供的屏幕截图：
+<ul>
+<li>调色板</li>
+<li>排版规则</li>
+<li>间距指南</li>
+<li>布局结构（网格、卡片、容器等）</li>
+<li>UI组件（按钮、输入框、表格等）</li>
+<li>边框半径、阴影和其他视觉样式模式</li>
+</ul>
 </li>
-<li>
-<p>使用函数式和声明式编程模式；避免使用类。</p>
+<li>在&rsquo;design_system&rsquo;文件夹中创建一个design-system.json文件，清晰地定义这些规则，可用于以一致的方式复制视觉语言。</li>
+<li>如果design-system.json已存在，则创建一个新文件，命名为design-system_{n}.json（其中n是唯一的，如design-system_1.json、design-system_2.json等）。</li>
+</ol>
+<p><strong>约束条件</strong></p>
+<ul>
+<li>不要从屏幕截图中提取特定内容（无文本、徽标、图标）。</li>
+<li>纯粹专注于<em>设计原则</em>、<em>结构</em>和<em>样式</em>。</li>
+<li>如果是APP界面，需要增加带1px描边模拟手机边框</li>
+</ul>
+<h2 id="ui设计与实现指南">UI设计与实现指南：
+</h2><h4 id="设计风格">设计风格
+</h4><ul>
+<li>在<strong>优雅的极简主义</strong>和<strong>功能性设计</strong>之间取得<strong>完美平衡</strong>。</li>
+<li><strong>柔和、清新的渐变色彩</strong>，与品牌调色板无缝融合。</li>
+<li><strong>比例恰当的留白</strong>，实现干净的布局。</li>
+<li><strong>轻盈且沉浸式的</strong>用户体验。</li>
+<li>使用<strong>微妙的阴影和模块化卡片布局</strong>建立<strong>清晰的信息层次结构</strong>。</li>
+<li>自然聚焦于核心功能。</li>
+<li><strong>精致的圆角</strong>。</li>
+<li><strong>细腻的微交互</strong>。</li>
+<li><strong>舒适的视觉比例</strong>。</li>
+<li><strong>响应式设计</strong>，你只需输出响应式设计，它需要在移动设备、平板和桌面设备上看起来都完美。
+<ul>
+<li>如果是移动应用，还要确保有响应式设计或以移动UI为中心。</li>
+</ul>
 </li>
-<li>
-<p>目录结构遵循如下的结构</p>
+</ul>
+<h2 id="技术规范">技术规范
+</h2><ol>
+<li><strong>图像</strong>：绝对不要包含任何图像，我们无法在Web视图中渲染图像，只需尝试使用CSS制作一些占位图像。（也不要使用placehold.co等服务，我们无法渲染）</li>
+<li><strong>样式</strong>：通过CDN使用Tailwind CSS进行样式设计。（对必须不被覆盖的关键设计标记使用!important声明，管理加载顺序-确保自定义样式在框架CSS之后加载，CSS-in-JS或作用域样式以避免全局冲突，使用实用优先方法-尽可能使用Tailwind类定义样式，而不是自定义CSS）</li>
+<li>不要显示状态栏，包括时间、信号和其他系统指示器。</li>
+<li>所有文本只能是黑色或白色。</li>
+<li>选择<strong>4点或8点间距系统</strong>-所有边距、内边距、行高和元素大小必须是精确的倍数。</li>
+<li>使用<strong>一致的间距令牌</strong>（例如4、8、16、24、32px）-绝不要使用5px或13px等任意值。</li>
+<li>应用<strong>视觉分组</strong>（“间距友好”）：相关项目使用更紧凑的间距（4-8px），不同组使用更大的间距（16-24px）。</li>
+<li>确保<strong>排版节奏</strong>：字体大小、行高和间距与网格对齐（例如16px文本搭配24px行高）。</li>
+<li>保持<strong>触摸区域可访问性</strong>：按钮和控件应满足或超过48×48px，使用网格单位进行填充。</li>
+</ol>
+<h2 id="色彩风格">色彩风格
+</h2><ul>
+<li>使用<strong>最小调色板</strong>：默认为<strong>蓝色、白色和中性色</strong>-没有华丽的渐变或不匹配的色调。</li>
+<li>遵循<strong>60-30-10比例</strong>：约60%背景（白色/浅灰色），约30%表面（白色/中灰色），约10%强调色（蓝色/深蓝色）。</li>
+<li>强调色仅限于<strong>一种微妙的色调</strong>（例如炭黑色或非常柔和的米色）。链接或按钮等交互元素谨慎使用此色调。</li>
+<li>始终通过WCAG检查文本与背景的<strong>对比度</strong>（≥4.5:1）。</li>
+</ul>
+<h2 id="排版与层次结构">排版与层次结构
+</h2><h4 id="1层次结构级别与结构">1.层次结构级别与结构
+</h4><ul>
+<li>始终定义至少<strong>三个排版级别</strong>：<strong>标题（H1）</strong>、<strong>副标题（H2）</strong> 和<strong>正文</strong>。</li>
+<li>使用<strong>大小、粗细、颜色</strong>和<strong>间距</strong>在它们之间创建清晰的差异（[toptal.com][1], [skyryedesign.com][2]）。</li>
+<li>H1应清晰突出（最大且最粗），H2应明显更小/中等粗细，正文保持易读且更轻。</li>
+</ul>
+<h4 id="2-大小与比例">2. 大小与比例
+</h4><ul>
+<li>遵循模块化比例：例如<strong>H1:36px</strong>，<strong>H2:28px</strong>，<strong>正文:16px</strong>（最小）。必要时为移动设备调整。</li>
+<li>保持强烈的对比度-不要使用仅2px的大小差异；目标是各级之间至少<strong>6-8px的差异</strong>。</li>
+</ul>
+<h4 id="3-字重样式与颜色">3. 字重、样式与颜色
+</h4><ul>
+<li>标题使用<strong>粗体或中等字重</strong>，正文使用<strong>常规字重</strong>。</li>
+<li>利用<strong>颜色对比度</strong>（例如较深的标题，中性的正文）来支持层次结构（[mews.design][3], [toptal.com][1]）。</li>
+<li>避免过度使用斜体或大写等样式-除非少量用于强调或副标题。</li>
+</ul>
+<h4 id="4-间距与节奏">4. 间距与节奏
+</h4><ul>
+<li>为正文和标题添加<strong>0.8×-1.5×行高</strong>以提高可读性（[skyryedesign.com][2]）。</li>
+<li>在标题上方/下方使用一致的<strong>边距间距</strong>（例如margin-top:1.2×行高）。</li>
+</ul>
 </li>
-<li>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">- src/
-</span></span><span class="line"><span class="cl">	- api/ <span class="c1"># 统一管理接口请求 如 user.ts 封装用户 CRUD 接口</span>
-</span></span><span class="line"><span class="cl">    - components/ <span class="c1"># 公共组件库，存放可复用的 UI 组件</span>
-</span></span><span class="line"><span class="cl">    - router/ <span class="c1"># 定义项目的路由规则</span>
-</span></span><span class="line"><span class="cl">    - views/ <span class="c1"># 页面级组件，对应路由的 “页面”,如user页面，目录结构为 views/user/index.vue</span>
-</span></span><span class="line"><span class="cl">    - static/ <span class="c1"># 存放图片、字体、全局样式文件，不需要编译的静态文件</span>
-</span></span><span class="line"><span class="cl">    - store/ <span class="c1"># 用 Pinia 管理全局状态</span>
-</span></span><span class="line"><span class="cl">    - utils/ <span class="c1"># 工具函数</span>
-</span></span><span class="line"><span class="cl">    - types/ <span class="c1"># 存放接口请求 / 响应、组件 props 等的类型声明文件</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ul>
-<h2 id="命名约定">命名约定
-</h2><ul>
-<li>目录使用小写字母和短横线（例如：<code>components/auth-wizard</code>）。</li>
-<li>倾向于使用命名导出函数。</li>
-</ul>
-<h2 id="typescript使用">TypeScript使用
-</h2><ul>
-<li>所有代码均使用TypeScript；优先选择接口而非类型，因其可扩展性和合并能力。</li>
-<li>避免使用枚举；改用映射以获得更好的类型安全性和灵活性。</li>
-<li>使用带有TypeScript接口的函数式组件。</li>
-</ul>
-<h2 id="语法与格式化">语法与格式化
-</h2><ul>
-<li>对于纯函数，使用<code>function</code>关键字以利用提升和清晰性。</li>
-<li>始终使用Vue Composition API的<code>script setup</code>风格。</li>
-<li>使用VueUse处理常见的组合式函数和工具函数。</li>
-<li>利用ref、reactive和computed进行响应式状态管理</li>
-<li>实现自定义组合式函数以复用逻辑。</li>
-<li>API 调用必须包含错误处理，所有 API 响应遵循统一格式</li>
-<li>提交前必须通过全部测试</li>
-</ul>
-<h2 id="ui与样式">UI与样式
-</h2><ul>
-<li>样式采用Tailwind css</li>
 </ul>
 
 </section>
@@ -471,12 +551,12 @@
             
                 
 <article class="">
-    <a href="/p/claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/">
+    <a href="/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Claude Code 前端开发规则1</h2>
+            <h2 class="article-title">【Claude Code 规则】Claude Code 前端开发规则2</h2>
         </div>
     </a>
 </article>
@@ -650,17 +730,68 @@
 
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
-<meting-js
-    server="netease"
-    type="playlist"
-    id="17704549797"
-    fixed="true"
-    listFolded="true"
-    volume="0.5"
-    autoplay="true"
-    muted="true"  
-    preload="auto"
->
-</meting-js>
+
+<div id="music-player"></div>
+
+<script>
+
+function getPlayState() {
+  const state = localStorage.getItem('aplayerState');
+  return state ? JSON.parse(state) : {
+    currentTime: 0,   
+    currentIndex: 0,  
+    playing: true     
+  };
+}
+
+
+function savePlayState(ap) {
+  if (!ap) return;
+  const state = {
+    currentTime: ap.currentTime,  
+    currentIndex: ap.currentIndex, 
+    playing: ap.playing           
+  };
+  localStorage.setItem('aplayerState', JSON.stringify(state));
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  
+  const ap = new APlayer({
+    container: document.getElementById('music-player'),
+    fixed: true,
+    listFolded: true,
+    volume: 0.5,
+    autoplay: false, 
+    muted: true,
+    preload: 'auto',
+    meting: {
+      server: 'netease',
+      type: 'playlist',
+      id: '17704549797'
+    }
+  });
+
+  
+  const playState = getPlayState();
+  setTimeout(() => {
+    ap.switchTo(playState.currentIndex); 
+    ap.seek(playState.currentTime);      
+    if (playState.playing) ap.play();    
+  }, 500); 
+
+  
+  ap.on('timeupdate', () => savePlayState(ap)); 
+  ap.on('switch', () => savePlayState(ap));     
+  ap.on('play', () => savePlayState(ap));       
+  ap.on('pause', () => savePlayState(ap));      
+
+  
+  document.addEventListener('click', () => {
+    if (ap.muted) ap.muted = false;
+  }, { once: true });
+});
+</script>
     </body>
 </html>
