@@ -2,52 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on muioo blog</title>
-        <link>http://localhost:1313/page/</link>
+        <link>https://muioo.github.io/page/</link>
         <description>Recent content in Pages on muioo blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://muioo.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>归档 | archives</title>
-        <link>http://localhost:1313/archives/</link>
+        <link>https://muioo.github.io/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/archives/</guid>
+        <guid>https://muioo.github.io/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>关于 | About</title>
-        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E-about/</link>
+        <link>https://muioo.github.io/%E5%85%B3%E4%BA%8E-about/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E-about/</guid>
-        <description>&lt;img src="http://localhost:1313/%E5%85%B3%E4%BA%8E-about/background1.jpg" alt="Featured image of post 关于 | About" /&gt;&lt;p&gt;随心所欲放一些东西。。做一个博客来记录一下，记录一些游戏成就，一些代码问题。。&lt;/p&gt;
+        <guid>https://muioo.github.io/%E5%85%B3%E4%BA%8E-about/</guid>
+        <description>&lt;img src="https://muioo.github.io/%E5%85%B3%E4%BA%8E-about/background1.jpg" alt="Featured image of post 关于 | About" /&gt;&lt;p&gt;随心所欲放一些东西。。做一个博客来记录一下，记录一些游戏成就，一些代码问题。。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;兴趣爱好&#34;&gt;兴趣爱好
 &lt;/h2&gt;&lt;h3 id=&#34;游戏&#34;&gt;游戏
-&lt;/h3&gt;&lt;p&gt;一些我喜欢的游戏：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;lol&lt;/li&gt;
-&lt;li&gt;空洞骑士&lt;/li&gt;
-&lt;li&gt;星露谷物语&lt;/li&gt;
-&lt;li&gt;MC&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;跑步&#34;&gt;跑步
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;关于本博客&#34;&gt;关于本博客
+&lt;/h3&gt;&lt;h3 id=&#34;跑步&#34;&gt;跑步
+&lt;/h3&gt;&lt;h2 id=&#34;关于本博客&#34;&gt;关于本博客
 &lt;/h2&gt;&lt;p&gt;这个博客是我使用 &lt;strong&gt;Hugo&lt;/strong&gt; 静态网站生成器搭建的个人技术博客。Hugo 以其快速的构建速度和灵活的配置而闻名，非常适合搭建个人博客和文档站点。&lt;/p&gt;
-&lt;h3 id=&#34;博客的目的&#34;&gt;博客的目的
-&lt;/h3&gt;&lt;p&gt;创建这个博客的主要目的是：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;记录开发过程中遇到的问题和解决方案&lt;/strong&gt;
-在开发过程中，我们经常会遇到各种技术问题。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;整理和分享有用的技术资料&lt;/strong&gt;
-我会在这里整理和分享我认为有价值的技术文章、工具和资源。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;分享经验和思考&lt;/strong&gt;
-除了技术内容，我也会分享一些关于开发、职业发展和生活的思考，希望能与大家交流和共鸣。&lt;/li&gt;
-&lt;/ol&gt;
 &lt;h3 id=&#34;技术实现&#34;&gt;技术实现
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;静态网站生成器&lt;/strong&gt;: Hugo&lt;/li&gt;
@@ -56,8 +36,8 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;联系方式&#34;&gt;联系方式
 &lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;📧 Email: &lt;a class=&#34;link&#34; href=&#34;mailto:2367306784@qq.com&#34; &gt;2367306784@qq.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💬 GitHub: &lt;a class=&#34;link&#34; href=&#34;[muioo]%28https://github.com/muioo%29&#34; &gt;muioo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Email: &lt;a class=&#34;link&#34; href=&#34;mailto:2367306784@qq.com&#34; &gt;2367306784@qq.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GitHub: &lt;a class=&#34;link&#34; href=&#34;[muioo]%28https://github.com/muioo%29&#34; &gt;muioo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;致谢&#34;&gt;致谢
 &lt;/h2&gt;&lt;p&gt;感谢你访问我的博客！希望这里的内容能对你有所帮助。如果你有任何建议或反馈，欢迎随时与我联系。&lt;/p&gt;
@@ -67,18 +47,18 @@
         </item>
         <item>
         <title>搜索 | Search</title>
-        <link>http://localhost:1313/search/</link>
+        <link>https://muioo.github.io/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/search/</guid>
+        <guid>https://muioo.github.io/search/</guid>
         <description></description>
         </item>
         <item>
         <title>相关链接 | Links</title>
-        <link>http://localhost:1313/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/</link>
+        <link>https://muioo.github.io/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/</guid>
+        <guid>https://muioo.github.io/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/</guid>
         <description>&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1

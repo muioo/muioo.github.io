@@ -1,20 +1,124 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前端开发规则（vue+ts） 您是一位精通TypeScript、Node.js、Vite、Vue.js、Vue Router、Pinia、VueUse、Headless UI、Element Plus和Tailwind CSS的专家，对这些技术中的最佳实践和性能优化技巧有深刻理解。 代码风格与结构 编写简洁、可维护且技术准确的TypeScript代码，并提供相关示例。\n">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="hugo搭建静态网站 下载hugo.exe\n下载主题（Hugo Themes）到hugo项目根目录的theme中\n删除主题的版本号后缀，将exampleSite/content目录和配置文件移动到根目录\n">
 <title></title>
 
-<link rel='canonical' href='http://localhost:1313/p/'>
+<link rel='canonical' href='http://localhost:8080/p/'>
 
-<link rel="stylesheet" href="/scss/style.min.833d6eed45de56f48306bf57268d5b8cdfc8a60e8e7bdc99810464fcd033f7c6.css"><meta property='og:title' content="">
-<meta property='og:description' content="前端开发规则（vue+ts） 您是一位精通TypeScript、Node.js、Vite、Vue.js、Vue Router、Pinia、VueUse、Headless UI、Element Plus和Tailwind CSS的专家，对这些技术中的最佳实践和性能优化技巧有深刻理解。 代码风格与结构 编写简洁、可维护且技术准确的TypeScript代码，并提供相关示例。\n">
-<meta property='og:url' content='http://localhost:1313/p/'>
+<link rel="stylesheet" href="/scss/style.min.2255cb2df767d30be0937aebf1bccb8714db2a3253c5b26bc9311112cbf2078b.css"><meta property='og:title' content="">
+<meta property='og:description' content="hugo搭建静态网站 下载hugo.exe\n下载主题（Hugo Themes）到hugo项目根目录的theme中\n删除主题的版本号后缀，将exampleSite/content目录和配置文件移动到根目录\n">
+<meta property='og:url' content='http://localhost:8080/p/'>
 <meta property='og:site_name' content='muioo blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' />
 <meta name="twitter:title" content="">
-<meta name="twitter:description" content="前端开发规则（vue+ts） 您是一位精通TypeScript、Node.js、Vite、Vue.js、Vue Router、Pinia、VueUse、Headless UI、Element Plus和Tailwind CSS的专家，对这些技术中的最佳实践和性能优化技巧有深刻理解。 代码风格与结构 编写简洁、可维护且技术准确的TypeScript代码，并提供相关示例。\n">
+<meta name="twitter:description" content="hugo搭建静态网站 下载hugo.exe\n下载主题（Hugo Themes）到hugo项目根目录的theme中\n删除主题的版本号后缀，将exampleSite/content目录和配置文件移动到根目录\n">
     <link rel="shortcut icon" href="/favicon.ico" />
+<script>
+    
 
+
+
+
+const live2d_path = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/';
+
+
+
+
+function loadExternalResource(url, type) {
+  return new Promise((resolve, reject) => {
+    let tag;
+
+    if (type === 'css') {
+      tag = document.createElement('link');
+      tag.rel = 'stylesheet';
+      tag.href = url;
+    }
+    else if (type === 'js') {
+      tag = document.createElement('script');
+      tag.type = 'module';
+      tag.src = url;
+    }
+    if (tag) {
+      tag.onload = () => resolve(url);
+      tag.onerror = () => reject(url);
+      document.head.appendChild(tag);
+    }
+  });
+}
+
+(async () => {
+  
+  
+  
+
+  
+  
+  const OriginalImage = window.Image;
+  window.Image = function(...args) {
+    const img = new OriginalImage(...args);
+    img.crossOrigin = "anonymous";
+    return img;
+  };
+  window.Image.prototype = OriginalImage.prototype;
+  
+  
+  await Promise.all([
+    loadExternalResource(live2d_path + 'waifu.css', 'css'),
+    loadExternalResource(live2d_path + 'waifu-tips.js', 'js')
+  ]);
+  
+  
+  initWidget({
+    waifuPath: live2d_path + 'waifu-tips.json',
+    
+    cubism2Path: live2d_path + 'live2d.min.js',
+    cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
+    tools: ['hitokoto', 'asteroids', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
+    logLevel: 'warn',
+    drag: false,
+  });
+})();
+
+console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #ff5450; font-size: large; color: #eee;', '');
+
+
+
+
+
+</script>
+
+
+<style>
+#waifu {
+    left: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+
+#waifu-tips {
+    left: auto !important;
+    right: 0 !important;
+}
+
+#waifu-tool {
+    left: auto !important;
+    right: 0 !important;
+}
+</style>
+        
+        <script src="https://unpkg.com/swup@4"></script>
+        <style>
+             
+            .transition-fade {
+                transition: opacity 0.3s;
+                opacity: 1;
+            }
+
+            html.is-animating .transition-fade {
+                opacity: 0;
+            }
+        </style>
     </head>
     <body class="
     article-page
@@ -22,9 +126,7 @@
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
-            if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "auto");
-            }
+            localStorage.setItem(colorSchemeKey, "light");
         })();
     </script><script>
     (function() {
@@ -41,7 +143,9 @@
         }
     })();
 </script>
-<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+
+        <div id="swup" class="transition-fade">
+            <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -64,8 +168,6 @@
                 
                 </a>
                 
-                    <span class="emoji">🍥</span>
-                
             </figure>
             
         
@@ -78,7 +180,7 @@
             
                 <li>
                     <a 
-                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        href='https://github.com/muioo/muioo.github.io'
                         target="_blank"
                         title="GitHub"
                         rel="me"
@@ -88,26 +190,6 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-</svg>
-
-
-
-                        
-                    </a>
-                </li>
-            
-                <li>
-                    <a 
-                        href='https://twitter.com'
-                        target="_blank"
-                        title="Twitter"
-                        rel="me"
-                    >
-                        
-                        
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
 </svg>
 
 
@@ -135,13 +217,13 @@
 
 
                 
-                <span>主页</span>
+                <span>主页 | Home</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/%E5%85%B3%E4%BA%8E/' >
+            <a href='/%E5%85%B3%E4%BA%8E-about/' >
                 
                 
                 
@@ -154,7 +236,7 @@
 
 
                 
-                <span>关于</span>
+                <span>关于 | About</span>
             </a>
         </li>
         
@@ -174,7 +256,7 @@
 
 
                 
-                <span>Archives</span>
+                <span>归档 | archives</span>
             </a>
         </li>
         
@@ -193,13 +275,13 @@
 
 
                 
-                <span>Search</span>
+                <span>搜索 | Search</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/links/' >
+            <a href='/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/' >
                 
                 
                 
@@ -212,33 +294,13 @@
 
 
                 
-                <span>Links</span>
+                <span>相关链接 | Links</span>
             </a>
         </li>
         
         <li class="menu-bottom-section">
             <ol class="menu">
 
-                
-                    <li id="dark-mode-toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                        <span>暗色模式</span>
-                    </li>
                 
             </ol>
         </li>
@@ -267,13 +329,13 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li>
+    <li><a href="#hugo搭建静态网站">hugo搭建静态网站</a>
       <ol>
-        <li><a href="#代码风格与结构">代码风格与结构</a></li>
-        <li><a href="#命名约定">命名约定</a></li>
-        <li><a href="#typescript使用">TypeScript使用</a></li>
-        <li><a href="#语法与格式化">语法与格式化</a></li>
-        <li><a href="#ui与样式">UI与样式</a></li>
+        <li>
+          <ol>
+            <li><a href="#添加背景图片">添加背景图片</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
   </ol>
@@ -286,7 +348,7 @@
     </aside>
 
 
-            <main class="main full-width">
+                <main class="main full-width">
     <article class="main-article">
     <header class="article-header">
 
@@ -305,26 +367,6 @@
     
     
     
-    <footer class="article-time">
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 2 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
 
     
 </div>
@@ -334,95 +376,72 @@
     <section class="article-content">
     
     
-    <h1 id="前端开发规则vuets">前端开发规则（vue+ts）
-</h1><ul>
-<li>您是一位精通TypeScript、Node.js、Vite、Vue.js、Vue Router、Pinia、VueUse、Headless UI、Element Plus和Tailwind CSS的专家，对这些技术中的最佳实践和性能优化技巧有深刻理解。</li>
+    <h2 id="hugo搭建静态网站">hugo搭建静态网站
+</h2><ul>
+<li>
+<p>下载hugo.exe</p>
+<p><img src="C:%5cUsers%5cblbl%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20260127130239251.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260127130239251"
+	
+	
+></p>
+</li>
+<li>
+<p>下载主题（<a class="link" href="https://themes.gohugo.io/"  target="_blank" rel="noopener"
+    >Hugo Themes</a>）到hugo项目根目录的theme中</p>
+</li>
+<li>
+<p>删除主题的版本号后缀，将exampleSite/content目录和配置文件移动到根目录</p>
+</li>
+<li>
+<p>删除content中的rich-content</p>
+</li>
 </ul>
-<h3 id="代码风格与结构">代码风格与结构
-</h3><ul>
-<li>
-<p>编写简洁、可维护且技术准确的TypeScript代码，并提供相关示例。</p>
-</li>
-<li>
-<p>如果文件已存在，则在已存在的文件上修改代码</p>
-</li>
-<li>
-<p>使用函数式和声明式编程模式；避免使用类。</p>
-</li>
-<li>
-<p>目录结构遵循如下的结构</p>
-</li>
-<li>
+<h4 id="添加背景图片">添加背景图片
+</h4><ul>
+<li>在static\images中添加图片</li>
+<li>在assets\scss中custom.html添加样式</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">- src/
-</span></span><span class="line"><span class="cl">	- api/ <span class="c1"># 统一管理接口请求 如 user.ts 封装用户 CRUD 接口</span>
-</span></span><span class="line"><span class="cl">    - components/ <span class="c1"># 公共组件库，存放可复用的 UI 组件</span>
-</span></span><span class="line"><span class="cl">    - router/ <span class="c1"># 定义项目的路由规则</span>
-</span></span><span class="line"><span class="cl">    - views/ <span class="c1"># 页面级组件，对应路由的 “页面”,如user页面，目录结构为 views/user/index.vue</span>
-</span></span><span class="line"><span class="cl">    - static/ <span class="c1"># 存放图片、字体、全局样式文件，不需要编译的静态文件</span>
-</span></span><span class="line"><span class="cl">    - store/ <span class="c1"># 用 Pinia 管理全局状态</span>
-</span></span><span class="line"><span class="cl">    - utils/ <span class="c1"># 工具函数</span>
-</span></span><span class="line"><span class="cl">    - types/ <span class="c1"># 存放接口请求 / 响应、组件 props 等的类型声明文件</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">body</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-image</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="s2">&#34;/images/background2.jpg&#34;</span><span class="p">);</span> <span class="c">/* 对应static/images/background2.jpg */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-size</span><span class="p">:</span> <span class="kc">cover</span><span class="p">;</span> <span class="c">/* 背景图覆盖整个页面 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-position</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span> <span class="c">/* 背景图居中显示 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-attachment</span><span class="p">:</span> <span class="kc">fixed</span><span class="p">;</span> <span class="c">/* 背景图固定（滚动时不跟随） */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-repeat</span><span class="p">:</span> <span class="kc">no-repeat</span><span class="p">;</span> <span class="c">/* 禁止背景图重复 */</span>
+</span></span><span class="line"><span class="cl">    <span class="c">/* 可选：添加半透明遮罩，避免背景干扰文字 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-blend-mode</span><span class="p">:</span> <span class="kc">overlay</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-</ul>
-<h3 id="命名约定">命名约定
-</h3><ul>
-<li>目录使用小写字母和短横线（例如：<code>components/auth-wizard</code>）。</li>
-<li>倾向于使用命名导出函数。</li>
-</ul>
-<h3 id="typescript使用">TypeScript使用
-</h3><ul>
-<li>所有代码均使用TypeScript；优先选择接口而非类型，因其可扩展性和合并能力。</li>
-<li>避免使用枚举；改用映射以获得更好的类型安全性和灵活性。</li>
-<li>使用带有TypeScript接口的函数式组件。</li>
-</ul>
-<h3 id="语法与格式化">语法与格式化
-</h3><ul>
-<li>对于纯函数，使用<code>function</code>关键字以利用提升和清晰性。</li>
-<li>始终使用Vue Composition API的<code>script setup</code>风格。</li>
-<li>使用VueUse处理常见的组合式函数和工具函数。</li>
-<li>利用ref、reactive和computed进行响应式状态管理</li>
-<li>实现自定义组合式函数以复用逻辑。</li>
-<li>API 调用必须包含错误处理，所有 API 响应遵循统一格式</li>
-<li>提交前必须通过全部测试</li>
-</ul>
-<h3 id="ui与样式">UI与样式
-</h3><ul>
-<li>样式采用Tailwind css</li>
-</ul>
-
+</div>
 </section>
 
 
     <footer class="article-footer">
     
 
-    
-    <section class="article-copyright">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
-</svg>
-
-
-
-        <span>Licensed under CC BY-NC-SA 4.0</span>
-    </section>
     </footer>
 
 
@@ -482,15 +501,47 @@
 
     <footer class="site-footer">
     <section class="copyright">
-        &copy; 
+        &copy;
         
         2026 muioo
     </section>
-    
-    <section class="powerby">
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+
+    <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;">
+            本站已稳定运行: <strong id="running-days"></strong> 天 |
+            博客: <strong>5</strong> 篇 |
+            字数: <strong>6774</strong> 字
+        </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
+
+    
+
+
+<script>
+    (function() {
+        
+        const BLOG_LAUNCH_DATE = '2026-01-22'; 
+        const startDate = new Date(BLOG_LAUNCH_DATE + 'T00:00:00Z'); 
+        
+        
+        const today = new Date();
+        const utcToday = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
+
+        
+        const timeDiff = utcToday - startDate;
+        const runningDays = Math.max(0, Math.floor(timeDiff / (1000 * 60 * 60 * 24)));
+
+        
+        const daysElement = document.getElementById('running-days');
+        if (daysElement) {
+            daysElement.textContent = runningDays;
+            
+            console.log('搭建日期:', startDate.toISOString());
+            console.log('当前日期:', utcToday.toISOString());
+            console.log('运行天数:', runningDays);
+        }
+    })();
+</script>
 </footer>
 
 
@@ -573,14 +624,104 @@
             >
     
 
-            </main>
+                </main>
+            </div>
         </div>
+
+        
+        
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" defer></script>
+
+
+<style>
+.aplayer.aplayer-fixed {
+    left: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+</style>
+
+<meting-js
+    server="netease"
+    type="playlist"
+    id="17704549797"
+    fixed="true"
+    listFolded="true"
+    volume="0.5"
+    preload="auto"
+>
+</meting-js>
+
+<script>
+
+function initAutoPlay() {
+    const observer = new MutationObserver(function(mutations, obs) {
+        const aplayerElement = document.querySelector('.aplayer');
+        
+        if (aplayerElement && window.APlayer && aplayerElement.aplayer) {
+            obs.disconnect();
+            const ap = aplayerElement.aplayer;
+            console.log('检测到 APlayer 已初始化');
+
+            
+            const playMusic = () => {
+                const playPromise = ap.play();
+                if (playPromise) {
+                    playPromise.then(() => {
+                        console.log('音乐自动播放成功');
+                    }).catch(error => {
+                        console.log('浏览器阻止了自动播放，等待用户交互');
+                        
+                        const playOnInteraction = function() {
+                            ap.play().then(() => {
+                                console.log('用户交互后开始播放');
+                            }).catch(e => {
+                                console.log('播放失败:', e);
+                            });
+                            
+                            document.removeEventListener('click', playOnInteraction);
+                            document.removeEventListener('touchstart', playOnInteraction);
+                            document.removeEventListener('keydown', playOnInteraction);
+                        };
+                        document.addEventListener('click', playOnInteraction);
+                        document.addEventListener('touchstart', playOnInteraction);
+                        document.addEventListener('keydown', playOnInteraction);
+                    });
+                }
+            };
+
+            
+            ap.on('ready', playMusic);
+            
+            setTimeout(playMusic, 1000);
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', initAutoPlay);
+
+
+if (typeof swup !== 'undefined') {
+    swup.hooks.on('page:view', initAutoPlay);
+}
+</script>
+
+        
         <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
             </script><script type="text/javascript" src="/ts/main.d5865de39ec4d83e41178ac30ba43c0801769bc628bdfe817153745c78ab5a3f.js" defer></script>
-<script>
+        <script>
     (function () {
         const customFont = document.createElement('link');
         customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
@@ -592,5 +733,9 @@
     }());
 </script>
 
+        
+        <script>
+            const swup = new Swup();
+        </script>
     </body>
 </html>

@@ -1,28 +1,130 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="欢迎来到我的网站">
 <title>Posts</title>
 
-<link rel='canonical' href='http://localhost:1313/post/'>
+<link rel='canonical' href='https://muioo.github.io/post/'>
 
-<link rel="stylesheet" href="/scss/style.min.833d6eed45de56f48306bf57268d5b8cdfc8a60e8e7bdc99810464fcd033f7c6.css"><meta property='og:title' content="Posts">
+<link rel="stylesheet" href="/scss/style.min.2255cb2df767d30be0937aebf1bccb8714db2a3253c5b26bc9311112cbf2078b.css"><meta property='og:title' content="Posts">
 <meta property='og:description' content="欢迎来到我的网站">
-<meta property='og:url' content='http://localhost:1313/post/'>
+<meta property='og:url' content='https://muioo.github.io/post/'>
 <meta property='og:site_name' content='muioo blog'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-01-26T00:00:00&#43;00:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-01-27T00:00:00&#43;00:00 '/>
 <meta name="twitter:title" content="Posts">
-<meta name="twitter:description" content="欢迎来到我的网站"><link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/post/index.xml">
+<meta name="twitter:description" content="欢迎来到我的网站"><link rel="alternate" type="application/rss&#43;xml" href="https://muioo.github.io/post/index.xml">
     <link rel="shortcut icon" href="/favicon.ico" />
+<script>
+    
 
+
+
+
+const live2d_path = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/';
+
+
+
+
+function loadExternalResource(url, type) {
+  return new Promise((resolve, reject) => {
+    let tag;
+
+    if (type === 'css') {
+      tag = document.createElement('link');
+      tag.rel = 'stylesheet';
+      tag.href = url;
+    }
+    else if (type === 'js') {
+      tag = document.createElement('script');
+      tag.type = 'module';
+      tag.src = url;
+    }
+    if (tag) {
+      tag.onload = () => resolve(url);
+      tag.onerror = () => reject(url);
+      document.head.appendChild(tag);
+    }
+  });
+}
+
+(async () => {
+  
+  
+  
+
+  
+  
+  const OriginalImage = window.Image;
+  window.Image = function(...args) {
+    const img = new OriginalImage(...args);
+    img.crossOrigin = "anonymous";
+    return img;
+  };
+  window.Image.prototype = OriginalImage.prototype;
+  
+  
+  await Promise.all([
+    loadExternalResource(live2d_path + 'waifu.css', 'css'),
+    loadExternalResource(live2d_path + 'waifu-tips.js', 'js')
+  ]);
+  
+  
+  initWidget({
+    waifuPath: live2d_path + 'waifu-tips.json',
+    
+    cubism2Path: live2d_path + 'live2d.min.js',
+    cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
+    tools: ['hitokoto', 'asteroids', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
+    logLevel: 'warn',
+    drag: false,
+  });
+})();
+
+console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #ff5450; font-size: large; color: #eee;', '');
+
+
+
+
+
+</script>
+
+
+<style>
+#waifu {
+    left: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+
+#waifu-tips {
+    left: auto !important;
+    right: 0 !important;
+}
+
+#waifu-tool {
+    left: auto !important;
+    right: 0 !important;
+}
+</style>
+        
+        <script src="https://unpkg.com/swup@4"></script>
+        <style>
+             
+            .transition-fade {
+                transition: opacity 0.3s;
+                opacity: 1;
+            }
+
+            html.is-animating .transition-fade {
+                opacity: 0;
+            }
+        </style>
     </head>
     <body class="">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
-            if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "auto");
-            }
+            localStorage.setItem(colorSchemeKey, "light");
         })();
     </script><script>
     (function() {
@@ -39,7 +141,9 @@
         }
     })();
 </script>
-<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+
+        <div id="swup" class="transition-fade">
+            <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -62,8 +166,6 @@
                 
                 </a>
                 
-                    <span class="emoji">🍥</span>
-                
             </figure>
             
         
@@ -76,7 +178,7 @@
             
                 <li>
                     <a 
-                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        href='https://github.com/muioo/muioo.github.io'
                         target="_blank"
                         title="GitHub"
                         rel="me"
@@ -86,26 +188,6 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-</svg>
-
-
-
-                        
-                    </a>
-                </li>
-            
-                <li>
-                    <a 
-                        href='https://twitter.com'
-                        target="_blank"
-                        title="Twitter"
-                        rel="me"
-                    >
-                        
-                        
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
 </svg>
 
 
@@ -133,13 +215,13 @@
 
 
                 
-                <span>主页</span>
+                <span>主页 | Home</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/%E5%85%B3%E4%BA%8E/' >
+            <a href='/%E5%85%B3%E4%BA%8E-about/' >
                 
                 
                 
@@ -152,7 +234,7 @@
 
 
                 
-                <span>关于</span>
+                <span>关于 | About</span>
             </a>
         </li>
         
@@ -172,7 +254,7 @@
 
 
                 
-                <span>Archives</span>
+                <span>归档 | archives</span>
             </a>
         </li>
         
@@ -191,13 +273,13 @@
 
 
                 
-                <span>Search</span>
+                <span>搜索 | Search</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/links/' >
+            <a href='/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/' >
                 
                 
                 
@@ -210,33 +292,13 @@
 
 
                 
-                <span>Links</span>
+                <span>相关链接 | Links</span>
             </a>
         </li>
         
         <li class="menu-bottom-section">
             <ol class="menu">
 
-                
-                    <li id="dark-mode-toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                        <span>暗色模式</span>
-                    </li>
                 
             </ol>
         </li>
@@ -287,15 +349,7 @@
                     <a href="/archives/#2026">
                         
                             <span class="year">2026</span>
-                            <span class="count">4</span>
-                        
-                    </a> 
-                </div>
-            <div class="archives-year">
-                    <a href="/archives/#2020">
-                        
-                            <span class="year">2020</span>
-                            <span class="count">1</span>
+                            <span class="count">5</span>
                         
                     </a> 
                 </div>
@@ -322,24 +376,12 @@
 
     <div class="tagCloud-tags">
         
-            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" class="font_size_2">
-                前端开发
-            </a>
-        
-            <a href="/categories/test/" class="font_size_1">
-                Test
-            </a>
-        
-            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/" class="font_size_1">
-                后端技术
+            <a href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" class="font_size_4">
+                开发技术
             </a>
         
             <a href="/categories/%E5%B7%A5%E5%85%B7%E6%8A%80%E5%B7%A7/" class="font_size_1">
                 工具技巧
-            </a>
-        
-            <a href="/categories/%E6%B5%8B%E8%AF%95/" class="font_size_1">
-                测试
             </a>
         
     </div>
@@ -371,8 +413,8 @@
                 Front
             </a>
         
-            <a href="/tags/claude-code%E8%A7%84%E5%88%99/">
-                Claude Code规则
+            <a href="/tags/vue/">
+                Vue
             </a>
         
             <a href="/tags/fastapi/">
@@ -381,6 +423,10 @@
         
             <a href="/tags/git/">
                 Git
+            </a>
+        
+            <a href="/tags/hugo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">
+                Hugo网站搭建
             </a>
         
             <a href="/tags/python/">
@@ -407,7 +453,7 @@
     </aside>
 
 
-            <main class="main full-width">
+                <main class="main full-width">
     <header>
         <h3 class="section-title">
             
@@ -427,22 +473,13 @@
     <section class="article-list--compact">
         
             <article>
-    <a href="/p/test-chinese/">
+    <a href="/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
         <div class="article-details">
-            <h2 class="article-title">Chinese Test</h2>
+            <h2 class="article-title">【Git命令】Git 操作笔记（协作&#43;常用命令）</h2>
             <footer class="article-time">
-                <time datetime='2020-09-09T00:00:00Z'>2020-09-09</time>
+                <time datetime='2026-01-23T00:00:00Z'>2026-01-23</time>
             </footer>
         </div>
-            <div class="article-image">
-                <img src="/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu_7d5f5b09f91c89db.jpg" 
-                        width="120"
-                        height="120" 
-                        alt="Chinese Test"
-                        loading="lazy">
-                
-            </div>
-        
     </a>
 </article>
         
@@ -457,26 +494,119 @@
     </a>
 </nav><footer class="site-footer">
     <section class="copyright">
-        &copy; 
+        &copy;
         
         2026 muioo
     </section>
-    
-    <section class="powerby">
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+
+    <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
+            本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
+            博客: <strong>5</strong> 篇 |
+            字数: <strong>7404</strong> 字
+        </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
 </footer>
 
 
-            </main>
+                </main>
+            </div>
         </div>
+
+        
+        
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" defer></script>
+
+
+<style>
+.aplayer.aplayer-fixed {
+    left: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+</style>
+
+<meting-js
+    server="netease"
+    type="playlist"
+    id="17704549797"
+    fixed="true"
+    listFolded="true"
+    volume="0.5"
+    preload="auto"
+>
+</meting-js>
+
+<script>
+
+function initAutoPlay() {
+    const observer = new MutationObserver(function(mutations, obs) {
+        const aplayerElement = document.querySelector('.aplayer');
+        
+        if (aplayerElement && window.APlayer && aplayerElement.aplayer) {
+            obs.disconnect();
+            const ap = aplayerElement.aplayer;
+            console.log('检测到 APlayer 已初始化');
+
+            
+            const playMusic = () => {
+                const playPromise = ap.play();
+                if (playPromise) {
+                    playPromise.then(() => {
+                        console.log('音乐自动播放成功');
+                    }).catch(error => {
+                        console.log('浏览器阻止了自动播放，等待用户交互');
+                        
+                        const playOnInteraction = function() {
+                            ap.play().then(() => {
+                                console.log('用户交互后开始播放');
+                            }).catch(e => {
+                                console.log('播放失败:', e);
+                            });
+                            
+                            document.removeEventListener('click', playOnInteraction);
+                            document.removeEventListener('touchstart', playOnInteraction);
+                            document.removeEventListener('keydown', playOnInteraction);
+                        };
+                        document.addEventListener('click', playOnInteraction);
+                        document.addEventListener('touchstart', playOnInteraction);
+                        document.addEventListener('keydown', playOnInteraction);
+                    });
+                }
+            };
+
+            
+            ap.on('ready', playMusic);
+            
+            setTimeout(playMusic, 1000);
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', initAutoPlay);
+
+
+if (typeof swup !== 'undefined') {
+    swup.hooks.on('page:view', initAutoPlay);
+}
+</script>
+
+        
         <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.d5865de39ec4d83e41178ac30ba43c0801769bc628bdfe817153745c78ab5a3f.js" defer></script>
-<script>
+            </script><script type="text/javascript" src="/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js" defer></script><script type="text/javascript" src="/ts/custom.75bd80549499cce4e49b199cc0322b9c39c3202aefc1da9a8480b5a3926a1094.js" defer></script>
+        <script>
     (function () {
         const customFont = document.createElement('link');
         customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
@@ -488,5 +618,34 @@
     }());
 </script>
 
+        
+        <script>
+            const swup = new Swup();
+        </script>
     </body>
+    <script>
+
+    
+    function updateRunningDays() {
+        const BLOG_LAUNCH_DATE = '2026-01-22';
+        const startDate = new Date(BLOG_LAUNCH_DATE + 'T00:00:00Z');
+        const today = new Date();
+        const utcToday = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
+        const timeDiff = utcToday - startDate;
+        const runningDays = Math.max(0, Math.floor(timeDiff / (1000 * 60 * 60 * 24)));
+
+        const daysElement = document.getElementById('running-days');
+        if (daysElement) {
+            daysElement.textContent = runningDays;
+        }
+    }
+
+    
+    updateRunningDays();
+
+    
+    document.addEventListener('swup:page:view', () => {
+        updateRunningDays();
+    });
+</script>
 </html>
