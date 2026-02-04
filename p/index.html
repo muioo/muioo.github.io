@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=8080&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="hugo搭建静态网站 下载hugo.exe\n下载主题（Hugo Themes）到hugo项目根目录的theme中\n删除主题的版本号后缀，将exampleSite/content目录和配置文件移动到根目录\n">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="解决方案： 1）查看vscode目录下debug.log日志 意思为：VS Code 读不到它自带的 ICU 国际化数据文件。这个 ICU 报错几乎都是 安装目录里的资源文件缺失/损坏 或者 目录权限/杀软隔离 导致 Code.exe 读不到它的 icudtl.dat 等文件。 2）先确认是不是“用户配置/插件”把它搞崩了 1 2 cmd中： code --disable-extensions 如果这样能打开：说明是插件或用户配置损坏。之后进VS Code后逐个禁用插件试试。\n">
 <title></title>
 
-<link rel='canonical' href='http://localhost:8080/p/'>
+<link rel='canonical' href='http://localhost:1313/p/'>
 
 <link rel="stylesheet" href="/scss/style.min.2255cb2df767d30be0937aebf1bccb8714db2a3253c5b26bc9311112cbf2078b.css"><meta property='og:title' content="">
-<meta property='og:description' content="hugo搭建静态网站 下载hugo.exe\n下载主题（Hugo Themes）到hugo项目根目录的theme中\n删除主题的版本号后缀，将exampleSite/content目录和配置文件移动到根目录\n">
-<meta property='og:url' content='http://localhost:8080/p/'>
+<meta property='og:description' content="解决方案： 1）查看vscode目录下debug.log日志 意思为：VS Code 读不到它自带的 ICU 国际化数据文件。这个 ICU 报错几乎都是 安装目录里的资源文件缺失/损坏 或者 目录权限/杀软隔离 导致 Code.exe 读不到它的 icudtl.dat 等文件。 2）先确认是不是“用户配置/插件”把它搞崩了 1 2 cmd中： code --disable-extensions 如果这样能打开：说明是插件或用户配置损坏。之后进VS Code后逐个禁用插件试试。\n">
+<meta property='og:url' content='http://localhost:1313/p/'>
 <meta property='og:site_name' content='muioo blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' />
 <meta name="twitter:title" content="">
-<meta name="twitter:description" content="hugo搭建静态网站 下载hugo.exe\n下载主题（Hugo Themes）到hugo项目根目录的theme中\n删除主题的版本号后缀，将exampleSite/content目录和配置文件移动到根目录\n">
+<meta name="twitter:description" content="解决方案： 1）查看vscode目录下debug.log日志 意思为：VS Code 读不到它自带的 ICU 国际化数据文件。这个 ICU 报错几乎都是 安装目录里的资源文件缺失/损坏 或者 目录权限/杀软隔离 导致 Code.exe 读不到它的 icudtl.dat 等文件。 2）先确认是不是“用户配置/插件”把它搞崩了 1 2 cmd中： code --disable-extensions 如果这样能打开：说明是插件或用户配置损坏。之后进VS Code后逐个禁用插件试试。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 <script>
     
@@ -329,11 +329,13 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#hugo搭建静态网站">hugo搭建静态网站</a>
+    <li>
       <ol>
         <li>
           <ol>
-            <li><a href="#添加背景图片">添加背景图片</a></li>
+            <li><a href="#解决方案">解决方案：</a></li>
+            <li><a href="#查找code指向哪里">查找code指向哪里：</a></li>
+            <li><a href="#检查关键资源文件是否还在">检查关键资源文件是否还在</a></li>
           </ol>
         </li>
       </ol>
@@ -376,63 +378,126 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     <section class="article-content">
     
     
-    <h2 id="hugo搭建静态网站">hugo搭建静态网站
-</h2><ul>
+    <h4 id="解决方案">解决方案：
+</h4><h5 id="1查看vscode目录下debuglog日志">1）查看vscode目录下debug.log日志
+</h5><ul>
+<li>意思为：VS Code 读不到它自带的 ICU 国际化数据文件。这个 ICU 报错几乎都是 安装目录里的资源文件缺失/损坏 或者 目录权限/杀软隔离 导致 Code.exe 读不到它的 icudtl.dat 等文件。</li>
+</ul>
+<h5 id="2先确认是不是用户配置插件把它搞崩了">2）先确认是不是“用户配置/插件”把它搞崩了
+</h5><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cmd中：
+</span></span><span class="line"><span class="cl">code --disable-extensions
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>
-<p>下载hugo.exe</p>
-<p><img src="C:%5cUsers%5cblbl%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20260127130239251.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20260127130239251"
-	
-	
-></p>
+<p>如果这样能打开：说明是插件或用户配置损坏。之后进VS Code后逐个禁用插件试试。</p>
 </li>
 <li>
-<p>下载主题（<a class="link" href="https://themes.gohugo.io/"  target="_blank" rel="noopener"
-    >Hugo Themes</a>）到hugo项目根目录的theme中</p>
-</li>
-<li>
-<p>删除主题的版本号后缀，将exampleSite/content目录和配置文件移动到根目录</p>
-</li>
-<li>
-<p>删除content中的rich-content</p>
+<p>打不开接着往下尝试：</p>
 </li>
 </ul>
-<h4 id="添加背景图片">添加背景图片
+<h5 id="3检查是否是环境变量路径的影响">3）检查是否是环境变量/路径的影响
+</h5><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">where code
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>结果无输出。</p>
+</li>
+<li>
+<p>cmd 里能运行 code 但 VS Code 打不开，也就是说，code 这个入口文件还在某个目录里，但 VS Code 本体/资源（ICU）坏了或路径断了。</p>
+</li>
+<li>
+<p>然后把“真正调用的 code 在哪”找出来，再直接修复。</p>
+</li>
+</ul>
+<h4 id="查找code指向哪里">查找code指向哪里：
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Get-Command code -All
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>如果它提示找不到命令，那说明 PS 环境找不到 code，可能是cmd里用了不同的 PATH / 或者跑的是某个残留的code.cmd。确保你vscode里的bin目录下是正确的code.cmd就行了。</p>
+</li>
+<li>
+<p>最关键的一步来了，我是在这一步找到了问题所在：</p>
+</li>
+</ul>
+<h4 id="检查关键资源文件是否还在">检查关键资源文件是否还在
 </h4><ul>
-<li>在static\images中添加图片</li>
-<li>在assets\scss中custom.html添加样式</li>
+<li>注意：路径要用你的vscode安装目录里bin文件夹所在同级路径。如上图，我的bin目录是在D:\vscode\Microsoft VS Code下。</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">body</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-image</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="s2">&#34;/images/background2.jpg&#34;</span><span class="p">);</span> <span class="c">/* 对应static/images/background2.jpg */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-size</span><span class="p">:</span> <span class="kc">cover</span><span class="p">;</span> <span class="c">/* 背景图覆盖整个页面 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-position</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span> <span class="c">/* 背景图居中显示 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-attachment</span><span class="p">:</span> <span class="kc">fixed</span><span class="p">;</span> <span class="c">/* 背景图固定（滚动时不跟随） */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-repeat</span><span class="p">:</span> <span class="kc">no-repeat</span><span class="p">;</span> <span class="c">/* 禁止背景图重复 */</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 可选：添加半透明遮罩，避免背景干扰文字 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-blend-mode</span><span class="p">:</span> <span class="kc">overlay</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Test-Path <span class="s2">&#34;D:\App\Microsoft VS Code\icudtl.dat&#34;</span>
+</span></span><span class="line"><span class="cl">Test-Path <span class="s2">&#34;D:\App\Microsoft VS Code\resources.pak&#34;</span>
+</span></span><span class="line"><span class="cl">Test-Path <span class="s2">&#34;D:\App\Microsoft VS Code\libEGL.dll&#34;</span>
+</span></span><span class="line"><span class="cl">Test-Path <span class="s2">&#34;D:\App\Microsoft VS Code\libGLESv2.dll&#34;</span>
+</span></span><span class="line"><span class="cl">我的输出：
+</span></span><span class="line"><span class="cl"><span class="nb">false</span>
+</span></span><span class="line"><span class="cl"><span class="nb">false</span>
+</span></span><span class="line"><span class="cl"><span class="nb">false</span>
+</span></span><span class="line"><span class="cl"><span class="nb">false</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>这些关键资源按理来说是要放在bin同级目录下，Code.exe 启动时会在根目录找icudtl.dat/resources.pak/libEGL.dll/libGLESv2.dll。但是找不到，说明路径错了。</p>
+</li>
+<li>
+<p>所以破案了：我的 VS Code 安装目录结构被“挪了一层”——关键资源文件都跑到 D:\vscode\Microsoft VS Code_\ 下面了，而 Code.exe 启动时会在根目录找 icudtl.dat / resources.pak / libEGL.dll / libGLESv2.dll，所以直接报 ICU 相关错误。</p>
+</li>
+<li>
+<p>所以把这些文件（以及同目录下其它资源）移回根目录即可：</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">$root</span> <span class="o">=</span> <span class="s2">&#34;D:\vscode\Microsoft VS Code&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$under</span> <span class="o">=</span> Join-Path <span class="nv">$root</span> <span class="s2">&#34;_&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1) 备份一下（可选但推荐）</span>
+</span></span><span class="line"><span class="cl">Copy-Item -Recurse -Force <span class="nv">$root</span> <span class="s2">&#34;</span><span class="nv">$root</span><span class="s2">.bak_</span><span class="k">$(</span>Get-Date -Format yyyyMMdd_HHmmss<span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2) 把 _\ 里的所有内容移动到根目录（遇到同名会覆盖）</span>
+</span></span><span class="line"><span class="cl">Move-Item -Force <span class="s2">&#34;</span><span class="nv">$under</span><span class="s2">\*&#34;</span> <span class="nv">$root</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3) 尝试启动</span>
+</span></span><span class="line"><span class="cl"><span class="p">&amp;</span> <span class="s2">&#34;</span><span class="nv">$root</span><span class="s2">\Code.exe&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
@@ -506,42 +571,13 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         2026 muioo
     </section>
 
-    <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;">
-            本站已稳定运行: <strong id="running-days"></strong> 天 |
-            博客: <strong>5</strong> 篇 |
-            字数: <strong>6774</strong> 字
+    <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
+            本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
+            博客: <strong>6</strong> 篇 |
+            字数: <strong>8226</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
-
-    
-
-
-<script>
-    (function() {
-        
-        const BLOG_LAUNCH_DATE = '2026-01-22'; 
-        const startDate = new Date(BLOG_LAUNCH_DATE + 'T00:00:00Z'); 
-        
-        
-        const today = new Date();
-        const utcToday = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
-
-        
-        const timeDiff = utcToday - startDate;
-        const runningDays = Math.max(0, Math.floor(timeDiff / (1000 * 60 * 60 * 24)));
-
-        
-        const daysElement = document.getElementById('running-days');
-        if (daysElement) {
-            daysElement.textContent = runningDays;
-            
-            console.log('搭建日期:', startDate.toISOString());
-            console.log('当前日期:', utcToday.toISOString());
-            console.log('运行天数:', runningDays);
-        }
-    })();
-</script>
 </footer>
 
 
@@ -720,7 +756,7 @@ if (typeof swup !== 'undefined') {
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.d5865de39ec4d83e41178ac30ba43c0801769bc628bdfe817153745c78ab5a3f.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.64b08e1ea8843989c3c2601c2bd130edc19d9e5863b4dba31894b5259ddbf682.js" defer></script><script type="text/javascript" src="/ts/custom.388b4c8555b925683490f851d96d246aca608f5b5a471b03653091790c45e904.js" defer></script>
         <script>
     (function () {
         const customFont = document.createElement('link');
@@ -738,4 +774,29 @@ if (typeof swup !== 'undefined') {
             const swup = new Swup();
         </script>
     </body>
+    <script>
+
+    
+    function updateRunningDays() {
+        const BLOG_LAUNCH_DATE = '2026-01-22';
+        const startDate = new Date(BLOG_LAUNCH_DATE + 'T00:00:00Z');
+        const today = new Date();
+        const utcToday = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
+        const timeDiff = utcToday - startDate;
+        const runningDays = Math.max(0, Math.floor(timeDiff / (1000 * 60 * 60 * 24)));
+
+        const daysElement = document.getElementById('running-days');
+        if (daysElement) {
+            daysElement.textContent = runningDays;
+        }
+    }
+
+    
+    updateRunningDays();
+
+    
+    document.addEventListener('swup:page:view', () => {
+        updateRunningDays();
+    });
+</script>
 </html>

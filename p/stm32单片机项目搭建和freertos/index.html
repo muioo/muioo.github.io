@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="stm32f103rct6开发板">
+<title>【stm32单片机】项目搭建和FreeRTOS</title>
+
+<link rel='canonical' href='http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/'>
+
+<link rel="stylesheet" href="/scss/style.min.2255cb2df767d30be0937aebf1bccb8714db2a3253c5b26bc9311112cbf2078b.css"><meta property='og:title' content="【stm32单片机】项目搭建和FreeRTOS">
+<meta property='og:description' content="stm32f103rct6开发板">
+<meta property='og:url' content='http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/'>
+<meta property='og:site_name' content='muioo blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='stm32' /><meta property='article:tag' content='FreeRTOS' /><meta property='article:published_time' content='2026-02-03T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-02-03T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="【stm32单片机】项目搭建和FreeRTOS">
+<meta name="twitter:description" content="stm32f103rct6开发板">
+    <link rel="shortcut icon" href="/favicon.ico" />
+<script>
+    
+
+
+
+
+const live2d_path = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/';
+
+
+
+
+function loadExternalResource(url, type) {
+  return new Promise((resolve, reject) => {
+    let tag;
+
+    if (type === 'css') {
+      tag = document.createElement('link');
+      tag.rel = 'stylesheet';
+      tag.href = url;
+    }
+    else if (type === 'js') {
+      tag = document.createElement('script');
+      tag.type = 'module';
+      tag.src = url;
+    }
+    if (tag) {
+      tag.onload = () => resolve(url);
+      tag.onerror = () => reject(url);
+      document.head.appendChild(tag);
+    }
+  });
+}
+
+(async () => {
+  
+  
+  
+
+  
+  
+  const OriginalImage = window.Image;
+  window.Image = function(...args) {
+    const img = new OriginalImage(...args);
+    img.crossOrigin = "anonymous";
+    return img;
+  };
+  window.Image.prototype = OriginalImage.prototype;
+  
+  
+  await Promise.all([
+    loadExternalResource(live2d_path + 'waifu.css', 'css'),
+    loadExternalResource(live2d_path + 'waifu-tips.js', 'js')
+  ]);
+  
+  
+  initWidget({
+    waifuPath: live2d_path + 'waifu-tips.json',
+    
+    cubism2Path: live2d_path + 'live2d.min.js',
+    cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
+    tools: ['hitokoto', 'asteroids', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
+    logLevel: 'warn',
+    drag: false,
+  });
+})();
+
+console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #ff5450; font-size: large; color: #eee;', '');
+
+
+
+
+
+</script>
+
+
+<style>
+#waifu {
+    left: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+
+#waifu-tips {
+    left: auto !important;
+    right: 0 !important;
+}
+
+#waifu-tool {
+    left: auto !important;
+    right: 0 !important;
+}
+</style>
+        
+        <script src="https://unpkg.com/swup@4"></script>
+        <style>
+             
+            .transition-fade {
+                transition: opacity 0.3s;
+                opacity: 1;
+            }
+
+            html.is-animating .transition-fade {
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+
+        <div id="swup" class="transition-fade">
+            <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_6827ff93fc5ecbf3.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">muioo blog</a></h1>
+            <h2 class="site-description">欢迎来到我的网站</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/muioo/muioo.github.io'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页 | Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E-about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于 | About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档 | archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索 | Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>相关链接 | Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#stm32开发笔记">STM32开发笔记</a>
+      <ol>
+        <li><a href="#stm32项目搭建">STM32项目搭建</a>
+          <ol>
+            <li><a href="#编译工具">编译工具</a></li>
+            <li><a href="#ide">IDE</a></li>
+            <li><a href="#烧录工具">烧录工具</a></li>
+            <li><a href="#串口测试工具">串口测试工具</a></li>
+            <li><a href="#使用cubemx初始化freertos项目">使用CUBEMX初始化FreeRTOS项目</a></li>
+            <li><a href="#遇到的问题">遇到的问题</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+                <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" >
+                开发技术
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/">【stm32单片机】项目搭建和FreeRTOS</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            stm32f103rct6开发板
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2026-02-03T00:00:00Z'>2026-02-03</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="stm32开发笔记">STM32开发笔记
+</h2><h3 id="stm32项目搭建">STM32项目搭建
+</h3><h4 id="编译工具">编译工具
+</h4><ul>
+<li>
+<p>cmake(<a class="link" href="https://blog.csdn.net/weixin_52677672/article/details/135815928?ops_request_misc=elastic_search_misc&amp;request_id=f41154c1922e9371d6d0ccc6d341e747&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-135815928-null-null.142%5ev102%5epc_search_result_base9&amp;utm_term=cmake%E5%AE%89%E8%A3%85&amp;spm=1018.2226.3001.4187"  target="_blank" rel="noopener"
+    >安装教程</a>）</p>
+<p>1、安装后配置环境变量</p>
+</li>
+<li>
+<p>ARM-GCC 编译器</p>
+<p>1、<a class="link" href="https://developer.arm.com/downloads/-/gnu-rm"  target="_blank" rel="noopener"
+    >安装链接</a></p>
+<p>2、配置环境变量，检验安装成功</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">arm-none-eabi-gcc -v
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Ninja构建工具</p>
+<ul>
+<li><a class="link" href="https://github.com/ninja-build/ninja/releases"  target="_blank" rel="noopener"
+    >安装链接</a></li>
+<li>配置环境变量</li>
+</ul>
+</li>
+</ul>
+<h4 id="ide">IDE
+</h4><ul>
+<li>
+<p>VSCODE</p>
+<ul>
+<li>安装插件<strong>STM32CubeIDE for Visual Studio Code</strong></li>
+<li>安装插件<strong>STM32 VS Code Extension</strong>，这个插件会自动下载<strong>ARM-GCC 编译器</strong>和<strong>ninja构建工具</strong></li>
+<li>之后打开项目文件夹即可打开cubemx创建的项目</li>
+</ul>
+</li>
+<li>
+<p>STM32cubemx（用于创建项目）</p>
+<ul>
+<li>
+<p><a class="link" href="https://www.st.com/en/development-tools/stm32cubemx.html"  target="_blank" rel="noopener"
+    >下载地址</a></p>
+</li>
+<li>
+<p><a class="link" href="https://blog.csdn.net/qq_47902937/article/details/154950893?ops_request_misc=elastic_search_misc&amp;request_id=1e90bb222ec0ebf0b15bd457c34f36ba&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-154950893-null-null.142%5ev102%5epc_search_result_base9&amp;utm_term=stm32cubemx%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE&amp;spm=1018.2226.3001.4187"  target="_blank" rel="noopener"
+    >创建教程</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="烧录工具">烧录工具
+</h4><ul>
+<li>
+<p>STM32cubeprogrammer</p>
+<ul>
+<li><a class="link" href="" >下载地址</a></li>
+</ul>
+</li>
+<li>
+<p>连接成功演示图</p>
+</li>
+</ul>
+<p><img src="/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55.png"
+	width="1539"
+	height="525"
+	srcset="/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55_hu_18b88aa36d8b715f.png 480w, /p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55_hu_d3d290da20a96947.png 1024w"
+	loading="lazy"
+	
+		alt="Snipaste_2026-01-31_17-15-55"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="293"
+		data-flex-basis="703px"
+	
+></p>
+<ul>
+<li><a class="link" href="http://blog.csdn.net/chenhuanqiangnihao/article/details/113663065?ops_request_misc=elastic_search_misc&amp;request_id=26e57d522f72d9a0151d8dfefcee8244&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-113663065-null-null.142%5ev102%5epc_search_result_base9&amp;utm_term=boot0%E5%92%8Cboot1%E9%85%8D%E7%BD%AE&amp;spm=1018.2226.3001.4187"  target="_blank" rel="noopener"
+    >注意事项</a>：烧录时，启动模式得设置为boot0=1，boot1=0，boot0接高电平boot1接GND</li>
+</ul>
+<h4 id="串口测试工具">串口测试工具
+</h4><ul>
+<li>SSCOM</li>
+</ul>
+<h4 id="使用cubemx初始化freertos项目">使用CUBEMX初始化FreeRTOS项目
+</h4><h5 id="freertos">FreeRTOS
+</h5><ul>
+<li>可以理解为并发（多核同时执行多个任务） 不可以理解为并行（需要单核切换来执行多个任务）</li>
+</ul>
+<h5 id="代码结构">代码结构
+</h5><ul>
+<li>
+<p>主要开发在core/Src和core/Inc目录中，Src目录中用来写具体功能，Inc定义函数和引脚</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">USV_BASE/
+</span></span><span class="line"><span class="cl">├── Core/                          <span class="c1"># STM32CubeMX生成（不修改）</span>
+</span></span><span class="line"><span class="cl">│   ├── Inc/
+</span></span><span class="line"><span class="cl">│   │   ├── main.h
+</span></span><span class="line"><span class="cl">│   │   ├── can.h                  <span class="c1"># CubeMX配置</span>
+</span></span><span class="line"><span class="cl">│   │   ├── usart.h                <span class="c1"># CubeMX配置</span>
+</span></span><span class="line"><span class="cl">│   │   └── ...
+</span></span><span class="line"><span class="cl">│   └── Src/
+</span></span><span class="line"><span class="cl">│       ├── freertos.c             <span class="c1"># 任务创建（尽量不要与STM32CubeMX生成的任务代码冲突）</span>
+</span></span><span class="line"><span class="cl">│       ├── can.c                  <span class="c1"># CAN中断回调（修改USER CODE区）</span>
+</span></span><span class="line"><span class="cl">│       ├── usart.c                <span class="c1"># UART中断回调（修改USER CODE区）</span>
+</span></span><span class="line"><span class="cl">│       └── ...
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├── App/                           <span class="c1"># 应用代码</span>
+</span></span><span class="line"><span class="cl">│   ├── Inc/
+</span></span><span class="line"><span class="cl">│   │   ├── app_config.h           <span class="c1"># 系统配置</span>
+</span></span><span class="line"><span class="cl">│   │   ├── app_types.h            <span class="c1"># 公共数据类型</span>
+</span></span><span class="line"><span class="cl">│   │   └── app_def.h              <span class="c1"># 宏定义</span>
+</span></span><span class="line"><span class="cl">│   │
+</span></span><span class="line"><span class="cl">│   ├── Driver/                    <span class="c1"># 驱动层（2个模块）</span>
+</span></span><span class="line"><span class="cl">│   │   ├── Inc/
+</span></span><span class="line"><span class="cl">│   │   │   ├── driver_can_radar.h
+</span></span><span class="line"><span class="cl">│   │   │   └── driver_sbus.h
+</span></span><span class="line"><span class="cl">│   │   └── Src/
+</span></span><span class="line"><span class="cl">│   │       ├── driver_can_radar.c
+</span></span><span class="line"><span class="cl">│   │       └── driver_sbus.c
+</span></span><span class="line"><span class="cl">│   │
+</span></span><span class="line"><span class="cl">│   ├── Algorithm/                 <span class="c1"># 算法模块（可选扩展）</span>
+</span></span><span class="line"><span class="cl">│   │   ├── Inc/
+</span></span><span class="line"><span class="cl">│   │   │   └── algo_avoid.h       <span class="c1"># 避障算法</span>
+</span></span><span class="line"><span class="cl">│   │   └── Src/
+</span></span><span class="line"><span class="cl">│   │       └── algo_avoid.c
+</span></span><span class="line"><span class="cl">│   │
+</span></span><span class="line"><span class="cl">│   └── Task/                      <span class="c1"># 任务层（3个任务）</span>
+</span></span><span class="line"><span class="cl">│       ├── Inc/
+</span></span><span class="line"><span class="cl">│       │   ├── task_radar.h       <span class="c1"># 雷达+避障</span>
+</span></span><span class="line"><span class="cl">│       │   ├── task_sbus.h        <span class="c1"># SBUS通信</span>
+</span></span><span class="line"><span class="cl">│       │   └── task_control.h     <span class="c1"># 控制决策</span>
+</span></span><span class="line"><span class="cl">│       └── Src/
+</span></span><span class="line"><span class="cl">│           ├── task_radar.c
+</span></span><span class="line"><span class="cl">│           ├── task_sbus.c
+</span></span><span class="line"><span class="cl">│           └── task_control.c
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">└── Docs/                          <span class="c1"># 文档</span>
+</span></span><span class="line"><span class="cl">    └── ArchitectureDesign_Simple.md
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>修改CUBEMX中定义的引脚会自动修改宏定义和引脚</p>
+</li>
+</ul>
+<h4 id="遇到的问题">遇到的问题
+</h4><h5 id="1stlink烧录问题">1、stlink烧录问题
+</h5><ul>
+<li>使用usb口给开发板供电，解决如下问题</li>
+</ul>
+<p><img src="/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03.png"
+	width="1110"
+	height="268"
+	srcset="/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03_hu_b4bf8708ee8ebed3.png 480w, /p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03_hu_b51bacd6b61e8e5a.png 1024w"
+	loading="lazy"
+	
+		alt="Snipaste_2026-02-03_17-17-03"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="414"
+		data-flex-basis="994px"
+	
+></p>
+<ul>
+<li>
+<p>ST-LINK烧录</p>
+<ul>
+<li>驱动更新：需要重启开发板或断开数据线才能识别</li>
+</ul>
+</li>
+<li>
+<p>烧录时要按下reset键 点击连接后松开reset，否则会遇到如下问题</p>
+</li>
+</ul>
+<p><img src="/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40.png"
+	width="1007"
+	height="236"
+	srcset="/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40_hu_bfc0101a69f253e.png 480w, /p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40_hu_27a78608606d98d6.png 1024w"
+	loading="lazy"
+	
+		alt="Snipaste_2026-02-03_17-16-40"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="426"
+		data-flex-basis="1024px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/stm32/">Stm32</a>
+        
+            <a href="/tags/freertos/">FreeRTOS</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【Hugo 网站搭建】Hugo搭建静态页面网站</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【Claude Code 规则】Claude Code 前端开发规则1</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【Claude Code 规则】Claude Code 前端开发规则2</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/claude-code-%E8%A7%84%E5%88%99fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【Claude Code 规则】FastAPI 后端开发规则</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        
+        2026 muioo
+    </section>
+
+    <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
+            本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
+            博客: <strong>7</strong> 篇 |
+            字数: <strong>9228</strong> 字
+        </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+    
+
+                </main>
+            </div>
+        </div>
+
+        
+        
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" defer></script>
+
+
+<style>
+.aplayer.aplayer-fixed {
+    left: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+</style>
+
+<meting-js
+    server="netease"
+    type="playlist"
+    id="17704549797"
+    fixed="true"
+    listFolded="true"
+    volume="0.5"
+    preload="auto"
+>
+</meting-js>
+
+<script>
+
+function initAutoPlay() {
+    const observer = new MutationObserver(function(mutations, obs) {
+        const aplayerElement = document.querySelector('.aplayer');
+        
+        if (aplayerElement && window.APlayer && aplayerElement.aplayer) {
+            obs.disconnect();
+            const ap = aplayerElement.aplayer;
+            console.log('检测到 APlayer 已初始化');
+
+            
+            const playMusic = () => {
+                const playPromise = ap.play();
+                if (playPromise) {
+                    playPromise.then(() => {
+                        console.log('音乐自动播放成功');
+                    }).catch(error => {
+                        console.log('浏览器阻止了自动播放，等待用户交互');
+                        
+                        const playOnInteraction = function() {
+                            ap.play().then(() => {
+                                console.log('用户交互后开始播放');
+                            }).catch(e => {
+                                console.log('播放失败:', e);
+                            });
+                            
+                            document.removeEventListener('click', playOnInteraction);
+                            document.removeEventListener('touchstart', playOnInteraction);
+                            document.removeEventListener('keydown', playOnInteraction);
+                        };
+                        document.addEventListener('click', playOnInteraction);
+                        document.addEventListener('touchstart', playOnInteraction);
+                        document.addEventListener('keydown', playOnInteraction);
+                    });
+                }
+            };
+
+            
+            ap.on('ready', playMusic);
+            
+            setTimeout(playMusic, 1000);
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', initAutoPlay);
+
+
+if (typeof swup !== 'undefined') {
+    swup.hooks.on('page:view', initAutoPlay);
+}
+</script>
+
+        
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.64b08e1ea8843989c3c2601c2bd130edc19d9e5863b4dba31894b5259ddbf682.js" defer></script><script type="text/javascript" src="/ts/custom.388b4c8555b925683490f851d96d246aca608f5b5a471b03653091790c45e904.js" defer></script>
+        <script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+        
+        <script>
+            const swup = new Swup();
+        </script>
+    </body>
+    <script>
+
+    
+    function updateRunningDays() {
+        const BLOG_LAUNCH_DATE = '2026-01-22';
+        const startDate = new Date(BLOG_LAUNCH_DATE + 'T00:00:00Z');
+        const today = new Date();
+        const utcToday = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
+        const timeDiff = utcToday - startDate;
+        const runningDays = Math.max(0, Math.floor(timeDiff / (1000 * 60 * 60 * 24)));
+
+        const daysElement = document.getElementById('running-days');
+        if (daysElement) {
+            daysElement.textContent = runningDays;
+        }
+    }
+
+    
+    updateRunningDays();
+
+    
+    document.addEventListener('swup:page:view', () => {
+        updateRunningDays();
+    });
+</script>
+</html>
