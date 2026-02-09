@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on muioo blog</title>
-        <link>http://localhost:1313/categories/</link>
+        <link>https://muioo.github.io/categories/</link>
         <description>Recent content in Categories on muioo blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>开发工具问题</title>
-        <link>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/</link>
-        <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
+        <lastBuildDate>Sat, 07 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://muioo.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>工具技巧</title>
+        <link>https://muioo.github.io/categories/%E5%B7%A5%E5%85%B7%E6%8A%80%E5%B7%A7/</link>
+        <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/</guid>
+        <guid>https://muioo.github.io/categories/%E5%B7%A5%E5%85%B7%E6%8A%80%E5%B7%A7/</guid>
         <description></description>
         </item>
         <item>
         <title>开发技术</title>
-        <link>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/</link>
-        <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
+        <link>https://muioo.github.io/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/</link>
+        <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/</guid>
+        <guid>https://muioo.github.io/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/</guid>
         <description></description>
         </item>
         <item>
-        <title>工具技巧</title>
-        <link>http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E6%8A%80%E5%B7%A7/</link>
-        <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+        <title>开发工具问题</title>
+        <link>https://muioo.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/</link>
+        <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E6%8A%80%E5%B7%A7/</guid>
+        <guid>https://muioo.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/</guid>
         <description></description>
         </item>
         

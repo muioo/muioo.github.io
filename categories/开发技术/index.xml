@@ -2,17 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>开发技术 on muioo blog</title>
-        <link>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/</link>
+        <link>https://muioo.github.io/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/</link>
         <description>Recent content in 开发技术 on muioo blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 06 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://muioo.github.io/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>【Claude Code 规则】Claude Code 全局规则</title>
+        <link>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%99/</link>
+        <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%99/</guid>
+        <description>&lt;h1 id=&#34;全局规则&#34;&gt;全局规则
+&lt;/h1&gt;&lt;p&gt;1、在编写任何代码前，请先描述你的方案并等待批准，如果需求不明确，在编写任何代码之前必须提出澄清问题&lt;/p&gt;
+&lt;p&gt;2、如果一项任务需要修改超过3个文件，请先停下来，将其分解成更小的任务&lt;/p&gt;
+&lt;p&gt;3、编写代码后，列出可能出现的问题，并建议相应的测试用例来覆盖问题&lt;/p&gt;
+&lt;p&gt;4、档发现bug时，首先要编写一个能够修复bug的测试，然后不断修复它，直到测试通过为止&lt;/p&gt;
+&lt;p&gt;5、每次纠正你之后，就在CLAUDE.md文件中添加一条新规则，这样就不会发生这种情况了&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>【stm32单片机】项目搭建和FreeRTOS</title>
-        <link>http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</link>
+        <link>https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</link>
         <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</guid>
+        <guid>https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</guid>
         <description>&lt;h2 id=&#34;stm32开发笔记&#34;&gt;STM32开发笔记
 &lt;/h2&gt;&lt;h3 id=&#34;stm32项目搭建&#34;&gt;STM32项目搭建
 &lt;/h3&gt;&lt;h4 id=&#34;编译工具&#34;&gt;编译工具
@@ -81,10 +95,10 @@
 &lt;p&gt;连接成功演示图&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55.png&#34;
 	width=&#34;1539&#34;
 	height=&#34;525&#34;
-	srcset=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55_hu_18b88aa36d8b715f.png 480w, http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55_hu_d3d290da20a96947.png 1024w&#34;
+	srcset=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55_hu_18b88aa36d8b715f.png 480w, https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55_hu_d3d290da20a96947.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Snipaste_2026-01-31_17-15-55&#34;
@@ -218,10 +232,10 @@
 &lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;使用usb口给开发板供电，解决如下问题&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03.png&#34;
 	width=&#34;1110&#34;
 	height=&#34;268&#34;
-	srcset=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03_hu_b4bf8708ee8ebed3.png 480w, http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03_hu_b51bacd6b61e8e5a.png 1024w&#34;
+	srcset=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03_hu_b4bf8708ee8ebed3.png 480w, https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03_hu_b51bacd6b61e8e5a.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Snipaste_2026-02-03_17-17-03&#34;
@@ -243,10 +257,10 @@
 &lt;p&gt;烧录时要按下reset键 点击连接后松开reset，否则会遇到如下问题&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40.png&#34;
 	width=&#34;1007&#34;
 	height=&#34;236&#34;
-	srcset=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40_hu_bfc0101a69f253e.png 480w, http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40_hu_27a78608606d98d6.png 1024w&#34;
+	srcset=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40_hu_bfc0101a69f253e.png 480w, https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40_hu_27a78608606d98d6.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Snipaste_2026-02-03_17-16-40&#34;
@@ -261,10 +275,10 @@
         </item>
         <item>
         <title>【Hugo 网站搭建】Hugo搭建静态页面网站</title>
-        <link>http://localhost:1313/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</link>
+        <link>https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</link>
         <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</guid>
+        <guid>https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</guid>
         <description>&lt;h2 id=&#34;hugo搭建静态网站样式修改和新增功能基本就是对照theme的目录和文件来修覆盖&#34;&gt;hugo搭建静态网站（样式修改和新增功能基本就是对照theme的目录和文件来修覆盖)
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -318,10 +332,10 @@
 &lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;效果图&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count.png&#34;
 	width=&#34;834&#34;
 	height=&#34;151&#34;
-	srcset=&#34;http://localhost:1313/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count_hu_f8aac859cab7ba82.png 480w, http://localhost:1313/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count_hu_5be87a182247cfc6.png 1024w&#34;
+	srcset=&#34;https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count_hu_f8aac859cab7ba82.png 480w, https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count_hu_5be87a182247cfc6.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;count&#34;
@@ -583,10 +597,10 @@
         </item>
         <item>
         <title>【Claude Code 规则】Claude Code 前端开发规则1</title>
-        <link>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</link>
+        <link>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</guid>
+        <guid>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</guid>
         <description>&lt;h1 id=&#34;前端规则设计1&#34;&gt;前端规则设计1
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -723,10 +737,10 @@
         </item>
         <item>
         <title>【Claude Code 规则】Claude Code 前端开发规则2</title>
-        <link>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</link>
+        <link>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</guid>
+        <guid>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</guid>
         <description>&lt;h1 id=&#34;前端设计规则2vuets&#34;&gt;前端设计规则2（vue+ts）
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;您是一位精通TypeScript、Node.js、Vite、Vue.js、Vue Router、Pinia、VueUse、Headless UI、Element Plus和Tailwind CSS的专家，对这些技术中的最佳实践和性能优化技巧有深刻理解。&lt;/li&gt;
@@ -797,14 +811,15 @@
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;样式采用Tailwind css&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;根据用户提供的需求 先生成所有功能的html示例页面在/example_html目录中&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>【Claude Code 规则】FastAPI 后端开发规则</title>
-        <link>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</link>
+        <link>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</guid>
+        <guid>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</guid>
         <description>&lt;h1 id=&#34;后端开发规则fastapi&#34;&gt;后端开发规则（fastapi）
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;您是一位精通 Python、FastAPI 和可扩展 API 开发的专家。&lt;/li&gt;
@@ -951,6 +966,16 @@
 &lt;li&gt;数据库使用mysql，数据库相关配置在settings目录的config.py文件进行操作。&lt;/li&gt;
 &lt;li&gt;使用tortoseorm进行数据库操作&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>【Python 正则】Python 正则表达式笔记</title>
+        <link>https://muioo.github.io/p/python-%E6%AD%A3%E5%88%99python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Sat, 24 Jan 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://muioo.github.io/p/python-%E6%AD%A3%E5%88%99python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;h2 id=&#34;python-正则表达式&#34;&gt;Python 正则表达式
+&lt;/h2&gt;&lt;p&gt;（请在此处添加文章内容）&lt;/p&gt;
 </description>
         </item>
         
