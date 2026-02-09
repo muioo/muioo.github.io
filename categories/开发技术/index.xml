@@ -95,20 +95,11 @@
 &lt;p&gt;连接成功演示图&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55.png&#34;
-	width=&#34;1539&#34;
-	height=&#34;525&#34;
-	srcset=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55_hu_18b88aa36d8b715f.png 480w, https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55_hu_d3d290da20a96947.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Snipaste_2026-01-31_17-15-55&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;293&#34;
-		data-flex-basis=&#34;703px&#34;
-	
-&gt;&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55.png&#34;&gt;&lt;figcaption&gt;
+      &lt;h4&gt;连接成功演示&lt;/h4&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http://blog.csdn.net/chenhuanqiangnihao/article/details/113663065?ops_request_misc=elastic_search_misc&amp;amp;request_id=26e57d522f72d9a0151d8dfefcee8244&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-113663065-null-null.142%5ev102%5epc_search_result_base9&amp;amp;utm_term=boot0%E5%92%8Cboot1%E9%85%8D%E7%BD%AE&amp;amp;spm=1018.2226.3001.4187&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;注意事项&lt;/a&gt;：烧录时，启动模式得设置为boot0=1，boot1=0，boot0接高电平boot1接GND&lt;/li&gt;
@@ -232,20 +223,11 @@
 &lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;使用usb口给开发板供电，解决如下问题&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03.png&#34;
-	width=&#34;1110&#34;
-	height=&#34;268&#34;
-	srcset=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03_hu_b4bf8708ee8ebed3.png 480w, https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03_hu_b51bacd6b61e8e5a.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Snipaste_2026-02-03_17-17-03&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;414&#34;
-		data-flex-basis=&#34;994px&#34;
-	
-&gt;&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03.png&#34;&gt;&lt;figcaption&gt;
+      &lt;h4&gt;ST-LINK烧录问题&lt;/h4&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;ST-LINK烧录&lt;/p&gt;
@@ -257,20 +239,11 @@
 &lt;p&gt;烧录时要按下reset键 点击连接后松开reset，否则会遇到如下问题&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40.png&#34;
-	width=&#34;1007&#34;
-	height=&#34;236&#34;
-	srcset=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40_hu_bfc0101a69f253e.png 480w, https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40_hu_27a78608606d98d6.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Snipaste_2026-02-03_17-16-40&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;426&#34;
-		data-flex-basis=&#34;1024px&#34;
-	
-&gt;&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40.png&#34;&gt;&lt;figcaption&gt;
+      &lt;h4&gt;烧录连接问题&lt;/h4&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
 </description>
         </item>
         <item>
@@ -332,20 +305,11 @@
 &lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;效果图&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count.png&#34;
-	width=&#34;834&#34;
-	height=&#34;151&#34;
-	srcset=&#34;https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count_hu_f8aac859cab7ba82.png 480w, https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count_hu_5be87a182247cfc6.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;count&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;552&#34;
-		data-flex-basis=&#34;1325px&#34;
-	
-&gt;&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count.png&#34;&gt;&lt;figcaption&gt;
+      &lt;h4&gt;底部运行统计效果&lt;/h4&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
 &lt;ul&gt;
 &lt;li&gt;新建baseof.html在layouts/_default目录下&lt;/li&gt;
 &lt;/ul&gt;
