@@ -2,17 +2,110 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>muioo blog</title>
-        <link>https://muioo.github.io/</link>
+        <link>http://localhost:1313/</link>
         <description>Recent content on muioo blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Sat, 07 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://muioo.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 14 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>【爬虫基本方法】爬虫request基本框架 &#43; scrapy框架 &#43; crawl4ai</title>
+        <link>http://localhost:1313/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/</link>
+        <pubDate>Sat, 14 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/</guid>
+        <description>&lt;h2 id=&#34;爬虫基本框架&#34;&gt;爬虫基本框架
+&lt;/h2&gt;&lt;h3 id=&#34;发送请求&#34;&gt;发送请求
+&lt;/h3&gt;&lt;h4 id=&#34;以b站评论区为例子&#34;&gt;以b站评论区为例子
+&lt;/h4&gt;&lt;p&gt;1、找到对应的数据包&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/1.png&#34;&gt;&lt;figcaption&gt;
+      &lt;h4&gt;找到目标数据包&lt;/h4&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;2、应对反爬&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/2.png&#34;&gt;&lt;figcaption&gt;
+      &lt;h4&gt;处理反爬&lt;/h4&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;headers&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;cookie&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;buvid3=7178F649-B51E-3511-52F3-F35BBADC24AD07347infoc; b_nut=1766219807; _uuid=7885107F6-10532-5A53-3DE1-49762D4BF86A89782infoc; bmg_af_switch=1; bmg_src_def_domain=i1.hdslb.com; buvid4=D98C240B-1FA4-8D02-C9B3-DD7693AFC8DF90828-025122016-lD92PdnjNqMMVtStsO1Yaw%3D%3D; rpdid=|(J|lmkkkuJ|0J&amp;#39;u~YYkkul~u; DedeUserID=123152920; DedeUserID__ckMd5=14a440f25b863dcc; theme-tip-show=SHOWED; theme-avatar-tip-show=SHOWED; CURRENT_QUALITY=0; PEA_AU=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiaWQiOjEyMzE1MjkyMCwicGlkIjozNzUyOTM4LCJleHAiOjE4MDIyNzAyMzAsImlzcyI6InRlc3QifQ.-Ki8KKoVKdTUYDeIL6zR10rl5t-RlYiDsIiLLJjK3ik; fingerprint=a4e5b37b8876bfe9b2ac49851b255d83; buvid_fp_plain=undefined; buvid_fp=a4e5b37b8876bfe9b2ac49851b255d83; bsource=search_bing; bp_t_offset_123152920=1167965937526112256; bili_ticket=eyJhbGciOiJIUzI1NiIsImtpZCI6InMwMyIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzEwMzc2MjMsImlhdCI6MTc3MDc3ODM2MywicGx0IjotMX0.YmqjaqFACN6HQkPvqSSujttyA0mmbQgrWYeHlb2Bhbg; bili_ticket_expires=1771037563; SESSDATA=8a9db992%2C1786523177%2C39356%2A21CjByGR1LZxP1_8VO6q6NMNeD7uaHBtFysH7X6KMHQD7BNzjXNZn8xey1B5Kzzpt74q0SVm14c1U4VkpZMUhkYl9uNnpjZGMyUmNibnc2NUs2eUdMS0kzSlZRT3hMOU1WZGR4ckJjMmx5NGwwcHZnVlBESnFQRkp3TWpSdUoyb3NLSndxUnBEOU9RIIEC; bili_jct=3900ae6a5e204b3a0afb02e5dbbb4a40; home_feed_column=5; browser_resolution=1536-695; sid=4j8dvybo; CURRENT_FNVAL=4048; b_lsid=C0839A2E_19C56CDB713&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;User-agent&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# get 查询参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s1&#34;&gt;&amp;#39;spm_id_from&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;333.337.search-card.all.click&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s1&#34;&gt;&amp;#39;vd_source&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;18d0a338800faafff98255fb11dc47ba&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;3、发送请求&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;response&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headers&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;解析数据&#34;&gt;解析数据
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;json_data 字典取值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;requests&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://www.bilibili.com/video/BV1K9Hse8EwM/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=18d0a338800faafff98255fb11dc47ba&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;headers&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;cookie&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;buvid3=7178F649-B51E-3511-52F3-F35BBADC24AD07347infoc; b_nut=1766219807; _uuid=7885107F6-10532-5A53-3DE1-49762D4BF86A89782infoc; bmg_af_switch=1; bmg_src_def_domain=i1.hdslb.com; buvid4=D98C240B-1FA4-8D02-C9B3-DD7693AFC8DF90828-025122016-lD92PdnjNqMMVtStsO1Yaw%3D%3D; rpdid=|(J|lmkkkuJ|0J&amp;#39;u~YYkkul~u; DedeUserID=123152920; DedeUserID__ckMd5=14a440f25b863dcc; theme-tip-show=SHOWED; theme-avatar-tip-show=SHOWED; CURRENT_QUALITY=0; PEA_AU=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiaWQiOjEyMzE1MjkyMCwicGlkIjozNzUyOTM4LCJleHAiOjE4MDIyNzAyMzAsImlzcyI6InRlc3QifQ.-Ki8KKoVKdTUYDeIL6zR10rl5t-RlYiDsIiLLJjK3ik; fingerprint=a4e5b37b8876bfe9b2ac49851b255d83; buvid_fp_plain=undefined; buvid_fp=a4e5b37b8876bfe9b2ac49851b255d83; bsource=search_bing; bp_t_offset_123152920=1167965937526112256; bili_ticket=eyJhbGciOiJIUzI1NiIsImtpZCI6InMwMyIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzEwMzc2MjMsImlhdCI6MTc3MDc3ODM2MywicGx0IjotMX0.YmqjaqFACN6HQkPvqSSujttyA0mmbQgrWYeHlb2Bhbg; bili_ticket_expires=1771037563; SESSDATA=8a9db992%2C1786523177%2C39356%2A21CjByGR1LZxP1_8VO6q6NMNeD7uaHBtFysH7X6KMHQD7BNzjXNZn8xey1B5Kzzpt74q0SVm14c1U4VkpZMUhkYl9uNnpjZGMyUmNibnc2NUs2eUdMS0kzSlZRT3hMOU1WZGR4ckJjMmx5NGwwcHZnVlBESnFQRkp3TWpSdUoyb3NLSndxUnBEOU9RIIEC; bili_jct=3900ae6a5e204b3a0afb02e5dbbb4a40; home_feed_column=5; browser_resolution=1536-695; sid=4j8dvybo; CURRENT_FNVAL=4048; b_lsid=C0839A2E_19C56CDB713&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;User-agent&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;response&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;requests&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;headers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headers&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# .content .text 获取html数据 .json 获取json数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;保存数据&#34;&gt;保存数据
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>【Claude Code命令】Claude Code（常用命令 &#43; skills &#43; mcp）</title>
-        <link>https://muioo.github.io/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/</link>
+        <link>http://localhost:1313/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/</link>
         <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/</guid>
+        <guid>http://localhost:1313/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/</guid>
         <description>&lt;h2 id=&#34;claude-code-操作笔记&#34;&gt;Claude Code 操作笔记
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;回到之前的对话&lt;/li&gt;
@@ -31,7 +124,31 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/rewind
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;mcp配置&#34;&gt;MCP配置
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;settings.json 配置api key&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;env&amp;#34;&lt;/span&gt;: &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;ANTHROPIC_BASE_URL&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://mg.aid.pub/claude-proxy&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;ANTHROPIC_AUTH_TOKEN&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;填写你的 APIKey&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;mcp配置&#34;&gt;MCP配置
 &lt;/h2&gt;&lt;h3 id=&#34;mcp1-figma-mcp&#34;&gt;mcp1: &lt;a class=&#34;link&#34; href=&#34;figma.com/files/team/1601458855909291900/recents-and-sharing&#34; &gt;figma mcp&lt;/a&gt;
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -127,7 +244,7 @@
 &lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;可以直接使用调用这个skills&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/1.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/1.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;superpowers skills 使用示例&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -158,14 +275,36 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/plugin install ui-ux-pro-max@ui-ux-pro-max-skill
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;skill3-everything-claude-code&#34;&gt;skill3： everything claude-code
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/affaan-m/everything-claude-code/blob/main/README.zh-CN.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;安装操作-1&#34;&gt;安装操作
+&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 将此仓库添加为市场&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/plugin marketplace add affaan-m/everything-claude-code
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 安装插件(要选择项目级还是用户级)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/plugin install everything-claude-code@everything-claude-code
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
         <title>【Claude Code 规则】Claude Code 全局规则</title>
-        <link>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%99/</link>
+        <link>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%99/</link>
         <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%99/</guid>
+        <guid>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%99/</guid>
         <description>&lt;h1 id=&#34;全局规则&#34;&gt;全局规则
 &lt;/h1&gt;&lt;p&gt;1、在编写任何代码前，请先描述你的方案并等待批准，如果需求不明确，在编写任何代码之前必须提出澄清问题&lt;/p&gt;
 &lt;p&gt;2、如果一项任务需要修改超过3个文件，请先停下来，将其分解成更小的任务&lt;/p&gt;
@@ -176,10 +315,10 @@
         </item>
         <item>
         <title>【stm32单片机】项目搭建和FreeRTOS</title>
-        <link>https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</link>
+        <link>http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</link>
         <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</guid>
+        <guid>http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</guid>
         <description>&lt;h2 id=&#34;stm32开发笔记&#34;&gt;STM32开发笔记
 &lt;/h2&gt;&lt;h3 id=&#34;stm32项目搭建&#34;&gt;STM32项目搭建
 &lt;/h3&gt;&lt;h4 id=&#34;编译工具&#34;&gt;编译工具
@@ -248,7 +387,7 @@
 &lt;p&gt;连接成功演示图&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;连接成功演示&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -376,7 +515,7 @@
 &lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;使用usb口给开发板供电，解决如下问题&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;ST-LINK烧录问题&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -392,7 +531,7 @@
 &lt;p&gt;烧录时要按下reset键 点击连接后松开reset，否则会遇到如下问题&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;烧录连接问题&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -401,10 +540,10 @@
         </item>
         <item>
         <title>【VSCODE 问题】VSCODE工具问题</title>
-        <link>https://muioo.github.io/p/vscode-%E9%97%AE%E9%A2%98vscode%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/</link>
+        <link>http://localhost:1313/p/vscode-%E9%97%AE%E9%A2%98vscode%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/</link>
         <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/vscode-%E9%97%AE%E9%A2%98vscode%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/</guid>
+        <guid>http://localhost:1313/p/vscode-%E9%97%AE%E9%A2%98vscode%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/</guid>
         <description>&lt;h2 id=&#34;vscode启动没有反应&#34;&gt;VSCODE启动没有反应
 &lt;/h2&gt;&lt;h4 id=&#34;解决方案&#34;&gt;解决方案：
 &lt;/h4&gt;&lt;h5 id=&#34;1查看vscode目录下debuglog日志&#34;&gt;1）查看vscode目录下debug.log日志
@@ -532,10 +671,10 @@
         </item>
         <item>
         <title>【Hugo 网站搭建】Hugo搭建静态页面网站</title>
-        <link>https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</link>
+        <link>http://localhost:1313/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</link>
         <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</guid>
+        <guid>http://localhost:1313/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</guid>
         <description>&lt;h2 id=&#34;hugo搭建静态网站样式修改和新增功能基本就是对照theme的目录和文件来修覆盖&#34;&gt;hugo搭建静态网站（样式修改和新增功能基本就是对照theme的目录和文件来修覆盖)
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -589,7 +728,7 @@
 &lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;效果图&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;底部运行统计效果&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -845,10 +984,10 @@
         </item>
         <item>
         <title>【Claude Code 规则】Claude Code 前端开发规则1</title>
-        <link>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</link>
+        <link>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</guid>
+        <guid>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</guid>
         <description>&lt;h1 id=&#34;前端规则设计1&#34;&gt;前端规则设计1
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -985,10 +1124,10 @@
         </item>
         <item>
         <title>【Claude Code 规则】Claude Code 前端开发规则2</title>
-        <link>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</link>
+        <link>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</guid>
+        <guid>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</guid>
         <description>&lt;h1 id=&#34;前端设计规则2vuets&#34;&gt;前端设计规则2（vue+ts）
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;您是一位精通TypeScript、Node.js、Vite、Vue.js、Vue Router、Pinia、VueUse、Headless UI、Element Plus和Tailwind CSS的专家，对这些技术中的最佳实践和性能优化技巧有深刻理解。&lt;/li&gt;
@@ -1064,10 +1203,10 @@
         </item>
         <item>
         <title>【Claude Code 规则】FastAPI 后端开发规则</title>
-        <link>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</link>
+        <link>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</guid>
+        <guid>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</guid>
         <description>&lt;h1 id=&#34;后端开发规则fastapi&#34;&gt;后端开发规则（fastapi）
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;您是一位精通 Python、FastAPI 和可扩展 API 开发的专家。&lt;/li&gt;
@@ -1218,20 +1357,20 @@
         </item>
         <item>
         <title>【Python 正则】Python 正则表达式笔记</title>
-        <link>https://muioo.github.io/p/python-%E6%AD%A3%E5%88%99python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AC%94%E8%AE%B0/</link>
+        <link>http://localhost:1313/p/python-%E6%AD%A3%E5%88%99python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Sat, 24 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/python-%E6%AD%A3%E5%88%99python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AC%94%E8%AE%B0/</guid>
+        <guid>http://localhost:1313/p/python-%E6%AD%A3%E5%88%99python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h2 id=&#34;python-正则表达式&#34;&gt;Python 正则表达式
 &lt;/h2&gt;&lt;p&gt;（请在此处添加文章内容）&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>【Git命令】Git 操作笔记（协作&#43;常用命令）</title>
-        <link>https://muioo.github.io/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+        <link>http://localhost:1313/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+        <guid>http://localhost:1313/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
         <description>&lt;h2 id=&#34;git操作&#34;&gt;git操作
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;已有仓库?&lt;/strong&gt;&lt;/li&gt;
@@ -1466,7 +1605,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global https.proxy https://127.0.0.1:7890
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note.png&#34;&gt;&lt;figcaption&gt;
+&lt;/div&gt;&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;Git代理配置&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -1475,19 +1614,19 @@
         </item>
         <item>
         <title>归档 | archives</title>
-        <link>https://muioo.github.io/archives/</link>
+        <link>http://localhost:1313/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/archives/</guid>
+        <guid>http://localhost:1313/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>关于 | About</title>
-        <link>https://muioo.github.io/%E5%85%B3%E4%BA%8E-about/</link>
+        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E-about/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/%E5%85%B3%E4%BA%8E-about/</guid>
-        <description>&lt;img src="https://muioo.github.io/%E5%85%B3%E4%BA%8E-about/background1.jpg" alt="Featured image of post 关于 | About" /&gt;&lt;p&gt;随心所欲放一些东西。。做一个博客来记录一下，记录一些游戏成就，一些代码问题。。&lt;/p&gt;
+        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E-about/</guid>
+        <description>&lt;img src="http://localhost:1313/%E5%85%B3%E4%BA%8E-about/background1.jpg" alt="Featured image of post 关于 | About" /&gt;&lt;p&gt;随心所欲放一些东西。。做一个博客来记录一下，记录一些游戏成就，一些代码问题。。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;兴趣爱好&#34;&gt;兴趣爱好
 &lt;/h2&gt;&lt;h3 id=&#34;游戏&#34;&gt;游戏
@@ -1513,18 +1652,18 @@
         </item>
         <item>
         <title>搜索 | Search</title>
-        <link>https://muioo.github.io/search/</link>
+        <link>http://localhost:1313/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/search/</guid>
+        <guid>http://localhost:1313/search/</guid>
         <description></description>
         </item>
         <item>
         <title>相关链接 | Links</title>
-        <link>https://muioo.github.io/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/</link>
+        <link>http://localhost:1313/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/</guid>
+        <guid>http://localhost:1313/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/</guid>
         <description></description>
         </item>
         

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Hugo网站搭建 on muioo blog</title>
-        <link>https://muioo.github.io/tags/hugo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/</link>
+        <link>http://localhost:1313/tags/hugo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/</link>
         <description>Recent content in Hugo网站搭建 on muioo blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Tue, 27 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://muioo.github.io/tags/hugo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 27 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/hugo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【Hugo 网站搭建】Hugo搭建静态页面网站</title>
-        <link>https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</link>
+        <link>http://localhost:1313/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</link>
         <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</guid>
+        <guid>http://localhost:1313/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</guid>
         <description>&lt;h2 id=&#34;hugo搭建静态网站样式修改和新增功能基本就是对照theme的目录和文件来修覆盖&#34;&gt;hugo搭建静态网站（样式修改和新增功能基本就是对照theme的目录和文件来修覆盖)
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -66,7 +66,7 @@
 &lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;效果图&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;底部运行统计效果&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;

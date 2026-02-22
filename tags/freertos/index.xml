@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>FreeRTOS on muioo blog</title>
-        <link>https://muioo.github.io/tags/freertos/</link>
+        <link>http://localhost:1313/tags/freertos/</link>
         <description>Recent content in FreeRTOS on muioo blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://muioo.github.io/tags/freertos/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/freertos/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【stm32单片机】项目搭建和FreeRTOS</title>
-        <link>https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</link>
+        <link>http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</link>
         <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</guid>
+        <guid>http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</guid>
         <description>&lt;h2 id=&#34;stm32开发笔记&#34;&gt;STM32开发笔记
 &lt;/h2&gt;&lt;h3 id=&#34;stm32项目搭建&#34;&gt;STM32项目搭建
 &lt;/h3&gt;&lt;h4 id=&#34;编译工具&#34;&gt;编译工具
@@ -81,7 +81,7 @@
 &lt;p&gt;连接成功演示图&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;连接成功演示&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -209,7 +209,7 @@
 &lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;使用usb口给开发板供电，解决如下问题&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;ST-LINK烧录问题&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -225,7 +225,7 @@
 &lt;p&gt;烧录时要按下reset键 点击连接后松开reset，否则会遇到如下问题&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;烧录连接问题&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
