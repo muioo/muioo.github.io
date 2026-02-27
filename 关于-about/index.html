@@ -111,7 +111,6 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         
         <link rel="dns-prefetch" href="https://giscus.app">
         <link rel="preconnect" href="https://giscus.app" crossorigin>
-        <link rel="preload" href="https://giscus.app/client.js" as="script">
 
         
         <script src="https://unpkg.com/swup@4"></script>
@@ -450,20 +449,34 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         <div class="comments-container">
             <h2 class="comments-title">评论</h2>
             
-<div class="comments-loading" id="comments-loading">
-    <div class="loading-spinner"></div>
-    <p class="loading-text">评论加载中...</p>
+<link rel="preconnect" href="https://giscus.app" crossorigin>
+<link rel="dns-prefetch" href="https://giscus.app">
+
+
+<div id="giscus-container" class="giscus-placeholder">
+    <div class="giscus-loading">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">评论区加载中...</p>
+    </div>
 </div>
 
+
 <style>
-    .comments-loading {
+    .giscus-placeholder {
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .giscus-loading {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        gap: 1rem;
         padding: 2rem 1rem;
         color: var(--text-secondary, #666);
-        min-height: 100px;
+        transition: opacity 0.3s ease;
     }
 
     .loading-spinner {
@@ -472,53 +485,35 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         border: 3px solid var(--border-color, #e0e0e0);
         border-top-color: var(--accent-color, #3b82f6);
         border-radius: 50%;
-        animation: spin 0.8s linear infinite;
+        animation: giscus-spin 0.8s linear infinite;
     }
 
-    @keyframes spin {
+    @keyframes giscus-spin {
         to { transform: rotate(360deg); }
     }
 
     .loading-text {
-        margin-top: 1rem;
         font-size: 0.875rem;
         opacity: 0.7;
     }
 
-     
     .giscus-frame {
         min-height: 200px;
+        width: 100%;
+    }
+
+    #giscus-container:not(.giscus-placeholder) {
+        min-height: 400px;
+    }
+
+     
+    #giscus-container iframe {
+        width: 100% !important;
+        min-height: 200px !important;
+        border: none !important;
     }
 </style>
 
-<script>
-    
-    function hideCommentsLoading() {
-        const loading = document.getElementById('comments-loading');
-        if (loading) {
-            loading.style.display = 'none';
-        }
-    }
-
-    
-    const checkGiscusLoaded = setInterval(function() {
-        const iframe = document.querySelector('iframe[src*="giscus.app"]');
-        if (iframe) {
-            clearInterval(checkGiscusLoaded);
-            
-            iframe.addEventListener('load', hideCommentsLoading);
-            setTimeout(hideCommentsLoading, 2000);
-        }
-    }, 100);
-
-    
-    setTimeout(function() {
-        clearInterval(checkGiscusLoaded);
-        hideCommentsLoading();
-    }, 10000);
-</script>
-
-            <div id="giscus-container"></div>
         </div>
     </section>
 
@@ -542,14 +537,13 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
         #giscus-container {
             margin-top: 1rem;
-            min-height: 200px;
         }
 
         body.dark .comments-title {
             color: var(--text-primary, #e0e0e0);
         }
 
-        body.dark .comments-loading {
+        body.dark .loading-text {
             color: var(--text-secondary, #999);
         }
 
@@ -558,32 +552,6 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
             border-top-color: var(--accent-color, #60a5fa);
         }
     </style>
-
-    <script>
-        
-        if (window.giscusState && window.giscusState.ready) {
-            
-            setTimeout(function() {
-                const targetContainer = document.getElementById('giscus-container');
-                const preloadContainer = document.getElementById('giscus-preload');
-                if (targetContainer && preloadContainer) {
-                    const iframe = preloadContainer.querySelector('iframe[src*="giscus.app"]');
-                    if (iframe) {
-                        targetContainer.appendChild(iframe);
-                        iframe.contentWindow.postMessage({
-                            giscus: {
-                                setConfig: {
-                                    term: window.location.pathname
-                                }
-                            }
-                        }, 'https://giscus.app');
-                        const loading = document.getElementById('comments-loading');
-                        if (loading) loading.style.display = 'none';
-                    }
-                }
-            }, 100);
-        }
-    </script>
 
 
     
@@ -781,96 +749,13 @@ if (typeof swup !== 'undefined') {
             
             window.giscusState = {
                 loaded: false,
-                ready: false,
-                container: null
+                ready: false
             };
 
             
-            function preloadGiscus() {
-                if (window.giscusState.loaded) return;
-                window.giscusState.loaded = true;
-
-                
-                const preloadContainer = document.createElement('div');
-                preloadContainer.id = 'giscus-preload';
-                preloadContainer.style.display = 'none';
-                document.body.appendChild(preloadContainer);
-
-                const script = document.createElement('script');
-                script.src = 'https://giscus.app/client.js';
-                script.setAttribute('data-repo', 'muioo/muioo.github.io');
-                script.setAttribute('data-repo-id', 'R_kgDOQ_pqAA');
-                script.setAttribute('data-category', 'Announcements');
-                script.setAttribute('data-category-id', 'DIC_kwDOQ_pqAM4C2CEc');
-                script.setAttribute('data-mapping', 'pathname');
-                script.setAttribute('data-strict', '0');
-                script.setAttribute('data-reactions-enabled', '1');
-                script.setAttribute('data-emit-metadata', '0');
-                script.setAttribute('data-input-position', 'bottom');
-                script.setAttribute('data-theme', 'preferred_color_scheme');
-                script.setAttribute('data-lang', 'zh-CN');
-                script.crossOrigin = 'anonymous';
-                script.async = true;
-
-                script.onload = function() {
-                    console.log('Giscus preloaded');
-                    window.giscusState.ready = true;
-                    
-                    if (document.body.classList.contains('article-page')) {
-                        showGiscus();
-                    }
-                };
-
-                preloadContainer.appendChild(script);
-            }
-
-            
-            function showGiscus() {
-                if (!window.giscusState.ready) return;
-
-                const targetContainer = document.getElementById('giscus-container');
-                const preloadContainer = document.getElementById('giscus-preload');
-                const commentsSection = document.querySelector('[data-comments-section]');
-
-                if (targetContainer && preloadContainer && commentsSection) {
-                    
-                    const iframe = preloadContainer.querySelector('iframe[src*="giscus.app"]');
-                    if (iframe) {
-                        targetContainer.appendChild(iframe);
-                        
-                        iframe.contentWindow.postMessage({
-                            giscus: {
-                                setConfig: {
-                                    term: window.location.pathname
-                                }
-                            }
-                        }, 'https://giscus.app');
-                        
-                        const loading = document.getElementById('comments-loading');
-                        if (loading) loading.style.display = 'none';
-                    }
-                }
-            }
-
-            
-            preloadGiscus();
-
-            
-            document.addEventListener('swup:page:view', function() {
-                if (document.body.classList.contains('article-page')) {
-                    if (window.giscusState.ready) {
-                        showGiscus();
-                    } else {
-                        
-                        const checkReady = setInterval(function() {
-                            if (window.giscusState.ready) {
-                                clearInterval(checkReady);
-                                showGiscus();
-                            }
-                        }, 100);
-                        setTimeout(() => clearInterval(checkReady), 5000);
-                    }
-                }
+            document.addEventListener('giscus:loaded', function() {
+                window.giscusState.ready = true;
+                console.log('[Giscus] 全局状态已更新为 ready');
             });
         })();
         </script>
@@ -892,6 +777,206 @@ if (typeof swup !== 'undefined') {
         document.head.appendChild(customFont);
     }());
 </script>
+
+        
+        <script>
+        (function() {
+            'use strict';
+
+            console.log('[GISCUS-MAIN] Script loaded');
+
+            var giscusConfig = {
+                src: 'https://giscus.app/client.js',
+                repo: 'muioo/muioo.github.io',
+                repoId: 'R_kgDOQ_pqAA',
+                category: 'Announcements',
+                categoryId: 'DIC_kwDOQ_pqAM4C2CEc',
+                mapping: 'pathname',
+                strict: '0',
+                reactionsEnabled: '1',
+                emitMetadata: '0',
+                inputPosition: 'bottom',
+                theme: 'preferred_color_scheme',
+                lang: 'zh-CN'
+            };
+
+            var loaded = false;
+            var observer = null;
+            var timeoutId = null;
+
+            function loadGiscus(container) {
+                if (loaded) return;
+                loaded = true;
+
+                console.log('[GISCUS-MAIN] Loading giscus...');
+
+                if (observer) {
+                    observer.disconnect();
+                    observer = null;
+                }
+                if (timeoutId) {
+                    clearTimeout(timeoutId);
+                    timeoutId = null;
+                }
+
+                var script = document.createElement('script');
+                script.src = giscusConfig.src;
+                script.async = true;
+                script.crossOrigin = 'anonymous';
+
+                for (var key in giscusConfig) {
+                    if (key !== 'src' && giscusConfig.hasOwnProperty(key)) {
+                        var dataKey = 'data-' + key.replace(/([A-Z])/g, '-$1').toLowerCase();
+                        script.setAttribute(dataKey, giscusConfig[key]);
+                    }
+                }
+
+                script.onload = function() {
+                    console.log('[GISCUS-MAIN] giscus loaded successfully');
+                    container.classList.remove('giscus-placeholder');
+                    initFeatures();
+                };
+
+                script.onerror = function() {
+                    console.error('[GISCUS-MAIN] Failed to load giscus');
+                    container.innerHTML = '<p style="color: #ef4444; text-align: center; padding: 2rem;">评论加载失败，请刷新页面重试</p>';
+                };
+
+                container.innerHTML = '';
+                container.appendChild(script);
+            }
+
+            function initFeatures() {
+                var observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.attributeName === 'class') {
+                            var iframe = document.querySelector('iframe[src*="giscus.app"]');
+                            if (iframe) {
+                                var isDark = document.body.classList.contains('dark');
+                                var theme = isDark ? 'dark' : 'light';
+                                try {
+                                    iframe.contentWindow.postMessage({
+                                        giscus: { setConfig: { theme: theme } }
+                                    }, 'https://giscus.app');
+                                } catch (e) {
+                                    
+                                }
+                            }
+                        }
+                    });
+                });
+
+                observer.observe(document.body, {
+                    attributes: true,
+                    attributeFilter: ['class']
+                });
+
+                setTimeout(function() {
+                    var iframe = document.querySelector('iframe[src*="giscus.app"]');
+                    if (iframe) {
+                        var isDark = document.body.classList.contains('dark');
+                        var theme = isDark ? 'dark' : 'light';
+                        try {
+                            iframe.contentWindow.postMessage({
+                                giscus: { setConfig: { theme: theme } }
+                            }, 'https://giscus.app');
+                        } catch (e) {}
+                    }
+                }, 1000);
+            }
+
+            function isNearViewport(el, margin) {
+                var rect = el.getBoundingClientRect();
+                var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                return rect.top <= windowHeight + margin;
+            }
+
+            function initLazyLoad() {
+                console.log('[GISCUS-MAIN] initLazyLoad called');
+
+                var container = document.getElementById('giscus-container');
+                if (!container) {
+                    console.log('[GISCUS-MAIN] Container not found, will retry');
+                    setTimeout(initLazyLoad, 100);
+                    return;
+                }
+
+                console.log('[GISCUS-MAIN] Container found');
+
+                if (isNearViewport(container, 200)) {
+                    console.log('[GISCUS-MAIN] Container in viewport, loading immediately');
+                    loadGiscus(container);
+                    return;
+                }
+
+                if ('IntersectionObserver' in window) {
+                    console.log('[GISCUS-MAIN] Using IntersectionObserver');
+                    observer = new IntersectionObserver(function(entries) {
+                        entries.forEach(function(entry) {
+                            if (entry.isIntersecting) {
+                                console.log('[GISCUS-MAIN] IntersectionObserver triggered');
+                                observer.disconnect();
+                                observer = null;
+                                loadGiscus(container);
+                            }
+                        });
+                    }, {
+                        root: null,
+                        rootMargin: '200px',
+                        threshold: 0
+                    });
+
+                    observer.observe(container);
+
+                    timeoutId = setTimeout(function() {
+                        if (!loaded) {
+                            console.log('[GISCUS-MAIN] Timeout fallback triggered');
+                            if (observer) {
+                                observer.disconnect();
+                                observer = null;
+                            }
+                            loadGiscus(container);
+                        }
+                    }, 3000);
+                } else {
+                    console.log('[GISCUS-MAIN] IntersectionObserver not supported, loading immediately');
+                    loadGiscus(container);
+                }
+            }
+
+            function init() {
+                console.log('[GISCUS-MAIN] init() called');
+                initLazyLoad();
+            }
+
+            function resetForNewPage() {
+                console.log('[GISCUS-MAIN] Swup page change, resetting');
+                loaded = false;
+
+                var container = document.getElementById('giscus-container');
+                if (container) {
+                    container.classList.add('giscus-placeholder');
+                    container.innerHTML = '<div class="giscus-loading"><div class="loading-spinner"></div><p class="loading-text">评论区加载中...</p></div>';
+                }
+
+                setTimeout(function() {
+                    initLazyLoad();
+                }, 100);
+            }
+
+            if (document.readyState === 'loading') {
+                console.log('[GISCUS-MAIN] Waiting for DOMContentLoaded');
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                console.log('[GISCUS-MAIN] DOM ready, calling init');
+                init();
+            }
+
+            document.addEventListener('swup:page:view', resetForNewPage);
+
+            console.log('[GISCUS-MAIN] Script registered');
+        })();
+        </script>
 
         
         <script>
