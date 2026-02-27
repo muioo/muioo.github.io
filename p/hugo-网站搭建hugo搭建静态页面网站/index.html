@@ -106,6 +106,12 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     right: 0 !important;
 }
 </style>
+
+        
+        <link rel="dns-prefetch" href="https://giscus.app">
+        <link rel="preconnect" href="https://giscus.app" crossorigin>
+        <link rel="preload" href="https://giscus.app/client.js" as="script">
+
         
         <script src="https://unpkg.com/swup@4"></script>
         <style>
@@ -333,9 +339,11 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
       <ol>
         <li>
           <ol>
+            <li><a href="#自定义firstbloglayouts_default目录的作用">自定义firstblog\layouts_default目录的作用</a></li>
             <li><a href="#添加背景图片">添加背景图片</a></li>
             <li><a href="#文章底部的计数">文章底部的计数</a></li>
             <li><a href="#看板娘功能">看板娘功能</a></li>
+            <li><a href="#评论区功能">评论区功能</a></li>
           </ol>
         </li>
       </ol>
@@ -425,6 +433,10 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 <p>删除content中的rich-content</p>
 </li>
 </ul>
+<h4 id="自定义firstbloglayouts_default目录的作用">自定义firstblog\layouts_default目录的作用
+</h4><ul>
+<li><strong>基础模板”</strong>，所有页面（文章、首页、归档等）都会继承它</li>
+</ul>
 <h4 id="添加背景图片">添加背景图片
 </h4><ul>
 <li>在static\images中添加图片</li>
@@ -443,18 +455,42 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">body</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-image</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="s2">&#34;/images/background2.jpg&#34;</span><span class="p">);</span> <span class="c">/* 对应static/images/background2.jpg */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-size</span><span class="p">:</span> <span class="kc">cover</span><span class="p">;</span> <span class="c">/* 背景图覆盖整个页面 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-position</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span> <span class="c">/* 背景图居中显示 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-attachment</span><span class="p">:</span> <span class="kc">fixed</span><span class="p">;</span> <span class="c">/* 背景图固定（滚动时不跟随） */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-repeat</span><span class="p">:</span> <span class="kc">no-repeat</span><span class="p">;</span> <span class="c">/* 禁止背景图重复 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-image</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="s2">&#34;/images/background2.jpg&#34;</span><span class="p">)</span> <span class="cp">!important</span><span class="p">;</span> <span class="c">/* 对应static/images/bg.jpg */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-size</span><span class="p">:</span> <span class="kc">cover</span> <span class="cp">!important</span><span class="p">;</span> <span class="c">/* 背景图覆盖整个页面 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-position</span><span class="p">:</span> <span class="kc">center</span> <span class="cp">!important</span><span class="p">;</span> <span class="c">/* 背景图居中显示 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-attachment</span><span class="p">:</span> <span class="kc">fixed</span> <span class="cp">!important</span><span class="p">;</span> <span class="c">/* 背景图固定（滚动时不跟随） */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-repeat</span><span class="p">:</span> <span class="kc">no-repeat</span> <span class="cp">!important</span><span class="p">;</span> <span class="c">/* 禁止背景图重复 */</span>
 </span></span><span class="line"><span class="cl">    <span class="c">/* 可选：添加半透明遮罩，避免背景干扰文字 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-blend-mode</span><span class="p">:</span> <span class="kc">overlay</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-blend-mode</span><span class="p">:</span> <span class="kc">overlay</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">/* 修复图片首次加载超出内容框的问题 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">article-content</span> <span class="nt">figure</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">max-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">article-content</span> <span class="nt">figure</span> <span class="nt">img</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">max-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">  
 </span></span></code></pre></td></tr></table>
 </div>
@@ -714,7 +750,461 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="看板娘功能">看板娘功能
-</h4>
+</h4><h4 id="评论区功能">评论区功能
+</h4><p>1、相关链接</p>
+<ul>
+<li>
+<p>**<a class="link" href="https://giscus.app/zh-CN"  target="_blank" rel="noopener"
+    >giscus评论</a>**按照流程注册giscus</p>
+</li>
+<li>
+<p>下载giscus评论到仓库中<a class="link" href="https://github.com/giscus/giscus?tab=readme-ov-file"  target="_blank" rel="noopener"
+    >github</a></p>
+</li>
+</ul>
+<p>2、在layouts\partials\comments目录下新建giscus.html、include.html、loader.html覆盖掉下载的主题中的文件</p>
+<ul>
+<li>giscus.html文件</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{/* giscus 核心代码 */}}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;giscus-container&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://giscus.app/client.js&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">data-repo</span><span class="o">=</span><span class="s">&#34;muioo/muioo.github.io&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">data-repo-id</span><span class="o">=</span><span class="s">&#34;R_kgDOQ_pqAA&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">data-category</span><span class="o">=</span><span class="s">&#34;Announcements&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">data-category-id</span><span class="o">=</span><span class="s">&#34;DIC_kwDOQ_pqAM4C2CEc&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">data-mapping</span><span class="o">=</span><span class="s">&#34;pathname&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">data-strict</span><span class="o">=</span><span class="s">&#34;0&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">data-reactions-enabled</span><span class="o">=</span><span class="s">&#34;1&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">data-emit-metadata</span><span class="o">=</span><span class="s">&#34;0&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">data-input-position</span><span class="o">=</span><span class="s">&#34;bottom&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">data-theme</span><span class="o">=</span><span class="s">&#34;preferred_color_scheme&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">data-lang</span><span class="o">=</span><span class="s">&#34;zh-CN&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">async</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">{{/* Swup 兼容 + 主题切换脚本 */}}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 获取 giscus iframe
+</span></span></span><span class="line"><span class="cl">        <span class="kd">function</span> <span class="nx">getGiscusIframe</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;iframe[src*=&#34;giscus.app&#34;]&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 获取当前主题
+</span></span></span><span class="line"><span class="cl">        <span class="kd">function</span> <span class="nx">getCurrentTheme</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kr">const</span> <span class="nx">isDark</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;dark&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">isDark</span> <span class="o">?</span> <span class="s1">&#39;dark&#39;</span> <span class="o">:</span> <span class="s1">&#39;light&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 更新 giscus 主题
+</span></span></span><span class="line"><span class="cl">        <span class="kd">function</span> <span class="nx">updateGiscusTheme</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kr">const</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nx">getGiscusIframe</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">iframe</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="kr">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">getCurrentTheme</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">iframe</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">giscus</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="nx">setConfig</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                            <span class="nx">theme</span><span class="o">:</span> <span class="nx">theme</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="p">},</span> <span class="s1">&#39;https://giscus.app&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// Swup 页面切换时重新加载 giscus
+</span></span></span><span class="line"><span class="cl">        <span class="kd">function</span> <span class="nx">reloadGiscus</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kr">const</span> <span class="nx">container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;giscus-container&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">container</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// 发送消息让 giscus 重新加载
+</span></span></span><span class="line"><span class="cl">                <span class="kr">const</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nx">getGiscusIframe</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="nx">iframe</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">iframe</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">                        <span class="nx">giscus</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                            <span class="nx">setConfig</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                                <span class="nx">term</span><span class="o">:</span> <span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span>
+</span></span><span class="line"><span class="cl">                            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">},</span> <span class="s1">&#39;https://giscus.app&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 监听 Swup 页面切换完成事件
+</span></span></span><span class="line"><span class="cl">        <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;swup:page:view&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">reloadGiscus</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 等待 iframe 加载后更新主题
+</span></span></span><span class="line"><span class="cl">            <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">updateGiscusTheme</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 监听主题切换
+</span></span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">observer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MutationObserver</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">mutations</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">mutations</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">mutation</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="nx">mutation</span><span class="p">.</span><span class="nx">attributeName</span> <span class="o">===</span> <span class="s1">&#39;class&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">updateGiscusTheme</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nx">observer</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">attributes</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">attributeFilter</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 初始化时设置主题
+</span></span></span><span class="line"><span class="cl">        <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">updateGiscusTheme</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})();</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>include.html文件</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{/* 评论功能主入口 */}}
+</span></span><span class="line"><span class="cl">{{ if .Params.comments | default true }}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">section</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;comments-section&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;评论&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;comments-container&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;comments-title&#34;</span><span class="p">&gt;</span>评论<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            {{ partial &#34;comments/loader.html&#34; . }}
+</span></span><span class="line"><span class="cl">            {{ partial &#34;comments/giscus.html&#34; . }}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nc">comments-section</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">margin-top</span><span class="p">:</span> <span class="mi">3</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">padding-top</span><span class="p">:</span> <span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">border-top</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">border</span><span class="o">-</span><span class="kc">color</span><span class="p">,</span> <span class="mh">#e0e0e0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nc">comments-container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">max-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nc">comments-title</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-size</span><span class="p">:</span> <span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-weight</span><span class="p">:</span> <span class="mi">600</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">margin-bottom</span><span class="p">:</span> <span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">text</span><span class="o">-</span><span class="n">primary</span><span class="p">,</span> <span class="mh">#1a1a1a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c">/* giscus 容器样式 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">#</span><span class="nn">giscus-container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">margin-top</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c">/* 暗色模式适配 */</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">body</span><span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">comments-title</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">text</span><span class="o">-</span><span class="n">primary</span><span class="p">,</span> <span class="mh">#e0e0e0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nt">body</span><span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">comments-loading</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">text</span><span class="o">-</span><span class="n">secondary</span><span class="p">,</span> <span class="mh">#999</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nt">body</span><span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">loading-spinner</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">border-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">border</span><span class="o">-</span><span class="kc">color</span><span class="p">,</span> <span class="mh">#333</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">border-top-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">accent</span><span class="o">-</span><span class="kc">color</span><span class="p">,</span> <span class="mh">#60a5fa</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>loader.html文件</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{/* 评论加载状态提示 */}}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;comments-loading&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;comments-loading&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;loading-spinner&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;loading-text&#34;</span><span class="p">&gt;</span>评论加载中...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nc">comments-loading</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">column</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">justify-content</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">padding</span><span class="p">:</span> <span class="mi">2</span><span class="kt">rem</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">text</span><span class="o">-</span><span class="n">secondary</span><span class="p">,</span> <span class="mh">#666</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">min-height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nc">loading-spinner</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">width</span><span class="p">:</span> <span class="mi">32</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">height</span><span class="p">:</span> <span class="mi">32</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">border</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span> <span class="kc">solid</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">border</span><span class="o">-</span><span class="kc">color</span><span class="p">,</span> <span class="mh">#e0e0e0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">border-top-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">accent</span><span class="o">-</span><span class="kc">color</span><span class="p">,</span> <span class="mh">#3b82f6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">border-radius</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">animation</span><span class="p">:</span> <span class="n">spin</span> <span class="mf">0.8</span><span class="kt">s</span> <span class="kc">linear</span> <span class="kc">infinite</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">@</span><span class="k">keyframes</span> <span class="nt">spin</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">to</span> <span class="p">{</span> <span class="k">transform</span><span class="p">:</span> <span class="nb">rotate</span><span class="p">(</span><span class="mi">360</span><span class="kt">deg</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nc">loading-text</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">margin-top</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">font-size</span><span class="p">:</span> <span class="mf">0.875</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">opacity</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">/* giscus 加载完成后隐藏 loading */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nc">giscus-frame</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">min-height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// giscus 加载完成后隐藏 loading
+</span></span></span><span class="line"><span class="cl">    <span class="kd">function</span> <span class="nx">hideCommentsLoading</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">loading</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;comments-loading&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">loading</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">loading</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 监听 giscus 加载
+</span></span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">checkGiscusLoaded</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;iframe[src*=&#34;giscus.app&#34;]&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">iframe</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">checkGiscusLoaded</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 等待 iframe 内容加载
+</span></span></span><span class="line"><span class="cl">            <span class="nx">iframe</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="nx">hideCommentsLoading</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">hideCommentsLoading</span><span class="p">,</span> <span class="mi">2000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 超时保护
+</span></span></span><span class="line"><span class="cl">    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">checkGiscusLoaded</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">hideCommentsLoading</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span> <span class="mi">10000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -814,47 +1304,146 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
      
     
         
-    <div class="disqus-container">
-    <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    <section class="comments-section" aria-label="评论" data-comments-section>
+        <div class="comments-container">
+            <h2 class="comments-title">评论</h2>
+            
+<div class="comments-loading" id="comments-loading">
+    <div class="loading-spinner"></div>
+    <p class="loading-text">评论加载中...</p>
 </div>
 
 <style>
-    .disqus-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
+    .comments-loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+        color: var(--text-secondary, #666);
+        min-height: 100px;
+    }
+
+    .loading-spinner {
+        width: 32px;
+        height: 32px;
+        border: 3px solid var(--border-color, #e0e0e0);
+        border-top-color: var(--accent-color, #3b82f6);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+        margin-top: 1rem;
+        font-size: 0.875rem;
+        opacity: 0.7;
+    }
+
+     
+    .giscus-frame {
+        min-height: 200px;
     }
 </style>
 
 <script>
-    window.addEventListener('onColorSchemeChange', (e) => {
-        if (typeof DISQUS == 'object') {
-            DISQUS.reset({
-                reload: true
-            });
+    
+    function hideCommentsLoading() {
+        const loading = document.getElementById('comments-loading');
+        if (loading) {
+            loading.style.display = 'none';
         }
-    })
+    }
+
+    
+    const checkGiscusLoaded = setInterval(function() {
+        const iframe = document.querySelector('iframe[src*="giscus.app"]');
+        if (iframe) {
+            clearInterval(checkGiscusLoaded);
+            
+            iframe.addEventListener('load', hideCommentsLoading);
+            setTimeout(hideCommentsLoading, 2000);
+        }
+    }, 100);
+
+    
+    setTimeout(function() {
+        clearInterval(checkGiscusLoaded);
+        hideCommentsLoading();
+    }, 10000);
 </script>
+
+            <div id="giscus-container"></div>
+        </div>
+    </section>
+
+    <style>
+        .comments-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color, #e0e0e0);
+        }
+
+        .comments-container {
+            max-width: 100%;
+        }
+
+        .comments-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary, #1a1a1a);
+        }
+
+        #giscus-container {
+            margin-top: 1rem;
+            min-height: 200px;
+        }
+
+        body.dark .comments-title {
+            color: var(--text-primary, #e0e0e0);
+        }
+
+        body.dark .comments-loading {
+            color: var(--text-secondary, #999);
+        }
+
+        body.dark .loading-spinner {
+            border-color: var(--border-color, #333);
+            border-top-color: var(--accent-color, #60a5fa);
+        }
+    </style>
+
+    <script>
+        
+        if (window.giscusState && window.giscusState.ready) {
+            
+            setTimeout(function() {
+                const targetContainer = document.getElementById('giscus-container');
+                const preloadContainer = document.getElementById('giscus-preload');
+                if (targetContainer && preloadContainer) {
+                    const iframe = preloadContainer.querySelector('iframe[src*="giscus.app"]');
+                    if (iframe) {
+                        targetContainer.appendChild(iframe);
+                        iframe.contentWindow.postMessage({
+                            giscus: {
+                                setConfig: {
+                                    term: window.location.pathname
+                                }
+                            }
+                        }, 'https://giscus.app');
+                        const loading = document.getElementById('comments-loading');
+                        if (loading) loading.style.display = 'none';
+                    }
+                }
+            }, 100);
+        }
+    </script>
+
 
     
 
@@ -867,8 +1456,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
     <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
             本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
-            博客: <strong>11</strong> 篇 |
-            字数: <strong>10295</strong> 字
+            博客: <strong>12</strong> 篇 |
+            字数: <strong>11705</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
@@ -1044,6 +1633,106 @@ if (typeof swup !== 'undefined') {
     swup.hooks.on('page:view', initAutoPlay);
 }
 </script>
+
+        
+        <script>
+        (function() {
+            
+            window.giscusState = {
+                loaded: false,
+                ready: false,
+                container: null
+            };
+
+            
+            function preloadGiscus() {
+                if (window.giscusState.loaded) return;
+                window.giscusState.loaded = true;
+
+                
+                const preloadContainer = document.createElement('div');
+                preloadContainer.id = 'giscus-preload';
+                preloadContainer.style.display = 'none';
+                document.body.appendChild(preloadContainer);
+
+                const script = document.createElement('script');
+                script.src = 'https://giscus.app/client.js';
+                script.setAttribute('data-repo', 'muioo/muioo.github.io');
+                script.setAttribute('data-repo-id', 'R_kgDOQ_pqAA');
+                script.setAttribute('data-category', 'Announcements');
+                script.setAttribute('data-category-id', 'DIC_kwDOQ_pqAM4C2CEc');
+                script.setAttribute('data-mapping', 'pathname');
+                script.setAttribute('data-strict', '0');
+                script.setAttribute('data-reactions-enabled', '1');
+                script.setAttribute('data-emit-metadata', '0');
+                script.setAttribute('data-input-position', 'bottom');
+                script.setAttribute('data-theme', 'preferred_color_scheme');
+                script.setAttribute('data-lang', 'zh-CN');
+                script.crossOrigin = 'anonymous';
+                script.async = true;
+
+                script.onload = function() {
+                    console.log('Giscus preloaded');
+                    window.giscusState.ready = true;
+                    
+                    if (document.body.classList.contains('article-page')) {
+                        showGiscus();
+                    }
+                };
+
+                preloadContainer.appendChild(script);
+            }
+
+            
+            function showGiscus() {
+                if (!window.giscusState.ready) return;
+
+                const targetContainer = document.getElementById('giscus-container');
+                const preloadContainer = document.getElementById('giscus-preload');
+                const commentsSection = document.querySelector('[data-comments-section]');
+
+                if (targetContainer && preloadContainer && commentsSection) {
+                    
+                    const iframe = preloadContainer.querySelector('iframe[src*="giscus.app"]');
+                    if (iframe) {
+                        targetContainer.appendChild(iframe);
+                        
+                        iframe.contentWindow.postMessage({
+                            giscus: {
+                                setConfig: {
+                                    term: window.location.pathname
+                                }
+                            }
+                        }, 'https://giscus.app');
+                        
+                        const loading = document.getElementById('comments-loading');
+                        if (loading) loading.style.display = 'none';
+                    }
+                }
+            }
+
+            
+            preloadGiscus();
+
+            
+            document.addEventListener('swup:page:view', function() {
+                if (document.body.classList.contains('article-page')) {
+                    if (window.giscusState.ready) {
+                        showGiscus();
+                    } else {
+                        
+                        const checkReady = setInterval(function() {
+                            if (window.giscusState.ready) {
+                                clearInterval(checkReady);
+                                showGiscus();
+                            }
+                        }, 100);
+                        setTimeout(() => clearInterval(checkReady), 5000);
+                    }
+                }
+            });
+        })();
+        </script>
 
         
         <script 

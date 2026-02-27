@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="爬虫基本框架 发送请求 以b站评论区为例子 1、找到对应的数据包\n2、应对反爬\n1 2 3 4 5 6 7 8 9 headers = { &#34;cookie&#34;:&#34;buvid3=7178F649-B51E-3511-52F3-F35BBADC24AD07347infoc; b_nut=1766219807; _uuid=7885107F6-10532-5A53-3DE1-49762D4BF86A89782infoc; bmg_af_switch=1; bmg_src_def_domain=i1.hdslb.com; buvid4=D98C240B-1FA4-8D02-C9B3-DD7693AFC8DF90828-025122016-lD92PdnjNqMMVtStsO1Yaw%3D%3D; rpdid=|(J|lmkkkuJ|0J&#39;u~YYkkul~u; DedeUserID=123152920; DedeUserID__ckMd5=14a440f25b863dcc; theme-tip-show=SHOWED; theme-avatar-tip-show=SHOWED; CURRENT_QUALITY=0; PEA_AU=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiaWQiOjEyMzE1MjkyMCwicGlkIjozNzUyOTM4LCJleHAiOjE4MDIyNzAyMzAsImlzcyI6InRlc3QifQ.-Ki8KKoVKdTUYDeIL6zR10rl5t-RlYiDsIiLLJjK3ik; fingerprint=a4e5b37b8876bfe9b2ac49851b255d83; buvid_fp_plain=undefined; buvid_fp=a4e5b37b8876bfe9b2ac49851b255d83; bsource=search_bing; bp_t_offset_123152920=1167965937526112256; bili_ticket=eyJhbGciOiJIUzI1NiIsImtpZCI6InMwMyIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzEwMzc2MjMsImlhdCI6MTc3MDc3ODM2MywicGx0IjotMX0.YmqjaqFACN6HQkPvqSSujttyA0mmbQgrWYeHlb2Bhbg; bili_ticket_expires=1771037563; SESSDATA=8a9db992%2C1786523177%2C39356%2A21CjByGR1LZxP1_8VO6q6NMNeD7uaHBtFysH7X6KMHQD7BNzjXNZn8xey1B5Kzzpt74q0SVm14c1U4VkpZMUhkYl9uNnpjZGMyUmNibnc2NUs2eUdMS0kzSlZRT3hMOU1WZGR4ckJjMmx5NGwwcHZnVlBESnFQRkp3TWpSdUoyb3NLSndxUnBEOU9RIIEC; bili_jct=3900ae6a5e204b3a0afb02e5dbbb4a40; home_feed_column=5; browser_resolution=1536-695; sid=4j8dvybo; CURRENT_FNVAL=4048; b_lsid=C0839A2E_19C56CDB713&#34;, &#34;User-agent&#34;:&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36&#34; } # get 查询参数 data = { &#39;spm_id_from&#39; : &#39;333.337.search-card.all.click&#39;, &#39;vd_source&#39; : &#39;18d0a338800faafff98255fb11dc47ba&#39; } 3、发送请求\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="项目部署 前端部署 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 // https://vitejs.dev/config/ export default defineConfig({ plugins: [vue()], resolve: { alias: { &#39;@&#39;: path.resolve(__dirname, &#39;./src&#39;), }, }, server: { port: 8891, host: &#39;0.0.0.0&#39;, proxy: { // 转发所有以 /api 开头的接口请求 &#39;/api&#39;: { target: &#39;http://localhost:8000&#39;, changeOrigin: true, }, &#39;/baike_img&#39;: { target: &#39;http://localhost:8000&#39;, changeOrigin: true, } } } }) 后端部署 ">
 <title></title>
 
 <link rel='canonical' href='http://localhost:1313/p/'>
 
 <link rel="stylesheet" href="/scss/style.min.34a655c144c140ff30d14c20a19524513b1fe83a47911915da398dcf7375b0ff.css"><meta property='og:title' content="">
-<meta property='og:description' content="爬虫基本框架 发送请求 以b站评论区为例子 1、找到对应的数据包\n2、应对反爬\n1 2 3 4 5 6 7 8 9 headers = { &#34;cookie&#34;:&#34;buvid3=7178F649-B51E-3511-52F3-F35BBADC24AD07347infoc; b_nut=1766219807; _uuid=7885107F6-10532-5A53-3DE1-49762D4BF86A89782infoc; bmg_af_switch=1; bmg_src_def_domain=i1.hdslb.com; buvid4=D98C240B-1FA4-8D02-C9B3-DD7693AFC8DF90828-025122016-lD92PdnjNqMMVtStsO1Yaw%3D%3D; rpdid=|(J|lmkkkuJ|0J&#39;u~YYkkul~u; DedeUserID=123152920; DedeUserID__ckMd5=14a440f25b863dcc; theme-tip-show=SHOWED; theme-avatar-tip-show=SHOWED; CURRENT_QUALITY=0; PEA_AU=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiaWQiOjEyMzE1MjkyMCwicGlkIjozNzUyOTM4LCJleHAiOjE4MDIyNzAyMzAsImlzcyI6InRlc3QifQ.-Ki8KKoVKdTUYDeIL6zR10rl5t-RlYiDsIiLLJjK3ik; fingerprint=a4e5b37b8876bfe9b2ac49851b255d83; buvid_fp_plain=undefined; buvid_fp=a4e5b37b8876bfe9b2ac49851b255d83; bsource=search_bing; bp_t_offset_123152920=1167965937526112256; bili_ticket=eyJhbGciOiJIUzI1NiIsImtpZCI6InMwMyIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzEwMzc2MjMsImlhdCI6MTc3MDc3ODM2MywicGx0IjotMX0.YmqjaqFACN6HQkPvqSSujttyA0mmbQgrWYeHlb2Bhbg; bili_ticket_expires=1771037563; SESSDATA=8a9db992%2C1786523177%2C39356%2A21CjByGR1LZxP1_8VO6q6NMNeD7uaHBtFysH7X6KMHQD7BNzjXNZn8xey1B5Kzzpt74q0SVm14c1U4VkpZMUhkYl9uNnpjZGMyUmNibnc2NUs2eUdMS0kzSlZRT3hMOU1WZGR4ckJjMmx5NGwwcHZnVlBESnFQRkp3TWpSdUoyb3NLSndxUnBEOU9RIIEC; bili_jct=3900ae6a5e204b3a0afb02e5dbbb4a40; home_feed_column=5; browser_resolution=1536-695; sid=4j8dvybo; CURRENT_FNVAL=4048; b_lsid=C0839A2E_19C56CDB713&#34;, &#34;User-agent&#34;:&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36&#34; } # get 查询参数 data = { &#39;spm_id_from&#39; : &#39;333.337.search-card.all.click&#39;, &#39;vd_source&#39; : &#39;18d0a338800faafff98255fb11dc47ba&#39; } 3、发送请求\n">
+<meta property='og:description' content="项目部署 前端部署 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 // https://vitejs.dev/config/ export default defineConfig({ plugins: [vue()], resolve: { alias: { &#39;@&#39;: path.resolve(__dirname, &#39;./src&#39;), }, }, server: { port: 8891, host: &#39;0.0.0.0&#39;, proxy: { // 转发所有以 /api 开头的接口请求 &#39;/api&#39;: { target: &#39;http://localhost:8000&#39;, changeOrigin: true, }, &#39;/baike_img&#39;: { target: &#39;http://localhost:8000&#39;, changeOrigin: true, } } } }) 后端部署 ">
 <meta property='og:url' content='http://localhost:1313/p/'>
 <meta property='og:site_name' content='muioo blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' />
 <meta name="twitter:title" content="">
-<meta name="twitter:description" content="爬虫基本框架 发送请求 以b站评论区为例子 1、找到对应的数据包\n2、应对反爬\n1 2 3 4 5 6 7 8 9 headers = { &#34;cookie&#34;:&#34;buvid3=7178F649-B51E-3511-52F3-F35BBADC24AD07347infoc; b_nut=1766219807; _uuid=7885107F6-10532-5A53-3DE1-49762D4BF86A89782infoc; bmg_af_switch=1; bmg_src_def_domain=i1.hdslb.com; buvid4=D98C240B-1FA4-8D02-C9B3-DD7693AFC8DF90828-025122016-lD92PdnjNqMMVtStsO1Yaw%3D%3D; rpdid=|(J|lmkkkuJ|0J&#39;u~YYkkul~u; DedeUserID=123152920; DedeUserID__ckMd5=14a440f25b863dcc; theme-tip-show=SHOWED; theme-avatar-tip-show=SHOWED; CURRENT_QUALITY=0; PEA_AU=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiaWQiOjEyMzE1MjkyMCwicGlkIjozNzUyOTM4LCJleHAiOjE4MDIyNzAyMzAsImlzcyI6InRlc3QifQ.-Ki8KKoVKdTUYDeIL6zR10rl5t-RlYiDsIiLLJjK3ik; fingerprint=a4e5b37b8876bfe9b2ac49851b255d83; buvid_fp_plain=undefined; buvid_fp=a4e5b37b8876bfe9b2ac49851b255d83; bsource=search_bing; bp_t_offset_123152920=1167965937526112256; bili_ticket=eyJhbGciOiJIUzI1NiIsImtpZCI6InMwMyIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzEwMzc2MjMsImlhdCI6MTc3MDc3ODM2MywicGx0IjotMX0.YmqjaqFACN6HQkPvqSSujttyA0mmbQgrWYeHlb2Bhbg; bili_ticket_expires=1771037563; SESSDATA=8a9db992%2C1786523177%2C39356%2A21CjByGR1LZxP1_8VO6q6NMNeD7uaHBtFysH7X6KMHQD7BNzjXNZn8xey1B5Kzzpt74q0SVm14c1U4VkpZMUhkYl9uNnpjZGMyUmNibnc2NUs2eUdMS0kzSlZRT3hMOU1WZGR4ckJjMmx5NGwwcHZnVlBESnFQRkp3TWpSdUoyb3NLSndxUnBEOU9RIIEC; bili_jct=3900ae6a5e204b3a0afb02e5dbbb4a40; home_feed_column=5; browser_resolution=1536-695; sid=4j8dvybo; CURRENT_FNVAL=4048; b_lsid=C0839A2E_19C56CDB713&#34;, &#34;User-agent&#34;:&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36&#34; } # get 查询参数 data = { &#39;spm_id_from&#39; : &#39;333.337.search-card.all.click&#39;, &#39;vd_source&#39; : &#39;18d0a338800faafff98255fb11dc47ba&#39; } 3、发送请求\n">
+<meta name="twitter:description" content="项目部署 前端部署 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 // https://vitejs.dev/config/ export default defineConfig({ plugins: [vue()], resolve: { alias: { &#39;@&#39;: path.resolve(__dirname, &#39;./src&#39;), }, }, server: { port: 8891, host: &#39;0.0.0.0&#39;, proxy: { // 转发所有以 /api 开头的接口请求 &#39;/api&#39;: { target: &#39;http://localhost:8000&#39;, changeOrigin: true, }, &#39;/baike_img&#39;: { target: &#39;http://localhost:8000&#39;, changeOrigin: true, } } } }) 后端部署 ">
     <link rel="shortcut icon" href="/favicon.ico" />
 <script>
     
@@ -329,15 +329,14 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#爬虫基本框架">爬虫基本框架</a>
+    <li><a href="#项目部署">项目部署</a>
       <ol>
-        <li><a href="#发送请求">发送请求</a>
+        <li>
           <ol>
-            <li><a href="#以b站评论区为例子">以b站评论区为例子</a></li>
+            <li><a href="#前端部署">前端部署</a></li>
+            <li><a href="#后端部署">后端部署</a></li>
           </ol>
         </li>
-        <li><a href="#解析数据">解析数据</a></li>
-        <li><a href="#保存数据">保存数据</a></li>
       </ol>
     </li>
   </ol>
@@ -378,73 +377,9 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     <section class="article-content">
     
     
-    <h2 id="爬虫基本框架">爬虫基本框架
-</h2><h3 id="发送请求">发送请求
-</h3><h4 id="以b站评论区为例子">以b站评论区为例子
-</h4><p>1、找到对应的数据包</p>
-<p><img src="C:%5cUsers%5c23673%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20260213194415074.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20260213194415074"
-	
-	
-></p>
-<p>2、应对反爬</p>
-<p><img src="/p/Snipaste_2026-02-13_19-46-44.png"
-	width="1920"
-	height="572"
-	srcset="/p/Snipaste_2026-02-13_19-46-44_hu_4c64d0a694e8ec11.png 480w, /p/Snipaste_2026-02-13_19-46-44_hu_dd9b6d24353c9026.png 1024w"
-	loading="lazy"
-	
-		alt="Snipaste_2026-02-13_19-46-44"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="335"
-		data-flex-basis="805px"
-	
-></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cookie&#34;</span><span class="p">:</span><span class="s2">&#34;buvid3=7178F649-B51E-3511-52F3-F35BBADC24AD07347infoc; b_nut=1766219807; _uuid=7885107F6-10532-5A53-3DE1-49762D4BF86A89782infoc; bmg_af_switch=1; bmg_src_def_domain=i1.hdslb.com; buvid4=D98C240B-1FA4-8D02-C9B3-DD7693AFC8DF90828-025122016-lD92PdnjNqMMVtStsO1Yaw%3D%3D; rpdid=|(J|lmkkkuJ|0J&#39;u~YYkkul~u; DedeUserID=123152920; DedeUserID__ckMd5=14a440f25b863dcc; theme-tip-show=SHOWED; theme-avatar-tip-show=SHOWED; CURRENT_QUALITY=0; PEA_AU=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiaWQiOjEyMzE1MjkyMCwicGlkIjozNzUyOTM4LCJleHAiOjE4MDIyNzAyMzAsImlzcyI6InRlc3QifQ.-Ki8KKoVKdTUYDeIL6zR10rl5t-RlYiDsIiLLJjK3ik; fingerprint=a4e5b37b8876bfe9b2ac49851b255d83; buvid_fp_plain=undefined; buvid_fp=a4e5b37b8876bfe9b2ac49851b255d83; bsource=search_bing; bp_t_offset_123152920=1167965937526112256; bili_ticket=eyJhbGciOiJIUzI1NiIsImtpZCI6InMwMyIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzEwMzc2MjMsImlhdCI6MTc3MDc3ODM2MywicGx0IjotMX0.YmqjaqFACN6HQkPvqSSujttyA0mmbQgrWYeHlb2Bhbg; bili_ticket_expires=1771037563; SESSDATA=8a9db992%2C1786523177%2C39356%2A21CjByGR1LZxP1_8VO6q6NMNeD7uaHBtFysH7X6KMHQD7BNzjXNZn8xey1B5Kzzpt74q0SVm14c1U4VkpZMUhkYl9uNnpjZGMyUmNibnc2NUs2eUdMS0kzSlZRT3hMOU1WZGR4ckJjMmx5NGwwcHZnVlBESnFQRkp3TWpSdUoyb3NLSndxUnBEOU9RIIEC; bili_jct=3900ae6a5e204b3a0afb02e5dbbb4a40; home_feed_column=5; browser_resolution=1536-695; sid=4j8dvybo; CURRENT_FNVAL=4048; b_lsid=C0839A2E_19C56CDB713&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;User-agent&#34;</span><span class="p">:</span><span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># get 查询参数</span>
-</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;spm_id_from&#39;</span> <span class="p">:</span> <span class="s1">&#39;333.337.search-card.all.click&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;vd_source&#39;</span> <span class="p">:</span> <span class="s1">&#39;18d0a338800faafff98255fb11dc47ba&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>3、发送请求</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span><span class="n">params</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="解析数据">解析数据
-</h3><ul>
-<li>json_data 字典取值</li>
-</ul>
-<div class="highlight"><div class="chroma">
+    <h2 id="项目部署">项目部署
+</h2><h4 id="前端部署">前端部署
+</h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -459,25 +394,47 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://www.bilibili.com/video/BV1K9Hse8EwM/?spm_id_from=333.337.search-card.all.click&amp;vd_source=18d0a338800faafff98255fb11dc47ba&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cookie&#34;</span><span class="p">:</span><span class="s2">&#34;buvid3=7178F649-B51E-3511-52F3-F35BBADC24AD07347infoc; b_nut=1766219807; _uuid=7885107F6-10532-5A53-3DE1-49762D4BF86A89782infoc; bmg_af_switch=1; bmg_src_def_domain=i1.hdslb.com; buvid4=D98C240B-1FA4-8D02-C9B3-DD7693AFC8DF90828-025122016-lD92PdnjNqMMVtStsO1Yaw%3D%3D; rpdid=|(J|lmkkkuJ|0J&#39;u~YYkkul~u; DedeUserID=123152920; DedeUserID__ckMd5=14a440f25b863dcc; theme-tip-show=SHOWED; theme-avatar-tip-show=SHOWED; CURRENT_QUALITY=0; PEA_AU=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiaWQiOjEyMzE1MjkyMCwicGlkIjozNzUyOTM4LCJleHAiOjE4MDIyNzAyMzAsImlzcyI6InRlc3QifQ.-Ki8KKoVKdTUYDeIL6zR10rl5t-RlYiDsIiLLJjK3ik; fingerprint=a4e5b37b8876bfe9b2ac49851b255d83; buvid_fp_plain=undefined; buvid_fp=a4e5b37b8876bfe9b2ac49851b255d83; bsource=search_bing; bp_t_offset_123152920=1167965937526112256; bili_ticket=eyJhbGciOiJIUzI1NiIsImtpZCI6InMwMyIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzEwMzc2MjMsImlhdCI6MTc3MDc3ODM2MywicGx0IjotMX0.YmqjaqFACN6HQkPvqSSujttyA0mmbQgrWYeHlb2Bhbg; bili_ticket_expires=1771037563; SESSDATA=8a9db992%2C1786523177%2C39356%2A21CjByGR1LZxP1_8VO6q6NMNeD7uaHBtFysH7X6KMHQD7BNzjXNZn8xey1B5Kzzpt74q0SVm14c1U4VkpZMUhkYl9uNnpjZGMyUmNibnc2NUs2eUdMS0kzSlZRT3hMOU1WZGR4ckJjMmx5NGwwcHZnVlBESnFQRkp3TWpSdUoyb3NLSndxUnBEOU9RIIEC; bili_jct=3900ae6a5e204b3a0afb02e5dbbb4a40; home_feed_column=5; browser_resolution=1536-695; sid=4j8dvybo; CURRENT_FNVAL=4048; b_lsid=C0839A2E_19C56CDB713&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;User-agent&#34;</span><span class="p">:</span><span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># .content .text 获取html数据 .json 获取json数据</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// https://vitejs.dev/config/
+</span></span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">defineConfig</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span><span class="nx">vue</span><span class="p">()],</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">resolve</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">alias</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="s1">&#39;@&#39;</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;./src&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">server</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">port</span>: <span class="kt">8891</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">proxy</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 转发所有以 /api 开头的接口请求
+</span></span></span><span class="line"><span class="cl">      <span class="s1">&#39;/api&#39;</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">target</span><span class="o">:</span> <span class="s1">&#39;http://localhost:8000&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">changeOrigin</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="s1">&#39;/baike_img&#39;</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">target</span><span class="o">:</span> <span class="s1">&#39;http://localhost:8000&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">changeOrigin</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="保存数据">保存数据
-</h3>
+</div><h4 id="后端部署">后端部署
+</h4>
 </section>
 
 
@@ -550,8 +507,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
     <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
             本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
-            博客: <strong>11</strong> 篇 |
-            字数: <strong>10284</strong> 字
+            博客: <strong>12</strong> 篇 |
+            字数: <strong>10494</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>

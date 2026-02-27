@@ -107,6 +107,12 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     right: 0 !important;
 }
 </style>
+
+        
+        <link rel="dns-prefetch" href="https://giscus.app">
+        <link rel="preconnect" href="https://giscus.app" crossorigin>
+        <link rel="preload" href="https://giscus.app/client.js" as="script">
+
         
         <script src="https://unpkg.com/swup@4"></script>
         <style>
@@ -350,7 +356,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
                     <a href="/archives/#2026">
                         
                             <span class="year">2026</span>
-                            <span class="count">11</span>
+                            <span class="count">12</span>
                         
                     </a> 
                 </div>
@@ -377,7 +383,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
     <div class="tagCloud-tags">
         
-            <a href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" class="font_size_8">
+            <a href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" class="font_size_9">
                 开发技术
             </a>
         
@@ -414,16 +420,16 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
                 Claude Code 规则设计
             </a>
         
+            <a href="/tags/vue/">
+                Vue
+            </a>
+        
             <a href="/tags/front/">
                 Front
             </a>
         
             <a href="/tags/python/">
                 Python
-            </a>
-        
-            <a href="/tags/vue/">
-                Vue
             </a>
         
             <a href="/tags/claude-code%E5%91%BD%E4%BB%A4/">
@@ -488,6 +494,63 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         
         <h3 class="article-subtitle">
             FastAPI 可扩展 API 开发的核心规则、目录结构及实践指南
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2026-01-26T00:00:00Z'>2026-01-26</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+</article>
+        
+            
+<article class="">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" >
+                开发技术
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/vue-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE%E5%88%B0linux%E6%9C%8D%E5%8A%A1%E5%99%A8/">【VUE 项目部署笔记】如何部署vue项目到linux服务器</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            项目部署笔记
         </h3>
         
     </div>
@@ -656,8 +719,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
     <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
             本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
-            博客: <strong>11</strong> 篇 |
-            字数: <strong>10349</strong> 字
+            博客: <strong>12</strong> 篇 |
+            字数: <strong>11705</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
@@ -753,6 +816,106 @@ if (typeof swup !== 'undefined') {
     swup.hooks.on('page:view', initAutoPlay);
 }
 </script>
+
+        
+        <script>
+        (function() {
+            
+            window.giscusState = {
+                loaded: false,
+                ready: false,
+                container: null
+            };
+
+            
+            function preloadGiscus() {
+                if (window.giscusState.loaded) return;
+                window.giscusState.loaded = true;
+
+                
+                const preloadContainer = document.createElement('div');
+                preloadContainer.id = 'giscus-preload';
+                preloadContainer.style.display = 'none';
+                document.body.appendChild(preloadContainer);
+
+                const script = document.createElement('script');
+                script.src = 'https://giscus.app/client.js';
+                script.setAttribute('data-repo', 'muioo/muioo.github.io');
+                script.setAttribute('data-repo-id', 'R_kgDOQ_pqAA');
+                script.setAttribute('data-category', 'Announcements');
+                script.setAttribute('data-category-id', 'DIC_kwDOQ_pqAM4C2CEc');
+                script.setAttribute('data-mapping', 'pathname');
+                script.setAttribute('data-strict', '0');
+                script.setAttribute('data-reactions-enabled', '1');
+                script.setAttribute('data-emit-metadata', '0');
+                script.setAttribute('data-input-position', 'bottom');
+                script.setAttribute('data-theme', 'preferred_color_scheme');
+                script.setAttribute('data-lang', 'zh-CN');
+                script.crossOrigin = 'anonymous';
+                script.async = true;
+
+                script.onload = function() {
+                    console.log('Giscus preloaded');
+                    window.giscusState.ready = true;
+                    
+                    if (document.body.classList.contains('article-page')) {
+                        showGiscus();
+                    }
+                };
+
+                preloadContainer.appendChild(script);
+            }
+
+            
+            function showGiscus() {
+                if (!window.giscusState.ready) return;
+
+                const targetContainer = document.getElementById('giscus-container');
+                const preloadContainer = document.getElementById('giscus-preload');
+                const commentsSection = document.querySelector('[data-comments-section]');
+
+                if (targetContainer && preloadContainer && commentsSection) {
+                    
+                    const iframe = preloadContainer.querySelector('iframe[src*="giscus.app"]');
+                    if (iframe) {
+                        targetContainer.appendChild(iframe);
+                        
+                        iframe.contentWindow.postMessage({
+                            giscus: {
+                                setConfig: {
+                                    term: window.location.pathname
+                                }
+                            }
+                        }, 'https://giscus.app');
+                        
+                        const loading = document.getElementById('comments-loading');
+                        if (loading) loading.style.display = 'none';
+                    }
+                }
+            }
+
+            
+            preloadGiscus();
+
+            
+            document.addEventListener('swup:page:view', function() {
+                if (document.body.classList.contains('article-page')) {
+                    if (window.giscusState.ready) {
+                        showGiscus();
+                    } else {
+                        
+                        const checkReady = setInterval(function() {
+                            if (window.giscusState.ready) {
+                                clearInterval(checkReady);
+                                showGiscus();
+                            }
+                        }, 100);
+                        setTimeout(() => clearInterval(checkReady), 5000);
+                    }
+                }
+            });
+        })();
+        </script>
 
         
         <script 

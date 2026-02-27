@@ -106,6 +106,12 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     right: 0 !important;
 }
 </style>
+
+        
+        <link rel="dns-prefetch" href="https://giscus.app">
+        <link rel="preconnect" href="https://giscus.app" crossorigin>
+        <link rel="preload" href="https://giscus.app/client.js" as="script">
+
         
         <script src="https://unpkg.com/swup@4"></script>
         <style>
@@ -349,7 +355,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
                     <a href="/archives/#2026">
                         
                             <span class="year">2026</span>
-                            <span class="count">11</span>
+                            <span class="count">12</span>
                         
                     </a> 
                 </div>
@@ -376,7 +382,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
     <div class="tagCloud-tags">
         
-            <a href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" class="font_size_8">
+            <a href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" class="font_size_9">
                 开发技术
             </a>
         
@@ -413,16 +419,16 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
                 Claude Code 规则设计
             </a>
         
+            <a href="/tags/vue/">
+                Vue
+            </a>
+        
             <a href="/tags/front/">
                 Front
             </a>
         
             <a href="/tags/python/">
                 Python
-            </a>
-        
-            <a href="/tags/vue/">
-                Vue
             </a>
         
             <a href="/tags/claude-code%E5%91%BD%E4%BB%A4/">
@@ -467,7 +473,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
         <div class="section-card">
             <div class="section-details">
-                <h3 class="section-count">18 个页面</h3>
+                <h3 class="section-count">19 个页面</h3>
                 <h1 class="section-term">Tags</h1>
                 
             </div>
@@ -546,8 +552,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
     <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
             本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
-            博客: <strong>11</strong> 篇 |
-            字数: <strong>10295</strong> 字
+            博客: <strong>12</strong> 篇 |
+            字数: <strong>11705</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
@@ -644,6 +650,106 @@ if (typeof swup !== 'undefined') {
     swup.hooks.on('page:view', initAutoPlay);
 }
 </script>
+
+        
+        <script>
+        (function() {
+            
+            window.giscusState = {
+                loaded: false,
+                ready: false,
+                container: null
+            };
+
+            
+            function preloadGiscus() {
+                if (window.giscusState.loaded) return;
+                window.giscusState.loaded = true;
+
+                
+                const preloadContainer = document.createElement('div');
+                preloadContainer.id = 'giscus-preload';
+                preloadContainer.style.display = 'none';
+                document.body.appendChild(preloadContainer);
+
+                const script = document.createElement('script');
+                script.src = 'https://giscus.app/client.js';
+                script.setAttribute('data-repo', 'muioo/muioo.github.io');
+                script.setAttribute('data-repo-id', 'R_kgDOQ_pqAA');
+                script.setAttribute('data-category', 'Announcements');
+                script.setAttribute('data-category-id', 'DIC_kwDOQ_pqAM4C2CEc');
+                script.setAttribute('data-mapping', 'pathname');
+                script.setAttribute('data-strict', '0');
+                script.setAttribute('data-reactions-enabled', '1');
+                script.setAttribute('data-emit-metadata', '0');
+                script.setAttribute('data-input-position', 'bottom');
+                script.setAttribute('data-theme', 'preferred_color_scheme');
+                script.setAttribute('data-lang', 'zh-CN');
+                script.crossOrigin = 'anonymous';
+                script.async = true;
+
+                script.onload = function() {
+                    console.log('Giscus preloaded');
+                    window.giscusState.ready = true;
+                    
+                    if (document.body.classList.contains('article-page')) {
+                        showGiscus();
+                    }
+                };
+
+                preloadContainer.appendChild(script);
+            }
+
+            
+            function showGiscus() {
+                if (!window.giscusState.ready) return;
+
+                const targetContainer = document.getElementById('giscus-container');
+                const preloadContainer = document.getElementById('giscus-preload');
+                const commentsSection = document.querySelector('[data-comments-section]');
+
+                if (targetContainer && preloadContainer && commentsSection) {
+                    
+                    const iframe = preloadContainer.querySelector('iframe[src*="giscus.app"]');
+                    if (iframe) {
+                        targetContainer.appendChild(iframe);
+                        
+                        iframe.contentWindow.postMessage({
+                            giscus: {
+                                setConfig: {
+                                    term: window.location.pathname
+                                }
+                            }
+                        }, 'https://giscus.app');
+                        
+                        const loading = document.getElementById('comments-loading');
+                        if (loading) loading.style.display = 'none';
+                    }
+                }
+            }
+
+            
+            preloadGiscus();
+
+            
+            document.addEventListener('swup:page:view', function() {
+                if (document.body.classList.contains('article-page')) {
+                    if (window.giscusState.ready) {
+                        showGiscus();
+                    } else {
+                        
+                        const checkReady = setInterval(function() {
+                            if (window.giscusState.ready) {
+                                clearInterval(checkReady);
+                                showGiscus();
+                            }
+                        }, 100);
+                        setTimeout(() => clearInterval(checkReady), 5000);
+                    }
+                }
+            });
+        })();
+        </script>
 
         
         <script 

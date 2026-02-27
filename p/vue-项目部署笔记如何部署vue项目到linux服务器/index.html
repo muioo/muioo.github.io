@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="项目部署笔记">
+<title>【VUE 项目部署笔记】如何部署vue项目到linux服务器</title>
+
+<link rel='canonical' href='http://localhost:1313/p/vue-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE%E5%88%B0linux%E6%9C%8D%E5%8A%A1%E5%99%A8/'>
+
+<link rel="stylesheet" href="/scss/style.min.34a655c144c140ff30d14c20a19524513b1fe83a47911915da398dcf7375b0ff.css"><meta property='og:title' content="【VUE 项目部署笔记】如何部署vue项目到linux服务器">
+<meta property='og:description' content="项目部署笔记">
+<meta property='og:url' content='http://localhost:1313/p/vue-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE%E5%88%B0linux%E6%9C%8D%E5%8A%A1%E5%99%A8/'>
+<meta property='og:site_name' content='muioo blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='vue' /><meta property='article:tag' content='项目部署' /><meta property='article:published_time' content='2026-01-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-01-26T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="【VUE 项目部署笔记】如何部署vue项目到linux服务器">
+<meta name="twitter:description" content="项目部署笔记">
+    <link rel="shortcut icon" href="/favicon.ico" />
+<script>
+    
+
+
+
+
+const live2d_path = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/';
+
+
+
+
+function loadExternalResource(url, type) {
+  return new Promise((resolve, reject) => {
+    let tag;
+
+    if (type === 'css') {
+      tag = document.createElement('link');
+      tag.rel = 'stylesheet';
+      tag.href = url;
+    }
+    else if (type === 'js') {
+      tag = document.createElement('script');
+      tag.type = 'module';
+      tag.src = url;
+    }
+    if (tag) {
+      tag.onload = () => resolve(url);
+      tag.onerror = () => reject(url);
+      document.head.appendChild(tag);
+    }
+  });
+}
+
+(async () => {
+  
+  
+  
+
+  
+  
+  const OriginalImage = window.Image;
+  window.Image = function(...args) {
+    const img = new OriginalImage(...args);
+    img.crossOrigin = "anonymous";
+    return img;
+  };
+  window.Image.prototype = OriginalImage.prototype;
+  
+  
+  await Promise.all([
+    loadExternalResource(live2d_path + 'waifu.css', 'css'),
+    loadExternalResource(live2d_path + 'waifu-tips.js', 'js')
+  ]);
+  
+  
+  initWidget({
+    waifuPath: live2d_path + 'waifu-tips.json',
+    
+    cubism2Path: live2d_path + 'live2d.min.js',
+    cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
+    tools: ['hitokoto', 'asteroids', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
+    logLevel: 'warn',
+    drag: false,
+  });
+})();
+
+console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #ff5450; font-size: large; color: #eee;', '');
+
+
+
+
+
+</script>
+
+
+<style>
+#waifu {
+    left: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+
+#waifu-tips {
+    left: auto !important;
+    right: 0 !important;
+}
+
+#waifu-tool {
+    left: auto !important;
+    right: 0 !important;
+}
+</style>
+
+        
+        <link rel="dns-prefetch" href="https://giscus.app">
+        <link rel="preconnect" href="https://giscus.app" crossorigin>
+        <link rel="preload" href="https://giscus.app/client.js" as="script">
+
+        
+        <script src="https://unpkg.com/swup@4"></script>
+        <style>
+             
+            .transition-fade {
+                transition: opacity 0.3s;
+                opacity: 1;
+            }
+
+            html.is-animating .transition-fade {
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+
+        <div id="swup" class="transition-fade">
+            <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_6827ff93fc5ecbf3.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">muioo blog</a></h1>
+            <h2 class="site-description">欢迎来到我的网站</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/muioo/muioo.github.io'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页 | Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E-about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于 | About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档 | archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索 | Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>相关链接 | Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#项目部署">项目部署</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#前端部署">前端部署</a></li>
+            <li><a href="#后端部署">后端部署</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+                <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" >
+                开发技术
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/vue-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE%E5%88%B0linux%E6%9C%8D%E5%8A%A1%E5%99%A8/">【VUE 项目部署笔记】如何部署vue项目到linux服务器</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            项目部署笔记
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2026-01-26T00:00:00Z'>2026-01-26</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="项目部署">项目部署
+</h2><h4 id="前端部署">前端部署
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// https://vitejs.dev/config/
+</span></span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">defineConfig</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span><span class="nx">vue</span><span class="p">()],</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">resolve</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">alias</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="s1">&#39;@&#39;</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;./src&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">server</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">port</span>: <span class="kt">8891</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">proxy</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 转发所有以 /api 开头的接口请求
+</span></span></span><span class="line"><span class="cl">      <span class="s1">&#39;/api&#39;</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">target</span><span class="o">:</span> <span class="s1">&#39;http://localhost:8000&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">changeOrigin</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="s1">&#39;/baike_img&#39;</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">target</span><span class="o">:</span> <span class="s1">&#39;http://localhost:8000&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">changeOrigin</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="后端部署">后端部署
+</h4>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/vue/">Vue</a>
+        
+            <a href="/tags/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/">项目部署</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【Claude Code 规则】Claude Code 前端开发规则1</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【Claude Code 规则】Claude Code 前端开发规则2</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【爬虫基本方法】爬虫request基本框架 &#43; scrapy框架 &#43; crawl4ai</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%99/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【Claude Code 规则】Claude Code 全局规则</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【stm32单片机】项目搭建和FreeRTOS</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+    <section class="comments-section" aria-label="评论" data-comments-section>
+        <div class="comments-container">
+            <h2 class="comments-title">评论</h2>
+            
+<div class="comments-loading" id="comments-loading">
+    <div class="loading-spinner"></div>
+    <p class="loading-text">评论加载中...</p>
+</div>
+
+<style>
+    .comments-loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+        color: var(--text-secondary, #666);
+        min-height: 100px;
+    }
+
+    .loading-spinner {
+        width: 32px;
+        height: 32px;
+        border: 3px solid var(--border-color, #e0e0e0);
+        border-top-color: var(--accent-color, #3b82f6);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+        margin-top: 1rem;
+        font-size: 0.875rem;
+        opacity: 0.7;
+    }
+
+     
+    .giscus-frame {
+        min-height: 200px;
+    }
+</style>
+
+<script>
+    
+    function hideCommentsLoading() {
+        const loading = document.getElementById('comments-loading');
+        if (loading) {
+            loading.style.display = 'none';
+        }
+    }
+
+    
+    const checkGiscusLoaded = setInterval(function() {
+        const iframe = document.querySelector('iframe[src*="giscus.app"]');
+        if (iframe) {
+            clearInterval(checkGiscusLoaded);
+            
+            iframe.addEventListener('load', hideCommentsLoading);
+            setTimeout(hideCommentsLoading, 2000);
+        }
+    }, 100);
+
+    
+    setTimeout(function() {
+        clearInterval(checkGiscusLoaded);
+        hideCommentsLoading();
+    }, 10000);
+</script>
+
+            <div id="giscus-container"></div>
+        </div>
+    </section>
+
+    <style>
+        .comments-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color, #e0e0e0);
+        }
+
+        .comments-container {
+            max-width: 100%;
+        }
+
+        .comments-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary, #1a1a1a);
+        }
+
+        #giscus-container {
+            margin-top: 1rem;
+            min-height: 200px;
+        }
+
+        body.dark .comments-title {
+            color: var(--text-primary, #e0e0e0);
+        }
+
+        body.dark .comments-loading {
+            color: var(--text-secondary, #999);
+        }
+
+        body.dark .loading-spinner {
+            border-color: var(--border-color, #333);
+            border-top-color: var(--accent-color, #60a5fa);
+        }
+    </style>
+
+    <script>
+        
+        if (window.giscusState && window.giscusState.ready) {
+            
+            setTimeout(function() {
+                const targetContainer = document.getElementById('giscus-container');
+                const preloadContainer = document.getElementById('giscus-preload');
+                if (targetContainer && preloadContainer) {
+                    const iframe = preloadContainer.querySelector('iframe[src*="giscus.app"]');
+                    if (iframe) {
+                        targetContainer.appendChild(iframe);
+                        iframe.contentWindow.postMessage({
+                            giscus: {
+                                setConfig: {
+                                    term: window.location.pathname
+                                }
+                            }
+                        }, 'https://giscus.app');
+                        const loading = document.getElementById('comments-loading');
+                        if (loading) loading.style.display = 'none';
+                    }
+                }
+            }, 100);
+        }
+    </script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        
+        2026 muioo
+    </section>
+
+    <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
+            本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
+            博客: <strong>12</strong> 篇 |
+            字数: <strong>11705</strong> 字
+        </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+    
+
+                </main>
+            </div>
+        </div>
+
+        
+        
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" defer></script>
+
+
+<style>
+.aplayer.aplayer-fixed {
+    left: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+</style>
+
+<meting-js
+    server="netease"
+    type="playlist"
+    id="17704549797"
+    fixed="true"
+    listFolded="true"
+    volume="0.5"
+    preload="auto"
+>
+</meting-js>
+
+<script>
+
+function initAutoPlay() {
+    const observer = new MutationObserver(function(mutations, obs) {
+        const aplayerElement = document.querySelector('.aplayer');
+        
+        if (aplayerElement && window.APlayer && aplayerElement.aplayer) {
+            obs.disconnect();
+            const ap = aplayerElement.aplayer;
+            console.log('检测到 APlayer 已初始化');
+
+            
+            const playMusic = () => {
+                const playPromise = ap.play();
+                if (playPromise) {
+                    playPromise.then(() => {
+                        console.log('音乐自动播放成功');
+                    }).catch(error => {
+                        console.log('浏览器阻止了自动播放，等待用户交互');
+                        
+                        const playOnInteraction = function() {
+                            ap.play().then(() => {
+                                console.log('用户交互后开始播放');
+                            }).catch(e => {
+                                console.log('播放失败:', e);
+                            });
+                            
+                            document.removeEventListener('click', playOnInteraction);
+                            document.removeEventListener('touchstart', playOnInteraction);
+                            document.removeEventListener('keydown', playOnInteraction);
+                        };
+                        document.addEventListener('click', playOnInteraction);
+                        document.addEventListener('touchstart', playOnInteraction);
+                        document.addEventListener('keydown', playOnInteraction);
+                    });
+                }
+            };
+
+            
+            ap.on('ready', playMusic);
+            
+            setTimeout(playMusic, 1000);
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', initAutoPlay);
+
+
+if (typeof swup !== 'undefined') {
+    swup.hooks.on('page:view', initAutoPlay);
+}
+</script>
+
+        
+        <script>
+        (function() {
+            
+            window.giscusState = {
+                loaded: false,
+                ready: false,
+                container: null
+            };
+
+            
+            function preloadGiscus() {
+                if (window.giscusState.loaded) return;
+                window.giscusState.loaded = true;
+
+                
+                const preloadContainer = document.createElement('div');
+                preloadContainer.id = 'giscus-preload';
+                preloadContainer.style.display = 'none';
+                document.body.appendChild(preloadContainer);
+
+                const script = document.createElement('script');
+                script.src = 'https://giscus.app/client.js';
+                script.setAttribute('data-repo', 'muioo/muioo.github.io');
+                script.setAttribute('data-repo-id', 'R_kgDOQ_pqAA');
+                script.setAttribute('data-category', 'Announcements');
+                script.setAttribute('data-category-id', 'DIC_kwDOQ_pqAM4C2CEc');
+                script.setAttribute('data-mapping', 'pathname');
+                script.setAttribute('data-strict', '0');
+                script.setAttribute('data-reactions-enabled', '1');
+                script.setAttribute('data-emit-metadata', '0');
+                script.setAttribute('data-input-position', 'bottom');
+                script.setAttribute('data-theme', 'preferred_color_scheme');
+                script.setAttribute('data-lang', 'zh-CN');
+                script.crossOrigin = 'anonymous';
+                script.async = true;
+
+                script.onload = function() {
+                    console.log('Giscus preloaded');
+                    window.giscusState.ready = true;
+                    
+                    if (document.body.classList.contains('article-page')) {
+                        showGiscus();
+                    }
+                };
+
+                preloadContainer.appendChild(script);
+            }
+
+            
+            function showGiscus() {
+                if (!window.giscusState.ready) return;
+
+                const targetContainer = document.getElementById('giscus-container');
+                const preloadContainer = document.getElementById('giscus-preload');
+                const commentsSection = document.querySelector('[data-comments-section]');
+
+                if (targetContainer && preloadContainer && commentsSection) {
+                    
+                    const iframe = preloadContainer.querySelector('iframe[src*="giscus.app"]');
+                    if (iframe) {
+                        targetContainer.appendChild(iframe);
+                        
+                        iframe.contentWindow.postMessage({
+                            giscus: {
+                                setConfig: {
+                                    term: window.location.pathname
+                                }
+                            }
+                        }, 'https://giscus.app');
+                        
+                        const loading = document.getElementById('comments-loading');
+                        if (loading) loading.style.display = 'none';
+                    }
+                }
+            }
+
+            
+            preloadGiscus();
+
+            
+            document.addEventListener('swup:page:view', function() {
+                if (document.body.classList.contains('article-page')) {
+                    if (window.giscusState.ready) {
+                        showGiscus();
+                    } else {
+                        
+                        const checkReady = setInterval(function() {
+                            if (window.giscusState.ready) {
+                                clearInterval(checkReady);
+                                showGiscus();
+                            }
+                        }, 100);
+                        setTimeout(() => clearInterval(checkReady), 5000);
+                    }
+                }
+            });
+        })();
+        </script>
+
+        
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.64b08e1ea8843989c3c2601c2bd130edc19d9e5863b4dba31894b5259ddbf682.js" defer></script><script type="text/javascript" src="/ts/custom.388b4c8555b925683490f851d96d246aca608f5b5a471b03653091790c45e904.js" defer></script>
+        <script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+        
+        <script>
+            const swup = new Swup();
+        </script>
+    </body>
+    <script>
+
+    
+    function updateRunningDays() {
+        const BLOG_LAUNCH_DATE = '2026-01-22';
+        const startDate = new Date(BLOG_LAUNCH_DATE + 'T00:00:00Z');
+        const today = new Date();
+        const utcToday = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
+        const timeDiff = utcToday - startDate;
+        const runningDays = Math.max(0, Math.floor(timeDiff / (1000 * 60 * 60 * 24)));
+
+        const daysElement = document.getElementById('running-days');
+        if (daysElement) {
+            daysElement.textContent = runningDays;
+        }
+    }
+
+    
+    updateRunningDays();
+
+    
+    document.addEventListener('swup:page:view', () => {
+        updateRunningDays();
+    });
+</script>
+</html>

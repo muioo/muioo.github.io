@@ -38,54 +38,42 @@
 &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Ninja构建工具&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/ninja-build/ninja/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;安装链接&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;配置环境变量&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;1、&lt;a class=&#34;link&#34; href=&#34;https://github.com/ninja-build/ninja/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;安装链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2、配置环境变量&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;ide&#34;&gt;IDE
 &lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;VSCODE&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;安装插件&lt;strong&gt;STM32CubeIDE for Visual Studio Code&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;安装插件&lt;strong&gt;STM32 VS Code Extension&lt;/strong&gt;，这个插件会自动下载&lt;strong&gt;ARM-GCC 编译器&lt;/strong&gt;和&lt;strong&gt;ninja构建工具&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;之后打开项目文件夹即可打开cubemx创建的项目&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;1、安装插件&lt;strong&gt;STM32CubeIDE for Visual Studio Code&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2、安装插件&lt;strong&gt;STM32 VS Code Extension&lt;/strong&gt;，这个插件会自动下载&lt;strong&gt;ARM-GCC 编译器&lt;/strong&gt;和&lt;strong&gt;ninja构建工具&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3、之后打开项目文件夹即可打开cubemx创建的项目&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;STM32cubemx（用于创建项目）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.st.com/en/development-tools/stm32cubemx.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;p&gt;1、&lt;a class=&#34;link&#34; href=&#34;https://www.st.com/en/development-tools/stm32cubemx.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;下载地址&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_47902937/article/details/154950893?ops_request_misc=elastic_search_misc&amp;amp;request_id=1e90bb222ec0ebf0b15bd457c34f36ba&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-154950893-null-null.142%5ev102%5epc_search_result_base9&amp;amp;utm_term=stm32cubemx%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE&amp;amp;spm=1018.2226.3001.4187&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;p&gt;2、&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_47902937/article/details/154950893?ops_request_misc=elastic_search_misc&amp;amp;request_id=1e90bb222ec0ebf0b15bd457c34f36ba&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-154950893-null-null.142%5ev102%5epc_search_result_base9&amp;amp;utm_term=stm32cubemx%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE&amp;amp;spm=1018.2226.3001.4187&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;创建教程&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;烧录工具&#34;&gt;烧录工具
 &lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;STM32cubeprogrammer&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;&#34; &gt;下载地址&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;1、&lt;a class=&#34;link&#34; href=&#34;&#34; &gt;下载地址&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;连接成功演示图&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55.png&#34;&gt;&lt;figcaption&gt;
+&lt;p&gt;​	&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;连接成功演示&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
-
+&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http://blog.csdn.net/chenhuanqiangnihao/article/details/113663065?ops_request_misc=elastic_search_misc&amp;amp;request_id=26e57d522f72d9a0151d8dfefcee8244&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-113663065-null-null.142%5ev102%5epc_search_result_base9&amp;amp;utm_term=boot0%E5%92%8Cboot1%E9%85%8D%E7%BD%AE&amp;amp;spm=1018.2226.3001.4187&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;注意事项&lt;/a&gt;：烧录时，启动模式得设置为boot0=1，boot1=0，boot0接高电平boot1接GND&lt;/li&gt;
@@ -95,14 +83,17 @@
 &lt;li&gt;SSCOM&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;使用cubemx初始化freertos项目&#34;&gt;使用CUBEMX初始化FreeRTOS项目
-&lt;/h4&gt;&lt;h5 id=&#34;freertos&#34;&gt;FreeRTOS
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/freertos-tutorial.html&#34;&gt;FreeRTOS移植教程&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;freertos&#34;&gt;FreeRTOS
 &lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;可以理解为并发（多核同时执行多个任务） 不可以理解为并行（需要单核切换来执行多个任务）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5 id=&#34;代码结构&#34;&gt;代码结构
 &lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;主要开发在core/Src和core/Inc目录中，Src目录中用来写具体功能，Inc定义函数和引脚&lt;/p&gt;
+&lt;li&gt;主要开发在core/Src和core/Inc目录中，Src目录中用来写具体功能，Inc定义函数和引脚&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -199,37 +190,31 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    └── ArchitectureDesign_Simple.md
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;修改CUBEMX中定义的引脚会自动修改宏定义和引脚&lt;/p&gt;
-&lt;/li&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;修改CUBEMX中定义的引脚会自动修改宏定义和引脚&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;遇到的问题&#34;&gt;遇到的问题
 &lt;/h4&gt;&lt;h5 id=&#34;1stlink烧录问题&#34;&gt;1、stlink烧录问题
 &lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;使用usb口给开发板供电，解决如下问题&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03.png&#34;&gt;&lt;figcaption&gt;
+&lt;p&gt;​	&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;ST-LINK烧录问题&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
-
+&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;ST-LINK烧录&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;驱动更新：需要重启开发板或断开数据线才能识别&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;驱动更新：需要重启开发板或断开数据线才能识别&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;烧录时要按下reset键 点击连接后松开reset，否则会遇到如下问题&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40.png&#34;&gt;&lt;figcaption&gt;
-      &lt;h4&gt;烧录连接问题&lt;/h4&gt;
-    &lt;/figcaption&gt;
+&lt;p&gt;​	&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40.png&#34;&gt;
 &lt;/figure&gt;
-
+&lt;/p&gt;
 </description>
         </item>
         
