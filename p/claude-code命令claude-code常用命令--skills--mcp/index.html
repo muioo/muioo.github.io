@@ -475,9 +475,54 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
-<li></li>
+<li>claude code项目开发（项目结构）</li>
 </ul>
-<h2 id="mcp配置">MCP配置
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">your-project/
+</span></span><span class="line"><span class="cl">├── .claude/
+</span></span><span class="line"><span class="cl">│   ├── CLAUDE.md           <span class="c1"># Main project instructions</span>
+</span></span><span class="line"><span class="cl">│   └── rules/
+</span></span><span class="line"><span class="cl">│       ├── code-style.md   <span class="c1"># Code style guidelines</span>
+</span></span><span class="line"><span class="cl">│       ├── testing.md      <span class="c1"># Testing conventions</span>
+</span></span><span class="line"><span class="cl">│       └── security.md     <span class="c1"># Security requirements</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>也可以设置为子目录的形式</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">.claude/rules/
+</span></span><span class="line"><span class="cl">├── frontend/
+</span></span><span class="line"><span class="cl">│   ├── react.md
+</span></span><span class="line"><span class="cl">│   └── styles.md
+</span></span><span class="line"><span class="cl">├── backend/
+</span></span><span class="line"><span class="cl">│   ├── api.md
+</span></span><span class="line"><span class="cl">│   └── database.md
+</span></span><span class="line"><span class="cl">└── general.md
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="mcp配置">MCP配置
 </h2><h3 id="mcp1-figma-mcp">mcp1: <a class="link" href="https://figma.com/files/team"  target="_blank" rel="noopener"
     >figma mcp</a>
 </h3><div class="highlight"><div class="chroma">
@@ -824,7 +869,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
             本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
             博客: <strong>12</strong> 篇 |
-            字数: <strong>11705</strong> 字
+            字数: <strong>11903</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>

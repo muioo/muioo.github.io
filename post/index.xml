@@ -1471,7 +1471,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;p&gt;3、在_default目录中的baseof.html文件中加载上述文件（如果评论区加载不出来或者有问题可能是因为baseof.html文件中渲染的顺序有问题）&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>【Claude Code 规则】Claude Code 前端开发规则1</title>
