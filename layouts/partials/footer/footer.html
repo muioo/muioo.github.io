@@ -1,0 +1,33 @@
+{{- $ThemeVersion := "3.33.0" -}}
+<footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
+            {{ .Site.Params.footer.since }} -
+        {{ end }}
+        {{ now.Format "2006" }} {{ default .Site.Title .Site.Copyright }}
+    </section>
+
+    <section class="powerby">
+        {{- /* 计算统计数据 */ -}}
+        {{- $postCount := len (where .Site.RegularPages "Type" "post") -}}
+        {{- $totalWords := 0 -}}
+        {{- range where .Site.RegularPages "Type" "post" -}}
+            {{- $totalWords = add $totalWords .WordCount -}}
+        {{- end -}}
+
+        {{- /* 动态生成统计文本 */ -}}
+        <div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
+            本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
+            博客: <strong>{{ $postCount }}</strong> 篇 |
+            字数: <strong>{{ $totalWords }}</strong> 字
+        </div>
+
+        {{- $Generator := `<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>` -}}
+        {{- $Theme := printf `<b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="%s">Stack</a></b>` $ThemeVersion -}}
+        {{- $DesignedBy := `<a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>` -}}
+
+        {{ T "footer.builtWith" (dict "Generator" $Generator) | safeHTML }} <br />
+        {{ T "footer.designedBy" (dict "Theme" $Theme "DesignedBy" $DesignedBy) | safeHTML }}
+    </section>
+</footer>

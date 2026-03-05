@@ -1,0 +1,51 @@
+#dark-mode-toggle {
+    margin-top: auto;
+    color: var(--body-text-color);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: var(--menu-icon-separation);
+    margin-bottom: 30px;
+}
+body {
+    background-image: url("/images/background2.jpg") !important; /* 对应static/images/bg.jpg */
+    background-size: cover !important; /* 背景图覆盖整个页面 */
+    background-position: center !important; /* 背景图居中显示 */
+    background-attachment: fixed !important; /* 背景图固定（滚动时不跟随） */
+    background-repeat: no-repeat !important; /* 禁止背景图重复 */
+    /* 可选：添加半透明遮罩，避免背景干扰文字 */
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    background-blend-mode: overlay !important;
+}
+
+/* 修复文章背景首次加载透明问题 */
+.article-page .main-article {
+    background: #fff !important;
+}
+
+/* Swup 过渡期间保持背景色 */
+html.is-animating .main-article {
+    background: #fff !important;
+}
+
+/* 为浅色和深色模式分别设置 */
+:root .article-page .main-article {
+    background: #fff !important;
+}
+
+[data-scheme="dark"] .article-page .main-article {
+    background: #424242 !important;
+}
+
+/* 修复图片首次加载超出内容框的问题 */
+.article-content figure {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.article-content figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+  

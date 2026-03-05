@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="{{ default `ltr` .Language.LanguageDirection }}">
+    <head>
+        {{- partial "head/head.html" . -}}
+        {{- block "head" . -}}{{ end }}
+
+        {{/* ==================================================================== */}}
+        {{/* ==================== 评论功能区域 (START) ========================= */}}
+        {{/* 要禁用评论功能，请注释掉下方标记的代码块 ============================ */}}
+        {{/* ==================================================================== */}}
+
+        <!-- GISCUS_HEAD_START: DNS 预解析优化 -->
+        <link rel="dns-prefetch" href="https://giscus.app">
+        <link rel="preconnect" href="https://giscus.app" crossorigin>
+        <!-- GISCUS_HEAD_END -->
+
+        {{/* ==================================================================== */}}
+        {{/* ==================== 评论功能区域 (END) =========================== */}}
+        {{/* ==================================================================== */}}
+
+        <!-- Swup for seamless page transitions -->
+        <script src="https://unpkg.com/swup@4"></script>
+        <style>
+            /* Swup transition styles */
+            .transition-fade {
+                transition: opacity 0.3s;
+                opacity: 1;
+            }
+
+            html.is-animating .transition-fade {
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body class="{{ block `body-class` . }}{{ end }}">
+        {{- partial "head/colorScheme" . -}}
+
+        {{/* The container is wider when there's any activated widget */}}
+        {{- $hasWidget := false -}}
+        {{- range .Site.Params.widgets -}}
+            {{- if gt (len .) 0 -}}
+                {{- $hasWidget = true -}}
+            {{- end -}}
+        {{- end -}}
+
+        <!-- Swup transition container -->
+        <div id="swup" class="transition-fade">
+            <div class="container main-container flex on-phone--column {{ if $hasWidget }}extended{{ else }}compact{{ end }}">
+                {{- block "left-sidebar" . -}}
+                    {{ partial "sidebar/left.html" . }}
+                {{- end -}}
+                {{- block "right-sidebar" . -}}{{ end }}
+                <main class="main full-width">
+                    {{- block "main" . }}{{- end }}
+                </main>
+            </div>
+        </div>
+
+        <!-- Audio player outside Swup container to prevent reload -->
+        {{ partial "footer/aplayer.html" . }}
+
+        {{/* ==================================================================== */}}
+        {{/* ==================== 评论功能区域 (START) ========================= */}}
+        {{/* 要禁用评论功能，请注释掉下方标记的代码块 ============================ */}}
+        {{/* ==================================================================== */}}
+
+        <!-- GISCUS_STATE_START: 全局状态管理 -->
+        <script>
+        (function() {
+            // 全局 giscus 状态
+            window.giscusState = {
+                loaded: false,
+                ready: false
+            };
+
+            // 监听 giscus 加载完成事件
+            document.addEventListener('giscus:loaded', function() {
+                window.giscusState.ready = true;
+                console.log('[Giscus] 全局状态已更新为 ready');
+            });
+        })();
+        </script>
+        <!-- GISCUS_STATE_END -->
+
+        <!-- GISCUS_LOADER_START: 评论加载脚本 -->
+        <script>
+        (function() {
+            'use strict';
+
+            console.log('[GISCUS-MAIN] Script loaded');
+
+            var giscusConfig = {
+                src: 'https://giscus.app/client.js',
+                repo: 'muioo/muioo.github.io',
+                repoId: 'R_kgDOQ_pqAA',
+                category: 'Announcements',
+                categoryId: 'DIC_kwDOQ_pqAM4C2CEc',
+                mapping: 'pathname',
+                strict: '0',
+                reactionsEnabled: '1',
+                emitMetadata: '0',
+                inputPosition: 'bottom',
+                theme: 'preferred_color_scheme',
+                lang: 'zh-CN'
+            };
+
+            var loaded = false;
+            var observer = null;
+            var timeoutId = null;
+
+            function loadGiscus(container) {
+                if (loaded) return;
+                loaded = true;
+
+                console.log('[GISCUS-MAIN] Loading giscus...');
+
+                if (observer) {
+                    observer.disconnect();
+                    observer = null;
+                }
+                if (timeoutId) {
+                    clearTimeout(timeoutId);
+                    timeoutId = null;
+                }
+
+                var script = document.createElement('script');
+                script.src = giscusConfig.src;
+                script.async = true;
+                script.crossOrigin = 'anonymous';
+
+                for (var key in giscusConfig) {
+                    if (key !== 'src' && giscusConfig.hasOwnProperty(key)) {
+                        var dataKey = 'data-' + key.replace(/([A-Z])/g, '-$1').toLowerCase();
+                        script.setAttribute(dataKey, giscusConfig[key]);
+                    }
+                }
+
+                script.onload = function() {
+                    console.log('[GISCUS-MAIN] giscus loaded successfully');
+                    container.classList.remove('giscus-placeholder');
+                    initFeatures();
+                };
+
+                script.onerror = function() {
+                    console.error('[GISCUS-MAIN] Failed to load giscus');
+                    container.innerHTML = '<p style="color: #ef4444; text-align: center; padding: 2rem;">评论加载失败，请刷新页面重试</p>';
+                };
+
+                container.innerHTML = '';
+                container.appendChild(script);
+            }
+
+            function initFeatures() {
+                var observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.attributeName === 'class') {
+                            var iframe = document.querySelector('iframe[src*="giscus.app"]');
+                            if (iframe) {
+                                var isDark = document.body.classList.contains('dark');
+                                var theme = isDark ? 'dark' : 'light';
+                                try {
+                                    iframe.contentWindow.postMessage({
+                                        giscus: { setConfig: { theme: theme } }
+                                    }, 'https://giscus.app');
+                                } catch (e) {
+                                    // Ignore cross-origin errors on first load
+                                }
+                            }
+                        }
+                    });
+                });
+
+                observer.observe(document.body, {
+                    attributes: true,
+                    attributeFilter: ['class']
+                });
+
+                setTimeout(function() {
+                    var iframe = document.querySelector('iframe[src*="giscus.app"]');
+                    if (iframe) {
+                        var isDark = document.body.classList.contains('dark');
+                        var theme = isDark ? 'dark' : 'light';
+                        try {
+                            iframe.contentWindow.postMessage({
+                                giscus: { setConfig: { theme: theme } }
+                            }, 'https://giscus.app');
+                        } catch (e) {}
+                    }
+                }, 1000);
+            }
+
+            function isNearViewport(el, margin) {
+                var rect = el.getBoundingClientRect();
+                var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                return rect.top <= windowHeight + margin;
+            }
+
+            function initLazyLoad() {
+                console.log('[GISCUS-MAIN] initLazyLoad called');
+
+                var container = document.getElementById('giscus-container');
+                if (!container) {
+                    console.log('[GISCUS-MAIN] Container not found, will retry');
+                    setTimeout(initLazyLoad, 100);
+                    return;
+                }
+
+                console.log('[GISCUS-MAIN] Container found');
+
+                if (isNearViewport(container, 200)) {
+                    console.log('[GISCUS-MAIN] Container in viewport, loading immediately');
+                    loadGiscus(container);
+                    return;
+                }
+
+                if ('IntersectionObserver' in window) {
+                    console.log('[GISCUS-MAIN] Using IntersectionObserver');
+                    observer = new IntersectionObserver(function(entries) {
+                        entries.forEach(function(entry) {
+                            if (entry.isIntersecting) {
+                                console.log('[GISCUS-MAIN] IntersectionObserver triggered');
+                                observer.disconnect();
+                                observer = null;
+                                loadGiscus(container);
+                            }
+                        });
+                    }, {
+                        root: null,
+                        rootMargin: '200px',
+                        threshold: 0
+                    });
+
+                    observer.observe(container);
+
+                    timeoutId = setTimeout(function() {
+                        if (!loaded) {
+                            console.log('[GISCUS-MAIN] Timeout fallback triggered');
+                            if (observer) {
+                                observer.disconnect();
+                                observer = null;
+                            }
+                            loadGiscus(container);
+                        }
+                    }, 3000);
+                } else {
+                    console.log('[GISCUS-MAIN] IntersectionObserver not supported, loading immediately');
+                    loadGiscus(container);
+                }
+            }
+
+            function init() {
+                console.log('[GISCUS-MAIN] init() called');
+                initLazyLoad();
+            }
+
+            function resetForNewPage() {
+                console.log('[GISCUS-MAIN] Swup page change, resetting');
+                loaded = false;
+
+                var container = document.getElementById('giscus-container');
+                if (container) {
+                    container.classList.add('giscus-placeholder');
+                    container.innerHTML = '<div class="giscus-loading"><div class="loading-spinner"></div><p class="loading-text">评论区加载中...</p></div>';
+                }
+
+                setTimeout(function() {
+                    initLazyLoad();
+                }, 100);
+            }
+
+            if (document.readyState === 'loading') {
+                console.log('[GISCUS-MAIN] Waiting for DOMContentLoaded');
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                console.log('[GISCUS-MAIN] DOM ready, calling init');
+                init();
+            }
+
+            document.addEventListener('swup:page:view', resetForNewPage);
+
+            console.log('[GISCUS-MAIN] Script registered');
+        })();
+        </script>
+        <!-- GISCUS_LOADER_END -->
+
+        {{/* ==================================================================== */}}
+        {{/* ==================== 评论功能区域 (END) =========================== */}}
+        {{/* ==================================================================== */}}
+
+        <!-- Other footer scripts -->
+        {{ partialCached "footer/components/script.html" . }}
+        {{ partialCached "footer/components/custom-font.html" . }}
+
+        <!-- Swup initialization -->
+        <script>
+            const swup = new Swup();
+        </script>
+    </body>
+
+    {{/* ==================================================================== */}}
+    {{/* ==================== 运行天数统计 (独立功能) ========================= */}}
+    {{/* 此功能与评论无关，禁用评论不会影响此功能 =============================== */}}
+    {{/* ==================================================================== */}}
+
+    <script>
+    // ✅ 定义更新运行天数的函数
+    function updateRunningDays() {
+        const BLOG_LAUNCH_DATE = '2026-01-22';
+        const startDate = new Date(BLOG_LAUNCH_DATE + 'T00:00:00Z');
+        const today = new Date();
+        const utcToday = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
+        const timeDiff = utcToday - startDate;
+        const runningDays = Math.max(0, Math.floor(timeDiff / (1000 * 60 * 60 * 24)));
+
+        const daysElement = document.getElementById('running-days');
+        if (daysElement) {
+            daysElement.textContent = runningDays;
+        }
+    }
+
+    // 🔄 首次加载时立即执行
+    updateRunningDays();
+
+    // 🔄 监听 Swup 页面切换完成事件
+    document.addEventListener('swup:page:view', () => {
+        updateRunningDays();
+    });
+    </script>
+</html>

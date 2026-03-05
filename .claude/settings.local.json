@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(taskkill:*)",
+      "Bash(if exist resources rmdir /s /q resources)",
+      "Bash(if exist public rmdir /s /q public)"
+    ]
+  }
+}
