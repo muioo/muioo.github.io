@@ -580,7 +580,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
 - 下载giscus评论到仓库中[github](https://github.com/giscus/giscus?tab=readme-ov-file)
 
-2、在layouts\partials\comments目录下新建giscus.html、include.html、loader.html覆盖掉下载的主题中的文件
+2、在layouts\partials\comments目录下新建giscus.html、include.html覆盖掉下载的主题中的文件
 
 - giscus.html文件
 
@@ -703,81 +703,72 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
 ```
 
-- loader.html文件
-
-```html
-{{/* 评论加载状态提示 */}}
-<div class="comments-loading" id="comments-loading">
-    <div class="loading-spinner"></div>
-    <p class="loading-text">评论加载中...</p>
-</div>
-
-<style>
-    .comments-loading {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem 1rem;
-        color: var(--text-secondary, #666);
-        min-height: 100px;
-    }
-
-    .loading-spinner {
-        width: 32px;
-        height: 32px;
-        border: 3px solid var(--border-color, #e0e0e0);
-        border-top-color: var(--accent-color, #3b82f6);
-        border-radius: 50%;
-        animation: spin 0.8s linear infinite;
-    }
-
-    @keyframes spin {
-        to { transform: rotate(360deg); }
-    }
-
-    .loading-text {
-        margin-top: 1rem;
-        font-size: 0.875rem;
-        opacity: 0.7;
-    }
-
-    /* giscus 加载完成后隐藏 loading */
-    .giscus-frame {
-        min-height: 200px;
-    }
-</style>
-
-<script>
-    // giscus 加载完成后隐藏 loading
-    function hideCommentsLoading() {
-        const loading = document.getElementById('comments-loading');
-        if (loading) {
-            loading.style.display = 'none';
-        }
-    }
-
-    // 监听 giscus 加载
-    const checkGiscusLoaded = setInterval(function() {
-        const iframe = document.querySelector('iframe[src*="giscus.app"]');
-        if (iframe) {
-            clearInterval(checkGiscusLoaded);
-            // 等待 iframe 内容加载
-            iframe.addEventListener('load', hideCommentsLoading);
-            setTimeout(hideCommentsLoading, 2000);
-        }
-    }, 100);
-
-    // 超时保护
-    setTimeout(function() {
-        clearInterval(checkGiscusLoaded);
-        hideCommentsLoading();
-    }, 10000);
-</script>
-
-```
-
 3、在_default目录中的baseof.html文件中加载上述文件（如果评论区加载不出来或者有问题可能是因为baseof.html文件中渲染的顺序有问题）
+
+#### github actions自动构建
+
+- 创建.github/workflows/hugo.yml文件
+
+```yaml
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches:
+      - main  # 或 master，根据你的主分支名
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true  # 如果你的主题是子模块，需要开启
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
 
 
 
