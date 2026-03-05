@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/p/vue-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE%E5%88%B0linux%E6%9C%8D%E5%8A%A1%E5%99%A8/'>
 
-<link rel="stylesheet" href="/scss/style.min.34a655c144c140ff30d14c20a19524513b1fe83a47911915da398dcf7375b0ff.css"><meta property='og:title' content="【VUE 项目部署笔记】如何部署vue项目到linux服务器">
+<link rel="stylesheet" href="/scss/style.min.928be253a7b696be7457ba6a15549629235b12a03234c71c71076635a84759f5.css"><meta property='og:title' content="【VUE 项目部署笔记】如何部署vue项目到linux服务器">
 <meta property='og:description' content="项目部署笔记">
 <meta property='og:url' content='http://localhost:1313/p/vue-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE%E5%88%B0linux%E6%9C%8D%E5%8A%A1%E5%99%A8/'>
 <meta property='og:site_name' content='muioo blog'>
@@ -90,26 +90,51 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
 
 <style>
-#waifu {
-    left: auto !important;
-    right: 0 !important;
-    bottom: 0 !important;
-}
+     
+    .article-page .main-article,
+    main .main-article {
+        background: #fff !important;
+    }
 
-#waifu-tips {
-    left: auto !important;
-    right: 0 !important;
-}
-
-#waifu-tool {
-    left: auto !important;
-    right: 0 !important;
-}
+     
+    [data-scheme="dark"] .article-page .main-article,
+    [data-scheme="dark"] main .main-article {
+        background: #424242 !important;
+    }
 </style>
+
+
+<style>
+    #waifu {
+        left: auto !important;
+        right: 0 !important;
+        bottom: 0 !important;
+    }
+
+    #waifu-tips {
+        left: auto !important;
+        right: 0 !important;
+    }
+
+    #waifu-tool {
+        left: auto !important;
+        right: 0 !important;
+    }
+</style>
+
+        
+        
+        
+        
 
         
         <link rel="dns-prefetch" href="https://giscus.app">
         <link rel="preconnect" href="https://giscus.app" crossorigin>
+        
+
+        
+        
+        
 
         
         <script src="https://unpkg.com/swup@4"></script>
@@ -694,7 +719,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
             本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
             博客: <strong>12</strong> 篇 |
-            字数: <strong>11784</strong> 字
+            字数: <strong>13586</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
@@ -872,6 +897,11 @@ if (typeof swup !== 'undefined') {
 </script>
 
         
+        
+        
+        
+
+        
         <script>
         (function() {
             
@@ -887,24 +917,7 @@ if (typeof swup !== 'undefined') {
             });
         })();
         </script>
-
         
-        <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
-                
-                >
-            </script><script type="text/javascript" src="/ts/main.64b08e1ea8843989c3c2601c2bd130edc19d9e5863b4dba31894b5259ddbf682.js" defer></script><script type="text/javascript" src="/ts/custom.388b4c8555b925683490f851d96d246aca608f5b5a471b03653091790c45e904.js" defer></script>
-        <script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-
-        document.head.appendChild(customFont);
-    }());
-</script>
 
         
         <script>
@@ -1105,14 +1118,42 @@ if (typeof swup !== 'undefined') {
             console.log('[GISCUS-MAIN] Script registered');
         })();
         </script>
+        
+
+        
+        
+        
+
+        
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.64b08e1ea8843989c3c2601c2bd130edc19d9e5863b4dba31894b5259ddbf682.js" defer></script><script type="text/javascript" src="/ts/custom.388b4c8555b925683490f851d96d246aca608f5b5a471b03653091790c45e904.js" defer></script>
+        <script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
 
         
         <script>
             const swup = new Swup();
         </script>
     </body>
-    <script>
 
+    
+    
+    
+    
+
+    <script>
     
     function updateRunningDays() {
         const BLOG_LAUNCH_DATE = '2026-01-22';
@@ -1135,5 +1176,5 @@ if (typeof swup !== 'undefined') {
     document.addEventListener('swup:page:view', () => {
         updateRunningDays();
     });
-</script>
+    </script>
 </html>
