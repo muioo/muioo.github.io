@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/'>
 
-<link rel="stylesheet" href="/scss/style.min.928be253a7b696be7457ba6a15549629235b12a03234c71c71076635a84759f5.css"><meta property='og:title' content="【Claude Code命令】Claude Code（常用命令 + skills + mcp）">
+<link rel="stylesheet" href="/scss/style.min.0027e4cf93c2ae05f8e38d1b6e57e3c1f802f002e335fe7df0ebc497df333274.css"><meta property='og:title' content="【Claude Code命令】Claude Code（常用命令 + skills + mcp）">
 <meta property='og:description' content="Claude Code的使用方法">
 <meta property='og:url' content='http://localhost:1313/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/'>
 <meta property='og:site_name' content='muioo blog'>
@@ -359,7 +359,11 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#claude-code-操作笔记">Claude Code 操作笔记</a></li>
+    <li><a href="#claude-code-操作笔记">Claude Code 操作笔记</a>
+      <ol>
+        <li><a href="#全局规则">全局规则</a></li>
+      </ol>
+    </li>
     <li><a href="#mcp配置">MCP配置</a>
       <ol>
         <li><a href="#mcp1-figma-mcp">mcp1: figma mcp</a></li>
@@ -391,6 +395,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         </li>
       </ol>
     </li>
+    <li><a href="#plugin安装">Plugin安装</a></li>
   </ol>
 </nav>
         </div>
@@ -511,6 +516,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">your-project/
@@ -520,6 +527,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </span></span><span class="line"><span class="cl">│       ├── code-style.md   <span class="c1"># Code style guidelines</span>
 </span></span><span class="line"><span class="cl">│       ├── testing.md      <span class="c1"># Testing conventions</span>
 </span></span><span class="line"><span class="cl">│       └── security.md     <span class="c1"># Security requirements</span>
+</span></span><span class="line"><span class="cl">│ 	└──skills
+</span></span><span class="line"><span class="cl">│		└── ...
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -547,7 +556,17 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </span></span><span class="line"><span class="cl">└── general.md
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="mcp配置">MCP配置
+</div><ul>
+<li>.claude目录不要上传到github</li>
+</ul>
+<h3 id="全局规则">全局规则
+</h3><p>1、在写任何代码之前，请先描述你的方案并且等待批准，如果需求不明确，在编写任何代码之前请务必提出澄清问题
+2、如果一项任务需要修改超过3个文件，请先停下来，将其分解成更小的任务
+3、编写代码后，列出可能出现的问题，并且建议相应的测试用例来检测问题
+4、当发现bug时，首先编写一个能够重现该bug的测试，然后不断修复它，直到它通过为止
+5、每次纠正你后，就在当前项目的根目录的CLAUDE.md文件中添加一条新规则，如果没有CLAUDE.md则新建一个再添加规则，确保以后不会发生这种情况</p>
+<p>6、你需要不断更新项目里的CLAUDE.md文件 让它适配当前项目的开发</p>
+<h2 id="mcp配置">MCP配置
 </h2><h3 id="mcp1-figma-mcp">mcp1: <a class="link" href="https://figma.com/files/team"  target="_blank" rel="noopener"
     >figma mcp</a>
 </h3><div class="highlight"><div class="chroma">
@@ -720,7 +739,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </span></span><span class="line"><span class="cl">git clone https://github.com/affaan-m/everything-claude-code.git
 </span></span></code></pre></td></tr></table>
 </div>
-</div>
+</div><h2 id="plugin安装">Plugin安装
+</h2>
 </section>
 
 
@@ -894,7 +914,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
             本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
             博客: <strong>12</strong> 篇 |
-            字数: <strong>13586</strong> 字
+            字数: <strong>13910</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
@@ -1304,7 +1324,7 @@ if (typeof swup !== 'undefined') {
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.64b08e1ea8843989c3c2601c2bd130edc19d9e5863b4dba31894b5259ddbf682.js" defer></script><script type="text/javascript" src="/ts/custom.388b4c8555b925683490f851d96d246aca608f5b5a471b03653091790c45e904.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.a2ef757b04c7ff1530590ad66d1ad3567d3384e8b5cf14b551690fe7bc1d3512.js" defer></script><script type="text/javascript" src="/ts/custom.388b4c8555b925683490f851d96d246aca608f5b5a471b03653091790c45e904.js" defer></script>
         <script>
     (function () {
         const customFont = document.createElement('link');

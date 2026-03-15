@@ -44,6 +44,8 @@ your-project/
 │       ├── code-style.md   # Code style guidelines
 │       ├── testing.md      # Testing conventions
 │       └── security.md     # Security requirements
+│ 	└──skills
+│		└── ...
 ```
 
 - 也可以设置为子目录的形式
@@ -58,6 +60,18 @@ your-project/
 │   └── database.md
 └── general.md
 ```
+
+-  .claude目录不要上传到github
+
+### 全局规则
+
+1、在写任何代码之前，请先描述你的方案并且等待批准，如果需求不明确，在编写任何代码之前请务必提出澄清问题
+2、如果一项任务需要修改超过3个文件，请先停下来，将其分解成更小的任务
+3、编写代码后，列出可能出现的问题，并且建议相应的测试用例来检测问题
+4、当发现bug时，首先编写一个能够重现该bug的测试，然后不断修复它，直到它通过为止
+5、每次纠正你后，就在当前项目的根目录的CLAUDE.md文件中添加一条新规则，如果没有CLAUDE.md则新建一个再添加规则，确保以后不会发生这种情况
+
+6、你需要不断更新项目里的CLAUDE.md文件 让它适配当前项目的开发
 
 ## MCP配置
 
@@ -183,3 +197,4 @@ git clone https://github.com/affaan-m/everything-claude-code.git
 
 ```
 
+## Plugin安装
