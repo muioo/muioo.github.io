@@ -294,6 +294,16 @@
         <!-- Swup initialization -->
         <script>
             const swup = new Swup();
+
+            // 在页面切换时重新初始化 Stack（复制按钮等功能）
+            document.addEventListener('swup:page:view', () => {
+                if (window.Stack && window.Stack.init) {
+                    // 延迟执行以确保 DOM 已更新
+                    setTimeout(() => {
+                        window.Stack.init();
+                    }, 100);
+                }
+            });
         </script>
     </body>
 
