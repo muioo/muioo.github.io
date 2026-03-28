@@ -1,7 +1,7 @@
 ---
 author: muioo
 
-title: "【前端开发】前端样式提示词"
+title: "【前端提示词】一些好看的前端样式提示词"
 
 date: 2026-03-27
 
@@ -9,9 +9,14 @@ description: "前端开发中常用的 React 组件样式提示词"
 
 tags: ["React", "Tailwind", "shadcn/ui", "组件"]
 
-categories: ["前端开发"]
-
+categories: ["开发技术"]
 ---
+
+# React项目初始化
+
+```react
+npm create vite@latest my-app -- --template react-ts
+```
 
 # 前端样式提示词
 
