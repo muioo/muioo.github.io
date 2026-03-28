@@ -11,11 +11,15 @@ tags: ["Docker", "服务器部署", "Ubuntu"]
 
 categories: ["项目部署"]
 
+image: "docker-page.png"
+
 ---
 
 # Docker笔记
 
+- docker总概图
 
+![docker](docker.png)
 
 # 服务器部署
 

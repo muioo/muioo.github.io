@@ -2,19 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Docker on muioo blog</title>
-        <link>http://localhost:1313/tags/docker/</link>
+        <link>https://muioo.github.io/tags/docker/</link>
         <description>Recent content in Docker on muioo blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Sat, 28 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 28 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://muioo.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【docker项目部署】服务器部署Docker配置&#43;部署项目</title>
-        <link>http://localhost:1313/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/</link>
+        <link>https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/</link>
         <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/</guid>
-        <description>&lt;h1 id=&#34;docker笔记&#34;&gt;Docker笔记
-&lt;/h1&gt;&lt;h1 id=&#34;服务器部署&#34;&gt;服务器部署
+        <guid>https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/</guid>
+        <description>&lt;img src="https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker-page.png" alt="Featured image of post 【docker项目部署】服务器部署Docker配置&#43;部署项目" /&gt;&lt;h1 id=&#34;docker笔记&#34;&gt;Docker笔记
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;docker总概图&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker.png&#34;
+	width=&#34;2523&#34;
+	height=&#34;1098&#34;
+	srcset=&#34;https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker_hu_6361a8492bca78be.png 480w, https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker_hu_5485d01072783c0a.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;docker&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;229&#34;
+		data-flex-basis=&#34;551px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;服务器部署&#34;&gt;服务器部署
 &lt;/h1&gt;&lt;h2 id=&#34;阿里云服务器ubutun上docker安装&#34;&gt;阿里云服务器Ubutun上docker安装
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;安装依赖&lt;/li&gt;

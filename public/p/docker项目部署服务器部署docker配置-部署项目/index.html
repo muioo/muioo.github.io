@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="记录阿里云Ubuntu服务器上Docker的安装、镜像加速和代理配置">
 <title>【docker项目部署】服务器部署Docker配置&#43;部署项目</title>
 
-<link rel='canonical' href='http://localhost:1313/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/'>
+<link rel='canonical' href='https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/'>
 
-<link rel="stylesheet" href="/scss/style.min.928be253a7b696be7457ba6a15549629235b12a03234c71c71076635a84759f5.css"><meta property='og:title' content="【docker项目部署】服务器部署Docker配置+部署项目">
+<link rel="stylesheet" href="/scss/style.min.4ebf376ef38fcb69ddbad6d7fd7d1e45ec13b082672405dfeadafee05717261c.css"><meta property='og:title' content="【docker项目部署】服务器部署Docker配置+部署项目">
 <meta property='og:description' content="记录阿里云Ubuntu服务器上Docker的安装、镜像加速和代理配置">
-<meta property='og:url' content='http://localhost:1313/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/'>
+<meta property='og:url' content='https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/'>
 <meta property='og:site_name' content='muioo blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Docker' /><meta property='article:tag' content='服务器部署' /><meta property='article:tag' content='Ubuntu' /><meta property='article:published_time' content='2026-03-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-28T00:00:00&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Docker' /><meta property='article:tag' content='服务器部署' /><meta property='article:tag' content='Ubuntu' /><meta property='article:published_time' content='2026-03-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-28T00:00:00&#43;00:00'/><meta property='og:image' content='https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker-page.png' />
 <meta name="twitter:title" content="【docker项目部署】服务器部署Docker配置+部署项目">
-<meta name="twitter:description" content="记录阿里云Ubuntu服务器上Docker的安装、镜像加速和代理配置">
+<meta name="twitter:description" content="记录阿里云Ubuntu服务器上Docker的安装、镜像加速和代理配置"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker-page.png' />
     <link rel="shortcut icon" href="/favicon.ico" />
 <script>
     
@@ -373,8 +374,20 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
 
                 <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/">
+                <img src="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker-page_hu_537b6a526df434de.png"
+                        srcset="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker-page_hu_537b6a526df434de.png 800w, /p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker-page_hu_4acbb46c703ef190.png 1600w"
+                        width="800" 
+                        height="476" 
+                        loading="lazy"
+                        alt="Featured image of post 【docker项目部署】服务器部署Docker配置&#43;部署项目" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
@@ -432,7 +445,24 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     
     
     <h1 id="docker笔记">Docker笔记
-</h1><h1 id="服务器部署">服务器部署
+</h1><ul>
+<li>docker总概图</li>
+</ul>
+<p><img src="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker.png"
+	width="2523"
+	height="1098"
+	srcset="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker_hu_6361a8492bca78be.png 480w, /p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker_hu_5485d01072783c0a.png 1024w"
+	loading="lazy"
+	
+		alt="docker"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="229"
+		data-flex-basis="551px"
+	
+></p>
+<h1 id="服务器部署">服务器部署
 </h1><h2 id="阿里云服务器ubutun上docker安装">阿里云服务器Ubutun上docker安装
 </h2><ul>
 <li>安装依赖</li>
@@ -766,7 +796,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
             本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
             博客: <strong>14</strong> 篇 |
-            字数: <strong>27830</strong> 字
+            字数: <strong>27839</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
@@ -1176,7 +1206,7 @@ if (typeof swup !== 'undefined') {
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.64b08e1ea8843989c3c2601c2bd130edc19d9e5863b4dba31894b5259ddbf682.js" defer></script><script type="text/javascript" src="/ts/custom.388b4c8555b925683490f851d96d246aca608f5b5a471b03653091790c45e904.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js" defer></script><script type="text/javascript" src="/ts/custom.75bd80549499cce4e49b199cc0322b9c39c3202aefc1da9a8480b5a3926a1094.js" defer></script>
         <script>
     (function () {
         const customFont = document.createElement('link');

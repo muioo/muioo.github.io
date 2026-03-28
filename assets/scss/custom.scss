@@ -48,3 +48,8 @@ html.is-animating .main-article {
     height: auto;
     display: block;
 }
+
+/* 完整显示文章封面图片，不裁剪 */
+.article-header .article-image img {
+    object-fit: contain !important;
+}

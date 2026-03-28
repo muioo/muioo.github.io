@@ -2,217 +2,217 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tags on muioo blog</title>
-        <link>http://localhost:1313/tags/</link>
+        <link>https://muioo.github.io/tags/</link>
         <description>Recent content in Tags on muioo blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Sat, 28 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 28 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://muioo.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Docker</title>
-        <link>http://localhost:1313/tags/docker/</link>
+        <link>https://muioo.github.io/tags/docker/</link>
         <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/docker/</guid>
+        <guid>https://muioo.github.io/tags/docker/</guid>
         <description></description>
         </item>
         <item>
         <title>Ubuntu</title>
-        <link>http://localhost:1313/tags/ubuntu/</link>
+        <link>https://muioo.github.io/tags/ubuntu/</link>
         <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/ubuntu/</guid>
+        <guid>https://muioo.github.io/tags/ubuntu/</guid>
         <description></description>
         </item>
         <item>
         <title>服务器部署</title>
-        <link>http://localhost:1313/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</link>
+        <link>https://muioo.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</link>
         <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</guid>
+        <guid>https://muioo.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</guid>
         <description></description>
         </item>
         <item>
         <title>React</title>
-        <link>http://localhost:1313/tags/react/</link>
+        <link>https://muioo.github.io/tags/react/</link>
         <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/react/</guid>
+        <guid>https://muioo.github.io/tags/react/</guid>
         <description></description>
         </item>
         <item>
         <title>Shadcn/Ui</title>
-        <link>http://localhost:1313/tags/shadcn/ui/</link>
+        <link>https://muioo.github.io/tags/shadcn/ui/</link>
         <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/shadcn/ui/</guid>
+        <guid>https://muioo.github.io/tags/shadcn/ui/</guid>
         <description></description>
         </item>
         <item>
         <title>Tailwind</title>
-        <link>http://localhost:1313/tags/tailwind/</link>
+        <link>https://muioo.github.io/tags/tailwind/</link>
         <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/tailwind/</guid>
+        <guid>https://muioo.github.io/tags/tailwind/</guid>
         <description></description>
         </item>
         <item>
         <title>组件</title>
-        <link>http://localhost:1313/tags/%E7%BB%84%E4%BB%B6/</link>
+        <link>https://muioo.github.io/tags/%E7%BB%84%E4%BB%B6/</link>
         <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/%E7%BB%84%E4%BB%B6/</guid>
+        <guid>https://muioo.github.io/tags/%E7%BB%84%E4%BB%B6/</guid>
         <description></description>
         </item>
         <item>
         <title>爬虫</title>
-        <link>http://localhost:1313/tags/%E7%88%AC%E8%99%AB/</link>
+        <link>https://muioo.github.io/tags/%E7%88%AC%E8%99%AB/</link>
         <pubDate>Sat, 14 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/%E7%88%AC%E8%99%AB/</guid>
+        <guid>https://muioo.github.io/tags/%E7%88%AC%E8%99%AB/</guid>
         <description></description>
         </item>
         <item>
         <title>Claude Code命令</title>
-        <link>http://localhost:1313/tags/claude-code%E5%91%BD%E4%BB%A4/</link>
+        <link>https://muioo.github.io/tags/claude-code%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/claude-code%E5%91%BD%E4%BB%A4/</guid>
+        <guid>https://muioo.github.io/tags/claude-code%E5%91%BD%E4%BB%A4/</guid>
         <description></description>
         </item>
         <item>
         <title>Mcp</title>
-        <link>http://localhost:1313/tags/mcp/</link>
+        <link>https://muioo.github.io/tags/mcp/</link>
         <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/mcp/</guid>
+        <guid>https://muioo.github.io/tags/mcp/</guid>
         <description></description>
         </item>
         <item>
         <title>Skills</title>
-        <link>http://localhost:1313/tags/skills/</link>
+        <link>https://muioo.github.io/tags/skills/</link>
         <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/skills/</guid>
+        <guid>https://muioo.github.io/tags/skills/</guid>
         <description></description>
         </item>
         <item>
         <title>Claude Code 规则设计</title>
-        <link>http://localhost:1313/tags/claude-code-%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1/</link>
+        <link>https://muioo.github.io/tags/claude-code-%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1/</link>
         <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/claude-code-%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1/</guid>
+        <guid>https://muioo.github.io/tags/claude-code-%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1/</guid>
         <description></description>
         </item>
         <item>
         <title>FreeRTOS</title>
-        <link>http://localhost:1313/tags/freertos/</link>
+        <link>https://muioo.github.io/tags/freertos/</link>
         <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/freertos/</guid>
+        <guid>https://muioo.github.io/tags/freertos/</guid>
         <description></description>
         </item>
         <item>
         <title>Stm32</title>
-        <link>http://localhost:1313/tags/stm32/</link>
+        <link>https://muioo.github.io/tags/stm32/</link>
         <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/stm32/</guid>
+        <guid>https://muioo.github.io/tags/stm32/</guid>
         <description></description>
         </item>
         <item>
         <title>Vscode 问题</title>
-        <link>http://localhost:1313/tags/vscode-%E9%97%AE%E9%A2%98/</link>
+        <link>https://muioo.github.io/tags/vscode-%E9%97%AE%E9%A2%98/</link>
         <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/vscode-%E9%97%AE%E9%A2%98/</guid>
+        <guid>https://muioo.github.io/tags/vscode-%E9%97%AE%E9%A2%98/</guid>
         <description></description>
         </item>
         <item>
         <title>Hugo网站搭建</title>
-        <link>http://localhost:1313/tags/hugo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/</link>
+        <link>https://muioo.github.io/tags/hugo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/</link>
         <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/hugo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/</guid>
+        <guid>https://muioo.github.io/tags/hugo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/</guid>
         <description></description>
         </item>
         <item>
         <title>FastAPI</title>
-        <link>http://localhost:1313/tags/fastapi/</link>
+        <link>https://muioo.github.io/tags/fastapi/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/fastapi/</guid>
+        <guid>https://muioo.github.io/tags/fastapi/</guid>
         <description></description>
         </item>
         <item>
         <title>Front</title>
-        <link>http://localhost:1313/tags/front/</link>
+        <link>https://muioo.github.io/tags/front/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/front/</guid>
+        <guid>https://muioo.github.io/tags/front/</guid>
         <description></description>
         </item>
         <item>
         <title>Python</title>
-        <link>http://localhost:1313/tags/python/</link>
+        <link>https://muioo.github.io/tags/python/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/python/</guid>
+        <guid>https://muioo.github.io/tags/python/</guid>
         <description></description>
         </item>
         <item>
         <title>Vue</title>
-        <link>http://localhost:1313/tags/vue/</link>
+        <link>https://muioo.github.io/tags/vue/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/vue/</guid>
+        <guid>https://muioo.github.io/tags/vue/</guid>
         <description></description>
         </item>
         <item>
         <title>后端开发</title>
-        <link>http://localhost:1313/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/</link>
+        <link>https://muioo.github.io/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/</guid>
+        <guid>https://muioo.github.io/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/</guid>
         <description></description>
         </item>
         <item>
         <title>项目部署</title>
-        <link>http://localhost:1313/tags/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</link>
+        <link>https://muioo.github.io/tags/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</guid>
+        <guid>https://muioo.github.io/tags/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</guid>
         <description></description>
         </item>
         <item>
         <title>正则表达式</title>
-        <link>http://localhost:1313/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+        <link>https://muioo.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
         <pubDate>Sat, 24 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+        <guid>https://muioo.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
         <description></description>
         </item>
         <item>
         <title>Git</title>
-        <link>http://localhost:1313/tags/git/</link>
+        <link>https://muioo.github.io/tags/git/</link>
         <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/git/</guid>
+        <guid>https://muioo.github.io/tags/git/</guid>
         <description></description>
         </item>
         <item>
         <title>版本控制</title>
-        <link>http://localhost:1313/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/</link>
+        <link>https://muioo.github.io/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/</link>
         <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/</guid>
+        <guid>https://muioo.github.io/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/</guid>
         <description></description>
         </item>
         <item>
         <title>多设备协作</title>
-        <link>http://localhost:1313/tags/%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%8D%8F%E4%BD%9C/</link>
+        <link>https://muioo.github.io/tags/%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%8D%8F%E4%BD%9C/</link>
         <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/tags/%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%8D%8F%E4%BD%9C/</guid>
+        <guid>https://muioo.github.io/tags/%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%8D%8F%E4%BD%9C/</guid>
         <description></description>
         </item>
         
