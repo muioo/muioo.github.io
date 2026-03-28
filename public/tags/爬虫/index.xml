@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>爬虫 on muioo blog</title>
-        <link>https://muioo.github.io/tags/%E7%88%AC%E8%99%AB/</link>
+        <link>http://localhost:1313/tags/%E7%88%AC%E8%99%AB/</link>
         <description>Recent content in 爬虫 on muioo blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Sat, 14 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://muioo.github.io/tags/%E7%88%AC%E8%99%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 14 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E7%88%AC%E8%99%AB/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【爬虫基本方法】爬虫request基本框架 &#43; scrapy框架 &#43; crawl4ai</title>
-        <link>https://muioo.github.io/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/</link>
+        <link>http://localhost:1313/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/</link>
         <pubDate>Sat, 14 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/</guid>
+        <guid>http://localhost:1313/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/</guid>
         <description>&lt;h2 id=&#34;爬虫基本框架&#34;&gt;爬虫基本框架
 &lt;/h2&gt;&lt;h3 id=&#34;发送请求&#34;&gt;发送请求
 &lt;/h3&gt;&lt;h4 id=&#34;以b站评论区为例子&#34;&gt;以b站评论区为例子
 &lt;/h4&gt;&lt;p&gt;1、找到对应的数据包&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/1.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/1.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;找到目标数据包&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;2、应对反爬&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/2.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/2.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;处理反爬&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;

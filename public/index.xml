@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>muioo blog</title>
-        <link>https://muioo.github.io/</link>
+        <link>http://localhost:1313/</link>
         <description>Recent content on muioo blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Sat, 28 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://muioo.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 28 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【docker项目部署】服务器部署Docker配置&#43;部署项目</title>
-        <link>https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/</link>
+        <link>http://localhost:1313/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/</link>
         <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/</guid>
-        <description>&lt;img src="https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker-page.png" alt="Featured image of post 【docker项目部署】服务器部署Docker配置&#43;部署项目" /&gt;&lt;h1 id=&#34;docker笔记&#34;&gt;Docker笔记
+        <guid>http://localhost:1313/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/</guid>
+        <description>&lt;img src="http://localhost:1313/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker-page.png" alt="Featured image of post 【docker项目部署】服务器部署Docker配置&#43;部署项目" /&gt;&lt;h1 id=&#34;docker笔记&#34;&gt;Docker笔记
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;docker总概图&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker.png&#34;
 	width=&#34;2523&#34;
 	height=&#34;1098&#34;
-	srcset=&#34;https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker_hu_6361a8492bca78be.png 480w, https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker_hu_5485d01072783c0a.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker_hu_6361a8492bca78be.png 480w, http://localhost:1313/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker_hu_5485d01072783c0a.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;docker&#34;
@@ -195,10 +195,10 @@
         </item>
         <item>
         <title>【前端提示词】一些好看的前端样式提示词</title>
-        <link>https://muioo.github.io/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/</link>
+        <link>http://localhost:1313/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/</link>
         <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/</guid>
+        <guid>http://localhost:1313/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/</guid>
         <description>&lt;h1 id=&#34;react项目初始化&#34;&gt;React项目初始化
 &lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -3486,10 +3486,10 @@
 &lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;示例图：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://muioo.github.io/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/siderbar1.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/siderbar1.png&#34;
 	width=&#34;1492&#34;
 	height=&#34;768&#34;
-	srcset=&#34;https://muioo.github.io/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/siderbar1_hu_cca94f2e197fd8a.png 480w, https://muioo.github.io/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/siderbar1_hu_4b1a6d5d55751c75.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/siderbar1_hu_cca94f2e197fd8a.png 480w, http://localhost:1313/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/siderbar1_hu_4b1a6d5d55751c75.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;siderbar1.png&#34;
@@ -6432,10 +6432,10 @@
 &lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;示例图&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://muioo.github.io/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/siderbar2.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/siderbar2.png&#34;
 	width=&#34;1501&#34;
 	height=&#34;768&#34;
-	srcset=&#34;https://muioo.github.io/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/siderbar2_hu_ae72fc397f509e55.png 480w, https://muioo.github.io/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/siderbar2_hu_46b4e45dc706e31f.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/siderbar2_hu_ae72fc397f509e55.png 480w, http://localhost:1313/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/siderbar2_hu_46b4e45dc706e31f.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;siderbar2&#34;
@@ -7342,21 +7342,21 @@
         </item>
         <item>
         <title>【爬虫基本方法】爬虫request基本框架 &#43; scrapy框架 &#43; crawl4ai</title>
-        <link>https://muioo.github.io/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/</link>
+        <link>http://localhost:1313/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/</link>
         <pubDate>Sat, 14 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/</guid>
+        <guid>http://localhost:1313/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/</guid>
         <description>&lt;h2 id=&#34;爬虫基本框架&#34;&gt;爬虫基本框架
 &lt;/h2&gt;&lt;h3 id=&#34;发送请求&#34;&gt;发送请求
 &lt;/h3&gt;&lt;h4 id=&#34;以b站评论区为例子&#34;&gt;以b站评论区为例子
 &lt;/h4&gt;&lt;p&gt;1、找到对应的数据包&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/1.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/1.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;找到目标数据包&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;2、应对反爬&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/2.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/2.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;处理反爬&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -7435,10 +7435,10 @@
         </item>
         <item>
         <title>【Claude Code命令】Claude Code（常用命令 &#43; skills &#43; mcp）</title>
-        <link>https://muioo.github.io/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/</link>
+        <link>http://localhost:1313/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/</link>
         <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/</guid>
+        <guid>http://localhost:1313/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/</guid>
         <description>&lt;h2 id=&#34;claude-code-操作笔记&#34;&gt;Claude Code 操作笔记
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;回到之前的对话&lt;/li&gt;
@@ -7654,7 +7654,7 @@
 &lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;可以直接使用调用这个skills&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/1.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/1.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;superpowers skills 使用示例&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -7718,10 +7718,10 @@
         </item>
         <item>
         <title>【Claude Code 规则】Claude Code 全局规则</title>
-        <link>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%99/</link>
+        <link>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%99/</link>
         <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%99/</guid>
+        <guid>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%85%A8%E5%B1%80%E8%A7%84%E5%88%99/</guid>
         <description>&lt;h1 id=&#34;全局规则&#34;&gt;全局规则
 &lt;/h1&gt;&lt;p&gt;1、在编写任何代码前，请先描述你的方案并等待批准，如果需求不明确，在编写任何代码之前必须提出澄清问题&lt;/p&gt;
 &lt;p&gt;2、如果一项任务需要修改超过3个文件，请先停下来，将其分解成更小的任务&lt;/p&gt;
@@ -7732,10 +7732,10 @@
         </item>
         <item>
         <title>【stm32单片机】项目搭建和FreeRTOS</title>
-        <link>https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</link>
+        <link>http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</link>
         <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</guid>
+        <guid>http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</guid>
         <description>&lt;h2 id=&#34;stm32开发笔记&#34;&gt;STM32开发笔记
 &lt;/h2&gt;&lt;h3 id=&#34;stm32项目搭建&#34;&gt;STM32项目搭建
 &lt;/h3&gt;&lt;h4 id=&#34;编译工具&#34;&gt;编译工具
@@ -7792,7 +7792,7 @@
 &lt;p&gt;连接成功演示图&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;​	&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55.png&#34;&gt;&lt;figcaption&gt;
+&lt;p&gt;​	&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;连接成功演示&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -7807,7 +7807,7 @@
 &lt;/ul&gt;
 &lt;h4 id=&#34;使用cubemx初始化freertos项目&#34;&gt;使用CUBEMX初始化FreeRTOS项目
 &lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://muioo.github.io/freertos-tutorial.html&#34;&gt;FreeRTOS移植教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/freertos-tutorial.html&#34;&gt;FreeRTOS移植教程&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5 id=&#34;freertos&#34;&gt;FreeRTOS
 &lt;/h5&gt;&lt;ul&gt;
@@ -7921,7 +7921,7 @@
 &lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;使用usb口给开发板供电，解决如下问题&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;​	&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03.png&#34;&gt;&lt;figcaption&gt;
+&lt;p&gt;​	&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;ST-LINK烧录问题&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -7935,17 +7935,17 @@
 &lt;p&gt;烧录时要按下reset键 点击连接后松开reset，否则会遇到如下问题&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;​	&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40.png&#34;&gt;
+&lt;p&gt;​	&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40.png&#34;&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
 </description>
         </item>
         <item>
         <title>【VSCODE 问题】VSCODE工具问题</title>
-        <link>https://muioo.github.io/p/vscode-%E9%97%AE%E9%A2%98vscode%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/</link>
+        <link>http://localhost:1313/p/vscode-%E9%97%AE%E9%A2%98vscode%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/</link>
         <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/vscode-%E9%97%AE%E9%A2%98vscode%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/</guid>
+        <guid>http://localhost:1313/p/vscode-%E9%97%AE%E9%A2%98vscode%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/</guid>
         <description>&lt;h2 id=&#34;vscode启动没有反应&#34;&gt;VSCODE启动没有反应
 &lt;/h2&gt;&lt;h4 id=&#34;解决方案&#34;&gt;解决方案：
 &lt;/h4&gt;&lt;h5 id=&#34;1查看vscode目录下debuglog日志&#34;&gt;1）查看vscode目录下debug.log日志
@@ -8073,10 +8073,10 @@
         </item>
         <item>
         <title>【Hugo 网站搭建】Hugo搭建静态页面网站</title>
-        <link>https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</link>
+        <link>http://localhost:1313/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</link>
         <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</guid>
+        <guid>http://localhost:1313/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/</guid>
         <description>&lt;h2 id=&#34;hugo搭建静态网站样式修改和新增功能基本就是对照theme的目录和文件来修覆盖&#34;&gt;hugo搭建静态网站（样式修改和新增功能基本就是对照theme的目录和文件来修覆盖)
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -8473,7 +8473,7 @@
 &lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;效果图&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count.png&#34;&gt;&lt;figcaption&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;底部运行统计效果&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -9551,10 +9551,10 @@
         </item>
         <item>
         <title>【Claude Code 规则】Claude Code 前端开发规则1</title>
-        <link>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</link>
+        <link>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</guid>
+        <guid>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%991/</guid>
         <description>&lt;h1 id=&#34;前端规则设计1&#34;&gt;前端规则设计1
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -9691,10 +9691,10 @@
         </item>
         <item>
         <title>【Claude Code 规则】Claude Code 前端开发规则2</title>
-        <link>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</link>
+        <link>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</guid>
+        <guid>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99claude-code-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%992/</guid>
         <description>&lt;h1 id=&#34;前端设计规则2vuets&#34;&gt;前端设计规则2（vue+ts）
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;您是一位精通TypeScript、Node.js、Vite、Vue.js、Vue Router、Pinia、VueUse、Headless UI、Element Plus和Tailwind CSS的专家，对这些技术中的最佳实践和性能优化技巧有深刻理解。&lt;/li&gt;
@@ -9770,10 +9770,10 @@
         </item>
         <item>
         <title>【Claude Code 规则】FastAPI 后端开发规则</title>
-        <link>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</link>
+        <link>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/claude-code-%E8%A7%84%E5%88%99fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</guid>
+        <guid>http://localhost:1313/p/claude-code-%E8%A7%84%E5%88%99fastapi-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99/</guid>
         <description>&lt;h1 id=&#34;后端开发规则fastapi&#34;&gt;后端开发规则（fastapi）
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;您是一位精通 Python、FastAPI 和可扩展 API 开发的专家。&lt;/li&gt;
@@ -9924,10 +9924,10 @@
         </item>
         <item>
         <title>【VUE 项目部署笔记】如何部署vue项目到linux服务器</title>
-        <link>https://muioo.github.io/p/vue-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE%E5%88%B0linux%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+        <link>http://localhost:1313/p/vue-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE%E5%88%B0linux%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/vue-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE%E5%88%B0linux%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+        <guid>http://localhost:1313/p/vue-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE%E5%88%B0linux%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
         <description>&lt;h2 id=&#34;项目部署&#34;&gt;项目部署
 &lt;/h2&gt;&lt;h4 id=&#34;前端部署&#34;&gt;前端部署
 &lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -9989,20 +9989,20 @@
         </item>
         <item>
         <title>【Python 正则】Python 正则表达式笔记</title>
-        <link>https://muioo.github.io/p/python-%E6%AD%A3%E5%88%99python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AC%94%E8%AE%B0/</link>
+        <link>http://localhost:1313/p/python-%E6%AD%A3%E5%88%99python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Sat, 24 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/python-%E6%AD%A3%E5%88%99python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AC%94%E8%AE%B0/</guid>
+        <guid>http://localhost:1313/p/python-%E6%AD%A3%E5%88%99python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h2 id=&#34;python-正则表达式&#34;&gt;Python 正则表达式
 &lt;/h2&gt;&lt;p&gt;（请在此处添加文章内容）&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>【Git命令】Git 操作笔记（协作&#43;常用命令）</title>
-        <link>https://muioo.github.io/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+        <link>http://localhost:1313/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+        <guid>http://localhost:1313/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
         <description>&lt;h2 id=&#34;git操作&#34;&gt;git操作
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;已有仓库?&lt;/strong&gt;&lt;/li&gt;
@@ -10237,7 +10237,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global https.proxy https://127.0.0.1:7890
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;figure&gt;&lt;img src=&#34;https://muioo.github.io/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note.png&#34;&gt;&lt;figcaption&gt;
+&lt;/div&gt;&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/git-note.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;Git代理配置&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -10246,19 +10246,19 @@
         </item>
         <item>
         <title>归档 | archives</title>
-        <link>https://muioo.github.io/archives/</link>
+        <link>http://localhost:1313/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/archives/</guid>
+        <guid>http://localhost:1313/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>关于 | About</title>
-        <link>https://muioo.github.io/%E5%85%B3%E4%BA%8E-about/</link>
+        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E-about/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/%E5%85%B3%E4%BA%8E-about/</guid>
-        <description>&lt;img src="https://muioo.github.io/%E5%85%B3%E4%BA%8E-about/background1.jpg" alt="Featured image of post 关于 | About" /&gt;&lt;p&gt;随心所欲放一些东西。。做一个博客来记录一下，记录一些游戏成就，一些代码问题。。&lt;/p&gt;
+        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E-about/</guid>
+        <description>&lt;img src="http://localhost:1313/%E5%85%B3%E4%BA%8E-about/background1.jpg" alt="Featured image of post 关于 | About" /&gt;&lt;p&gt;随心所欲放一些东西。。做一个博客来记录一下，记录一些游戏成就，一些代码问题。。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;兴趣爱好&#34;&gt;兴趣爱好
 &lt;/h2&gt;&lt;h3 id=&#34;游戏&#34;&gt;游戏
@@ -10284,18 +10284,18 @@
         </item>
         <item>
         <title>搜索 | Search</title>
-        <link>https://muioo.github.io/search/</link>
+        <link>http://localhost:1313/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/search/</guid>
+        <guid>http://localhost:1313/search/</guid>
         <description></description>
         </item>
         <item>
         <title>相关链接 | Links</title>
-        <link>https://muioo.github.io/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/</link>
+        <link>http://localhost:1313/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://muioo.github.io/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/</guid>
+        <guid>http://localhost:1313/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/</guid>
         <description></description>
         </item>
         
