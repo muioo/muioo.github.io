@@ -77,6 +77,10 @@ your-project/
 
 6、你需要不断更新项目里的CLAUDE.md文件 让它适配当前项目的开发
 
+## Claude Code配置
+
+
+
 ## MCP配置
 
 ### mcp1: [figma mcp](https://figma.com/files/team)
@@ -202,3 +206,4 @@ git clone https://github.com/affaan-m/everything-claude-code.git
 ```
 
 ## Plugin安装
+
