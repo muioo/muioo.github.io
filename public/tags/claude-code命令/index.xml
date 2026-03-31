@@ -114,7 +114,8 @@
 &lt;p&gt;4、当发现bug时，首先编写一个能够重现该bug的测试，然后不断修复它，直到它通过为止&lt;/p&gt;
 &lt;p&gt;5、每次纠正你后，就在当前项目的根目录的CLAUDE.md文件中添加一条新规则，如果没有CLAUDE.md则新建一个再添加规则，确保以后不会发生这种情况&lt;/p&gt;
 &lt;p&gt;6、你需要不断更新项目里的CLAUDE.md文件 让它适配当前项目的开发&lt;/p&gt;
-&lt;h2 id=&#34;mcp配置&#34;&gt;MCP配置
+&lt;h2 id=&#34;claude-code配置&#34;&gt;Claude Code配置
+&lt;/h2&gt;&lt;h2 id=&#34;mcp配置&#34;&gt;MCP配置
 &lt;/h2&gt;&lt;h3 id=&#34;mcp1-figma-mcp&#34;&gt;mcp1: &lt;a class=&#34;link&#34; href=&#34;https://figma.com/files/team&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;figma mcp&lt;/a&gt;
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

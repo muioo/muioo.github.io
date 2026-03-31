@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>嵌入式 on muioo blog</title>
+        <link>http://localhost:1313/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
+        <description>Recent content in 嵌入式 on muioo blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>muioo</copyright>
+        <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>【MAVLink】CRC校验算法分析</title>
+        <link>http://localhost:1313/p/mavlinkcrc%E6%A0%A1%E9%AA%8C%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/</link>
+        <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/mavlinkcrc%E6%A0%A1%E9%AA%8C%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/</guid>
+        <description>&lt;h1 id=&#34;claudemd&#34;&gt;CLAUDE.md
+&lt;/h1&gt;&lt;p&gt;This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.&lt;/p&gt;
+&lt;h2 id=&#34;project-overview&#34;&gt;Project Overview
+&lt;/h2&gt;&lt;p&gt;This is a MAVLink v2 protocol CRC analysis project. The goal is to understand and verify the CRC checksum calculation used in MAVLink message frames.&lt;/p&gt;
+&lt;h2 id=&#34;reference-materials&#34;&gt;Reference Materials
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;参考资料.txt&lt;/code&gt; — Contains links to MAVLink CRC documentation:
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://mavlink.io/zh/guide/crc.html#mavlink-crc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://mavlink.io/zh/guide/crc.html#mavlink-crc&lt;/a&gt; (CRC algorithm details)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://mavlink.io/zh/guide/serialization.html#crc_extra&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://mavlink.io/zh/guide/serialization.html#crc_extra&lt;/a&gt; (CRC_EXTRA mechanism)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;data&#34;&gt;Data
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;消息数据.csv&lt;/code&gt; — Captured MAVLink v2 frames with pre-parsed fields. The CSV columns are:
+&lt;ul&gt;
+&lt;li&gt;时间, 序号, 帧起始标志, 有效载荷长度, 序列号, 系统ID, 组件ID, 消息ID, 消息名称&lt;/li&gt;
+&lt;li&gt;帧头信息, 载荷数据, CRC低字节, CRC高字节, CRC校验位, 帧长度, 原始帧数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;key-protocol-details&#34;&gt;Key Protocol Details
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;All frames use MAVLink v2 (start flag &lt;code&gt;0xFD&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;System ID = 1, Component ID = 1&lt;/li&gt;
+&lt;li&gt;The CRC-16/X.25 algorithm is used, with a message-specific &lt;code&gt;CRC_EXTRA&lt;/code&gt; seed byte appended to the payload before computing the checksum&lt;/li&gt;
+&lt;li&gt;The CSV file is encoded in a Chinese locale (GBK/GB2312) — use &lt;code&gt;encoding=&#39;gbk&#39;&lt;/code&gt; or similar when reading with pandas/Python&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;working-with-the-data&#34;&gt;Working with the Data
+&lt;/h2&gt;&lt;p&gt;When writing Python scripts to analyze this data:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Read the CSV with &lt;code&gt;pd.read_csv(..., encoding=&#39;gbk&#39;)&lt;/code&gt; or &lt;code&gt;encoding_errors=&#39;replace&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Hex fields (消息ID, CRC bytes, raw frames) are stored as strings with &lt;code&gt;0x&lt;/code&gt; prefix or plain hex&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;原始帧数据&lt;/code&gt; column contains the complete raw frame in hex — useful for verifying CRC calculations end-to-end&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

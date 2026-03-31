@@ -170,6 +170,7 @@ services:
     container_name: knowledge-frontend
     restart: unless-stopped
     ports:
+    # 服务器端口5173 映射 到docker容器内端口80
       - "5173:80"
     depends_on:
       - backend
@@ -237,7 +238,7 @@ FROM nginx:alpine
 
 COPY --from=builder /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-
+# 暴露容器内端口80
 EXPOSE 80
 ```
 
@@ -272,6 +273,8 @@ FRONTEND_PORT=5173
 # 执行
 docker compose -d build
 ```
+
+
 
 
 
