@@ -8,48 +8,52 @@
         <language>en-us</language>
         <copyright>muioo</copyright>
         <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>【MAVLink】CRC校验算法分析</title>
-        <link>http://localhost:1313/p/mavlinkcrc%E6%A0%A1%E9%AA%8C%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/</link>
+        <title>【功能开发规则】CRC校验算法分析</title>
+        <link>http://localhost:1313/p/%E5%8A%9F%E8%83%BD%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99crc%E6%A0%A1%E9%AA%8C%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/</link>
         <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/mavlinkcrc%E6%A0%A1%E9%AA%8C%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/</guid>
+        <guid>http://localhost:1313/p/%E5%8A%9F%E8%83%BD%E5%BC%80%E5%8F%91%E8%A7%84%E5%88%99crc%E6%A0%A1%E9%AA%8C%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/</guid>
         <description>&lt;h1 id=&#34;claudemd&#34;&gt;CLAUDE.md
-&lt;/h1&gt;&lt;p&gt;This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.&lt;/p&gt;
-&lt;h2 id=&#34;project-overview&#34;&gt;Project Overview
-&lt;/h2&gt;&lt;p&gt;This is a MAVLink v2 protocol CRC analysis project. The goal is to understand and verify the CRC checksum calculation used in MAVLink message frames.&lt;/p&gt;
-&lt;h2 id=&#34;reference-materials&#34;&gt;Reference Materials
+&lt;/h1&gt;&lt;p&gt;本文件为 Claude Code (claude.ai/code) 在此代码仓库中工作时提供指导。&lt;/p&gt;
+&lt;h2 id=&#34;设计提示词时要注意数据的处理&#34;&gt;设计提示词时要注意数据的处理
 &lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;参考资料.txt&lt;/code&gt; — Contains links to MAVLink CRC documentation:
+&lt;li&gt;尽量不要使用txt的格式读取文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;项目概述&#34;&gt;项目概述
+&lt;/h2&gt;&lt;p&gt;这是一个 MAVLink v2 协议 CRC 分析项目。目标是理解和验证 MAVLink 消息帧中使用的 CRC 校验和计算方法。&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;参考资料.txt&lt;/code&gt; — 包含 MAVLink CRC 文档链接：
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://mavlink.io/zh/guide/crc.html#mavlink-crc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://mavlink.io/zh/guide/crc.html#mavlink-crc&lt;/a&gt; (CRC algorithm details)&lt;/li&gt;
+    &gt;https://mavlink.io/zh/guide/crc.html#mavlink-crc&lt;/a&gt; (CRC 算法详情)&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://mavlink.io/zh/guide/serialization.html#crc_extra&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://mavlink.io/zh/guide/serialization.html#crc_extra&lt;/a&gt; (CRC_EXTRA mechanism)&lt;/li&gt;
+    &gt;https://mavlink.io/zh/guide/serialization.html#crc_extra&lt;/a&gt; (CRC_EXTRA 机制)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;data&#34;&gt;Data
+&lt;h2 id=&#34;数据说明&#34;&gt;数据说明
 &lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;消息数据.csv&lt;/code&gt; — Captured MAVLink v2 frames with pre-parsed fields. The CSV columns are:
+&lt;li&gt;&lt;code&gt;消息数据.csv&lt;/code&gt; — 捕获的 MAVLink v2 帧及预解析字段。CSV 列包括：
 &lt;ul&gt;
 &lt;li&gt;时间, 序号, 帧起始标志, 有效载荷长度, 序列号, 系统ID, 组件ID, 消息ID, 消息名称&lt;/li&gt;
 &lt;li&gt;帧头信息, 载荷数据, CRC低字节, CRC高字节, CRC校验位, 帧长度, 原始帧数据&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;key-protocol-details&#34;&gt;Key Protocol Details
+&lt;h2 id=&#34;关键协议细节&#34;&gt;关键协议细节
 &lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;All frames use MAVLink v2 (start flag &lt;code&gt;0xFD&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;System ID = 1, Component ID = 1&lt;/li&gt;
-&lt;li&gt;The CRC-16/X.25 algorithm is used, with a message-specific &lt;code&gt;CRC_EXTRA&lt;/code&gt; seed byte appended to the payload before computing the checksum&lt;/li&gt;
-&lt;li&gt;The CSV file is encoded in a Chinese locale (GBK/GB2312) — use &lt;code&gt;encoding=&#39;gbk&#39;&lt;/code&gt; or similar when reading with pandas/Python&lt;/li&gt;
+&lt;li&gt;所有帧使用 MAVLink v2（起始标志 &lt;code&gt;0xFD&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;系统ID = 1，组件ID = 1&lt;/li&gt;
+&lt;li&gt;使用 CRC-16/X.25 算法，在计算校验和之前将特定于消息的 &lt;code&gt;CRC_EXTRA&lt;/code&gt; 种子字节附加到有效载荷&lt;/li&gt;
+&lt;li&gt;CSV 文件使用中文编码（GBK/GB2312）— 使用 pandas/Python 读取时使用 &lt;code&gt;encoding=&#39;gbk&#39;&lt;/code&gt; 或类似编码&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;working-with-the-data&#34;&gt;Working with the Data
-&lt;/h2&gt;&lt;p&gt;When writing Python scripts to analyze this data:&lt;/p&gt;
+&lt;h2 id=&#34;数据处理指南&#34;&gt;数据处理指南
+&lt;/h2&gt;&lt;p&gt;编写 Python 脚本分析此数据时：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Read the CSV with &lt;code&gt;pd.read_csv(..., encoding=&#39;gbk&#39;)&lt;/code&gt; or &lt;code&gt;encoding_errors=&#39;replace&#39;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Hex fields (消息ID, CRC bytes, raw frames) are stored as strings with &lt;code&gt;0x&lt;/code&gt; prefix or plain hex&lt;/li&gt;
-&lt;li&gt;The &lt;code&gt;原始帧数据&lt;/code&gt; column contains the complete raw frame in hex — useful for verifying CRC calculations end-to-end&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;pd.read_csv(..., encoding=&#39;gbk&#39;)&lt;/code&gt; 或 &lt;code&gt;encoding_errors=&#39;replace&#39;&lt;/code&gt; 读取 CSV&lt;/li&gt;
+&lt;li&gt;十六进制字段（消息ID、CRC字节、原始帧）以字符串形式存储，带 &lt;code&gt;0x&lt;/code&gt; 前缀或纯十六进制&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;原始帧数据&lt;/code&gt; 列包含完整的十六进制原始帧 — 可用于端到端验证 CRC 计算&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -7797,8 +7801,19 @@
         <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/</guid>
-        <description>&lt;h2 id=&#34;claude-code-操作笔记&#34;&gt;Claude Code 操作笔记
-&lt;/h2&gt;&lt;ul&gt;
+        <description>&lt;h1 id=&#34;claude-code安装&#34;&gt;Claude Code安装
+&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 前提环境node -v npm -v git -v&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install -g @anthropic-ai/claude-code
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;claude-code-使用笔记&#34;&gt;Claude Code 使用笔记
+&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;回到之前的对话&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -7898,8 +7913,7 @@
 &lt;p&gt;4、当发现bug时，首先编写一个能够重现该bug的测试，然后不断修复它，直到它通过为止&lt;/p&gt;
 &lt;p&gt;5、每次纠正你后，就在当前项目的根目录的CLAUDE.md文件中添加一条新规则，如果没有CLAUDE.md则新建一个再添加规则，确保以后不会发生这种情况&lt;/p&gt;
 &lt;p&gt;6、你需要不断更新项目里的CLAUDE.md文件 让它适配当前项目的开发&lt;/p&gt;
-&lt;h2 id=&#34;claude-code配置&#34;&gt;Claude Code配置
-&lt;/h2&gt;&lt;h2 id=&#34;mcp配置&#34;&gt;MCP配置
+&lt;h2 id=&#34;mcp配置&#34;&gt;MCP配置
 &lt;/h2&gt;&lt;h3 id=&#34;mcp1-figma-mcp&#34;&gt;mcp1: &lt;a class=&#34;link&#34; href=&#34;https://figma.com/files/team&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;figma mcp&lt;/a&gt;
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -8088,6 +8102,27 @@
 &lt;p&gt;4、档发现bug时，首先要编写一个能够修复bug的测试，然后不断修复它，直到测试通过为止&lt;/p&gt;
 &lt;p&gt;5、每次纠正你之后，就在CLAUDE.md文件中添加一条新规则，这样就不会发生这种情况了&lt;/p&gt;
 </description>
+        </item>
+        <item>
+        <title>【bun 安装】bun安装使用教程</title>
+        <link>http://localhost:1313/p/bun-%E5%AE%89%E8%A3%85bun%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
+        <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/bun-%E5%AE%89%E8%A3%85bun%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
+        <description>&lt;h1 id=&#34;bun安装&#34;&gt;bun安装
+&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install -g bun
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 验证是否安装成功&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bun -v
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>【stm32单片机】项目搭建和FreeRTOS</title>
@@ -10347,16 +10382,6 @@
 &lt;/h4&gt;</description>
         </item>
         <item>
-        <title>【Python 正则】Python 正则表达式笔记</title>
-        <link>http://localhost:1313/p/python-%E6%AD%A3%E5%88%99python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AC%94%E8%AE%B0/</link>
-        <pubDate>Sat, 24 Jan 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/python-%E6%AD%A3%E5%88%99python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AC%94%E8%AE%B0/</guid>
-        <description>&lt;h2 id=&#34;python-正则表达式&#34;&gt;Python 正则表达式
-&lt;/h2&gt;&lt;p&gt;（请在此处添加文章内容）&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>【Git命令】Git 操作笔记（协作&#43;常用命令）</title>
         <link>http://localhost:1313/p/git%E5%91%BD%E4%BB%A4git-%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
@@ -10602,6 +10627,14 @@
 &lt;/figure&gt;
 
 </description>
+        </item>
+        <item>
+        <title></title>
+        <link>http://localhost:1313/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/</guid>
+        <description></description>
         </item>
         <item>
         <title></title>

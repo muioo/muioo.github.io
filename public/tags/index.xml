@@ -136,6 +136,14 @@
         <description></description>
         </item>
         <item>
+        <title>Bun 安装使用</title>
+        <link>http://localhost:1313/tags/bun-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/bun-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>FreeRTOS</title>
         <link>http://localhost:1313/tags/freertos/</link>
         <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
@@ -213,14 +221,6 @@
         <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/tags/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>正则表达式</title>
-        <link>http://localhost:1313/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
-        <pubDate>Sat, 24 Jan 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
         <description></description>
         </item>
         <item>

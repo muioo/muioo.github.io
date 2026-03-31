@@ -12,7 +12,14 @@ tags: ["skills","claude code命令","mcp"]
 categories: ["工具技巧"]
 ---
 
-## Claude Code 操作笔记
+# Claude Code安装
+
+```bash
+# 前提环境node -v npm -v git -v
+npm install -g @anthropic-ai/claude-code
+```
+
+# Claude Code 使用笔记
 
 - 回到之前的对话
 
@@ -76,10 +83,6 @@ your-project/
 5、每次纠正你后，就在当前项目的根目录的CLAUDE.md文件中添加一条新规则，如果没有CLAUDE.md则新建一个再添加规则，确保以后不会发生这种情况
 
 6、你需要不断更新项目里的CLAUDE.md文件 让它适配当前项目的开发
-
-## Claude Code配置
-
-
 
 ## MCP配置
 

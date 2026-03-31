@@ -9,7 +9,7 @@ description: "记录一些hugo搭建网站所需要修改的地方"
 
 tags: [ "hugo网站搭建"]
 
-categories: ["开发技术"]
+categories: ["杂七杂八应用"]
 
 ---
 

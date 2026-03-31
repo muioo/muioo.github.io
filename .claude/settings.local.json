@@ -3,7 +3,9 @@
     "allow": [
       "Bash(taskkill:*)",
       "Bash(if exist resources rmdir /s /q resources)",
-      "Bash(if exist public rmdir /s /q public)"
+      "Bash(if exist public rmdir /s /q public)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
