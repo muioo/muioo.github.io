@@ -16,6 +16,14 @@
         <description></description>
         </item>
         <item>
+        <title>Install</title>
+        <link>http://localhost:1313/tags/install/</link>
+        <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/install/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Ubuntu</title>
         <link>http://localhost:1313/tags/ubuntu/</link>
         <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
@@ -69,6 +77,14 @@
         <pubDate>Sat, 14 Feb 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/tags/%E7%88%AC%E8%99%AB/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Claude Code</title>
+        <link>http://localhost:1313/tags/claude-code/</link>
+        <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/claude-code/</guid>
         <description></description>
         </item>
         <item>
