@@ -9,7 +9,7 @@ description: "记录阿里云Ubuntu服务器上Docker的安装、镜像加速和
 
 tags: ["Docker", "服务器部署", "Ubuntu"]
 
-categories: ["项目部署"]
+categories: ["项目部署","工具技巧"]
 
 image: "docker-page.png"
 

@@ -49,6 +49,18 @@ html.is-animating .main-article {
     display: block;
 }
 
+/* 修复 Markdown 直接生成的图片（在 p 标签内）超出范围 */
+.article-content img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 1rem auto;
+}
+
+.article-content p {
+    overflow: hidden;
+}
+
 /* 完整显示文章封面图片，不裁剪 */
 .article-header .article-image img {
     object-fit: contain !important;

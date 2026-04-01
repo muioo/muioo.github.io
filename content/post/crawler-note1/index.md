@@ -21,8 +21,6 @@ categories: ["开发技术"]
 
 1、找到对应的数据包
 
-{{< figure src="1.png" title="找到目标数据包" >}}
-
 2、应对反爬
 
 {{< figure src="2.png" title="处理反爬" >}}
