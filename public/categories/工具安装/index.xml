@@ -7,10 +7,50 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Sat, 28 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 07 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>【Claude Code安装】Claude Code安装</title>
+        <link>http://localhost:1313/p/claude-code%E5%AE%89%E8%A3%85claude-code%E5%AE%89%E8%A3%85/</link>
+        <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/claude-code%E5%AE%89%E8%A3%85claude-code%E5%AE%89%E8%A3%85/</guid>
+        <description>&lt;img src="http://localhost:1313/p/claude-code%E5%AE%89%E8%A3%85claude-code%E5%AE%89%E8%A3%85/page.png" alt="Featured image of post 【Claude Code安装】Claude Code安装" /&gt;&lt;h1 id=&#34;claude-code安装&#34;&gt;Claude Code安装
+&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 前提环境node -v npm -v git -v&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install -g @anthropic-ai/claude-code
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>【bun 安装】bun安装使用教程</title>
+        <link>http://localhost:1313/p/bun-%E5%AE%89%E8%A3%85bun%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
+        <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/bun-%E5%AE%89%E8%A3%85bun%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
+        <description>&lt;h1 id=&#34;bun安装&#34;&gt;bun安装
+&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install -g bun
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 验证是否安装成功&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bun -v
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>【docker 安装】docker多系统的安装</title>
         <link>http://localhost:1313/p/docker-%E5%AE%89%E8%A3%85docker%E5%A4%9A%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%89%E8%A3%85/</link>
-        <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/docker-%E5%AE%89%E8%A3%85docker%E5%A4%9A%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
         <description>&lt;img src="http://localhost:1313/p/docker-%E5%AE%89%E8%A3%85docker%E5%A4%9A%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%89%E8%A3%85/docker-page.png" alt="Featured image of post 【docker 安装】docker多系统的安装" /&gt;&lt;h2 id=&#34;阿里云服务器ubutun上docker安装&#34;&gt;阿里云服务器Ubutun上docker安装
@@ -75,46 +115,6 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;windows安装&#34;&gt;Windows安装
 &lt;/h2&gt;</description>
-        </item>
-        <item>
-        <title>【Claude Code安装】Claude Code安装</title>
-        <link>http://localhost:1313/p/claude-code%E5%AE%89%E8%A3%85claude-code%E5%AE%89%E8%A3%85/</link>
-        <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/claude-code%E5%AE%89%E8%A3%85claude-code%E5%AE%89%E8%A3%85/</guid>
-        <description>&lt;img src="http://localhost:1313/p/claude-code%E5%AE%89%E8%A3%85claude-code%E5%AE%89%E8%A3%85/page.png" alt="Featured image of post 【Claude Code安装】Claude Code安装" /&gt;&lt;h1 id=&#34;claude-code安装&#34;&gt;Claude Code安装
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 前提环境node -v npm -v git -v&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install -g @anthropic-ai/claude-code
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-        </item>
-        <item>
-        <title>【bun 安装】bun安装使用教程</title>
-        <link>http://localhost:1313/p/bun-%E5%AE%89%E8%A3%85bun%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
-        <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/bun-%E5%AE%89%E8%A3%85bun%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
-        <description>&lt;h1 id=&#34;bun安装&#34;&gt;bun安装
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install -g bun
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 验证是否安装成功&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bun -v
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
         </item>
         
     </channel>

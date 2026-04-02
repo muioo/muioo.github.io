@@ -3,7 +3,7 @@ author: muioo
 
 title: "【docker项目部署】服务器部署Docker配置+部署项目"
 
-date: 2026-03-28
+date: 2026-03-01
 
 description: "记录阿里云Ubuntu服务器上Docker的安装、镜像加速和代理配置"
 

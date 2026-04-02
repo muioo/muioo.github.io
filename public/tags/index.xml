@@ -24,30 +24,6 @@
         <description></description>
         </item>
         <item>
-        <title>Install</title>
-        <link>http://localhost:1313/tags/install/</link>
-        <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/install/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Ubuntu</title>
-        <link>http://localhost:1313/tags/ubuntu/</link>
-        <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/ubuntu/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>服务器部署</title>
-        <link>http://localhost:1313/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</link>
-        <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>React</title>
         <link>http://localhost:1313/tags/react/</link>
         <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
@@ -80,6 +56,22 @@
         <description></description>
         </item>
         <item>
+        <title>Ubuntu</title>
+        <link>http://localhost:1313/tags/ubuntu/</link>
+        <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/ubuntu/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>服务器部署</title>
+        <link>http://localhost:1313/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</link>
+        <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>爬虫</title>
         <link>http://localhost:1313/tags/%E7%88%AC%E8%99%AB/</link>
         <pubDate>Sat, 14 Feb 2026 00:00:00 +0000</pubDate>
@@ -101,6 +93,14 @@
         <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/tags/claude-code%E5%91%BD%E4%BB%A4/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Install</title>
+        <link>http://localhost:1313/tags/install/</link>
+        <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/install/</guid>
         <description></description>
         </item>
         <item>

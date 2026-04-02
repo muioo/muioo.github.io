@@ -16,14 +16,6 @@
         <description></description>
         </item>
         <item>
-        <title>工具安装</title>
-        <link>http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/</link>
-        <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>开发工具</title>
         <link>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link>
         <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
@@ -32,19 +24,27 @@
         <description></description>
         </item>
         <item>
-        <title>项目部署</title>
-        <link>http://localhost:1313/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</link>
-        <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>提示词</title>
         <link>http://localhost:1313/categories/%E6%8F%90%E7%A4%BA%E8%AF%8D/</link>
         <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/categories/%E6%8F%90%E7%A4%BA%E8%AF%8D/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>项目部署</title>
+        <link>http://localhost:1313/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</link>
+        <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>工具安装</title>
+        <link>http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/</link>
+        <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/</guid>
         <description></description>
         </item>
         <item>

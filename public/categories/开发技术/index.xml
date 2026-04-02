@@ -15,7 +15,10 @@
         <guid>http://localhost:1313/p/nginxnginx%E7%9A%84%E7%90%86%E8%A7%A3%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
         <description>&lt;h1 id=&#34;nginx详细解读&#34;&gt;nginx详细解读
 &lt;/h1&gt;&lt;h2 id=&#34;nginx在项目部署中的作用&#34;&gt;nginx在项目部署中的作用
-&lt;/h2&gt;</description>
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;生产环境中请求接口不走vite.config.ts中的代理，而是nginx.conf&lt;/li&gt;
+&lt;/ul&gt;
+</description>
         </item>
         <item>
         <title>【前端提示词】一些好看的前端样式提示词</title>
