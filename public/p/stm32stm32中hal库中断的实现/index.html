@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/'>
 
-<link rel="stylesheet" href="/scss/style.min.77c85ae2e723ccd19af321d3adbe8e0276582f3f4d9624cbb6d406c3a4d4b4bd.css"><meta property='og:title' content="【stm32】STM32中HAL库中断的实现">
+<link rel="stylesheet" href="/scss/style.min.9bcbe133e0c8f365670d0fd9ec460b7d30f94750a9d3d60b6585808358824f0e.css"><meta property='og:title' content="【stm32】STM32中HAL库中断的实现">
 <meta property='og:description' content="STM32中HAL库中断的实现，基于HAL库的中断详细学习">
 <meta property='og:url' content='http://localhost:1313/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/'>
 <meta property='og:site_name' content='muioo blog'>
@@ -434,6 +434,89 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </h2><p>中断可以由硬件或者软件触发。在ARM处理器中，把能够打断当前代码执行流程的事件分为异常（exception）和中断（interrupt）两类。二者的区别在于：中断是由内核外部产生的，一般由硬件触发，比如定时器中断和外部中断等。而异常通常是内核自身产生的，大多由软件触发，比如除法出错异常，预取指失败等。</p>
 <p>在基于Cortex-M内核设计的ARM处理器中提供了一个专用的硬件模块：嵌套向量中断控制器 （nested vectored interrupt controller，NVIC）用来管理全部的异常和中断。通过对NVIC的编程，可以实现中断的使能、中断优先级的设置以及中断触发方式的选择等功能。</p>
 <p>NVIC利用中断通道来管理各类中断，中断源通过中断通道向内核发出中断申请，这些中断通道已经固定分配给内核异常和片内外设。每一个中断通道对应一个中断服务程序，按照中断优先级的顺序组成了STM32微控制器 的中断向量表。不同型号的STM32微控制器支持的中断通道各不相同</p>
+<h1 id="2stm32中断代码案例">2、stm32中断代码案例
+</h1><p>根据上方的优先级可以设置抢占优先级或者响应优先级，要注意key引脚的接法，这里我的引按键引脚是PC5</p>
+<p><strong>情况 A：你按键是 一端接 PC5，一端接 GND 这是开发板最常见接法</strong></p>
+<p>松开：PC5 = 1（上拉）</p>
+<p>按下：PC5 = 0（到地）</p>
+<p>这种接法必须：</p>
+<p>上拉 + 下降沿</p>
+<p><strong>情况 B：如果按键是 一端接 PC5，一端接 3.3V</strong></p>
+<p>松开：PC5 = 0（下拉）</p>
+<p>按下：PC5 = 1（到电源）</p>
+<p>这种需要：</p>
+<p>下拉 + 上升沿</p>
+<p><img src="/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/%E5%BC%95%E8%84%9A%E5%88%9D%E5%A7%8B%E5%8C%96.png"
+	width="1130"
+	height="536"
+	srcset="/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/%E5%BC%95%E8%84%9A%E5%88%9D%E5%A7%8B%E5%8C%96_hu_14f8e84d7fa9883c.png 480w, /p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/%E5%BC%95%E8%84%9A%E5%88%9D%E5%A7%8B%E5%8C%96_hu_8b2ecc65bee6c4a6.png 1024w"
+	loading="lazy"
+	
+		alt="引脚初始化"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="210"
+		data-flex-basis="505px"
+	
+></p>
+<p>使用按键触发中断，当按下key0时电平翻转，点亮红灯</p>
+<p>在main.c中重写HAL_GPIO_EXTI_Callback()函数</p>
+<p><img src="/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD%E5%87%BD%E6%95%B0.png"
+	width="1089"
+	height="198"
+	srcset="/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD%E5%87%BD%E6%95%B0_hu_5e94415e2f865384.png 480w, /p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD%E5%87%BD%E6%95%B0_hu_75b83f07a869c4de.png 1024w"
+	loading="lazy"
+	
+		alt="外部中断函数"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="550"
+		data-flex-basis="1320px"
+	
+></p>
+<h1 id="3定时器与中断闪灯">3、定时器与中断闪灯
+</h1><p>SysTick_Handler()函数，<code>SysTick</code> 是 <strong>Cortex-M 内核自带的定时器</strong>（系统滴答定时器）。</p>
+<ul>
+<li>
+<p>默认配置：<strong>每 1ms 溢出一次</strong></p>
+</li>
+<li>
+<p>溢出后自动进入中断</p>
+</li>
+<li>
+<p>进入中断就会执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">SysTick_Handler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 这里的代码每 1ms 自动跑一次！
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p><img src="/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/%E6%BB%B4%E7%AD%94%E5%AE%9A%E6%97%B6%E5%99%A8.png"
+	width="979"
+	height="351"
+	srcset="/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/%E6%BB%B4%E7%AD%94%E5%AE%9A%E6%97%B6%E5%99%A8_hu_36b8605e5edf1f95.png 480w, /p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/%E6%BB%B4%E7%AD%94%E5%AE%9A%E6%97%B6%E5%99%A8_hu_9e9a3d4a6424b040.png 1024w"
+	loading="lazy"
+	
+		alt="滴答定时器"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="278"
+		data-flex-basis="669px"
+	
+></p>
 
 </section>
 
@@ -466,12 +549,12 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
             
                 
 <article class="">
-    <a href="/p/stm32%E4%B8%ADicic%E9%80%9A%E4%BF%A1/">
+    <a href="/p/stm32ic%E9%80%9A%E4%BF%A1/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">【stm32中I²C】I²C通信</h2>
+            <h2 class="article-title">【stm32】I²C通信</h2>
         </div>
     </a>
 </article>
@@ -657,8 +740,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
     <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
             本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
-            博客: <strong>16</strong> 篇 |
-            字数: <strong>25180</strong> 字
+            博客: <strong>17</strong> 篇 |
+            字数: <strong>25535</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
@@ -1068,7 +1151,7 @@ if (typeof swup !== 'undefined') {
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.a2ef757b04c7ff1530590ad66d1ad3567d3384e8b5cf14b551690fe7bc1d3512.js" defer></script><script type="text/javascript" src="/ts/custom.388b4c8555b925683490f851d96d246aca608f5b5a471b03653091790c45e904.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.64b08e1ea8843989c3c2601c2bd130edc19d9e5863b4dba31894b5259ddbf682.js" defer></script><script type="text/javascript" src="/ts/custom.388b4c8555b925683490f851d96d246aca608f5b5a471b03653091790c45e904.js" defer></script>
         <script>
     (function () {
         const customFont = document.createElement('link');
