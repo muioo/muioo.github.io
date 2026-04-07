@@ -1,11 +1,11 @@
 ---
 author: muioo
-title: 【stm32中HAL库中断的实现】基于HAL库的中断详细学习
+title: 【stm32】STM32中HAL库中断的实现
 tags:
   - stm32
   - 嵌入式
 date: 2026-04-07
-description: stm32中断原理以及实现
+description: STM32中HAL库中断的实现，基于HAL库的中断详细学习
 categories:
   - 开发技术
 ---

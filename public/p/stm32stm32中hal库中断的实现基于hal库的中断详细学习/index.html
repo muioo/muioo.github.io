@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-    <head>
-	<meta name="generator" content="Hugo 0.154.5"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="欢迎来到我的网站">
-<title>muioo blog</title>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="STM32中HAL库中断的实现，基于HAL库的中断详细学习">
+<title>【stm32】STM32中HAL库中断的实现，基于HAL库的中断详细学习</title>
 
-<link rel='canonical' href='http://localhost:1313/'>
+<link rel='canonical' href='http://localhost:1313/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8Ehal%E5%BA%93%E7%9A%84%E4%B8%AD%E6%96%AD%E8%AF%A6%E7%BB%86%E5%AD%A6%E4%B9%A0/'>
 
-<link rel="stylesheet" href="/scss/style.min.9bcbe133e0c8f365670d0fd9ec460b7d30f94750a9d3d60b6585808358824f0e.css"><meta property='og:title' content="muioo blog">
-<meta property='og:description' content="欢迎来到我的网站">
-<meta property='og:url' content='http://localhost:1313/'>
+<link rel="stylesheet" href="/scss/style.min.9bcbe133e0c8f365670d0fd9ec460b7d30f94750a9d3d60b6585808358824f0e.css"><meta property='og:title' content="【stm32】STM32中HAL库中断的实现，基于HAL库的中断详细学习">
+<meta property='og:description' content="STM32中HAL库中断的实现，基于HAL库的中断详细学习">
+<meta property='og:url' content='http://localhost:1313/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8Ehal%E5%BA%93%E7%9A%84%E4%B8%AD%E6%96%AD%E8%AF%A6%E7%BB%86%E5%AD%A6%E4%B9%A0/'>
 <meta property='og:site_name' content='muioo blog'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-04-07T00:00:00&#43;00:00 '/>
-<meta name="twitter:title" content="muioo blog">
-<meta name="twitter:description" content="欢迎来到我的网站"><link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/index.xml">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='stm32' /><meta property='article:tag' content='嵌入式' /><meta property='article:published_time' content='2026-04-07T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-04-07T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="【stm32】STM32中HAL库中断的实现，基于HAL库的中断详细学习">
+<meta name="twitter:description" content="STM32中HAL库中断的实现，基于HAL库的中断详细学习">
     <link rel="shortcut icon" href="/favicon.ico" />
 <script>
     
@@ -151,7 +150,9 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
             }
         </style>
     </head>
-    <body class="">
+    <body class="
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -231,7 +232,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         
         
         
-        <li  class='current' >
+        <li >
             <a href='/' >
                 
                 
@@ -339,60 +340,10 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     <aside class="sidebar right-sidebar sticky">
         
             
-                <form action="/search/" class="search-form widget" >
-        <p>
-            <label>搜索</label>
-            <input name="keyword" required placeholder="输入关键词..." />
-        
-            <button title="搜索">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="10" cy="10" r="7" />
-  <line x1="21" y1="21" x2="15" y2="15" />
-</svg>
-
-
-
-            </button>
-        </p>
-    </form>
-            
-        
-            
-                <section class="widget archives">
+                
+    <section class="widget archives">
         <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">归档</h2>
-
-        
-        
-        
-        
-        <div class="widget-archive--list">
-            <div class="archives-year">
-                    <a href="/archives/#2026">
-                        
-                            <span class="year">2026</span>
-                            <span class="count">15</span>
-                        
-                    </a> 
-                </div>
-            
-        </div>
-    </section>
-            
-        
-            
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <line x1="5" y1="9" x2="19" y2="9" />
   <line x1="5" y1="15" x2="19" y2="15" />
@@ -402,106 +353,17 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
 
 
-    </div>
-    <h2 class="widget-title section-title">分类</h2>
-
-    <div class="tagCloud-tags">
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
         
-            <a href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" class="font_size_5">
-                开发技术
-            </a>
-        
-            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="font_size_3">
-                开发工具
-            </a>
-        
-            <a href="/categories/%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/" class="font_size_2">
-                工具安装
-            </a>
-        
-            <a href="/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" class="font_size_2">
-                项目部署
-            </a>
-        
-            <a href="/categories/ai%E7%BC%96%E7%A8%8B/" class="font_size_1">
-                Ai编程
-            </a>
-        
-            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/" class="font_size_1">
-                开发工具问题
-            </a>
-        
-            <a href="/categories/%E6%8F%90%E7%A4%BA%E8%AF%8D/" class="font_size_1">
-                提示词
-            </a>
-        
-            <a href="/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E5%BA%94%E7%94%A8/" class="font_size_1">
-                杂七杂八应用
-            </a>
-        
-    </div>
-</section>
-
-            
-        
-            
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
-  <circle cx="9" cy="9" r="2" />
-</svg>
-
-
-
-    </div>
-    <h2 class="widget-title section-title">标签云</h2>
-
-    <div class="tagCloud-tags">
-        
-            <a href="/tags/docker/">
-                Docker
-            </a>
-        
-            <a href="/tags/claude-code/">
-                Claude Code
-            </a>
-        
-            <a href="/tags/install/">
-                Install
-            </a>
-        
-            <a href="/tags/stm32/">
-                Stm32
-            </a>
-        
-            <a href="/tags/claude-code%E5%91%BD%E4%BB%A4/">
-                Claude Code命令
-            </a>
-        
-            <a href="/tags/freertos/">
-                FreeRTOS
-            </a>
-        
-            <a href="/tags/git/">
-                Git
-            </a>
-        
-            <a href="/tags/hugo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">
-                Hugo网站搭建
-            </a>
-        
-            <a href="/tags/mcp/">
-                Mcp
-            </a>
-        
-            <a href="/tags/nginx/">
-                Nginx
-            </a>
-        
-    </div>
-</section>
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#11嵌套向量中断控制器">1.1、嵌套向量中断控制器</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
 
             
         
@@ -509,14 +371,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
 
                 <main class="main full-width">
-    
-    
-    
-
-    <section class="article-list">
-        
-            
-<article class="">
+    <article class="main-article">
     <header class="article-header">
 
     <div class="article-details">
@@ -532,7 +387,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/">【stm32】STM32中HAL库中断的实现</a>
+            <a href="/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8Ehal%E5%BA%93%E7%9A%84%E4%B8%AD%E6%96%AD%E8%AF%A6%E7%BB%86%E5%AD%A6%E4%B9%A0/">【stm32】STM32中HAL库中断的实现，基于HAL库的中断详细学习</a>
         </h2>
     
         
@@ -570,211 +425,217 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </div>
 
 </header>
-</article>
-        
-            
-<article class="">
-    <header class="article-header">
 
-    <div class="article-details">
+    <section class="article-content">
     
-    <header class="article-category">
-        
-            <a href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" >
-                开发技术
-            </a>
-        
-    </header>
     
+    <h1 id="1stm32-中断系统">1、STM32 中断系统
+</h1><h2 id="11嵌套向量中断控制器">1.1、嵌套向量中断控制器
+</h2><p>中断可以由硬件或者软件触发。在ARM处理器中，把能够打断当前代码执行流程的事件分为异常（exception）和中断（interrupt）两类。二者的区别在于：中断是由内核外部产生的，一般由硬件触发，比如定时器中断和外部中断等。而异常通常是内核自身产生的，大多由软件触发，比如除法出错异常，预取指失败等。</p>
+<p>在基于Cortex-M内核设计的ARM处理器中提供了一个专用的硬件模块：嵌套向量中断控制器 （nested vectored interrupt controller，NVIC）用来管理全部的异常和中断。通过对NVIC的编程，可以实现中断的使能、中断优先级的设置以及中断触发方式的选择等功能。</p>
+<p>NVIC利用中断通道来管理各类中断，中断源通过中断通道向内核发出中断申请，这些中断通道已经固定分配给内核异常和片内外设。每一个中断通道对应一个中断服务程序，按照中断优先级的顺序组成了STM32微控制器 的中断向量表。不同型号的STM32微控制器支持的中断通道各不相同</p>
 
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/nginxnginx%E7%9A%84%E7%90%86%E8%A7%A3%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8/">【nginx】nginx的理解以及使用</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            nginx在生产部署方面的应用
-        </h3>
-        
-    </div>
+</section>
 
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published" datetime='2026-04-02T00:00:00Z'>2026-04-02</time>
-            </div>
-        
 
+    <footer class="article-footer">
+    
+    <section class="article-tags">
         
+            <a href="/tags/stm32/">Stm32</a>
+        
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
+        
+    </section>
+
+
     </footer>
-    
+
 
     
-</div>
-
-</header>
 </article>
-        
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
             
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image">
-            <a href="/p/docker%E5%91%BD%E4%BB%A4docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-                <img src="/p/docker%E5%91%BD%E4%BB%A4docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/docker-page_hu_537b6a526df434de.png"
-                        srcset="/p/docker%E5%91%BD%E4%BB%A4docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/docker-page_hu_537b6a526df434de.png 800w, /p/docker%E5%91%BD%E4%BB%A4docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/docker-page_hu_4acbb46c703ef190.png 1600w"
-                        width="800" 
-                        height="476" 
-                        loading="lazy"
-                        alt="Featured image of post 【docker命令】docker常用命令" />
                 
-            </a>
-        </div>
-    
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" >
-                开发工具
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/docker%E5%91%BD%E4%BB%A4docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">【docker命令】docker常用命令</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            docker的一些常用命令
-        </h3>
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published" datetime='2026-03-28T00:00:00Z'>2026-03-28</time>
-            </div>
-        
-
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-</article>
-        
-            
 <article class="">
-    <header class="article-header">
+    <a href="/p/stm32%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/">
+        
+        
 
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" >
-                开发技术
-            </a>
-        
-            <a href="/categories/%E6%8F%90%E7%A4%BA%E8%AF%8D/" >
-                提示词
-            </a>
-        
-    </header>
-    
+        <div class="article-details">
+            <h2 class="article-title">【stm32】项目搭建和FreeRTOS</h2>
+        </div>
+    </a>
+</article>
 
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/">【前端提示词】一些好看的前端样式提示词</a>
-        </h2>
-    
+            
+                
+<article class="">
+    <a href="/p/nginxnginx%E7%9A%84%E7%90%86%E8%A7%A3%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8/">
         
-        <h3 class="article-subtitle">
-            前端开发中常用的 React 组件样式提示词
-        </h3>
         
+
+        <div class="article-details">
+            <h2 class="article-title">【nginx】nginx的理解以及使用</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【前端提示词】一些好看的前端样式提示词</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【爬虫基本方法】爬虫request基本框架 &#43; scrapy框架 &#43; crawl4ai</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
     </div>
+</aside>
 
+     
     
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published" datetime='2026-03-27T00:00:00Z'>2026-03-27</time>
-            </div>
         
 
-        
-    </footer>
-    
+    <section class="comments-section" aria-label="评论" data-comments-section>
+        <div class="comments-container">
+            <h2 class="comments-title">评论</h2>
+            
+<link rel="preconnect" href="https://giscus.app" crossorigin>
+<link rel="dns-prefetch" href="https://giscus.app">
 
-    
+
+<div id="giscus-container" class="giscus-placeholder">
+    <div class="giscus-loading">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">评论区加载中...</p>
+    </div>
 </div>
 
-</header>
-</article>
-        
-    </section><nav class="pagination" role="navigation" aria-label="pagination"><a class="page-link disabled"aria-label="Previous page"aria-disabled="true">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 6l-6 6l6 6" /></svg>
-    </a><a class="page-link current" aria-label="Page 1"aria-current="page">
-        1
-    </a><a class="page-link "href="/page/2/"  aria-label="Page 2">
-                2
-            </a><a class="page-link "href="/page/3/"  aria-label="Page 3">
-                3
-            </a><span class="page-link pagination-link">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-dots"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>
-    </span><a class="page-link "href="/page/4/"aria-label="Page 4">
-        4
-    </a><a class="page-link "href="/page/2/"aria-label="Next page">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
-    </a>
-</nav><footer class="site-footer">
+
+<style>
+    .giscus-placeholder {
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .giscus-loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem 1rem;
+        color: var(--text-secondary, #666);
+        transition: opacity 0.3s ease;
+    }
+
+    .loading-spinner {
+        width: 32px;
+        height: 32px;
+        border: 3px solid var(--border-color, #e0e0e0);
+        border-top-color: var(--accent-color, #3b82f6);
+        border-radius: 50%;
+        animation: giscus-spin 0.8s linear infinite;
+    }
+
+    @keyframes giscus-spin {
+        to { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+        font-size: 0.875rem;
+        opacity: 0.7;
+    }
+
+    .giscus-frame {
+        min-height: 200px;
+        width: 100%;
+    }
+
+    #giscus-container:not(.giscus-placeholder) {
+        min-height: 400px;
+    }
+
+     
+    #giscus-container iframe {
+        width: 100% !important;
+        min-height: 200px !important;
+        border: none !important;
+    }
+</style>
+
+        </div>
+    </section>
+
+    <style>
+        .comments-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color, #e0e0e0);
+        }
+
+        .comments-container {
+            max-width: 100%;
+        }
+
+        .comments-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary, #1a1a1a);
+        }
+
+        #giscus-container {
+            margin-top: 1rem;
+        }
+
+        body.dark .comments-title {
+            color: var(--text-primary, #e0e0e0);
+        }
+
+        body.dark .loading-text {
+            color: var(--text-secondary, #999);
+        }
+
+        body.dark .loading-spinner {
+            border-color: var(--border-color, #333);
+            border-top-color: var(--accent-color, #60a5fa);
+        }
+    </style>
+
+
+    
+
+    <footer class="site-footer">
     <section class="copyright">
         &copy;
         
@@ -789,6 +650,86 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
 </footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+    
 
                 </main>
             </div>

@@ -1,7 +1,7 @@
 ---
 author: muioo
 
-title: "【stm32单片机】项目搭建和FreeRTOS"
+title: "【stm32】项目搭建和FreeRTOS"
 
 date: 2026-02-03
 
