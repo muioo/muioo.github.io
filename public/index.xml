@@ -7,7 +7,20 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Thu, 02 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 07 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>【stm32中HAL库中断的实现】基于HAL库的中断详细学习</title>
+        <link>http://localhost:1313/p/stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8Ehal%E5%BA%93%E7%9A%84%E4%B8%AD%E6%96%AD%E8%AF%A6%E7%BB%86%E5%AD%A6%E4%B9%A0/</link>
+        <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8Ehal%E5%BA%93%E7%9A%84%E4%B8%AD%E6%96%AD%E8%AF%A6%E7%BB%86%E5%AD%A6%E4%B9%A0/</guid>
+        <description>&lt;h1 id=&#34;1stm32-中断系统&#34;&gt;1、STM32 中断系统
+&lt;/h1&gt;&lt;h2 id=&#34;11嵌套向量中断控制器&#34;&gt;1.1、嵌套向量中断控制器
+&lt;/h2&gt;&lt;p&gt;中断可以由硬件或者软件触发。在ARM处理器中，把能够打断当前代码执行流程的事件分为异常（exception）和中断（interrupt）两类。二者的区别在于：中断是由内核外部产生的，一般由硬件触发，比如定时器中断和外部中断等。而异常通常是内核自身产生的，大多由软件触发，比如除法出错异常，预取指失败等。&lt;/p&gt;
+&lt;p&gt;在基于Cortex-M内核设计的ARM处理器中提供了一个专用的硬件模块：嵌套向量中断控制器 （nested vectored interrupt controller，NVIC）用来管理全部的异常和中断。通过对NVIC的编程，可以实现中断的使能、中断优先级的设置以及中断触发方式的选择等功能。&lt;/p&gt;
+&lt;p&gt;NVIC利用中断通道来管理各类中断，中断源通过中断通道向内核发出中断申请，这些中断通道已经固定分配给内核异常和片内外设。每一个中断通道对应一个中断服务程序，按照中断优先级的顺序组成了STM32微控制器 的中断向量表。不同型号的STM32微控制器支持的中断通道各不相同&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>【nginx】nginx的理解以及使用</title>
         <link>http://localhost:1313/p/nginxnginx%E7%9A%84%E7%90%86%E8%A7%A3%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
         <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
@@ -8674,12 +8687,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;如果这样能打开：说明是插件或用户配置损坏。之后进VS Code后逐个禁用插件试试。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;打不开接着往下尝试：&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;如果这样能打开：说明是插件或用户配置损坏。之后进VS Code后逐个禁用插件试试。打不开接着往下尝试：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5 id=&#34;3检查是否是环境变量路径的影响&#34;&gt;3）检查是否是环境变量/路径的影响
 &lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
