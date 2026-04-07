@@ -31,12 +31,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;如果这样能打开：说明是插件或用户配置损坏。之后进VS Code后逐个禁用插件试试。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;打不开接着往下尝试：&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;如果这样能打开：说明是插件或用户配置损坏。之后进VS Code后逐个禁用插件试试。打不开接着往下尝试：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5 id=&#34;3检查是否是环境变量路径的影响&#34;&gt;3）检查是否是环境变量/路径的影响
 &lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

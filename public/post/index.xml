@@ -8,12 +8,17 @@
         <language>en-us</language>
         <copyright>muioo</copyright>
         <lastBuildDate>Tue, 07 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>【stm32中HAL库中断的实现】</title>
-        <link>http://localhost:1313/p/stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/</link>
+        <title>【stm32】STM32中HAL库中断的实现</title>
+        <link>http://localhost:1313/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/</link>
         <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/</guid>
-        <description></description>
+        <guid>http://localhost:1313/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/</guid>
+        <description>&lt;h1 id=&#34;1stm32-中断系统&#34;&gt;1、STM32 中断系统
+&lt;/h1&gt;&lt;h2 id=&#34;11嵌套向量中断控制器&#34;&gt;1.1、嵌套向量中断控制器
+&lt;/h2&gt;&lt;p&gt;中断可以由硬件或者软件触发。在ARM处理器中，把能够打断当前代码执行流程的事件分为异常（exception）和中断（interrupt）两类。二者的区别在于：中断是由内核外部产生的，一般由硬件触发，比如定时器中断和外部中断等。而异常通常是内核自身产生的，大多由软件触发，比如除法出错异常，预取指失败等。&lt;/p&gt;
+&lt;p&gt;在基于Cortex-M内核设计的ARM处理器中提供了一个专用的硬件模块：嵌套向量中断控制器 （nested vectored interrupt controller，NVIC）用来管理全部的异常和中断。通过对NVIC的编程，可以实现中断的使能、中断优先级的设置以及中断触发方式的选择等功能。&lt;/p&gt;
+&lt;p&gt;NVIC利用中断通道来管理各类中断，中断源通过中断通道向内核发出中断申请，这些中断通道已经固定分配给内核异常和片内外设。每一个中断通道对应一个中断服务程序，按照中断优先级的顺序组成了STM32微控制器 的中断向量表。不同型号的STM32微控制器支持的中断通道各不相同&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>【nginx】nginx的理解以及使用</title>
@@ -8154,6 +8159,39 @@
 &lt;/h3&gt;</description>
         </item>
         <item>
+        <title>【stm32中I²C】I²C通信</title>
+        <link>http://localhost:1313/p/stm32%E4%B8%ADicic%E9%80%9A%E4%BF%A1/</link>
+        <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/stm32%E4%B8%ADicic%E9%80%9A%E4%BF%A1/</guid>
+        <description>&lt;h1 id=&#34;gpio的工作方式&#34;&gt;GPIO的工作方式
+&lt;/h1&gt;&lt;h2 id=&#34;4种输入模式&#34;&gt;4种输入模式
+&lt;/h2&gt;&lt;h3 id=&#34;输入浮空&#34;&gt;输入浮空
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E4%B8%ADicic%E9%80%9A%E4%BF%A1/1.png&#34;
+	width=&#34;1554&#34;
+	height=&#34;875&#34;
+	srcset=&#34;http://localhost:1313/p/stm32%E4%B8%ADicic%E9%80%9A%E4%BF%A1/1_hu_20a370fa48408c7e.png 480w, http://localhost:1313/p/stm32%E4%B8%ADicic%E9%80%9A%E4%BF%A1/1_hu_e632be80797a9e87.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;输入上拉&#34;&gt;输入上拉
+&lt;/h3&gt;&lt;h3 id=&#34;输入下拉&#34;&gt;输入下拉
+&lt;/h3&gt;&lt;h3 id=&#34;模拟输入&#34;&gt;模拟输入
+&lt;/h3&gt;&lt;h2 id=&#34;4种输出模式&#34;&gt;4种输出模式
+&lt;/h2&gt;&lt;h3 id=&#34;开漏输出&#34;&gt;开漏输出
+&lt;/h3&gt;&lt;h3 id=&#34;开口复用功能&#34;&gt;开口复用功能
+&lt;/h3&gt;&lt;h3 id=&#34;推挽输出&#34;&gt;推挽输出
+&lt;/h3&gt;&lt;h3 id=&#34;推完复用功能&#34;&gt;推完复用功能
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>【Claude Code安装】Claude Code安装</title>
         <link>http://localhost:1313/p/claude-code%E5%AE%89%E8%A3%85claude-code%E5%AE%89%E8%A3%85/</link>
         <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
@@ -8449,11 +8487,11 @@
 &lt;/h2&gt;</description>
         </item>
         <item>
-        <title>【stm32单片机】项目搭建和FreeRTOS</title>
-        <link>http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</link>
+        <title>【stm32】项目搭建和FreeRTOS</title>
+        <link>http://localhost:1313/p/stm32%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</link>
         <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</guid>
+        <guid>http://localhost:1313/p/stm32%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/</guid>
         <description>&lt;h2 id=&#34;stm32开发笔记&#34;&gt;STM32开发笔记
 &lt;/h2&gt;&lt;h3 id=&#34;stm32项目搭建&#34;&gt;STM32项目搭建
 &lt;/h3&gt;&lt;h4 id=&#34;编译工具&#34;&gt;编译工具
@@ -8510,7 +8548,7 @@
 &lt;p&gt;连接成功演示图&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;​	&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55.png&#34;&gt;&lt;figcaption&gt;
+&lt;p&gt;​	&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-01-31_17-15-55.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;连接成功演示&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -8639,7 +8677,7 @@
 &lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;使用usb口给开发板供电，解决如下问题&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;​	&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03.png&#34;&gt;&lt;figcaption&gt;
+&lt;p&gt;​	&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-17-03.png&#34;&gt;&lt;figcaption&gt;
       &lt;h4&gt;ST-LINK烧录问题&lt;/h4&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -8653,7 +8691,7 @@
 &lt;p&gt;烧录时要按下reset键 点击连接后松开reset，否则会遇到如下问题&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;​	&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E5%8D%95%E7%89%87%E6%9C%BA%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40.png&#34;&gt;
+&lt;p&gt;​	&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/Snipaste_2026-02-03_17-16-40.png&#34;&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
 </description>
@@ -8682,12 +8720,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;如果这样能打开：说明是插件或用户配置损坏。之后进VS Code后逐个禁用插件试试。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;打不开接着往下尝试：&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;如果这样能打开：说明是插件或用户配置损坏。之后进VS Code后逐个禁用插件试试。打不开接着往下尝试：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5 id=&#34;3检查是否是环境变量路径的影响&#34;&gt;3）检查是否是环境变量/路径的影响
 &lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

@@ -96,6 +96,14 @@
         <description></description>
         </item>
         <item>
+        <title>I²C</title>
+        <link>http://localhost:1313/tags/ic/</link>
+        <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/ic/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Claude Code</title>
         <link>http://localhost:1313/tags/claude-code/</link>
         <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
