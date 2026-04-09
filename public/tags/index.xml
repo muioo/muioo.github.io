@@ -56,38 +56,6 @@
         <description></description>
         </item>
         <item>
-        <title>Shadcn/Ui</title>
-        <link>http://localhost:1313/tags/shadcn/ui/</link>
-        <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/shadcn/ui/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Tailwind</title>
-        <link>http://localhost:1313/tags/tailwind/</link>
-        <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/tailwind/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>组件</title>
-        <link>http://localhost:1313/tags/%E7%BB%84%E4%BB%B6/</link>
-        <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/%E7%BB%84%E4%BB%B6/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Ubuntu</title>
-        <link>http://localhost:1313/tags/ubuntu/</link>
-        <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/ubuntu/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>服务器部署</title>
         <link>http://localhost:1313/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</link>
         <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
@@ -104,14 +72,6 @@
         <description></description>
         </item>
         <item>
-        <title>I²C协议</title>
-        <link>http://localhost:1313/tags/ic%E5%8D%8F%E8%AE%AE/</link>
-        <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/ic%E5%8D%8F%E8%AE%AE/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Claude Code</title>
         <link>http://localhost:1313/tags/claude-code/</link>
         <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
@@ -120,35 +80,11 @@
         <description></description>
         </item>
         <item>
-        <title>Claude Code命令</title>
-        <link>http://localhost:1313/tags/claude-code%E5%91%BD%E4%BB%A4/</link>
-        <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/claude-code%E5%91%BD%E4%BB%A4/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Install</title>
         <link>http://localhost:1313/tags/install/</link>
         <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/tags/install/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Mcp</title>
-        <link>http://localhost:1313/tags/mcp/</link>
-        <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/mcp/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Skills</title>
-        <link>http://localhost:1313/tags/skills/</link>
-        <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/skills/</guid>
         <description></description>
         </item>
         <item>
@@ -213,6 +149,70 @@
         <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/tags/%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%8D%8F%E4%BD%9C/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Claude Code命令</title>
+        <link>http://localhost:1313/tags/claude-code%E5%91%BD%E4%BB%A4/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/claude-code%E5%91%BD%E4%BB%A4/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>I²C协议</title>
+        <link>http://localhost:1313/tags/ic%E5%8D%8F%E8%AE%AE/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/ic%E5%8D%8F%E8%AE%AE/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Mcp</title>
+        <link>http://localhost:1313/tags/mcp/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/mcp/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Shadcn/Ui</title>
+        <link>http://localhost:1313/tags/shadcn/ui/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/shadcn/ui/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Skills</title>
+        <link>http://localhost:1313/tags/skills/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/skills/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Tailwind</title>
+        <link>http://localhost:1313/tags/tailwind/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/tailwind/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Ubuntu</title>
+        <link>http://localhost:1313/tags/ubuntu/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/ubuntu/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>组件</title>
+        <link>http://localhost:1313/tags/%E7%BB%84%E4%BB%B6/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/%E7%BB%84%E4%BB%B6/</guid>
         <description></description>
         </item>
         

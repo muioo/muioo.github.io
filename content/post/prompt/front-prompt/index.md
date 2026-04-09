@@ -7,7 +7,7 @@ date: 2026-03-27
 
 description: "前端开发中常用的 React 组件样式提示词"
 
-tags: ["React", "Tailwind", "shadcn/ui", "组件"]
+tags: ["React" ]
 
 categories: ["开发技术","提示词"]
 ---

@@ -7,7 +7,7 @@ date: 2026-03-01
 
 description: "记录阿里云Ubuntu服务器上Docker的安装、镜像加速和代理配置"
 
-tags: ["Docker", "服务器部署", "Ubuntu"]
+tags: ["Docker", "服务器部署"]
 
 categories: ["项目部署"]
 

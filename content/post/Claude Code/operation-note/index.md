@@ -7,7 +7,7 @@ date: 2026-02-07
 
 description: "Claude Code的使用方法"
 
-tags: ["skills","claude code命令","mcp"]
+tags: ["claude code"]
 
 categories: ["开发工具"]
 
