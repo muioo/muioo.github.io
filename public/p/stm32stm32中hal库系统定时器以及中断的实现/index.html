@@ -359,8 +359,14 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#11嵌套向量中断控制器">1.1、嵌套向量中断控制器</a></li>
-    <li><a href="#12stm32中断优先级设置">1.2、STM32中断优先级设置</a></li>
+    <li><a href="#stm32-中断系统">STM32 中断系统</a>
+      <ol>
+        <li><a href="#1嵌套向量中断控制器">1嵌套向量中断控制器</a></li>
+        <li><a href="#stm32中断优先级设置">STM32中断优先级设置</a></li>
+      </ol>
+    </li>
+    <li><a href="#stm32中断代码案例">stm32中断代码案例</a></li>
+    <li><a href="#定时器与中断闪灯">定时器与中断闪灯</a></li>
   </ol>
 </nav>
         </div>
@@ -430,13 +436,13 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     <section class="article-content">
     
     
-    <h1 id="1stm32-中断系统">1、STM32 中断系统
-</h1><h2 id="11嵌套向量中断控制器">1.1、嵌套向量中断控制器
-</h2><p>中断可以由硬件或者软件触发。在ARM处理器中，把能够打断当前代码执行流程的事件分为异常（exception）和中断（interrupt）两类。二者的区别在于：中断是由内核外部产生的，一般由硬件触发，比如定时器中断和外部中断等。而异常通常是内核自身产生的，大多由软件触发，比如除法出错异常，预取指失败等。</p>
+    <h2 id="stm32-中断系统">STM32 中断系统
+</h2><h3 id="1嵌套向量中断控制器">1嵌套向量中断控制器
+</h3><p>中断可以由硬件或者软件触发。在ARM处理器中，把能够打断当前代码执行流程的事件分为异常（exception）和中断（interrupt）两类。二者的区别在于：中断是由内核外部产生的，一般由硬件触发，比如定时器中断和外部中断等。而异常通常是内核自身产生的，大多由软件触发，比如除法出错异常，预取指失败等。</p>
 <p>在基于Cortex-M内核设计的ARM处理器中提供了一个专用的硬件模块：嵌套向量中断控制器 （nested vectored interrupt controller，NVIC）用来管理全部的异常和中断。通过对NVIC的编程，可以实现中断的使能、中断优先级的设置以及中断触发方式的选择等功能。</p>
 <p>NVIC利用中断通道来管理各类中断，中断源通过中断通道向内核发出中断申请，这些中断通道已经固定分配给内核异常和片内外设。每一个中断通道对应一个中断服务程序，按照中断优先级的顺序组成了STM32微控制器 的中断向量表。不同型号的STM32微控制器支持的中断通道各不相同</p>
-<h2 id="12stm32中断优先级设置">1.2、STM32中断优先级设置
-</h2><p>中断源通过中断通道向内核发出中断申请，设置中断源的优先级实际上是设置中断通道的优先级。中断通道的优先级通过NVIC中的中断优先级寄存器NVIC_IP进行设置，该寄存器是8位，理论上可以配置256个中断优先级。STM32微控制器只使用了其中的高4位，并分成了两个优先级：抢占优先级（preempition priority）和子优先级（subpriority）。</p>
+<h3 id="stm32中断优先级设置">STM32中断优先级设置
+</h3><p>中断源通过中断通道向内核发出中断申请，设置中断源的优先级实际上是设置中断通道的优先级。中断通道的优先级通过NVIC中的中断优先级寄存器NVIC_IP进行设置，该寄存器是8位，理论上可以配置256个中断优先级。STM32微控制器只使用了其中的高4位，并分成了两个优先级：抢占优先级（preempition priority）和子优先级（subpriority）。</p>
 <p>抢占优先级：无关中断产生的先后，只比较优先级的高低。</p>
 <p>子优先级：就是响应优先级，响应优先级主要给出了一种响应的优先队列。</p>
 <p>具有高抢占式优先级的中断可以在具有低抢占式优先级的中断处理过程中被响应，即中断嵌套，或者说高抢占式优先级的中断可以嵌套低抢占式优先级的中断。通俗的理解就是，低抢占优先级的中断处理正在执行，来了一个高抢占式优先级的中断，即去执行高抢占式优先级的中断，执行完毕后，再去执行低抢占优先级的中断。</p>
@@ -486,8 +492,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </table></div>
 <p>在判断一个中断的优先级时，需要综合考虑这两个优先级。当多个中断同时提出中断申请时，抢占优先级高的中断会优先得到执行。如果抢占优先级相同，则比较子优先级；子优先级高的中断会优先得到执行。如果抢占优先级和子优先级都相同的话，就根据各中断在中断向量表中的位置来确定，中断向量表中靠前的中断优先得到执行。</p>
 <p>在HAL库的初始化过程中，HAL库初始化函数HAL_Init()将优先级分组设置为第4组，即只有0~15共16级抢占式优先级，没有子优先级。编号越小的优先级越高：0号为最高，15号为最低。</p>
-<h1 id="2stm32中断代码案例">2、stm32中断代码案例
-</h1><p>根据上方的优先级可以设置抢占优先级或者响应优先级，要注意key引脚的接法，这里我的引按键引脚是PC5</p>
+<h2 id="stm32中断代码案例">stm32中断代码案例
+</h2><p>根据上方的优先级可以设置抢占优先级或者响应优先级，要注意key引脚的接法，这里我的引按键引脚是PC5</p>
 <p><strong>情况 A：你按键是 一端接 PC5，一端接 GND 这是开发板最常见接法</strong></p>
 <p>松开：PC5 = 1（上拉）</p>
 <p>按下：PC5 = 0（到地）</p>
@@ -528,8 +534,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 		data-flex-basis="1320px"
 	
 ></p>
-<h1 id="3定时器与中断闪灯">3、定时器与中断闪灯
-</h1><p>SysTick_Handler()函数，<code>SysTick</code> 是 <strong>Cortex-M 内核自带的定时器</strong>（系统滴答定时器）。</p>
+<h2 id="定时器与中断闪灯">定时器与中断闪灯
+</h2><p>SysTick_Handler()函数，<code>SysTick</code> 是 <strong>Cortex-M 内核自带的定时器</strong>（系统滴答定时器）。</p>
 <ul>
 <li>
 <p>默认配置：<strong>每 1ms 溢出一次</strong></p>
@@ -614,6 +620,19 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
             
                 
 <article class="">
+    <a href="/p/stm32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【stm32】串口通信</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/stm32%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%92%8Cfreertos/">
         
         
@@ -646,19 +665,6 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
         <div class="article-details">
             <h2 class="article-title">【前端提示词】一些好看的前端样式提示词</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">【爬虫基本方法】爬虫request基本框架 &#43; scrapy框架 &#43; crawl4ai</h2>
         </div>
     </a>
 </article>
@@ -792,8 +798,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
     <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
             本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
-            博客: <strong>18</strong> 篇 |
-            字数: <strong>26758</strong> 字
+            博客: <strong>19</strong> 篇 |
+            字数: <strong>27467</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>

@@ -7399,13 +7399,21 @@
         <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/stm32ic%E9%80%9A%E4%BF%A1/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>【stm32】串口通信</title>
+        <link>http://localhost:1313/p/stm32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</link>
+        <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/stm32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</guid>
         <description>&lt;h1 id=&#34;gpio的工作方式&#34;&gt;GPIO的工作方式
 &lt;/h1&gt;&lt;h2 id=&#34;4种输入模式&#34;&gt;4种输入模式
 &lt;/h2&gt;&lt;h3 id=&#34;输入浮空&#34;&gt;输入浮空
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stm32ic%E9%80%9A%E4%BF%A1/1.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/1.png&#34;
 	width=&#34;1554&#34;
 	height=&#34;875&#34;
-	srcset=&#34;http://localhost:1313/p/stm32ic%E9%80%9A%E4%BF%A1/1_hu_20a370fa48408c7e.png 480w, http://localhost:1313/p/stm32ic%E9%80%9A%E4%BF%A1/1_hu_e632be80797a9e87.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/stm32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/1_hu_20a370fa48408c7e.png 480w, http://localhost:1313/p/stm32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/1_hu_e632be80797a9e87.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;

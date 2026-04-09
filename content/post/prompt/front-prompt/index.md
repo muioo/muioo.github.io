@@ -9,7 +9,7 @@ description: "前端开发中常用的 React 组件样式提示词"
 
 tags: ["React" ]
 
-categories: ["开发技术","提示词"]
+categories: ["开发技术","ai编程"]
 ---
 
 # 前端样式提示词

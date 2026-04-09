@@ -12,11 +12,11 @@ tags: ["frp"]
 categories: ["杂七杂八的应用"]
 ---
 
-# frp下载
+## frp下载
 
 链接https://github.com/fatedier/frp/releases/tag/v0.68.0
 
-# 服务器配置
+## 服务器配置
 
 服务器上frps.toml
 
@@ -72,7 +72,7 @@ WantedBy = multi-user.target
 
 - 注意：服务器需要打开7001、6389、6000三个端口
 
-# 控制端配置（win）
+## 控制端配置（win）
 
 打开frpc.toml文件
 

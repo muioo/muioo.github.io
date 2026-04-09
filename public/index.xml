@@ -13,10 +13,10 @@
         <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/frpfrp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8Fp2p%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%8E%A7%E5%88%B6rdp/</guid>
-        <description>&lt;h1 id=&#34;frp下载&#34;&gt;frp下载
-&lt;/h1&gt;&lt;p&gt;链接https://github.com/fatedier/frp/releases/tag/v0.68.0&lt;/p&gt;
-&lt;h1 id=&#34;服务器配置&#34;&gt;服务器配置
-&lt;/h1&gt;&lt;p&gt;服务器上frps.toml&lt;/p&gt;
+        <description>&lt;h2 id=&#34;frp下载&#34;&gt;frp下载
+&lt;/h2&gt;&lt;p&gt;链接https://github.com/fatedier/frp/releases/tag/v0.68.0&lt;/p&gt;
+&lt;h2 id=&#34;服务器配置&#34;&gt;服务器配置
+&lt;/h2&gt;&lt;p&gt;服务器上frps.toml&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -110,8 +110,8 @@
 &lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;注意：服务器需要打开7001、6389、6000三个端口&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;控制端配置win&#34;&gt;控制端配置（win）
-&lt;/h1&gt;&lt;p&gt;打开frpc.toml文件&lt;/p&gt;
+&lt;h2 id=&#34;控制端配置win&#34;&gt;控制端配置（win）
+&lt;/h2&gt;&lt;p&gt;打开frpc.toml文件&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -153,8 +153,8 @@
         <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/win11%E4%B8%93%E4%B8%9A%E7%89%88%E6%BF%80%E6%B4%BBwin11%E4%B8%93%E4%B8%9A%E7%89%88%E6%BF%80%E6%B4%BB/</guid>
-        <description>&lt;h1 id=&#34;激活方法&#34;&gt;激活方法
-&lt;/h1&gt;&lt;p&gt;激活方式如下：&lt;/p&gt;
+        <description>&lt;h2 id=&#34;激活方法&#34;&gt;激活方法
+&lt;/h2&gt;&lt;p&gt;激活方式如下：&lt;/p&gt;
 &lt;p&gt;输入cmd 以管理员启动&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -176,13 +176,13 @@
         <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%AE%9A%E6%97%B6%E5%99%A8%E4%BB%A5%E5%8F%8A%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/</guid>
-        <description>&lt;h1 id=&#34;1stm32-中断系统&#34;&gt;1、STM32 中断系统
-&lt;/h1&gt;&lt;h2 id=&#34;11嵌套向量中断控制器&#34;&gt;1.1、嵌套向量中断控制器
-&lt;/h2&gt;&lt;p&gt;中断可以由硬件或者软件触发。在ARM处理器中，把能够打断当前代码执行流程的事件分为异常（exception）和中断（interrupt）两类。二者的区别在于：中断是由内核外部产生的，一般由硬件触发，比如定时器中断和外部中断等。而异常通常是内核自身产生的，大多由软件触发，比如除法出错异常，预取指失败等。&lt;/p&gt;
+        <description>&lt;h2 id=&#34;stm32-中断系统&#34;&gt;STM32 中断系统
+&lt;/h2&gt;&lt;h3 id=&#34;1嵌套向量中断控制器&#34;&gt;1嵌套向量中断控制器
+&lt;/h3&gt;&lt;p&gt;中断可以由硬件或者软件触发。在ARM处理器中，把能够打断当前代码执行流程的事件分为异常（exception）和中断（interrupt）两类。二者的区别在于：中断是由内核外部产生的，一般由硬件触发，比如定时器中断和外部中断等。而异常通常是内核自身产生的，大多由软件触发，比如除法出错异常，预取指失败等。&lt;/p&gt;
 &lt;p&gt;在基于Cortex-M内核设计的ARM处理器中提供了一个专用的硬件模块：嵌套向量中断控制器 （nested vectored interrupt controller，NVIC）用来管理全部的异常和中断。通过对NVIC的编程，可以实现中断的使能、中断优先级的设置以及中断触发方式的选择等功能。&lt;/p&gt;
 &lt;p&gt;NVIC利用中断通道来管理各类中断，中断源通过中断通道向内核发出中断申请，这些中断通道已经固定分配给内核异常和片内外设。每一个中断通道对应一个中断服务程序，按照中断优先级的顺序组成了STM32微控制器 的中断向量表。不同型号的STM32微控制器支持的中断通道各不相同&lt;/p&gt;
-&lt;h2 id=&#34;12stm32中断优先级设置&#34;&gt;1.2、STM32中断优先级设置
-&lt;/h2&gt;&lt;p&gt;中断源通过中断通道向内核发出中断申请，设置中断源的优先级实际上是设置中断通道的优先级。中断通道的优先级通过NVIC中的中断优先级寄存器NVIC_IP进行设置，该寄存器是8位，理论上可以配置256个中断优先级。STM32微控制器只使用了其中的高4位，并分成了两个优先级：抢占优先级（preempition priority）和子优先级（subpriority）。&lt;/p&gt;
+&lt;h3 id=&#34;stm32中断优先级设置&#34;&gt;STM32中断优先级设置
+&lt;/h3&gt;&lt;p&gt;中断源通过中断通道向内核发出中断申请，设置中断源的优先级实际上是设置中断通道的优先级。中断通道的优先级通过NVIC中的中断优先级寄存器NVIC_IP进行设置，该寄存器是8位，理论上可以配置256个中断优先级。STM32微控制器只使用了其中的高4位，并分成了两个优先级：抢占优先级（preempition priority）和子优先级（subpriority）。&lt;/p&gt;
 &lt;p&gt;抢占优先级：无关中断产生的先后，只比较优先级的高低。&lt;/p&gt;
 &lt;p&gt;子优先级：就是响应优先级，响应优先级主要给出了一种响应的优先队列。&lt;/p&gt;
 &lt;p&gt;具有高抢占式优先级的中断可以在具有低抢占式优先级的中断处理过程中被响应，即中断嵌套，或者说高抢占式优先级的中断可以嵌套低抢占式优先级的中断。通俗的理解就是，低抢占优先级的中断处理正在执行，来了一个高抢占式优先级的中断，即去执行高抢占式优先级的中断，执行完毕后，再去执行低抢占优先级的中断。&lt;/p&gt;
@@ -232,8 +232,8 @@
 &lt;/table&gt;
 &lt;p&gt;在判断一个中断的优先级时，需要综合考虑这两个优先级。当多个中断同时提出中断申请时，抢占优先级高的中断会优先得到执行。如果抢占优先级相同，则比较子优先级；子优先级高的中断会优先得到执行。如果抢占优先级和子优先级都相同的话，就根据各中断在中断向量表中的位置来确定，中断向量表中靠前的中断优先得到执行。&lt;/p&gt;
 &lt;p&gt;在HAL库的初始化过程中，HAL库初始化函数HAL_Init()将优先级分组设置为第4组，即只有0~15共16级抢占式优先级，没有子优先级。编号越小的优先级越高：0号为最高，15号为最低。&lt;/p&gt;
-&lt;h1 id=&#34;2stm32中断代码案例&#34;&gt;2、stm32中断代码案例
-&lt;/h1&gt;&lt;p&gt;根据上方的优先级可以设置抢占优先级或者响应优先级，要注意key引脚的接法，这里我的引按键引脚是PC5&lt;/p&gt;
+&lt;h2 id=&#34;stm32中断代码案例&#34;&gt;stm32中断代码案例
+&lt;/h2&gt;&lt;p&gt;根据上方的优先级可以设置抢占优先级或者响应优先级，要注意key引脚的接法，这里我的引按键引脚是PC5&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;情况 A：你按键是 一端接 PC5，一端接 GND 这是开发板最常见接法&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;松开：PC5 = 1（上拉）&lt;/p&gt;
 &lt;p&gt;按下：PC5 = 0（到地）&lt;/p&gt;
@@ -274,8 +274,8 @@
 		data-flex-basis=&#34;1320px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;h1 id=&#34;3定时器与中断闪灯&#34;&gt;3、定时器与中断闪灯
-&lt;/h1&gt;&lt;p&gt;SysTick_Handler()函数，&lt;code&gt;SysTick&lt;/code&gt; 是 &lt;strong&gt;Cortex-M 内核自带的定时器&lt;/strong&gt;（系统滴答定时器）。&lt;/p&gt;
+&lt;h2 id=&#34;定时器与中断闪灯&#34;&gt;定时器与中断闪灯
+&lt;/h2&gt;&lt;p&gt;SysTick_Handler()函数，&lt;code&gt;SysTick&lt;/code&gt; 是 &lt;strong&gt;Cortex-M 内核自带的定时器&lt;/strong&gt;（系统滴答定时器）。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;默认配置：&lt;strong&gt;每 1ms 溢出一次&lt;/strong&gt;&lt;/p&gt;
@@ -8456,15 +8456,25 @@
 &lt;/h3&gt;</description>
         </item>
         <item>
+        <title>【stm32】I²C通信</title>
+        <link>http://localhost:1313/p/stm32ic%E9%80%9A%E4%BF%A1/</link>
+        <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/stm32ic%E9%80%9A%E4%BF%A1/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>【stm32】串口通信</title>
         <link>http://localhost:1313/p/stm32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</link>
         <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/stm32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</guid>
-        <description>&lt;h1 id=&#34;gpio的工作方式&#34;&gt;GPIO的工作方式
-&lt;/h1&gt;&lt;h2 id=&#34;4种输入模式&#34;&gt;4种输入模式
-&lt;/h2&gt;&lt;h3 id=&#34;输入浮空&#34;&gt;输入浮空
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/1.png&#34;
+        <description>&lt;h2 id=&#34;gpio的工作方式&#34;&gt;GPIO的工作方式
+&lt;/h2&gt;&lt;h3 id=&#34;4种输入模式&#34;&gt;4种输入模式
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;输入浮空&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stm32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/1.png&#34;
 	width=&#34;1554&#34;
 	height=&#34;875&#34;
 	srcset=&#34;http://localhost:1313/p/stm32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/1_hu_20a370fa48408c7e.png 480w, http://localhost:1313/p/stm32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/1_hu_e632be80797a9e87.png 1024w&#34;
@@ -8478,15 +8488,33 @@
 		data-flex-basis=&#34;426px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;h3 id=&#34;输入上拉&#34;&gt;输入上拉
-&lt;/h3&gt;&lt;h3 id=&#34;输入下拉&#34;&gt;输入下拉
-&lt;/h3&gt;&lt;h3 id=&#34;模拟输入&#34;&gt;模拟输入
-&lt;/h3&gt;&lt;h2 id=&#34;4种输出模式&#34;&gt;4种输出模式
-&lt;/h2&gt;&lt;h3 id=&#34;开漏输出&#34;&gt;开漏输出
-&lt;/h3&gt;&lt;h3 id=&#34;开口复用功能&#34;&gt;开口复用功能
-&lt;/h3&gt;&lt;h3 id=&#34;推挽输出&#34;&gt;推挽输出
-&lt;/h3&gt;&lt;h3 id=&#34;推完复用功能&#34;&gt;推完复用功能
-&lt;/h3&gt;</description>
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;输入上拉&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;输入下拉&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;模拟输入&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4种输出模式&#34;&gt;4种输出模式
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;开漏输出&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;开口复用功能&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;推挽输出&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;推完复用功能&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
         </item>
         <item>
         <title>【Claude Code安装】Claude Code安装</title>
