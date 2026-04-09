@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-    <head>
-	<meta name="generator" content="Hugo 0.154.5"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="欢迎来到我的网站">
-<title>Pager 2 - muioo blog</title>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="frp远程桌面的使用方法">
+<title>【frp】FRP内网穿透P2P远程桌面控制（RDP）</title>
 
-<link rel='canonical' href='http://localhost:1313/'>
+<link rel='canonical' href='http://localhost:1313/p/frpfrp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8Fp2p%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%8E%A7%E5%88%B6rdp/'>
 
-<link rel="stylesheet" href="/scss/style.min.9bcbe133e0c8f365670d0fd9ec460b7d30f94750a9d3d60b6585808358824f0e.css"><meta property='og:title' content="muioo blog">
-<meta property='og:description' content="欢迎来到我的网站">
-<meta property='og:url' content='http://localhost:1313/'>
+<link rel="stylesheet" href="/scss/style.min.9bcbe133e0c8f365670d0fd9ec460b7d30f94750a9d3d60b6585808358824f0e.css"><meta property='og:title' content="【frp】FRP内网穿透P2P远程桌面控制（RDP）">
+<meta property='og:description' content="frp远程桌面的使用方法">
+<meta property='og:url' content='http://localhost:1313/p/frpfrp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8Fp2p%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%8E%A7%E5%88%B6rdp/'>
 <meta property='og:site_name' content='muioo blog'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-04-09T00:00:00&#43;00:00 '/>
-<meta name="twitter:title" content="muioo blog">
-<meta name="twitter:description" content="欢迎来到我的网站"><link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/index.xml">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='frp' /><meta property='article:published_time' content='2026-04-09T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-04-09T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="【frp】FRP内网穿透P2P远程桌面控制（RDP）">
+<meta name="twitter:description" content="frp远程桌面的使用方法">
     <link rel="shortcut icon" href="/favicon.ico" />
 <script>
     
@@ -151,7 +150,9 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
             }
         </style>
     </head>
-    <body class="">
+    <body class="
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -231,7 +232,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         
         
         
-        <li  class='current' >
+        <li >
             <a href='/' >
                 
                 
@@ -336,463 +337,338 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     </ol>
 </aside>
 
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                <form action="/search/" class="search-form widget" >
-        <p>
-            <label>搜索</label>
-            <input name="keyword" required placeholder="输入关键词..." />
-        
-            <button title="搜索">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="10" cy="10" r="7" />
-  <line x1="21" y1="21" x2="15" y2="15" />
-</svg>
+    
 
+                <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
 
-
-            </button>
-        </p>
-    </form>
-            
+    <div class="article-details">
+    
+    <header class="article-category">
         
-            
-                <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">归档</h2>
-
-        
-        
-        
-        
-        <div class="widget-archive--list">
-            <div class="archives-year">
-                    <a href="/archives/#2026">
-                        
-                            <span class="year">2026</span>
-                            <span class="count">18</span>
-                        
-                    </a> 
-                </div>
-            
-        </div>
-    </section>
-            
-        
-            
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-    </div>
-    <h2 class="widget-title section-title">分类</h2>
-
-    <div class="tagCloud-tags">
-        
-            <a href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" class="font_size_6">
-                开发技术
-            </a>
-        
-            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="font_size_3">
-                开发工具
-            </a>
-        
-            <a href="/categories/%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/" class="font_size_2">
-                工具安装
-            </a>
-        
-            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/" class="font_size_2">
-                开发工具问题
-            </a>
-        
-            <a href="/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" class="font_size_2">
-                项目部署
-            </a>
-        
-            <a href="/categories/ai%E7%BC%96%E7%A8%8B/" class="font_size_1">
-                Ai编程
-            </a>
-        
-            <a href="/categories/%E6%8F%90%E7%A4%BA%E8%AF%8D/" class="font_size_1">
-                提示词
-            </a>
-        
-            <a href="/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E5%BA%94%E7%94%A8/" class="font_size_1">
-                杂七杂八应用
-            </a>
-        
-            <a href="/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E5%BA%94%E7%94%A8/" class="font_size_1">
+            <a href="/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E5%BA%94%E7%94%A8/" >
                 杂七杂八的应用
             </a>
         
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/frpfrp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8Fp2p%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%8E%A7%E5%88%B6rdp/">【frp】FRP内网穿透P2P远程桌面控制（RDP）</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            frp远程桌面的使用方法
+        </h3>
+        
     </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2026-04-09T00:00:00Z'>2026-04-09</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="frp下载">frp下载
+</h1><p>链接https://github.com/fatedier/frp/releases/tag/v0.68.0</p>
+<h1 id="服务器配置">服务器配置
+</h1><p>服务器上frps.toml</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">bindAddr</span> <span class="p">=</span> <span class="s2">&#34;0.0.0.0&#34;</span> <span class="c">#服务端监听的 IP 地址，0.0.0.0表示监听所有网络接口</span>
+</span></span><span class="line"><span class="cl"><span class="nx">bindPort</span> <span class="p">=</span> <span class="mi">6000</span> <span class="c">#指定 FRP 服务端的监听端口，客户端将通过这个端口连接到 FRP 服务端</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">vhostHTTPPort</span> <span class="p">=</span> <span class="mi">28080</span> <span class="c">#指定虚拟主机 HTTP 服务监听的端口 </span>
+</span></span><span class="line"><span class="cl"><span class="nx">webServer</span><span class="p">.</span><span class="nx">addr</span> <span class="p">=</span> <span class="s2">&#34;0.0.0.0&#34;</span> <span class="c">#指定 FRP Web UI（管理界面）的绑定地址</span>
+</span></span><span class="line"><span class="cl"><span class="nx">webServer</span><span class="p">.</span><span class="nx">port</span> <span class="p">=</span> <span class="mi">7001</span> <span class="c">#指定 FRP Web UI 的端口号，可以通过 7500 端口访问管理界面，可以设置成别的</span>
+</span></span><span class="line"><span class="cl"><span class="nx">webServer</span><span class="p">.</span><span class="nx">user</span> <span class="p">=</span> <span class="s2">&#34;admin&#34;</span> <span class="c">#Web UI 登录所需的用户名，自由设置</span>
+</span></span><span class="line"><span class="cl"><span class="nx">webServer</span><span class="p">.</span><span class="nx">password</span> <span class="p">=</span> <span class="s2">&#34;admin123&#34;</span> <span class="c">#Web UI 登录所需的密码，自由设置</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">log</span><span class="p">.</span><span class="nx">to</span> <span class="p">=</span> <span class="s2">&#34;/frpslog/frps.log&#34;</span> <span class="c">#指定日志输出的文件路径</span>
+</span></span><span class="line"><span class="cl"><span class="nx">log</span><span class="p">.</span><span class="nx">level</span> <span class="p">=</span> <span class="s2">&#34;info&#34;</span> <span class="c">#日志的记录级别，info 表示记录一般的信息</span>
+</span></span><span class="line"><span class="cl"><span class="nx">log</span><span class="p">.</span><span class="nx">maxDays</span> <span class="p">=</span> <span class="mi">3</span> <span class="c">#设置日志文件保留的天数，超过 3 天的日志文件将被自动删除</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">auth</span><span class="p">.</span><span class="nx">method</span> <span class="p">=</span> <span class="s2">&#34;token&#34;</span> <span class="c">#指定认证方式，token 表示客户端和服务端通过 Token 进行身份认证</span>
+</span></span><span class="line"><span class="cl"><span class="nx">auth</span><span class="p">.</span><span class="nx">token</span> <span class="p">=</span> <span class="s2">&#34;abcdef&#34;</span> <span class="c">#Token 用于客户端和服务端的身份认证，自由设置</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">allowPorts</span> <span class="p">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="nx">start</span> <span class="p">=</span> <span class="mi">6389</span><span class="p">,</span> <span class="nx">end</span> <span class="p">=</span> <span class="mi">6389</span><span class="p">},</span> <span class="c">#定义允许客户端使用的端口范围</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>服务器需要启动服务配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#进入文件</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /etc/systemd/system
+</span></span><span class="line"><span class="cl"><span class="c1">#创建frps.service文件进行配置</span>
+</span></span><span class="line"><span class="cl">vim frps.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>写入内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span> <span class="o">=</span> frp server <span class="c1"># 服务名称，可自定义</span>
+</span></span><span class="line"><span class="cl"><span class="nv">After</span> <span class="o">=</span> network.target syslog.target
+</span></span><span class="line"><span class="cl"><span class="nv">Wants</span> <span class="o">=</span> network.target
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Type</span> <span class="o">=</span> simple
+</span></span><span class="line"><span class="cl"><span class="c1">#启动frps的命令，修改为frps的安装路径</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span> <span class="o">=</span> /root/wbl/frp/frp_0.68.0_linux_amd64/frps -c /root/wbl/frp/frp_0.68.0_linux_amd64/frps.toml
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span> <span class="o">=</span> multi-user.target
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>注意：服务器需要打开7001、6389、6000三个端口</li>
+</ul>
+<h1 id="控制端配置win">控制端配置（win）
+</h1><p>打开frpc.toml文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">serverAddr</span> <span class="o">=</span> <span class="s2">&#34;服务器ip&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">serverPort</span> <span class="o">=</span> <span class="m">6000</span> <span class="c1">#与服务器上的端口一致</span>
+</span></span><span class="line"><span class="cl">auth.token <span class="o">=</span> <span class="s2">&#34;abcdef&#34;</span> <span class="c1"># 与服务器上的token一致</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>transport.tls<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">enable</span> <span class="o">=</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[[</span>proxies<span class="o">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name</span> <span class="o">=</span> <span class="s2">&#34;windows-rdp&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">type</span> <span class="o">=</span> <span class="s2">&#34;tcp&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">localIP</span> <span class="o">=</span> <span class="s2">&#34;127.0.0.1&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">localPort</span> <span class="o">=</span> <span class="m">3389</span>
+</span></span><span class="line"><span class="cl"><span class="nv">remotePort</span> <span class="o">=</span> <span class="m">6389</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在安装路径中打开cmd，执行frpc -c frpc.toml，最好将这个服务设置为开机自启，可以使用nssm</p>
+
 </section>
 
-            
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
         
+            <a href="/tags/frp/">Frp</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+
+    <section class="comments-section" aria-label="评论" data-comments-section>
+        <div class="comments-container">
+            <h2 class="comments-title">评论</h2>
             
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
-  <circle cx="9" cy="9" r="2" />
-</svg>
+<link rel="preconnect" href="https://giscus.app" crossorigin>
+<link rel="dns-prefetch" href="https://giscus.app">
 
 
-
+<div id="giscus-container" class="giscus-placeholder">
+    <div class="giscus-loading">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">评论区加载中...</p>
     </div>
-    <h2 class="widget-title section-title">标签云</h2>
-
-    <div class="tagCloud-tags">
-        
-            <a href="/tags/claude-code/">
-                Claude Code
-            </a>
-        
-            <a href="/tags/docker/">
-                Docker
-            </a>
-        
-            <a href="/tags/stm32/">
-                Stm32
-            </a>
-        
-            <a href="/tags/install/">
-                Install
-            </a>
-        
-            <a href="/tags/freertos/">
-                FreeRTOS
-            </a>
-        
-            <a href="/tags/frp/">
-                Frp
-            </a>
-        
-            <a href="/tags/git/">
-                Git
-            </a>
-        
-            <a href="/tags/hugo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">
-                Hugo网站搭建
-            </a>
-        
-            <a href="/tags/nginx/">
-                Nginx
-            </a>
-        
-            <a href="/tags/react/">
-                React
-            </a>
-        
-    </div>
-</section>
-
-            
-        
-    </aside>
+</div>
 
 
-                <main class="main full-width">
-    
-    
-    
+<style>
+    .giscus-placeholder {
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-    <section class="article-list">
-        
-            
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image">
-            <a href="/p/docker%E5%91%BD%E4%BB%A4docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-                <img src="/p/docker%E5%91%BD%E4%BB%A4docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/docker-page_hu_537b6a526df434de.png"
-                        srcset="/p/docker%E5%91%BD%E4%BB%A4docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/docker-page_hu_537b6a526df434de.png 800w, /p/docker%E5%91%BD%E4%BB%A4docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/docker-page_hu_4acbb46c703ef190.png 1600w"
-                        width="800" 
-                        height="476" 
-                        loading="lazy"
-                        alt="Featured image of post 【docker命令】docker常用命令" />
-                
-            </a>
+    .giscus-loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem 1rem;
+        color: var(--text-secondary, #666);
+        transition: opacity 0.3s ease;
+    }
+
+    .loading-spinner {
+        width: 32px;
+        height: 32px;
+        border: 3px solid var(--border-color, #e0e0e0);
+        border-top-color: var(--accent-color, #3b82f6);
+        border-radius: 50%;
+        animation: giscus-spin 0.8s linear infinite;
+    }
+
+    @keyframes giscus-spin {
+        to { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+        font-size: 0.875rem;
+        opacity: 0.7;
+    }
+
+    .giscus-frame {
+        min-height: 200px;
+        width: 100%;
+    }
+
+    #giscus-container:not(.giscus-placeholder) {
+        min-height: 400px;
+    }
+
+     
+    #giscus-container iframe {
+        width: 100% !important;
+        min-height: 200px !important;
+        border: none !important;
+    }
+</style>
+
         </div>
-    
+    </section>
 
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" >
-                开发工具
-            </a>
-        
-    </header>
-    
+    <style>
+        .comments-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color, #e0e0e0);
+        }
 
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/docker%E5%91%BD%E4%BB%A4docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">【docker命令】docker常用命令</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            docker的一些常用命令
-        </h3>
-        
-    </div>
+        .comments-container {
+            max-width: 100%;
+        }
 
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published" datetime='2026-03-28T00:00:00Z'>2026-03-28</time>
-            </div>
-        
+        .comments-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary, #1a1a1a);
+        }
 
-        
-    </footer>
-    
+        #giscus-container {
+            margin-top: 1rem;
+        }
+
+        body.dark .comments-title {
+            color: var(--text-primary, #e0e0e0);
+        }
+
+        body.dark .loading-text {
+            color: var(--text-secondary, #999);
+        }
+
+        body.dark .loading-spinner {
+            border-color: var(--border-color, #333);
+            border-top-color: var(--accent-color, #60a5fa);
+        }
+    </style>
+
 
     
-</div>
 
-</header>
-</article>
-        
-            
-<article class="">
-    <header class="article-header">
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" >
-                开发技术
-            </a>
-        
-            <a href="/categories/%E6%8F%90%E7%A4%BA%E8%AF%8D/" >
-                提示词
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/%E5%89%8D%E7%AB%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E6%A0%B7%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D/">【前端提示词】一些好看的前端样式提示词</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            前端开发中常用的 React 组件样式提示词
-        </h3>
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published" datetime='2026-03-27T00:00:00Z'>2026-03-27</time>
-            </div>
-        
-
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-</article>
-        
-            
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image">
-            <a href="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/">
-                <img src="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/page_hu_537b6a526df434de.png"
-                        srcset="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/page_hu_537b6a526df434de.png 800w, /p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/page_hu_4acbb46c703ef190.png 1600w"
-                        width="800" 
-                        height="476" 
-                        loading="lazy"
-                        alt="Featured image of post 【docker项目部署】服务器部署Docker配置&#43;部署项目" />
-                
-            </a>
-        </div>
-    
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" >
-                项目部署
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/">【docker项目部署】服务器部署Docker配置&#43;部署项目</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            记录阿里云Ubuntu服务器上Docker的安装、镜像加速和代理配置
-        </h3>
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published" datetime='2026-03-01T00:00:00Z'>2026-03-01</time>
-            </div>
-        
-
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-</article>
-        
-            
-<article class="">
-    <header class="article-header">
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" >
-                开发技术
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/">【爬虫基本方法】爬虫request基本框架 &#43; scrapy框架 &#43; crawl4ai</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            爬虫基本方法
-        </h3>
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published" datetime='2026-02-14T00:00:00Z'>2026-02-14</time>
-            </div>
-        
-
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-</article>
-        
-    </section><nav class="pagination" role="navigation" aria-label="pagination"><a class="page-link "href="/"aria-label="Previous page">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 6l-6 6l6 6" /></svg>
-    </a><a class="page-link " aria-label="Page 1"href="/">
-        1
-    </a><a class="page-link current"aria-current="page"href="/page/2/"  aria-label="Page 2">
-                2
-            </a><a class="page-link "href="/page/3/"  aria-label="Page 3">
-                3
-            </a><a class="page-link "href="/page/4/"  aria-label="Page 4">
-                4
-            </a><span class="page-link pagination-link">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-dots"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>
-    </span><a class="page-link "href="/page/5/"aria-label="Page 5">
-        5
-    </a><a class="page-link "href="/page/3/"aria-label="Next page">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
-    </a>
-</nav><footer class="site-footer">
+    <footer class="site-footer">
     <section class="copyright">
         &copy;
         
@@ -807,6 +683,86 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
 </footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+    
 
                 </main>
             </div>
