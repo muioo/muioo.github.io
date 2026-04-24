@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/'>
 
-<link rel="stylesheet" href="/scss/style.min.9bcbe133e0c8f365670d0fd9ec460b7d30f94750a9d3d60b6585808358824f0e.css"><meta property='og:title' content="【爬虫基本方法】爬虫request基本框架 + scrapy框架 + crawl4ai">
+<link rel="stylesheet" href="/scss/style.min.77c85ae2e723ccd19af321d3adbe8e0276582f3f4d9624cbb6d406c3a4d4b4bd.css"><meta property='og:title' content="【爬虫基本方法】爬虫request基本框架 + scrapy框架 + crawl4ai">
 <meta property='og:description' content="爬虫基本方法">
 <meta property='og:url' content='http://localhost:1313/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/'>
 <meta property='og:site_name' content='muioo blog'>
@@ -370,6 +370,13 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         <li><a href="#保存数据">保存数据</a></li>
       </ol>
     </li>
+    <li><a href="#crawl4ai爬虫库">crawl4ai爬虫库</a>
+      <ol>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#使用">使用</a></li>
+      </ol>
+    </li>
+    <li><a href="#scrapy框架">scrapy框架</a></li>
   </ol>
 </nav>
         </div>
@@ -443,12 +450,55 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </h2><h3 id="发送请求">发送请求
 </h3><h4 id="以b站评论区为例子">以b站评论区为例子
 </h4><p>1、找到对应的数据包</p>
+<p><img src="/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/5.png"
+	width="1384"
+	height="393"
+	srcset="/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/5_hu_f3f99d60ab61ce3a.png 480w, /p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/5_hu_36b98f1f1560dc98.png 1024w"
+	loading="lazy"
+	
+		alt="5"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="352"
+		data-flex-basis="845px"
+	
+></p>
 <p>2、应对反爬</p>
-<figure><img src="/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/2.png"><figcaption>
-      <h4>处理反爬</h4>
-    </figcaption>
-</figure>
-
+<ul>
+<li>添加get请求参数</li>
+</ul>
+<p><img src="/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/3.png"
+	width="1466"
+	height="426"
+	srcset="/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/3_hu_6ad4cb571d052424.png 480w, /p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/3_hu_a1d4d20bcb9d95cd.png 1024w"
+	loading="lazy"
+	
+		alt="3"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="344"
+		data-flex-basis="825px"
+	
+></p>
+<ul>
+<li>添加cookie</li>
+</ul>
+<p><img src="/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/2.png"
+	width="1920"
+	height="572"
+	srcset="/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/2_hu_4c64d0a694e8ec11.png 480w, /p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/2_hu_dd9b6d24353c9026.png 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="335"
+		data-flex-basis="805px"
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -486,6 +536,20 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </h3><ul>
 <li>json_data 字典取值</li>
 </ul>
+<p><img src="/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/4..png"
+	width="1849"
+	height="866"
+	srcset="/p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/4._hu_dc4229079a0e368c.png 480w, /p/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95%E7%88%AC%E8%99%ABrequest%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6--scrapy%E6%A1%86%E6%9E%B6--crawl4ai/4._hu_960a272db3203da2.png 1024w"
+	loading="lazy"
+	
+		alt="4."
+	
+	
+		class="gallery-image" 
+		data-flex-grow="213"
+		data-flex-basis="512px"
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -519,7 +583,56 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="保存数据">保存数据
-</h3>
+</h3><h2 id="crawl4ai爬虫库">crawl4ai爬虫库
+</h2><h3 id="安装">安装
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install crawl4ai
+</span></span><span class="line"><span class="cl"><span class="c1"># crawl4ai需要依赖playwright</span>
+</span></span><span class="line"><span class="cl">python -m playwright install --with-deps chromium
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="使用">使用
+</h3><ul>
+<li>简单运行</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">asyncio</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">crawl4ai</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">async</span> <span class="k">with</span> <span class="n">AsyncWebCrawler</span><span class="p">()</span> <span class="k">as</span> <span class="n">crawler</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">crawler</span><span class="o">.</span><span class="n">arun</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">url</span><span class="o">=</span><span class="s2">&#34;https://next.xxx.com/xxx&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">markdown</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="scrapy框架">scrapy框架
+</h2>
 </section>
 
 
@@ -546,6 +659,19 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/stm32freertos%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【stm32】FreeRTOS实时操作系统1</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="">
@@ -594,19 +720,6 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
         <div class="article-details">
             <h2 class="article-title">【stm32】I²C通信</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/stm32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">【stm32】串口通信</h2>
         </div>
     </a>
 </article>
@@ -740,8 +853,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
     <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
             本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
-            博客: <strong>19</strong> 篇 |
-            字数: <strong>27484</strong> 字
+            博客: <strong>23</strong> 篇 |
+            字数: <strong>43021</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
@@ -1151,7 +1264,7 @@ if (typeof swup !== 'undefined') {
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.64b08e1ea8843989c3c2601c2bd130edc19d9e5863b4dba31894b5259ddbf682.js" defer></script><script type="text/javascript" src="/ts/custom.388b4c8555b925683490f851d96d246aca608f5b5a471b03653091790c45e904.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.a2ef757b04c7ff1530590ad66d1ad3567d3384e8b5cf14b551690fe7bc1d3512.js" defer></script><script type="text/javascript" src="/ts/custom.388b4c8555b925683490f851d96d246aca608f5b5a471b03653091790c45e904.js" defer></script>
         <script>
     (function () {
         const customFont = document.createElement('link');

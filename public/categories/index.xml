@@ -7,12 +7,20 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Thu, 09 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 24 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>开发工具问题</title>
         <link>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/</link>
-        <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+        <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>开发技术</title>
+        <link>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/</link>
+        <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/</guid>
         <description></description>
         </item>
         <item>
@@ -21,14 +29,6 @@
         <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>开发技术</title>
-        <link>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/</link>
-        <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/</guid>
         <description></description>
         </item>
         <item>

@@ -46,3 +46,18 @@ categories: ["开发技术"]
 
 
 - 推完复用功能
+
+## 串口打印数据
+
+vscode重写
+
+```c
+int __io_putchar(int ch)
+{
+    HAL_UART_Transmit(&huart1, (uint8_t*)&ch, 1, HAL_MAX_DELAY);
+    return ch;
+}
+```
+
+Keil5重写
+

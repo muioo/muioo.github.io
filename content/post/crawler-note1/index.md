@@ -21,9 +21,17 @@ categories: ["开发技术"]
 
 1、找到对应的数据包
 
+![5](5.png)
+
 2、应对反爬
 
-{{< figure src="2.png" title="处理反爬" >}}
+- 添加get请求参数
+
+![3](3.png)
+
+- 添加cookie
+
+![2](2.png)
 
 ```python
 headers = {
@@ -48,6 +56,8 @@ response = request.get(url=url,params=data,headers=headers)
 
 - json_data 字典取值
 
+![4.](4..png)
+
 ```python
 import requests
 
@@ -64,15 +74,48 @@ response = requests.get(url=url, headers=headers)
 print(response.content)
 ```
 
-
-
-
-
-
-
 ### 保存数据
 
 
+
+## crawl4ai爬虫库
+
+### 安装
+
+```bash
+pip install crawl4ai
+# crawl4ai需要依赖playwright
+python -m playwright install --with-deps chromium
+```
+
+### 使用
+
+- 简单运行
+
+```python
+import asyncio
+from crawl4ai import *
+
+async def main():
+    async with AsyncWebCrawler() as crawler:
+        result = await crawler.arun(
+            url="https://next.xxx.com/xxx",
+        )
+        print(result.markdown)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+
+
+
+
+
+
+
+
+## scrapy框架
 
 
 

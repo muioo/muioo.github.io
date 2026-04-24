@@ -16,6 +16,13 @@ image: "page.png"
 
 # Claude Code 使用笔记
 
+- 更新版本
+
+```bash
+# claude code 内部使用
+claude update
+```
+
 - 回到之前的对话
 
 ```bash
