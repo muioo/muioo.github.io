@@ -33,8 +33,8 @@
         
         <guid>http://localhost:1313/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/</guid>
         <description>&lt;img src="http://localhost:1313/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/page.png" alt="Featured image of post 【Claude Code命令】Claude Code（常用命令 &#43; skills &#43; mcp）" /&gt;&lt;h1 id=&#34;claude-code-使用笔记&#34;&gt;Claude Code 使用笔记
-<<<<<<< HEAD
-&lt;/h1&gt;&lt;ul&gt;
+&lt;/h1&gt;&lt;p&gt;&amp;laquo;&amp;laquo;&amp;laquo;&amp;lt; HEAD&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;更新版本&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -47,11 +47,24 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;claude update
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
-=======
-&lt;/h1&gt;&lt;h2 id=&#34;常用命令以及文件配置&#34;&gt;常用命令以及文件配置
-&lt;/h2&gt;&lt;ul&gt;
->>>>>>> origin/main
+&lt;/div&gt;&lt;p&gt;=======&lt;/p&gt;
+&lt;h2 id=&#34;常用命令以及文件配置&#34;&gt;常用命令以及文件配置
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;origin/main&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
 &lt;li&gt;回到之前的对话&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

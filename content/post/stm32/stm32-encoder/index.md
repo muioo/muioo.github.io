@@ -3,11 +3,11 @@ author: muioo
 
 title: "【stm32】定时器以及编码器"
 
-date: 2026-02-08
+date: 2026-04-24
 
 description: "stm32f103rct6开发板定时器、PWM、编码器"
 
-tags: [ "stm32"]
+tags: ["stm32"]
 
 categories: ["开发技术"]
 ---

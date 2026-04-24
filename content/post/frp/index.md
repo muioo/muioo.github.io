@@ -9,7 +9,7 @@ description: "frp远程桌面的使用方法"
 
 tags: ["frp"]
 
-categories: ["杂七杂八的应用"]
+categories: ["杂七杂八应用"]
 ---
 
 ## frp下载

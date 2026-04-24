@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="&laquo;&laquo;&laquo;&lt; HEAD\rauthor: muioo\ntitle: &ldquo;【stm32】FreeRTOS实时操作系统1&rdquo;\ndate: 2026-04-21\ndescription: &ldquo;stm32f103rct6开发板实现FreeRtos，使用Tsk进行对比&rdquo;\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Maven配置\r下载 Maven\r进入Maven官网Welcome to Apache Maven – Maven\n进入文件夹，创建 repo 文件夹，用于存放 Maven 本地仓库依赖\n配置环境变量\r检查是否配置成功\n配置settings.xml\r打开settings.xml\n">
 <title></title>
 
 <link rel='canonical' href='http://localhost:1313/p/'>
 
 <link rel="stylesheet" href="/scss/style.min.77c85ae2e723ccd19af321d3adbe8e0276582f3f4d9624cbb6d406c3a4d4b4bd.css"><meta property='og:title' content="">
-<meta property='og:description' content="&laquo;&laquo;&laquo;&lt; HEAD\rauthor: muioo\ntitle: &ldquo;【stm32】FreeRTOS实时操作系统1&rdquo;\ndate: 2026-04-21\ndescription: &ldquo;stm32f103rct6开发板实现FreeRtos，使用Tsk进行对比&rdquo;\n">
+<meta property='og:description' content="Maven配置\r下载 Maven\r进入Maven官网Welcome to Apache Maven – Maven\n进入文件夹，创建 repo 文件夹，用于存放 Maven 本地仓库依赖\n配置环境变量\r检查是否配置成功\n配置settings.xml\r打开settings.xml\n">
 <meta property='og:url' content='http://localhost:1313/p/'>
 <meta property='og:site_name' content='muioo blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' />
 <meta name="twitter:title" content="">
-<meta name="twitter:description" content="&laquo;&laquo;&laquo;&lt; HEAD\rauthor: muioo\ntitle: &ldquo;【stm32】FreeRTOS实时操作系统1&rdquo;\ndate: 2026-04-21\ndescription: &ldquo;stm32f103rct6开发板实现FreeRtos，使用Tsk进行对比&rdquo;\n">
+<meta name="twitter:description" content="Maven配置\r下载 Maven\r进入Maven官网Welcome to Apache Maven – Maven\n进入文件夹，创建 repo 文件夹，用于存放 Maven 本地仓库依赖\n配置环境变量\r检查是否配置成功\n配置settings.xml\r打开settings.xml\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 <script>
     
@@ -359,20 +359,19 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#-head">&laquo;&laquo;&laquo;&lt; HEAD</a></li>
-    <li><a href="#categories-开发技术">categories: [&ldquo;开发技术&rdquo;]</a>
+    <li><a href="#maven配置">Maven配置</a>
       <ol>
-        <li><a href="#freertos">FreeRtos</a></li>
-        <li><a href="#原生串行代码独占cpu">原生串行代码，独占cpu</a></li>
+        <li>
+          <ol>
+            <li><a href="#下载-maven">下载 Maven</a></li>
+            <li><a href="#配置环境变量">配置环境变量</a></li>
+            <li><a href="#配置settingsxml">配置settings.xml</a></li>
+            <li><a href="#idea配置maven">IDEA配置Maven</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
-    <li><a href="#heading">=======</a></li>
-    <li><a href="#categories-开发技术-1">categories: [&ldquo;开发技术&rdquo;]</a>
-      <ol>
-        <li><a href="#freertos-1">FreeRtos</a></li>
-        <li><a href="#原生串行代码独占cpu-1">原生串行代码，独占cpu</a></li>
-      </ol>
-    </li>
+    <li><a href="#创建springboot项目">创建SpringBoot项目</a></li>
   </ol>
 </nav>
         </div>
@@ -411,17 +410,116 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     <section class="article-content">
     
     
-    <h2 id="-head">&laquo;&laquo;&laquo;&lt; HEAD
-</h2><p>author: muioo</p>
-<p>title: &ldquo;【stm32】FreeRTOS实时操作系统1&rdquo;</p>
-<p>date: 2026-04-21</p>
-<p>description: &ldquo;stm32f103rct6开发板实现FreeRtos，使用Tsk进行对比&rdquo;</p>
-<p>tags: [ &ldquo;stm32&rdquo;]</p>
-<h2 id="categories-开发技术">categories: [&ldquo;开发技术&rdquo;]
-</h2><h3 id="freertos">FreeRtos
-</h3><p>Freertos可以理解为并发，一个cpu快速切换多个任务执行。</p>
-<h3 id="原生串行代码独占cpu">原生串行代码，独占cpu
-</h3><div class="highlight"><div class="chroma">
+    <h2 id="maven配置">Maven配置
+</h2><h4 id="下载-maven">下载 Maven
+</h4><p>进入Maven官网<a class="link" href="https://maven.apache.org/"  target="_blank" rel="noopener"
+    >Welcome to Apache Maven – Maven</a></p>
+<p><img src="/p/Maven1.png"
+	width="2480"
+	height="876"
+	srcset="/p/Maven1_hu_defd1e4b93f006fd.png 480w, /p/Maven1_hu_af68d8f78a858261.png 1024w"
+	loading="lazy"
+	
+		alt="Maven1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="283"
+		data-flex-basis="679px"
+	
+></p>
+<p>进入文件夹，创建 repo 文件夹，用于存放 Maven 本地仓库依赖</p>
+<h4 id="配置环境变量">配置环境变量
+</h4><p><img src="/p/Maven2.png"
+	width="834"
+	height="825"
+	srcset="/p/Maven2_hu_40939a859de2ff55.png 480w, /p/Maven2_hu_dd0e9f1319a037cb.png 1024w"
+	loading="lazy"
+	
+		alt="Maven2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="101"
+		data-flex-basis="242px"
+	
+></p>
+<p>检查是否配置成功</p>
+<p><img src="/p/Maven3.png"
+	width="1707"
+	height="253"
+	srcset="/p/Maven3_hu_36403b2c359d3695.png 480w, /p/Maven3_hu_8b2d7ad458cf0375.png 1024w"
+	loading="lazy"
+	
+		alt="Maven3"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="674"
+		data-flex-basis="1619px"
+	
+></p>
+<h4 id="配置settingsxml">配置settings.xml
+</h4><p>打开settings.xml</p>
+<p><img src="/p/Maven5.png"
+	width="1711"
+	height="435"
+	srcset="/p/Maven5_hu_75d8046639b34d96.png 480w, /p/Maven5_hu_6cbb91099450a673.png 1024w"
+	loading="lazy"
+	
+		alt="Maven5"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="393"
+		data-flex-basis="944px"
+	
+></p>
+<p>复制刚才创建的repo目录</p>
+<p><img src="/p/Maven4.png"
+	width="1686"
+	height="613"
+	srcset="/p/Maven4_hu_39dbcaa64bd6d2b9.png 480w, /p/Maven4_hu_71c8eb81dd618a4e.png 1024w"
+	loading="lazy"
+	
+		alt="Maven4"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="275"
+		data-flex-basis="660px"
+	
+></p>
+<p>在 <code>settings.xml</code> 的第 <code>56</code> 行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;localRepository&gt;</span>D:\App\apache-maven-3.9.14-bin\apache-maven-3.9.14\repo<span class="nt">&lt;/localRepository&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在 <code>settings.xml</code> 的第 <code>160</code> 行左右，配置阿里云镜像，加速依赖下载</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;mirror&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;id&gt;</span>aliyun-maven<span class="nt">&lt;/id&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;mirrorOf&gt;</span>central<span class="nt">&lt;/mirrorOf&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;url&gt;</span>https://maven.aliyun.com/repository/public<span class="nt">&lt;/url&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;blocked&gt;</span>false<span class="nt">&lt;/blocked&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/mirror&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在 <code>settings.xml</code> 的 第 <code>192</code> 行，配置jdk，如果项目用到其他的jdk版本，也在这加就可以，我配置了jdk17和jdk21</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -450,159 +548,55 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </span><span class="lnt">25
 </span><span class="lnt">26
 </span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">__io_putchar</span><span class="p">(</span><span class="kt">int</span> <span class="n">ch</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">HAL_UART_Transmit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">ch</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">HAL_MAX_DELAY</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ch</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">UART_TASK</span><span class="p">(){</span>
-</span></span><span class="line"><span class="cl">  <span class="n">uart_time</span> <span class="o">=</span> <span class="nf">HAL_GetTick</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;UART OUTPUT,time:%d!!</span><span class="se">\r\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">uart_time</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">ADC_TASK</span><span class="p">(){</span>
-</span></span><span class="line"><span class="cl">  <span class="nf">HAL_Delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="n">adc_time</span> <span class="o">=</span> <span class="nf">HAL_GetTick</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;ADC GET DATA,time:%d</span><span class="se">\r\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">adc_time</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="nf">HAL_Delay</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">KEY_TASK</span><span class="p">(){</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c1">//如果按键被按下
-</span></span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nf">HAL_GPIO_ReadPin</span><span class="p">(</span><span class="n">GPIOC</span><span class="p">,</span> <span class="n">GPIO_PIN_5</span><span class="p">)</span> <span class="o">==</span> <span class="n">GPIO_PIN_RESET</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">//消抖
-</span></span></span><span class="line"><span class="cl">    <span class="nf">HAL_Delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">HAL_GPIO_ReadPin</span><span class="p">(</span><span class="n">GPIOC</span><span class="p">,</span> <span class="n">GPIO_PIN_5</span><span class="p">)</span> <span class="o">==</span> <span class="n">GPIO_PIN_RESET</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">       <span class="nf">HAL_GPIO_TogglePin</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_PIN_8</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">ALL_TASK</span><span class="p">(){</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">UART_TASK</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">ADC_TASK</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">KEY_TASK</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="c">&lt;!-- JDK17 --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;profile&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;id&gt;</span>jdk-17<span class="nt">&lt;/id&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;activation&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;activeByDefault&gt;</span>true<span class="nt">&lt;/activeByDefault&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jdk&gt;</span>17<span class="nt">&lt;/jdk&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/activation&gt;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;properties&gt;</span>
+</span></span><span class="line"><span class="cl">    	<span class="nt">&lt;maven.compiler.source&gt;</span>17<span class="nt">&lt;/maven.compiler.source&gt;</span>
+</span></span><span class="line"><span class="cl">    	<span class="nt">&lt;maven.compiler.target&gt;</span>17<span class="nt">&lt;/maven.compiler.target&gt;</span>
+</span></span><span class="line"><span class="cl">    	<span class="nt">&lt;maven.compiler.compilerVersion&gt;</span>17<span class="nt">&lt;/maven.compiler.compilerVersion&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;/properties&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/profile&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- JDK21 --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;profile&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;id&gt;</span>jdk-21<span class="nt">&lt;/id&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;activation&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="nt">&lt;jdk&gt;</span>21<span class="nt">&lt;/jdk&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/activation&gt;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;properties&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="nt">&lt;maven.compiler.source&gt;</span>21<span class="nt">&lt;/maven.compiler.source&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="nt">&lt;maven.compiler.target&gt;</span>21<span class="nt">&lt;/maven.compiler.target&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="nt">&lt;maven.compiler.compilerVersion&gt;</span>21<span class="nt">&lt;/maven.compiler.compilerVersion&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/properties&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/profile&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="heading">=======
-</h2><p>author: muioo</p>
-<p>title: &ldquo;【stm32】FreeRTOS实时操作系统1&rdquo;</p>
-<p>date: 2026-04-21</p>
-<p>description: &ldquo;stm32f103rct6开发板实现FreeRtos，使用Tsk进行对比&rdquo;</p>
-<p>tags: [ &ldquo;stm32&rdquo;]</p>
-<h2 id="categories-开发技术-1">categories: [&ldquo;开发技术&rdquo;]
-</h2><h3 id="freertos-1">FreeRtos
-</h3><p>Freertos可以理解为并发，一个cpu快速切换多个任务执行。</p>
-<h3 id="原生串行代码独占cpu-1">原生串行代码，独占cpu
-</h3><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">__io_putchar</span><span class="p">(</span><span class="kt">int</span> <span class="n">ch</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">HAL_UART_Transmit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">ch</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">HAL_MAX_DELAY</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ch</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">UART_TASK</span><span class="p">(){</span>
-</span></span><span class="line"><span class="cl">  <span class="n">uart_time</span> <span class="o">=</span> <span class="nf">HAL_GetTick</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;UART OUTPUT,time:%d!!</span><span class="se">\r\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">uart_time</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">ADC_TASK</span><span class="p">(){</span>
-</span></span><span class="line"><span class="cl">  <span class="nf">HAL_Delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="n">adc_time</span> <span class="o">=</span> <span class="nf">HAL_GetTick</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;ADC GET DATA,time:%d</span><span class="se">\r\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">adc_time</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="nf">HAL_Delay</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">KEY_TASK</span><span class="p">(){</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c1">//如果按键被按下
-</span></span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nf">HAL_GPIO_ReadPin</span><span class="p">(</span><span class="n">GPIOC</span><span class="p">,</span> <span class="n">GPIO_PIN_5</span><span class="p">)</span> <span class="o">==</span> <span class="n">GPIO_PIN_RESET</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">//消抖
-</span></span></span><span class="line"><span class="cl">    <span class="nf">HAL_Delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">HAL_GPIO_ReadPin</span><span class="p">(</span><span class="n">GPIOC</span><span class="p">,</span> <span class="n">GPIO_PIN_5</span><span class="p">)</span> <span class="o">==</span> <span class="n">GPIO_PIN_RESET</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">       <span class="nf">HAL_GPIO_TogglePin</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_PIN_8</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">ALL_TASK</span><span class="p">(){</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">UART_TASK</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">ADC_TASK</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">KEY_TASK</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>origin/main</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-
+</div><p>按住 Win + R 运行 CMD ，输入 <code>mvn help:system</code>，如下所示表示配置成功：</p>
+<h4 id="idea配置maven">IDEA配置Maven
+</h4><p><img src="/p/Maven6.png"
+	width="1507"
+	height="1125"
+	srcset="/p/Maven6_hu_d9a49312ac2f75b1.png 480w, /p/Maven6_hu_e140dbc44a014cbd.png 1024w"
+	loading="lazy"
+	
+		alt="Maven6"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="133"
+		data-flex-basis="321px"
+	
+></p>
+<h2 id="创建springboot项目">创建SpringBoot项目
+</h2>
 </section>
 
 
@@ -743,8 +737,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
     <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
             本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
-            博客: <strong>24</strong> 篇 |
-            字数: <strong>29976</strong> 字
+            博客: <strong>23</strong> 篇 |
+            字数: <strong>29582</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
