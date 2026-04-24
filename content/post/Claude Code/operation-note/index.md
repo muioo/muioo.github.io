@@ -16,12 +16,16 @@ image: "page.png"
 
 # Claude Code 使用笔记
 
+<<<<<<< HEAD
 - 更新版本
 
 ```bash
 # claude code 内部使用
 claude update
 ```
+=======
+## 常用命令以及文件配置
+>>>>>>> origin/main
 
 - 回到之前的对话
 
@@ -71,6 +75,51 @@ your-project/
 ```
 
 -  .claude目录不要上传到github
+
+- 一些常用命令
+
+```bash
+/init — 初始化CLAUDE.md，新项目第一件事
+/compact — 压缩上下文，长对话续命神器
+/model — 切模型，简单haiku，硬骨头opus
+/clear — 清空对话重新来
+/resume — 恢复之前的对话
+/memory — 编辑记忆文件，跨会话记忆
+/add-dir — 添加工作目录
+/mcp — 管理MCP服务器
+/export — 导出对话到文件
+/vim — 切换Vim模式
+
+🥊【进阶命令·按需使用】
+/cost — 看当前花了多少钱
+/context — 可视化上下文使用情况
+/review — 智能代码审查
+/agents — 创建和管理智能体
+/hooks — 管理工具事件钩子
+/config — 打开配置面板
+/doctor — 诊断安装问题
+/status — 查看版本、模型、账户状态
+/security-review — 安全审查待提交代码
+/pr-comments — 获取GitHub PR评论
+
+🎯【快捷键·效率翻倍】
+Shift+Tab — 一键接受所有变更（最常用！）
+ESC — 中断执行，跑偏了立刻刹车
+ESC+ESC — 跳转到之前的消息
+Cmd+K — 打开命令面板
+Cmd+B — 后台执行命令
+Cmd+O — 展开/折叠过程信息
+@文件名 — 引用文件
+!命令 — 直接执行bash命令
+[#信息](javascript:;) — 写入CLAUDE.md记忆
+Control+V — 粘贴图片
+```
+
+- 让claudecode获得最高权限
+
+```bash
+claude --dangerously-skip-permissions
+```
 
 ## MCP配置
 

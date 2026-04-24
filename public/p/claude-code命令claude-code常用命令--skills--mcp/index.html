@@ -360,6 +360,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
+    <li><a href="#常用命令以及文件配置">常用命令以及文件配置</a></li>
     <li><a href="#mcp配置">MCP配置</a>
       <ol>
         <li><a href="#mcp1-figma-mcp">mcp1: figma mcp</a></li>
@@ -474,7 +475,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     
     
     <h1 id="claude-code-使用笔记">Claude Code 使用笔记
-</h1><ul>
+</h1><p>&laquo;&laquo;&laquo;&lt; HEAD</p>
+<ul>
 <li>更新版本</li>
 </ul>
 <div class="highlight"><div class="chroma">
@@ -487,7 +489,24 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </span></span><span class="line"><span class="cl">claude update
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
+</div><p>=======</p>
+<h2 id="常用命令以及文件配置">常用命令以及文件配置
+</h2><blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>origin/main</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
 <li>回到之前的对话</li>
 </ul>
 <div class="highlight"><div class="chroma">
@@ -578,9 +597,99 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>.claude目录不要上传到github</li>
+<li>
+<p>.claude目录不要上传到github</p>
+</li>
+<li>
+<p>一些常用命令</p>
+</li>
 </ul>
-<h2 id="mcp配置">MCP配置
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/init — 初始化CLAUDE.md，新项目第一件事
+</span></span><span class="line"><span class="cl">/compact — 压缩上下文，长对话续命神器
+</span></span><span class="line"><span class="cl">/model — 切模型，简单haiku，硬骨头opus
+</span></span><span class="line"><span class="cl">/clear — 清空对话重新来
+</span></span><span class="line"><span class="cl">/resume — 恢复之前的对话
+</span></span><span class="line"><span class="cl">/memory — 编辑记忆文件，跨会话记忆
+</span></span><span class="line"><span class="cl">/add-dir — 添加工作目录
+</span></span><span class="line"><span class="cl">/mcp — 管理MCP服务器
+</span></span><span class="line"><span class="cl">/export — 导出对话到文件
+</span></span><span class="line"><span class="cl">/vim — 切换Vim模式
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">🥊【进阶命令·按需使用】
+</span></span><span class="line"><span class="cl">/cost — 看当前花了多少钱
+</span></span><span class="line"><span class="cl">/context — 可视化上下文使用情况
+</span></span><span class="line"><span class="cl">/review — 智能代码审查
+</span></span><span class="line"><span class="cl">/agents — 创建和管理智能体
+</span></span><span class="line"><span class="cl">/hooks — 管理工具事件钩子
+</span></span><span class="line"><span class="cl">/config — 打开配置面板
+</span></span><span class="line"><span class="cl">/doctor — 诊断安装问题
+</span></span><span class="line"><span class="cl">/status — 查看版本、模型、账户状态
+</span></span><span class="line"><span class="cl">/security-review — 安全审查待提交代码
+</span></span><span class="line"><span class="cl">/pr-comments — 获取GitHub PR评论
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">🎯【快捷键·效率翻倍】
+</span></span><span class="line"><span class="cl">Shift+Tab — 一键接受所有变更（最常用！）
+</span></span><span class="line"><span class="cl">ESC — 中断执行，跑偏了立刻刹车
+</span></span><span class="line"><span class="cl">ESC+ESC — 跳转到之前的消息
+</span></span><span class="line"><span class="cl">Cmd+K — 打开命令面板
+</span></span><span class="line"><span class="cl">Cmd+B — 后台执行命令
+</span></span><span class="line"><span class="cl">Cmd+O — 展开/折叠过程信息
+</span></span><span class="line"><span class="cl">@文件名 — 引用文件
+</span></span><span class="line"><span class="cl">!命令 — 直接执行bash命令
+</span></span><span class="line"><span class="cl"><span class="o">[</span><span class="c1">#信息](javascript:;) — 写入CLAUDE.md记忆</span>
+</span></span><span class="line"><span class="cl">Control+V — 粘贴图片
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>让claudecode获得最高权限</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">claude --dangerously-skip-permissions
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="mcp配置">MCP配置
 </h2><h3 id="mcp1-figma-mcp">mcp1: <a class="link" href="https://figma.com/files/team"  target="_blank" rel="noopener"
     >figma mcp</a>
 </h3><div class="highlight"><div class="chroma">
@@ -947,8 +1056,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
     <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
             本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
-            博客: <strong>23</strong> 篇 |
-            字数: <strong>43021</strong> 字
+            博客: <strong>24</strong> 篇 |
+            字数: <strong>29976</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
