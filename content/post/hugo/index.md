@@ -23,11 +23,11 @@ categories: ["杂七杂八应用"]
 
 - 删除content中的rich-content
 
-#### 自定义firstblog\layouts\_default目录的作用
+### 自定义firstblog\layouts\_default目录的作用
 
-- **基础模板”**，所有页面（文章、首页、归档等）都会继承它
+- **基础模板**，所有页面（文章、首页、归档等）都会继承它
 
-#### 添加背景图片
+### 添加背景图片
 
 - 在static\images中添加图片
 - 在assets\scss中custom.html添加样式
@@ -216,7 +216,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </style>
 ```
 
-#### 文章底部的计数
+### 文章底部的计数
 
 - 效果图
 
@@ -568,11 +568,9 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </footer>
 ```
 
-#### 看板娘功能
+### 看板娘功能
 
-
-
-#### 评论区功能
+### 评论区功能
 
 1、相关链接
 
@@ -705,7 +703,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
 3、在_default目录中的baseof.html文件中加载上述文件（如果评论区加载不出来或者有问题可能是因为baseof.html文件中渲染的顺序有问题）
 
-#### github actions自动构建
+### github actions自动构建
 
 - 创建.github/workflows/hugo.yml文件
 

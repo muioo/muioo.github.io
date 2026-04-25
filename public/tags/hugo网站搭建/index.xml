@@ -29,12 +29,12 @@
 &lt;p&gt;删除content中的rich-content&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;自定义firstbloglayouts_default目录的作用&#34;&gt;自定义firstblog\layouts_default目录的作用
-&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;基础模板”&lt;/strong&gt;，所有页面（文章、首页、归档等）都会继承它&lt;/li&gt;
+&lt;h3 id=&#34;自定义firstbloglayouts_default目录的作用&#34;&gt;自定义firstblog\layouts_default目录的作用
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;基础模板&lt;/strong&gt;，所有页面（文章、首页、归档等）都会继承它&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;添加背景图片&#34;&gt;添加背景图片
-&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&#34;添加背景图片&#34;&gt;添加背景图片
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;在static\images中添加图片&lt;/li&gt;
 &lt;li&gt;在assets\scss中custom.html添加样式&lt;/li&gt;
 &lt;/ul&gt;
@@ -405,8 +405,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;style&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;文章底部的计数&#34;&gt;文章底部的计数
-&lt;/h4&gt;&lt;ul&gt;
+&lt;/div&gt;&lt;h3 id=&#34;文章底部的计数&#34;&gt;文章底部的计数
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;效果图&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/hugo-%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BAhugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%BD%91%E7%AB%99/count.png&#34;&gt;&lt;figcaption&gt;
@@ -1104,9 +1104,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;footer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;看板娘功能&#34;&gt;看板娘功能
-&lt;/h4&gt;&lt;h4 id=&#34;评论区功能&#34;&gt;评论区功能
-&lt;/h4&gt;&lt;p&gt;1、相关链接&lt;/p&gt;
+&lt;/div&gt;&lt;h3 id=&#34;看板娘功能&#34;&gt;看板娘功能
+&lt;/h3&gt;&lt;h3 id=&#34;评论区功能&#34;&gt;评论区功能
+&lt;/h3&gt;&lt;p&gt;1、相关链接&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;**&lt;a class=&#34;link&#34; href=&#34;https://giscus.app/zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -1357,8 +1357,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;3、在_default目录中的baseof.html文件中加载上述文件（如果评论区加载不出来或者有问题可能是因为baseof.html文件中渲染的顺序有问题）&lt;/p&gt;
-&lt;h4 id=&#34;github-actions自动构建&#34;&gt;github actions自动构建
-&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&#34;github-actions自动构建&#34;&gt;github actions自动构建
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;创建.github/workflows/hugo.yml文件&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

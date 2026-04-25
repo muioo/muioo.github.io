@@ -175,14 +175,6 @@
         <guid>http://localhost:1313/tags/%E5%A4%9A%E8%AE%BE%E5%A4%87%E5%8D%8F%E4%BD%9C/</guid>
         <description></description>
         </item>
-        <item>
-        <title>IDEA问题</title>
-        <link>http://localhost:1313/tags/idea%E9%97%AE%E9%A2%98/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/idea%E9%97%AE%E9%A2%98/</guid>
-        <description></description>
-        </item>
         
     </channel>
 </rss>

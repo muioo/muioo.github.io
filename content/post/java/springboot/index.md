@@ -1,7 +1,7 @@
 ---
 author: muioo
 
-title: "【JavaWeb】springboot+maven开发"
+title: "【Maven 安装】Maven安装以及springboot+maven初始化项目"
 
 date: 2026-04-24
 
@@ -9,11 +9,9 @@ description: "maven配置已经IDEA初始化springboot项目"
 
 tags: ["maven","springboot"]
 
-categories: ["开发技术"]
+categories: ["工具安装"]
 
 ---
-
-
 
 ## Maven配置
 
