@@ -365,14 +365,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     <li><a href="#docker部署网络图以知识库项目为例">Docker部署网络图（以知识库项目为例）</a></li>
     <li><a href="#docker使用">Docker使用</a>
       <ol>
-        <li><a href="#常用命令使用">常用命令使用</a></li>
         <li><a href="#数据库使用">数据库使用</a></li>
-        <li><a href="#dockerfile文件使用">Dockerfile文件使用</a>
-          <ol>
-            <li><a href="#常用关键字">常用关键字</a></li>
-            <li><a href="#使用案例">使用案例</a></li>
-          </ol>
-        </li>
+        <li><a href="#dockerfile文件使用">Dockerfile文件使用</a></li>
       </ol>
     </li>
     <li><a href="#部署流程">部署流程</a></li>
@@ -573,22 +567,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 	
 ></p>
 <h2 id="docker使用">Docker使用
-</h2><h3 id="常用命令使用">常用命令使用
-</h3><p><img src="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker.png"
-	width="2523"
-	height="1098"
-	srcset="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker_hu_6361a8492bca78be.png 480w, /p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker_hu_5485d01072783c0a.png 1024w"
-	loading="lazy"
-	
-		alt="docker"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="229"
-		data-flex-basis="551px"
-	
-></p>
-<h3 id="数据库使用">数据库使用
+</h2><h3 id="数据库使用">数据库使用
 </h3><p><img src="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/mysql-docker1.png"
 	width="1610"
 	height="127"
@@ -615,9 +594,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </div>
 </div><p>docker中的数据库可以看到与宿主机的mysql是隔离的，当前没有映射宿主机端口。</p>
 <h3 id="dockerfile文件使用">Dockerfile文件使用
-</h3><h4 id="常用关键字">常用关键字
-</h4><h4 id="使用案例">使用案例
-</h4><ul>
+</h3><ul>
 <li>docker-compose.yml（没有创建数据库）</li>
 </ul>
 <div class="highlight"><div class="chroma">
@@ -817,7 +794,406 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </div><h2 id="部署流程">部署流程
 </h2><ul>
 <li>代码仓库https://github.com/muioo/knowledge-system.git</li>
-<li>创建数据库</li>
+<li>数据库迁移脚本. /backend/entrypoint.sh</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 不使用 set -e，以便显示错误信息</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=== Waiting for MySQL to be ready ===&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">MAX_RETRIES</span><span class="o">=</span><span class="m">30</span>
+</span></span><span class="line"><span class="cl"><span class="nv">RETRY</span><span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> true<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> python -c <span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">import asyncio, sys
+</span></span></span><span class="line"><span class="cl"><span class="s2">from tortoise import Tortoise
+</span></span></span><span class="line"><span class="cl"><span class="s2">from backend.settings.config import TORTOISE_ORM
+</span></span></span><span class="line"><span class="cl"><span class="s2">async def check():
+</span></span></span><span class="line"><span class="cl"><span class="s2">    try:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        await Tortoise.init(config=TORTOISE_ORM)
+</span></span></span><span class="line"><span class="cl"><span class="s2">        await Tortoise.close_connections()
+</span></span></span><span class="line"><span class="cl"><span class="s2">        print(&#39;OK&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    except Exception as e:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        print(f&#39;ERROR: {e}&#39;, file=sys.stderr)
+</span></span></span><span class="line"><span class="cl"><span class="s2">        sys.exit(1)
+</span></span></span><span class="line"><span class="cl"><span class="s2">asyncio.run(check())
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span> 2&gt;<span class="p">&amp;</span>1<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">RETRY</span><span class="o">=</span><span class="k">$((</span>RETRY <span class="o">+</span> <span class="m">1</span><span class="k">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$RETRY</span> -ge <span class="nv">$MAX_RETRIES</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;MySQL not ready after </span><span class="si">${</span><span class="nv">MAX_RETRIES</span><span class="si">}</span><span class="s2"> retries, exiting.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;  MySQL not ready yet, retrying in 2s... (</span><span class="nv">$RETRY</span><span class="s2">/</span><span class="nv">$MAX_RETRIES</span><span class="s2">)&#34;</span>
+</span></span><span class="line"><span class="cl">    sleep <span class="m">2</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;MySQL is ready.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=== Running aerich migrations ===&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用 aerich CLI 但先读取迁移文件，分割后逐条执行</span>
+</span></span><span class="line"><span class="cl">python <span class="s">&lt;&lt; &#39;PYTHON_SCRIPT&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">import asyncio
+</span></span></span><span class="line"><span class="cl"><span class="s">import sys
+</span></span></span><span class="line"><span class="cl"><span class="s">import traceback
+</span></span></span><span class="line"><span class="cl"><span class="s">import os
+</span></span></span><span class="line"><span class="cl"><span class="s">import re
+</span></span></span><span class="line"><span class="cl"><span class="s">from pathlib import Path
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">async def init_db_with_tortoise():
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;&#34;&#34;使用 TortoiseORM 直接初始化数据库表（无 migrations 时）&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">    from tortoise import Tortoise
+</span></span></span><span class="line"><span class="cl"><span class="s">    from backend.settings.config import TORTOISE_ORM
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">    print(&#34;No migrations directory found, using TortoiseORM to initialize database...&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">    await Tortoise.init(config=TORTOISE_ORM)
+</span></span></span><span class="line"><span class="cl"><span class="s">    await Tortoise.generate_schemas()
+</span></span></span><span class="line"><span class="cl"><span class="s">    print(f&#34;Database tables created successfully!&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">    await Tortoise.close_connections()
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">async def migrate():
+</span></span></span><span class="line"><span class="cl"><span class="s">    try:
+</span></span></span><span class="line"><span class="cl"><span class="s">        from aerich import Command
+</span></span></span><span class="line"><span class="cl"><span class="s">        from aerich.models import Aerich
+</span></span></span><span class="line"><span class="cl"><span class="s">        from backend.settings.config import TORTOISE_ORM
+</span></span></span><span class="line"><span class="cl"><span class="s">        from tortoise import Tortoise, connections
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        print(&#34;Initializing aerich...&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">        # 初始化 Tortoise 和 aerich
+</span></span></span><span class="line"><span class="cl"><span class="s">        await Tortoise.init(config=TORTOISE_ORM)
+</span></span></span><span class="line"><span class="cl"><span class="s">        command = Command(tortoise_config=TORTOISE_ORM, location=&#39;migrations&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">        await command.init()
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        print(&#34;Checking for pending migrations...&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">        # 检查是否有待执行的迁移
+</span></span></span><span class="line"><span class="cl"><span class="s">        migrations_path = Path(&#39;migrations/models&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">        if not migrations_path.exists():
+</span></span></span><span class="line"><span class="cl"><span class="s">            print(&#39;No migrations directory found&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 使用 TortoiseORM 直接初始化数据库表
+</span></span></span><span class="line"><span class="cl"><span class="s">            await init_db_with_tortoise()
+</span></span></span><span class="line"><span class="cl"><span class="s">            return
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        # 获取所有迁移文件
+</span></span></span><span class="line"><span class="cl"><span class="s">        migration_files = sorted(migrations_path.glob(&#39;*.py&#39;))
+</span></span></span><span class="line"><span class="cl"><span class="s">        if not migration_files:
+</span></span></span><span class="line"><span class="cl"><span class="s">            print(&#39;No migration files found&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 使用 TortoiseORM 直接初始化数据库表
+</span></span></span><span class="line"><span class="cl"><span class="s">            await init_db_with_tortoise()
+</span></span></span><span class="line"><span class="cl"><span class="s">            return
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        # 获取已应用的迁移
+</span></span></span><span class="line"><span class="cl"><span class="s">        applied_versions = []
+</span></span></span><span class="line"><span class="cl"><span class="s">        try:
+</span></span></span><span class="line"><span class="cl"><span class="s">            applied = await Aerich.all().values(&#39;version&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            applied_versions = [a[&#39;version&#39;] for a in applied]
+</span></span></span><span class="line"><span class="cl"><span class="s">            print(f&#34;Already applied migrations: {applied_versions}&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">        except Exception as e:
+</span></span></span><span class="line"><span class="cl"><span class="s">            print(f&#34;No aerich table yet (first run): {e}&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            pass  # 首次运行，aerich 表还不存在
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        # 找出待执行的迁移
+</span></span></span><span class="line"><span class="cl"><span class="s">        pending = []
+</span></span></span><span class="line"><span class="cl"><span class="s">        for f in migration_files:
+</span></span></span><span class="line"><span class="cl"><span class="s">            if f.name.startswith(&#39;0_&#39;):
+</span></span></span><span class="line"><span class="cl"><span class="s">                # 初始迁移特殊处理
+</span></span></span><span class="line"><span class="cl"><span class="s">                if not applied_versions:
+</span></span></span><span class="line"><span class="cl"><span class="s">                    pending.append(f)
+</span></span></span><span class="line"><span class="cl"><span class="s">            else:
+</span></span></span><span class="line"><span class="cl"><span class="s">                # 检查完整文件名是否在已应用列表中
+</span></span></span><span class="line"><span class="cl"><span class="s">                if f.name not in applied_versions:
+</span></span></span><span class="line"><span class="cl"><span class="s">                    pending.append(f)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        if not pending:
+</span></span></span><span class="line"><span class="cl"><span class="s">            print(&#39;No new migrations to run&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            await Tortoise.close_connections()
+</span></span></span><span class="line"><span class="cl"><span class="s">            return
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        print(f&#34;Found {len(pending)} pending migrations: {[f.name for f in pending]}&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        # 逐个执行迁移
+</span></span></span><span class="line"><span class="cl"><span class="s">        for i, migration_file in enumerate(pending, 1):
+</span></span></span><span class="line"><span class="cl"><span class="s">            print(f&#34;  [{i}/{len(pending)}] Applying {migration_file.name}...&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 动态导入迁移模块
+</span></span></span><span class="line"><span class="cl"><span class="s">            module_name = f&#34;migrations.models.{migration_file.stem}&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">            module = __import__(module_name, fromlist=[&#39;upgrade&#39;])
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 获取升级 SQL
+</span></span></span><span class="line"><span class="cl"><span class="s">            conn = connections.get(&#39;default&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            upgrade_sql = await module.upgrade(conn)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 分割 SQL 语句
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 简单方法：按分号分割，然后过滤空语句
+</span></span></span><span class="line"><span class="cl"><span class="s">            statements = []
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 移除多行注释 /* ... */
+</span></span></span><span class="line"><span class="cl"><span class="s">            import re
+</span></span></span><span class="line"><span class="cl"><span class="s">            upgrade_sql = re.sub(r&#39;/\*.*?\*/&#39;, &#39;&#39;, upgrade_sql, flags=re.DOTALL)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 移除单行注释 --
+</span></span></span><span class="line"><span class="cl"><span class="s">            upgrade_sql = re.sub(r&#39;--.*?$&#39;, &#39;&#39;, upgrade_sql, flags=re.MULTILINE)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 按分号分割并清理
+</span></span></span><span class="line"><span class="cl"><span class="s">            raw_statements = upgrade_sql.split(&#39;;&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            for stmt in raw_statements:
+</span></span></span><span class="line"><span class="cl"><span class="s">                # 移除前后空白和空行
+</span></span></span><span class="line"><span class="cl"><span class="s">                cleaned = &#39;\n&#39;.join(line.strip() for line in stmt.split(&#39;\n&#39;) if line.strip())
+</span></span></span><span class="line"><span class="cl"><span class="s">                if cleaned:
+</span></span></span><span class="line"><span class="cl"><span class="s">                    statements.append(cleaned)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            print(f&#34;    Found {len(statements)} SQL statements to execute&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 逐条执行 SQL
+</span></span></span><span class="line"><span class="cl"><span class="s">            for j, stmt in enumerate(statements, 1):
+</span></span></span><span class="line"><span class="cl"><span class="s">                try:
+</span></span></span><span class="line"><span class="cl"><span class="s">                    # 清理语句
+</span></span></span><span class="line"><span class="cl"><span class="s">                    stmt_clean = stmt.strip().rstrip(&#39;;&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">                    if not stmt_clean:
+</span></span></span><span class="line"><span class="cl"><span class="s">                        continue
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">                    await conn.execute_script(stmt_clean)
+</span></span></span><span class="line"><span class="cl"><span class="s">                    print(f&#34;    [{j}/{len(statements)}] Executed successfully&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">                except Exception as e:
+</span></span></span><span class="line"><span class="cl"><span class="s">                    error_str = str(e)
+</span></span></span><span class="line"><span class="cl"><span class="s">                    # 跳过已存在的错误
+</span></span></span><span class="line"><span class="cl"><span class="s">                    if &#39;already exists&#39; in error_str or &#39;Duplicate column&#39; in error_str or &#39;Duplicate key&#39; in error_str:
+</span></span></span><span class="line"><span class="cl"><span class="s">                        print(f&#34;    [{j}/{len(statements)}] Skipped (already exists)&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">                        continue
+</span></span></span><span class="line"><span class="cl"><span class="s">                    print(f&#34;    [{j}/{len(statements)}] ERROR: {e}&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">                    print(f&#34;    SQL: {stmt_clean[:200]}...&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">                    # 不抛出异常，继续执行下一条语句
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 记录迁移
+</span></span></span><span class="line"><span class="cl"><span class="s">            try:
+</span></span></span><span class="line"><span class="cl"><span class="s">                # 使用完整文件名作为版本
+</span></span></span><span class="line"><span class="cl"><span class="s">                version = migration_file.name
+</span></span></span><span class="line"><span class="cl"><span class="s">                await Aerich.create(
+</span></span></span><span class="line"><span class="cl"><span class="s">                    version=version,
+</span></span></span><span class="line"><span class="cl"><span class="s">                    app=&#39;models&#39;,
+</span></span></span><span class="line"><span class="cl"><span class="s">                    content=upgrade_sql
+</span></span></span><span class="line"><span class="cl"><span class="s">                )
+</span></span></span><span class="line"><span class="cl"><span class="s">                print(f&#34;  [{i}/{len(pending)}] Recorded migration: {migration_file.name}&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            except Exception as e:
+</span></span></span><span class="line"><span class="cl"><span class="s">                if &#39;Duplicate entry&#39; in str(e):
+</span></span></span><span class="line"><span class="cl"><span class="s">                    print(f&#34;  [{i}/{len(pending)}] Migration already recorded&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">                else:
+</span></span></span><span class="line"><span class="cl"><span class="s">                    raise
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        print(&#39;All migrations completed successfully&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">    except Exception as e:
+</span></span></span><span class="line"><span class="cl"><span class="s">        print(f&#34;Migration error: {e}&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">        traceback.print_exc()
+</span></span></span><span class="line"><span class="cl"><span class="s">        sys.exit(1)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">asyncio.run(migrate())
+</span></span></span><span class="line"><span class="cl"><span class="s">PYTHON_SCRIPT</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=== Migrations complete, starting server ===&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">exec</span> uvicorn backend.main:app --host 0.0.0.0 --port <span class="m">8022</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>数据库连接脚本./init-db.sh</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -872,7 +1248,6 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>数据库迁移</li>
 <li>拉取代码</li>
 </ul>
 <div class="highlight"><div class="chroma">
@@ -1130,7 +1505,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
             本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
             博客: <strong>22</strong> 篇 |
-            字数: <strong>28574</strong> 字
+            字数: <strong>29562</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>

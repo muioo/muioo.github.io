@@ -16,17 +16,13 @@ image: "page.png"
 
 # Claude Code 使用笔记
 
-<<<<<<< HEAD
 - 更新版本
 
 ```bash
 # claude code 内部使用
 claude update
 ```
-=======
 ## 常用命令以及文件配置
->>>>>>> origin/main
-
 - 回到之前的对话
 
 ```bash
