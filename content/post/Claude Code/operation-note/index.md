@@ -19,8 +19,9 @@ image: "page.png"
 - 更新版本
 
 ```bash
-# claude code 内部使用
-claude update
+claude --version
+//更新
+npm update -g @anthropic-ai/claude-code
 ```
 ## 常用命令以及文件配置
 - 回到之前的对话
@@ -174,72 +175,4 @@ npm install -g figma-developer-mcp
 **使用figma 开发前端样式页面**
 
 1、先在figma中选中页面样式
-
-## 开源skills安装
-
-### skills的使用
-
-**项目级**
-
-```bash
-1、在.claude目录中创建skills目录
-2、将github下载的skills复制进来
-```
-
-### skills 1：[superpowers skills](https://github.com/obra/superpowers)
-
-##### Claude Code 中安装方法
-
-```bash
-# In Claude Code, register the marketplace first:
-/plugin marketplace add obra/superpowers-marketplace
-```
-
-```bash
-# Then install the plugin from this marketplace:
-/plugin install superpowers@superpowers-marketplace
-```
-
-##### 使用方法
-
-- 可以直接使用调用这个skills
-
-{{< figure src="1.png" title="superpowers skills 使用示例" >}}
-
-##### 可能出现的问题（安装通病）
-
-- 1、安装提示网络有问题，这个一般是没有开代理 或者 没有配置全局代理 
-
-### skills 2：ui-ux-pro-max-skills
-
-- [官网](https://ui-ux-pro-max-skill.nextlevelbuilder.io/)
-
-- [github](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)
-
-##### 安装操作
-
-```bash
-/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill
-/plugin install ui-ux-pro-max@ui-ux-pro-max-skill
-```
-
-### skill3： everything claude-code
-
-- [github](https://github.com/affaan-m/everything-claude-code/blob/main/README.zh-CN.md)
-
-##### 安装操作
-
-```bash
-# 将此仓库添加为市场
-/plugin marketplace add affaan-m/everything-claude-code
-
-# 安装插件(要选择项目级还是用户级)
-/plugin install everything-claude-code@everything-claude-code
-
-# 克隆项目
-git clone https://github.com/affaan-m/everything-claude-code.git
-
-```
-
-## Plugin安装
 

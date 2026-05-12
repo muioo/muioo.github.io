@@ -7,54 +7,30 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Sat, 28 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>【docker命令】docker常用命令</title>
-        <link>http://localhost:1313/p/docker%E5%91%BD%E4%BB%A4docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
-        <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/docker%E5%91%BD%E4%BB%A4docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
-        <description>&lt;img src="http://localhost:1313/p/docker%E5%91%BD%E4%BB%A4docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/docker-page.png" alt="Featured image of post 【docker命令】docker常用命令" /&gt;&lt;h1 id=&#34;&#34;&gt;
-&lt;/h1&gt;</description>
-        </item>
-        <item>
+        <lastBuildDate>Sat, 07 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【Claude Code命令】Claude Code（常用命令 &#43; skills &#43; mcp）</title>
         <link>http://localhost:1313/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/</link>
         <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/</guid>
         <description>&lt;img src="http://localhost:1313/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/page.png" alt="Featured image of post 【Claude Code命令】Claude Code（常用命令 &#43; skills &#43; mcp）" /&gt;&lt;h1 id=&#34;claude-code-使用笔记&#34;&gt;Claude Code 使用笔记
-&lt;/h1&gt;&lt;p&gt;&amp;laquo;&amp;laquo;&amp;laquo;&amp;lt; HEAD&lt;/p&gt;
-&lt;ul&gt;
+&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;更新版本&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# claude code 内部使用&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;claude update
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;claude --version
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//更新
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm update -g @anthropic-ai/claude-code
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;=======&lt;/p&gt;
-&lt;h2 id=&#34;常用命令以及文件配置&#34;&gt;常用命令以及文件配置
-&lt;/h2&gt;&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;origin/main&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
+&lt;/div&gt;&lt;h2 id=&#34;常用命令以及文件配置&#34;&gt;常用命令以及文件配置
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;回到之前的对话&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -311,107 +287,7 @@
 &lt;h4 id=&#34;使用教程&#34;&gt;使用教程
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;使用figma 开发前端样式页面&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;1、先在figma中选中页面样式&lt;/p&gt;
-&lt;h2 id=&#34;开源skills安装&#34;&gt;开源skills安装
-&lt;/h2&gt;&lt;h3 id=&#34;skills的使用&#34;&gt;skills的使用
-&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;项目级&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1、在.claude目录中创建skills目录
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2、将github下载的skills复制进来
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;skills-1superpowers-skills&#34;&gt;skills 1：&lt;a class=&#34;link&#34; href=&#34;https://github.com/obra/superpowers&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;superpowers skills&lt;/a&gt;
-&lt;/h3&gt;&lt;h5 id=&#34;claude-code-中安装方法&#34;&gt;Claude Code 中安装方法
-&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# In Claude Code, register the marketplace first:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/plugin marketplace add obra/superpowers-marketplace
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Then install the plugin from this marketplace:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/plugin install superpowers@superpowers-marketplace
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h5 id=&#34;使用方法&#34;&gt;使用方法
-&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;可以直接使用调用这个skills&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/1.png&#34;&gt;&lt;figcaption&gt;
-      &lt;h4&gt;superpowers skills 使用示例&lt;/h4&gt;
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h5 id=&#34;可能出现的问题安装通病&#34;&gt;可能出现的问题（安装通病）
-&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;1、安装提示网络有问题，这个一般是没有开代理 或者 没有配置全局代理&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;skills-2ui-ux-pro-max-skills&#34;&gt;skills 2：ui-ux-pro-max-skills
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://ui-ux-pro-max-skill.nextlevelbuilder.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;官网&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/nextlevelbuilder/ui-ux-pro-max-skill&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;github&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id=&#34;安装操作&#34;&gt;安装操作
-&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/plugin install ui-ux-pro-max@ui-ux-pro-max-skill
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;skill3-everything-claude-code&#34;&gt;skill3： everything claude-code
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/affaan-m/everything-claude-code/blob/main/README.zh-CN.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;github&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id=&#34;安装操作-1&#34;&gt;安装操作
-&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 将此仓库添加为市场&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/plugin marketplace add affaan-m/everything-claude-code
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 安装插件(要选择项目级还是用户级)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/plugin install everything-claude-code@everything-claude-code
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 克隆项目&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/affaan-m/everything-claude-code.git
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;plugin安装&#34;&gt;Plugin安装
-&lt;/h2&gt;</description>
+</description>
         </item>
         <item>
         <title>【Git命令】Git 操作笔记（协作&#43;常用命令）</title>

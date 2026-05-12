@@ -372,27 +372,6 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
         </li>
       </ol>
     </li>
-    <li><a href="#开源skills安装">开源skills安装</a>
-      <ol>
-        <li><a href="#skills的使用">skills的使用</a></li>
-        <li><a href="#skills-1superpowers-skills">skills 1：superpowers skills</a>
-          <ol>
-            <li></li>
-          </ol>
-        </li>
-        <li><a href="#skills-2ui-ux-pro-max-skills">skills 2：ui-ux-pro-max-skills</a>
-          <ol>
-            <li></li>
-          </ol>
-        </li>
-        <li><a href="#skill3-everything-claude-code">skill3： everything claude-code</a>
-          <ol>
-            <li></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-    <li><a href="#plugin安装">Plugin安装</a></li>
   </ol>
 </nav>
         </div>
@@ -482,10 +461,12 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># claude code 内部使用</span>
-</span></span><span class="line"><span class="cl">claude update
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">claude --version
+</span></span><span class="line"><span class="cl">//更新
+</span></span><span class="line"><span class="cl">npm update -g @anthropic-ai/claude-code
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="常用命令以及文件配置">常用命令以及文件配置
@@ -746,107 +727,7 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 <h4 id="使用教程">使用教程
 </h4><p><strong>使用figma 开发前端样式页面</strong></p>
 <p>1、先在figma中选中页面样式</p>
-<h2 id="开源skills安装">开源skills安装
-</h2><h3 id="skills的使用">skills的使用
-</h3><p><strong>项目级</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">1、在.claude目录中创建skills目录
-</span></span><span class="line"><span class="cl">2、将github下载的skills复制进来
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="skills-1superpowers-skills">skills 1：<a class="link" href="https://github.com/obra/superpowers"  target="_blank" rel="noopener"
-    >superpowers skills</a>
-</h3><h5 id="claude-code-中安装方法">Claude Code 中安装方法
-</h5><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># In Claude Code, register the marketplace first:</span>
-</span></span><span class="line"><span class="cl">/plugin marketplace add obra/superpowers-marketplace
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Then install the plugin from this marketplace:</span>
-</span></span><span class="line"><span class="cl">/plugin install superpowers@superpowers-marketplace
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h5 id="使用方法">使用方法
-</h5><ul>
-<li>可以直接使用调用这个skills</li>
-</ul>
-<figure><img src="/p/claude-code%E5%91%BD%E4%BB%A4claude-code%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4--skills--mcp/1.png"><figcaption>
-      <h4>superpowers skills 使用示例</h4>
-    </figcaption>
-</figure>
 
-<h5 id="可能出现的问题安装通病">可能出现的问题（安装通病）
-</h5><ul>
-<li>1、安装提示网络有问题，这个一般是没有开代理 或者 没有配置全局代理</li>
-</ul>
-<h3 id="skills-2ui-ux-pro-max-skills">skills 2：ui-ux-pro-max-skills
-</h3><ul>
-<li>
-<p><a class="link" href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/"  target="_blank" rel="noopener"
-    >官网</a></p>
-</li>
-<li>
-<p><a class="link" href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"  target="_blank" rel="noopener"
-    >github</a></p>
-</li>
-</ul>
-<h5 id="安装操作">安装操作
-</h5><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill
-</span></span><span class="line"><span class="cl">/plugin install ui-ux-pro-max@ui-ux-pro-max-skill
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="skill3-everything-claude-code">skill3： everything claude-code
-</h3><ul>
-<li><a class="link" href="https://github.com/affaan-m/everything-claude-code/blob/main/README.zh-CN.md"  target="_blank" rel="noopener"
-    >github</a></li>
-</ul>
-<h5 id="安装操作-1">安装操作
-</h5><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 将此仓库添加为市场</span>
-</span></span><span class="line"><span class="cl">/plugin marketplace add affaan-m/everything-claude-code
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 安装插件(要选择项目级还是用户级)</span>
-</span></span><span class="line"><span class="cl">/plugin install everything-claude-code@everything-claude-code
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 克隆项目</span>
-</span></span><span class="line"><span class="cl">git clone https://github.com/affaan-m/everything-claude-code.git
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="plugin安装">Plugin安装
-</h2>
 </section>
 
 
@@ -873,30 +754,6 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
-            
-                
-<article class="has-image">
-    <a href="/p/docker%E5%91%BD%E4%BB%A4docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-        
-        
-            <div class="article-image">
-                <img src="/p/docker%E5%91%BD%E4%BB%A4docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/docker-page.021d70619d3979456d1db4e77d590ccf_hu_37ba483bb5211a9e.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 【docker命令】docker常用命令"
-                        
-                        data-hash="md5-Ah1wYZ05eUVtHbTnfVkMzw==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">【docker命令】docker常用命令</h2>
-        </div>
-    </a>
-</article>
-
             
                 
 <article class="">
@@ -1039,8 +896,8 @@ console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-w
 
     <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
             本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
-            博客: <strong>22</strong> 篇 |
-            字数: <strong>29562</strong> 字
+            博客: <strong>23</strong> 篇 |
+            字数: <strong>30157</strong> 字
         </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>

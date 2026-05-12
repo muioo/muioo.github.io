@@ -8,19 +8,19 @@
         <language>en-us</language>
         <copyright>muioo</copyright>
         <lastBuildDate>Fri, 24 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/maven/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>【JavaWeb】springboot&#43;maven开发</title>
-        <link>http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/</link>
+        <title>【Maven 安装】Maven安装以及springboot&#43;maven初始化项目</title>
+        <link>http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/</link>
         <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/</guid>
+        <guid>http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/</guid>
         <description>&lt;h2 id=&#34;maven配置&#34;&gt;Maven配置
 &lt;/h2&gt;&lt;h4 id=&#34;下载-maven&#34;&gt;下载 Maven
 &lt;/h4&gt;&lt;p&gt;进入Maven官网&lt;a class=&#34;link&#34; href=&#34;https://maven.apache.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Welcome to Apache Maven – Maven&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven1.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven1.png&#34;
 	width=&#34;2480&#34;
 	height=&#34;876&#34;
-	srcset=&#34;http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven1_hu_defd1e4b93f006fd.png 480w, http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven1_hu_af68d8f78a858261.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven1_hu_defd1e4b93f006fd.png 480w, http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven1_hu_af68d8f78a858261.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Maven1&#34;
@@ -33,10 +33,10 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;进入文件夹，创建 repo 文件夹，用于存放 Maven 本地仓库依赖&lt;/p&gt;
 &lt;h4 id=&#34;配置环境变量&#34;&gt;配置环境变量
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven2.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven2.png&#34;
 	width=&#34;834&#34;
 	height=&#34;825&#34;
-	srcset=&#34;http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven2_hu_40939a859de2ff55.png 480w, http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven2_hu_dd0e9f1319a037cb.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven2_hu_40939a859de2ff55.png 480w, http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven2_hu_dd0e9f1319a037cb.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Maven2&#34;
@@ -48,10 +48,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;检查是否配置成功&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven3.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven3.png&#34;
 	width=&#34;1707&#34;
 	height=&#34;253&#34;
-	srcset=&#34;http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven3_hu_36403b2c359d3695.png 480w, http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven3_hu_8b2d7ad458cf0375.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven3_hu_36403b2c359d3695.png 480w, http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven3_hu_8b2d7ad458cf0375.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Maven3&#34;
@@ -64,10 +64,10 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;配置settingsxml&#34;&gt;配置settings.xml
 &lt;/h4&gt;&lt;p&gt;打开settings.xml&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven5.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven5.png&#34;
 	width=&#34;1711&#34;
 	height=&#34;435&#34;
-	srcset=&#34;http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven5_hu_75d8046639b34d96.png 480w, http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven5_hu_6cbb91099450a673.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven5_hu_75d8046639b34d96.png 480w, http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven5_hu_6cbb91099450a673.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Maven5&#34;
@@ -79,10 +79,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;复制刚才创建的repo目录&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven4.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven4.png&#34;
 	width=&#34;1686&#34;
 	height=&#34;613&#34;
-	srcset=&#34;http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven4_hu_39dbcaa64bd6d2b9.png 480w, http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven4_hu_71c8eb81dd618a4e.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven4_hu_39dbcaa64bd6d2b9.png 480w, http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven4_hu_71c8eb81dd618a4e.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Maven4&#34;
@@ -184,10 +184,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;按住 Win + R 运行 CMD ，输入 &lt;code&gt;mvn help:system&lt;/code&gt;，如下所示表示配置成功：&lt;/p&gt;
 &lt;h4 id=&#34;idea配置maven&#34;&gt;IDEA配置Maven
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven6.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven6.png&#34;
 	width=&#34;1507&#34;
 	height=&#34;1125&#34;
-	srcset=&#34;http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven6_hu_d9a49312ac2f75b1.png 480w, http://localhost:1313/p/javawebspringboot-maven%E5%BC%80%E5%8F%91/Maven6_hu_e140dbc44a014cbd.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven6_hu_d9a49312ac2f75b1.png 480w, http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/Maven6_hu_e140dbc44a014cbd.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Maven6&#34;
