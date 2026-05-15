@@ -1,0 +1,31 @@
+{{- $dailyPage := .Site.GetPage "/ai-daily" -}}
+{{- $dailyPages := where .Site.RegularPages "Section" "ai-daily" -}}
+{{- if and $dailyPage (gt (len $dailyPages) 0) -}}
+    <li class="ai-daily-item {{ if eq $.RelPermalink $dailyPage.RelPermalink }}current{{ end }}">
+        <a href="{{ $dailyPage.RelPermalink }}">
+            {{ partial "helper/icon" "archives" }}
+            <span>日报总览</span>
+        </a>
+    </li>
+
+    {{- range ($dailyPages.GroupByDate "2006-01") -}}
+        <li class="ai-daily-month-group">
+            <details class="ai-daily-month-details" {{ if eq .Key (now.Format "2006-01") }}open{{ end }}>
+                <summary class="ai-daily-month-summary">
+                    <span>{{ .Key }}</span>
+                    <span>{{ len .Pages }}</span>
+                </summary>
+                <ol class="ai-daily-month-menu">
+                    {{- range .Pages.ByDate.Reverse -}}
+                        <li class="ai-daily-item {{ if eq $.RelPermalink .RelPermalink }}current{{ end }}">
+                            <a href="{{ .RelPermalink }}">
+                                {{ partial "helper/icon" "clock" }}
+                                <span>{{ .Date.Format "01-02" }}</span>
+                            </a>
+                        </li>
+                    {{- end -}}
+                </ol>
+            </details>
+        </li>
+    {{- end -}}
+{{- end -}}

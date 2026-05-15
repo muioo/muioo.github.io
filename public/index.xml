@@ -7,7 +7,46 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Fri, 24 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 May 2026 08:30:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI日报 | 2026-05-15</title>
+        <link>http://localhost:1313/ai-daily/2026-05-15/</link>
+        <pubDate>Fri, 15 May 2026 08:30:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/ai-daily/2026-05-15/</guid>
+        <description>&lt;p&gt;本日报仅采集 &lt;code&gt;hex2077.dev&lt;/code&gt; 对应日期页面中的开源 TOP 项目，并同步整理项目摘要与仓库链接。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;生成日期：&lt;code&gt;2026-05-15&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;数据来源：&lt;a class=&#34;link&#34; href=&#34;https://hex2077.dev/docs/2026-05/2026-05-15/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;hex2077 原始页面&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;开源-top-项目&#34;&gt;开源 TOP 项目
+&lt;/h2&gt;&lt;h3 id=&#34;1-wifi捕捉人体ai资讯&#34;&gt;1. WiFi捕捉人体(AI资讯)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/ruvnet/RuView&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：WiFi信号秒变空间智能。 开源项目 RuView 实现了 WiFi捕捉人体(AI资讯) 的建模突破。 这种 非侵入 技术 ✧(≖ 连 ≖✿) 竟能监测体征。 项目在 GitHub 狂砍 ⭐55.9k 星标 🚀 极其火爆。 无需相机的方案将彻底颠富 智慧养老 体验。 隐私安全与智能感知的平衡 (〃&amp;rsquo;▽&amp;rsquo;〃) 终于实现了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-多角色编程套件ai资讯&#34;&gt;2. 多角色编程套件(AI资讯)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/garrytan/gstack&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：gstack 编程套件火爆全网。 硅谷大咖专属的 多角色编程套件(AI资讯) 获九万星。 项目集成了 二十多款 🚀 辅助工具非常全面。 开发者 ⚡ 可让 Claude 变身为全能的虚拟团队。 此方案 ฅʕ•̫͡•ʔ诺 极度简化了 多人协作 流程。 个人开发者通过它能轻松 执掌整家公司 ✨。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-开源隐身浏览器ai资讯&#34;&gt;3. 开源隐身浏览器(AI资讯)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/CloakHQ/CloakBrowser&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：CloakBrowser绕过指纹检测。 这款 开源隐身浏览器(AI资讯) ⭐10.8k 表现非常惊人。 它基于源码级修改 🕵️ 成功修复了 所有指纹泄露。 在机器人检测中通关 三十项测试 (๑•̀ㅂ•́)诺 堪称完美。 开发者能直接替换 Playwright 🛠️ 框架应对爬虫。 该项目已成为 自动化采集 🚀 圈里的超级新宠。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-ai编码智能体ai资讯&#34;&gt;4. AI编码智能体(AI资讯)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/rohitg00/agentmemory&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：AgentMemory持久化内存系统。 该项目为 AI编码智能体(AI资讯) 提供了持久化的强悍内存。 开发者通过它优化了代码编写的 上下文一致性 🚀。 工具在 GitHub 斩获 ⭐8.9k 高星 (〃&amp;rsquo;▽&amp;rsquo;〃) 真火。 它解决了长周期任务中 AI记忆丢失 的痛点。 这种 存储机制 ⚡ 让复杂编程流程变得极其丝滑。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>【Maven 安装】Maven安装以及springboot&#43;maven初始化项目</title>
         <link>http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/</link>
         <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
@@ -498,14 +537,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;heading&#34;&gt;=======
-&lt;/h2&gt;&lt;p&gt;author: muioo&lt;/p&gt;
-&lt;p&gt;title: &amp;ldquo;【stm32】FreeRTOS实时操作系统1&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;date: 2026-04-21&lt;/p&gt;
-&lt;p&gt;description: &amp;ldquo;stm32f103rct6开发板实现FreeRtos，使用Tsk进行对比&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;tags: [ &amp;ldquo;stm32&amp;rdquo;]&lt;/p&gt;
-&lt;h2 id=&#34;categories-开发技术&#34;&gt;categories: [&amp;ldquo;开发技术&amp;rdquo;]
-&lt;/h2&gt;&lt;h3 id=&#34;freertos-1&#34;&gt;FreeRtos
+&lt;/div&gt;&lt;h3 id=&#34;freertos-1&#34;&gt;FreeRtos
 &lt;/h3&gt;&lt;p&gt;Freertos可以理解为并发，一个cpu快速切换多个任务执行。&lt;/p&gt;
 &lt;h3 id=&#34;原生串行代码独占cpu-1&#34;&gt;原生串行代码，独占cpu
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -4709,6 +4741,15 @@
         
         <guid>http://localhost:1313/archives/</guid>
         <description></description>
+        </item>
+        <item>
+        <title>AI日报 | Daily</title>
+        <link>http://localhost:1313/ai-daily-entry/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/ai-daily-entry/</guid>
+        <description>&lt;p&gt;这个页面会自动跳转到最新一篇 AI 日报。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>关于 | About</title>

@@ -16,6 +16,15 @@
         <description></description>
         </item>
         <item>
+        <title>AI日报 | Daily</title>
+        <link>http://localhost:1313/ai-daily-entry/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/ai-daily-entry/</guid>
+        <description>&lt;p&gt;这个页面会自动跳转到最新一篇 AI 日报。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>关于 | About</title>
         <link>http://localhost:1313/%E5%85%B3%E4%BA%8E-about/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

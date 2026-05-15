@@ -65,3 +65,123 @@ html.is-animating .main-article {
 .article-header .article-image img {
     object-fit: contain !important;
 }
+
+#main-menu .menu-section-header {
+    margin-top: 20px;
+    color: var(--body-text-color);
+    font-size: 1.4rem;
+    opacity: 0.75;
+}
+
+#main-menu .menu-section-header span {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--menu-icon-separation);
+}
+
+#main-menu .menu-section-header a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--menu-icon-separation);
+    color: inherit;
+}
+
+#main-menu .ai-daily-item a,
+#main-menu .ai-daily-empty {
+    display: flex;
+    align-items: center;
+    gap: var(--menu-icon-separation);
+    padding: 10px 0;
+}
+
+#main-menu .ai-daily-empty {
+    color: var(--accent-color-text);
+    opacity: 0.7;
+    font-size: 1.3rem;
+}
+
+#main-menu .ai-daily-month-group {
+    margin: 4px 0;
+}
+
+#main-menu .ai-daily-month-details {
+    width: 100%;
+}
+
+#main-menu .ai-daily-month-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: var(--body-text-color);
+    font-size: 1.3rem;
+    padding: 8px 0;
+    opacity: 0.85;
+    list-style: none;
+}
+
+#main-menu .ai-daily-month-summary::-webkit-details-marker {
+    display: none;
+}
+
+#main-menu .ai-daily-month-menu {
+    margin: 0;
+    padding: 0 0 0 8px;
+}
+
+.ai-daily-archive {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ai-daily-month {
+    border: 1px solid var(--card-separator-color);
+    border-radius: var(--card-border-radius);
+    background: var(--card-background);
+    overflow: hidden;
+}
+
+.ai-daily-month-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--body-text-color);
+    list-style: none;
+}
+
+.ai-daily-month-summary::-webkit-details-marker {
+    display: none;
+}
+
+.ai-daily-month-list {
+    padding: 0 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ai-daily-month-item {
+    border-top: 1px solid var(--card-separator-color);
+    padding-top: 10px;
+}
+
+.ai-daily-month-link {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    color: var(--body-text-color);
+}
+
+.ai-daily-month-date {
+    flex-shrink: 0;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.ai-daily-month-title {
+    text-align: right;
+}

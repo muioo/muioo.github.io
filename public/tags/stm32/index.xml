@@ -304,14 +304,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;heading&#34;&gt;=======
-&lt;/h2&gt;&lt;p&gt;author: muioo&lt;/p&gt;
-&lt;p&gt;title: &amp;ldquo;【stm32】FreeRTOS实时操作系统1&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;date: 2026-04-21&lt;/p&gt;
-&lt;p&gt;description: &amp;ldquo;stm32f103rct6开发板实现FreeRtos，使用Tsk进行对比&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;tags: [ &amp;ldquo;stm32&amp;rdquo;]&lt;/p&gt;
-&lt;h2 id=&#34;categories-开发技术&#34;&gt;categories: [&amp;ldquo;开发技术&amp;rdquo;]
-&lt;/h2&gt;&lt;h3 id=&#34;freertos-1&#34;&gt;FreeRtos
+&lt;/div&gt;&lt;h3 id=&#34;freertos-1&#34;&gt;FreeRtos
 &lt;/h3&gt;&lt;p&gt;Freertos可以理解为并发，一个cpu快速切换多个任务执行。&lt;/p&gt;
 &lt;h3 id=&#34;原生串行代码独占cpu-1&#34;&gt;原生串行代码，独占cpu
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

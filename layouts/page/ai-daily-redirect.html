@@ -1,0 +1,31 @@
+{{ define "main" }}
+    {{- $dailyPages := where .Site.RegularPages "Section" "ai-daily" -}}
+    {{- $latestDaily := "" -}}
+    {{- if gt (len $dailyPages) 0 -}}
+        {{- $latestDaily = (index ($dailyPages.ByDate.Reverse) 0).RelPermalink -}}
+    {{- end -}}
+
+    <article class="main-article">
+        <header class="article-header">
+            <h1 class="article-title">{{ .Title }}</h1>
+            <h2 class="article-subtitle">正在跳转到最新日报</h2>
+        </header>
+
+        <section class="article-content">
+            {{ if $latestDaily }}
+                <p>如果没有自动跳转，请点击：<a href="{{ $latestDaily }}">查看最新 AI 日报</a></p>
+                <script>
+                    window.location.replace({{ printf "%q" $latestDaily | safeJS }});
+                </script>
+            {{ else }}
+                <p>当前还没有可用的 AI 日报内容。</p>
+            {{ end }}
+        </section>
+    </article>
+
+    {{ partialCached "footer/footer" . }}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "page") }}
+{{ end }}
