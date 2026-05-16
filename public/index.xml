@@ -7,7 +7,46 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Fri, 15 May 2026 08:30:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 16 May 2026 08:30:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI日报 | 2026-05-16</title>
+        <link>http://localhost:1313/ai-daily/2026-05-16/</link>
+        <pubDate>Sat, 16 May 2026 08:30:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/ai-daily/2026-05-16/</guid>
+        <description>&lt;h2 id=&#34;开源-top-项目&#34;&gt;开源 TOP 项目
+&lt;/h2&gt;&lt;h3 id=&#34;1-n8n-mcp项目ai资讯&#34;&gt;1. n8n-mcp项目(AI资讯)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/czlonkowski/n8n-mcp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：n8n-mcp：工作流构建新利器。 这里的 n8n-mcp项目(AI资讯) ⭐20.8k 简化了自动化流程。它能驱动 Claude (๑•̀ㅂ•́)و✧ 自动帮你生成工作流。开发者 👨‍💻 仅需描述需求就能快速实现 逻辑部署。MCP协议 扩展了 AI 处理复杂任务的上限。整个项目带来的 自动化体验 🚀 实在是震撼。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-anthropic技能库ai资讯&#34;&gt;2. Anthropic技能库(AI资讯)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/anthropics/skills&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：Anthropic 发布 Agent 技能库。 由大厂发布的 Anthropic技能库(AI资讯) 🚀 狂揽 13.5 万星。项目专门为 智能体技能 ⭐135k 打造基础。开发者能快速调取 核心组件 🛠️ 实现交互。社区活跃度极高简直是目前最火 开源项目。这套工具助力 (๑•̀ㅂ•́)و✧ Agent生态 迈向成熟。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-视频检索架构ai资讯&#34;&gt;3. 视频检索架构(AI资讯)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：英伟达发布视频搜索摘要蓝图。 该 视频检索架构(AI资讯) ⭐1.1k 助推构建智能体。利用 GPU加速 ⚡ 能够应对各种视频分析任务。项目在社区极受追捧 🏗️ 显著降低了门槛。这套 标准架构 (๑•̀ㅂ•́)u✧ 让开发变得更简单。英伟达正通过 开源蓝图 锁定视觉应用生态。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-lecun的世界模型ai资讯&#34;&gt;4. LeCun的世界模型(AI资讯)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/keon/jepa&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：160 行代码复刻 JEPA 模型。 开发者复刻了 LeCun的世界模型(AI资讯) 🚀 仅需 160 行代码。项目支持 五大变体 且普通电脑 (^_−)☆ 就能运行。核心机制 掩码预测 🎯 被精准拆解为算法本体。开发者还提供 可视化工具 ✨ 观察特征分离。这为研究 世界模型 提供了极简的入门路径。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-乔木全能助手ai资讯&#34;&gt;5. 乔木全能助手(AI资讯)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/joeseesun/qiaomu-anything-to-notebooklm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：全能助手乔木实现一键转换。 开源项目 乔木全能助手(AI资讯) ⭐2.6k 在社区彻底火了。它能把微信文章与网页视频 🚀 喂给 笔记本模型。瞬间生成 播客草稿 或者脑图 🎨 非常省心。该工具已经狂揽两千多颗星星 🌟 真的很顶。它极大地优化了 知识管理 的信息输入流程。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>AI日报 | 2026-05-15</title>
         <link>http://localhost:1313/ai-daily/2026-05-15/</link>
         <pubDate>Fri, 15 May 2026 08:30:00 +0800</pubDate>

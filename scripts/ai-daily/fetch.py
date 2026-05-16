@@ -7,8 +7,10 @@ import datetime as dt
 import json
 import os
 import pathlib
+import random
 import re
 import sys
+import time
 import urllib.error
 import urllib.request
 from html import unescape
@@ -24,6 +26,26 @@ LATEST_FILE = DATA_DIR / "latest.json"
 TIMEZONE = os.getenv("AI_DAILY_TIMEZONE", "Asia/Shanghai")
 DATE_OVERRIDE = os.getenv("AI_DAILY_DATE", "").strip()
 MAX_ITEMS = int(os.getenv("AI_DAILY_MAX_ITEMS", "12"))
+FETCH_RETRIES = int(os.getenv("AI_DAILY_FETCH_RETRIES", "4"))
+FETCH_TIMEOUT = int(os.getenv("AI_DAILY_FETCH_TIMEOUT", "30"))
+BROWSER_FALLBACK = os.getenv("AI_DAILY_BROWSER_FALLBACK", "auto").strip().lower()
+
+GLOBAL_NOTIFICATION_ID = "domain_update_v1"
+GLOBAL_NOTIFICATION_LOCAL_STORAGE_KEY = f"hide_global_notif_{GLOBAL_NOTIFICATION_ID}"
+GLOBAL_NOTIFICATION_SESSION_STORAGE_KEY = f"session_notif_{GLOBAL_NOTIFICATION_ID}"
+
+BROWSER_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/136.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+    "Cache-Control": "no-cache",
+    "Pragma": "no-cache",
+    "Upgrade-Insecure-Requests": "1",
+}
 
 
 def get_target_date() -> dt.date:
@@ -40,6 +62,123 @@ def normalize_text(value: str) -> str:
     text = unescape(value)
     text = re.sub(r"\s+", " ", text)
     return text.strip()
+
+
+def is_blocked_page(html: str) -> bool:
+    blocked_markers = [
+        "cf-challenge",
+        "cf-browser-verification",
+        "cf-turnstile",
+        "g-recaptcha",
+        "hcaptcha",
+        "attention required",
+        "verify you are human",
+        "访问过于频繁",
+        "安全验证",
+        "请完成验证",
+    ]
+    lower_html = html.lower()
+    return any(marker in lower_html for marker in blocked_markers)
+
+
+def should_try_browser_fallback() -> bool:
+    return BROWSER_FALLBACK not in {"0", "false", "off", "no"}
+
+
+def browser_fallback_error() -> RuntimeError:
+    return RuntimeError(
+        "browser fallback requires Playwright. Install with: "
+        "python -m pip install playwright && python -m playwright install chromium"
+    )
+
+
+def fetch_source_html_with_browser(url: str) -> str:
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError as exc:
+        raise browser_fallback_error() from exc
+
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch(headless=True)
+        try:
+            context = browser.new_context(
+                locale="zh-CN",
+                user_agent=BROWSER_HEADERS["User-Agent"],
+                extra_http_headers={
+                    "Accept-Language": BROWSER_HEADERS["Accept-Language"],
+                },
+            )
+            context.add_init_script(
+                """
+                (() => {
+                  const localKey = "hide_global_notif_domain_update_v1";
+                  const sessionKey = "session_notif_domain_update_v1";
+                  try { window.localStorage.setItem(localKey, "true"); } catch (_) {}
+                  try { window.sessionStorage.setItem(sessionKey, "true"); } catch (_) {}
+                })();
+                """
+            )
+            page = context.new_page()
+            page.goto(url, wait_until="networkidle", timeout=FETCH_TIMEOUT * 1000)
+            dismiss_global_notification(page)
+            html = page.content()
+            if is_blocked_page(html):
+                raise RuntimeError("source page returned a verification or anti-bot page")
+            return html
+        finally:
+            browser.close()
+
+
+def dismiss_global_notification(page: object) -> None:
+    # The site shows a client-side domain update modal. Prefer storage bypass,
+    # then fall back to text-based clicks so layout changes do not break us.
+    try:
+        page.evaluate(
+            """
+            ([localKey, sessionKey]) => {
+              try { window.localStorage.setItem(localKey, "true"); } catch (_) {}
+              try { window.sessionStorage.setItem(sessionKey, "true"); } catch (_) {}
+            }
+            """,
+            [GLOBAL_NOTIFICATION_LOCAL_STORAGE_KEY, GLOBAL_NOTIFICATION_SESSION_STORAGE_KEY],
+        )
+    except Exception:
+        pass
+
+    for selector in [
+        "button:has-text('进入站点')",
+        "button:has-text('ENTER SITE')",
+        "[role='button']:has-text('进入站点')",
+        "[role='button']:has-text('ENTER SITE')",
+    ]:
+        try:
+            locator = page.locator(selector).first
+            if locator.is_visible(timeout=1500):
+                locator.click(timeout=1500)
+                return
+        except Exception:
+            continue
+
+    try:
+        page.keyboard.press("Escape")
+    except Exception:
+        pass
+
+
+def fetch_projects_with_browser_fallback(source_url: str, errors: list[str]) -> list[dict[str, str]]:
+    if not should_try_browser_fallback():
+        return []
+
+    try:
+        html = fetch_source_html_with_browser(source_url)
+        projects = extract_projects(html)
+        if projects:
+            return projects
+        errors.append(f"浏览器渲染后仍未提取到开源 TOP 项目：{source_url}")
+    except Exception as exc:  # noqa: BLE001
+        errors.append(f"浏览器回退抓取失败: {exc} - {source_url}")
+
+    return []
 
 
 class HexTopProjectParser(HTMLParser):
@@ -95,9 +234,30 @@ class HexTopProjectParser(HTMLParser):
 
 
 def fetch_source_html(url: str) -> str:
-    request = urllib.request.Request(url, headers={"User-Agent": "muioo-ai-daily-bot"})
-    with urllib.request.urlopen(request, timeout=30) as response:
-        return response.read().decode("utf-8", errors="replace")
+    last_error: Exception | None = None
+
+    for attempt in range(1, FETCH_RETRIES + 1):
+        request = urllib.request.Request(url, headers=BROWSER_HEADERS)
+        try:
+            with urllib.request.urlopen(request, timeout=FETCH_TIMEOUT) as response:
+                html = response.read().decode("utf-8", errors="replace")
+                if is_blocked_page(html):
+                    raise RuntimeError("source page returned a verification or anti-bot page")
+                return html
+        except urllib.error.HTTPError as exc:
+            last_error = exc
+            if exc.code == 404:
+                raise
+        except Exception as exc:  # noqa: BLE001
+            last_error = exc
+
+        if attempt < FETCH_RETRIES:
+            sleep_seconds = min(20, attempt * 3 + random.uniform(0.5, 1.5))
+            time.sleep(sleep_seconds)
+
+    if last_error is None:
+        raise RuntimeError("failed to fetch source page for unknown reason")
+    raise last_error
 
 
 def extract_projects(html: str) -> list[dict[str, str]]:
@@ -207,10 +367,20 @@ def fetch_projects_for_date(target_date: dt.date) -> tuple[list[dict[str, str]],
         if projects:
             return projects, errors
         errors.append(f"来源页面存在，但没有提取到开源 TOP 项目：{source_url}")
+        projects = fetch_projects_with_browser_fallback(source_url, errors)
+        if projects:
+            return projects, errors
     except urllib.error.HTTPError as exc:
         errors.append(f"抓取来源失败: HTTP {exc.code} - {source_url}")
+        if exc.code != 404:
+            projects = fetch_projects_with_browser_fallback(source_url, errors)
+            if projects:
+                return projects, errors
     except Exception as exc:  # noqa: BLE001
         errors.append(f"抓取来源失败: {exc} - {source_url}")
+        projects = fetch_projects_with_browser_fallback(source_url, errors)
+        if projects:
+            return projects, errors
 
     return [], errors
 
