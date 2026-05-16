@@ -1,717 +1,2062 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="记录阿里云Ubuntu服务器上Docker的安装、镜像加速和代理配置"><title>【docker项目部署】服务器部署Docker配置+部署项目</title><link rel=canonical href=https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/><link rel=stylesheet href=/scss/style.min.a9f8528cf21200d696e4551d1118c2c9d2f618cad09642e9fc9e99f3c9c3fc67.css><meta property='og:title' content="【docker项目部署】服务器部署Docker配置+部署项目"><meta property='og:description' content="记录阿里云Ubuntu服务器上Docker的安装、镜像加速和代理配置"><meta property='og:url' content='https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/'><meta property='og:site_name' content='muioo blog'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='Docker'><meta property='article:tag' content='服务器部署'><meta property='article:published_time' content='2026-03-01T00:00:00+00:00'><meta property='article:modified_time' content='2026-03-01T00:00:00+00:00'><meta property='og:image' content='https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/page.png'><meta name=twitter:title content="【docker项目部署】服务器部署Docker配置+部署项目"><meta name=twitter:description content="记录阿里云Ubuntu服务器上Docker的安装、镜像加速和代理配置"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content='https://muioo.github.io/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/page.png'><link rel="shortcut icon" href=/favicon.ico><script>const live2d_path="https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/";function loadExternalResource(e,t){return new Promise((n,s)=>{let o;t==="css"?(o=document.createElement("link"),o.rel="stylesheet",o.href=e):t==="js"&&(o=document.createElement("script"),o.type="module",o.src=e),o&&(o.onload=()=>n(e),o.onerror=()=>s(e),document.head.appendChild(o))})}(async()=>{const e=window.Image;window.Image=function(...n){const t=new e(...n);return t.crossOrigin="anonymous",t},window.Image.prototype=e.prototype,await Promise.all([loadExternalResource(live2d_path+"waifu.css","css"),loadExternalResource(live2d_path+"waifu-tips.js","js")]),initWidget({waifuPath:live2d_path+"waifu-tips.json",cubism2Path:live2d_path+"live2d.min.js",cubism5Path:"https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js",tools:["hitokoto","asteroids","switch-model","switch-texture","photo","info","quit"],logLevel:"warn",drag:!1})})(),console.log(`
-%cLive2D%cWidget%c
-`,"padding: 8px; background: #cd3e45; font-weight: bold; font-size: large; color: white;","padding: 8px; background: #ff5450; font-size: large; color: #eee;","")</script><style>.article-page .main-article,main .main-article{background:#fff!important}[data-scheme=dark] .article-page .main-article,[data-scheme=dark] main .main-article{background:#424242!important}</style><style>#waifu{left:auto!important;right:0!important;bottom:0!important}#waifu-tips{left:auto!important;right:0!important}#waifu-tool{left:auto!important;right:0!important}</style><link rel=dns-prefetch href=https://giscus.app><link rel=preconnect href=https://giscus.app crossorigin><script src=https://unpkg.com/swup@4></script><style>.transition-fade{transition:opacity .3s;opacity:1}html.is-animating .transition-fade{opacity:0}</style></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.setItem(e,"light")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div id=swup class=transition-fade><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
-<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/avatar_hu_6827ff93fc5ecbf3.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar></a></figure><div class=site-meta><h1 class=site-name><a href=/>muioo blog</a></h1><h2 class=site-description>欢迎来到我的网站</h2></div></header><ol class=menu-social><li><a href=https://github.com/muioo/muioo.github.io target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
-<span>主页 | Home</span></a></li><li><a href=/%E5%85%B3%E4%BA%8E-about/><svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
-<span>关于 | About</span></a></li><li><a href=/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
-<span>归档 | archives</span></a></li><li><a href=/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
-<span>搜索 | Search</span></a></li><li><a href=/ai-daily/2026-05-15/><svg class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M21 14l-3-3h-7a1 1 0 01-1-1V4a1 1 0 011-1h9a1 1 0 011 1v10"/><path d="M14 15v2a1 1 0 01-1 1H6l-3 3V11a1 1 0 011-1h2"/></svg>
-<span>AI日报 | Daily</span></a></li><li><a href=/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
-<span>相关链接 | Links</span></a></li><li class=ai-daily-item><a href=/ai-daily/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
-<span>日报总览</span></a></li><li class=ai-daily-month-group><details class=ai-daily-month-details open><summary class=ai-daily-month-summary><span>2026-05</span>
-<span>1</span></summary><ol class=ai-daily-month-menu><li class=ai-daily-item><a href=/ai-daily/2026-05-15/><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
-<span>05-15</span></a></li></ol></details></li><li class=menu-bottom-section><ol class=menu></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目录</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#阿里云服务器docker配置镜像加速>阿里云服务器docker配置镜像加速</a></li><li><a href=#阿里云服务器为docker配置本地代理>阿里云服务器为docker配置本地代理</a></li><li><a href=#docker部署网络图以知识库项目为例>Docker部署网络图（以知识库项目为例）</a></li><li><a href=#docker使用>Docker使用</a><ol><li><a href=#数据库使用>数据库使用</a></li><li><a href=#dockerfile文件使用>Dockerfile文件使用</a></li></ol></li><li><a href=#部署流程>部署流程</a></li></ol></nav></div></section></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/><img src=/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/page_hu_537b6a526df434de.png srcset="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/page_hu_537b6a526df434de.png 800w, /p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/page_hu_4acbb46c703ef190.png 1600w" width=800 height=476 loading=lazy alt="Featured image of post 【docker项目部署】服务器部署Docker配置+部署项目"></a></div><div class=article-details><header class=article-category><a href=/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/>项目部署</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/>【docker项目部署】服务器部署Docker配置+部署项目</a></h2><h3 class=article-subtitle>记录阿里云Ubuntu服务器上Docker的安装、镜像加速和代理配置</h3></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
-<time class=article-time--published datetime=2026-03-01T00:00:00Z>2026-03-01</time></div></footer></div></header><section class=article-content><h1 id=服务器部署>服务器部署</h1><h2 id=阿里云服务器docker配置镜像加速>阿里云服务器docker配置镜像加速</h2><ul><li>创建/etc/docker目录</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mkdir -p /etc/docker
-</span></span></code></pre></td></tr></table></div></div><ul><li>写入镜像地址</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>tee /etc/docker/daemon.json <span class=s>&lt;&lt;-&#39;EOF&#39;
-</span></span></span><span class=line><span class=cl><span class=s>{
-</span></span></span><span class=line><span class=cl><span class=s>  &#34;registry-mirrors&#34;: [
-</span></span></span><span class=line><span class=cl><span class=s>    &#34;https://docker.m.daocloud.io&#34;
-</span></span></span><span class=line><span class=cl><span class=s>  ]
-</span></span></span><span class=line><span class=cl><span class=s>}
-</span></span></span><span class=line><span class=cl><span class=s>EOF</span>
-</span></span></code></pre></td></tr></table></div></div><ul><li>重启docker</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>systemctl daemon-reload <span class=o>&amp;&amp;</span> systemctl restart docker
-</span></span></code></pre></td></tr></table></div></div><h2 id=阿里云服务器为docker配置本地代理>阿里云服务器为docker配置本地代理</h2><ul><li>创建/etc/systemd/system/docker.service.d文件</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mkdir -p /etc/systemd/system/docker.service.d
-</span></span></code></pre></td></tr></table></div></div><ul><li>查看文件内容并且写入</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>cat &gt; /etc/systemd/system/docker.service.d/proxy.conf <span class=s>&lt;&lt; &#39;EOF&#39;
-</span></span></span><span class=line><span class=cl><span class=s>[Service]
-</span></span></span><span class=line><span class=cl><span class=s>Environment=&#34;HTTP_PROXY=http://127.0.0.1:7890&#34;
-</span></span></span><span class=line><span class=cl><span class=s>Environment=&#34;HTTPS_PROXY=http://127.0.0.1:7890&#34;
-</span></span></span><span class=line><span class=cl><span class=s>EOF</span>
-</span></span></code></pre></td></tr></table></div></div><ul><li>重启docker</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>systemctl daemon-reload <span class=o>&amp;&amp;</span> systemctl restart docker
-</span></span></code></pre></td></tr></table></div></div><ul><li>验证代理是否生效</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>systemctl show --property<span class=o>=</span>Environment docker <span class=c1># 出现这个表示成功Environment=HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=docker部署网络图以知识库项目为例>Docker部署网络图（以知识库项目为例）</h2><p><img src=/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84.png width=482 height=311 srcset="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84_hu_6802adfe3697fabb.png 480w, /p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84_hu_4f02172539d2568c.png 1024w" loading=lazy alt=docker网络架构 class=gallery-image data-flex-grow=154 data-flex-basis=371px></p><h2 id=docker使用>Docker使用</h2><h3 id=数据库使用>数据库使用</h3><p><img src=/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/mysql-docker1.png width=1610 height=127 srcset="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/mysql-docker1_hu_318b81c3888ab3.png 480w, /p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/mysql-docker1_hu_2191343c33bccd8f.png 1024w" loading=lazy alt=mysql-docker1 class=gallery-image data-flex-grow=1267 data-flex-basis=3042px></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 进入数据库（mysql为docker创建的mysql名称，建议不要像我这样同名）</span>
-</span></span><span class=line><span class=cl>docker <span class=nb>exec</span> -it mysql mysql -uroot -proot123456
-</span></span></code></pre></td></tr></table></div></div><p>docker中的数据库可以看到与宿主机的mysql是隔离的，当前没有映射宿主机端口。</p><h3 id=dockerfile文件使用>Dockerfile文件使用</h3><ul><li>docker-compose.yml（没有创建数据库）</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span><span class=lnt>27
-</span><span class=lnt>28
-</span><span class=lnt>29
-</span><span class=lnt>30
-</span><span class=lnt>31
-</span><span class=lnt>32
-</span><span class=lnt>33
-</span><span class=lnt>34
-</span><span class=lnt>35
-</span><span class=lnt>36
-</span><span class=lnt>37
-</span><span class=lnt>38
-</span><span class=lnt>39
-</span><span class=lnt>40
-</span><span class=lnt>41
-</span><span class=lnt>42
-</span><span class=lnt>43
-</span><span class=lnt>44
-</span><span class=lnt>45
-</span><span class=lnt>46
-</span><span class=lnt>47
-</span><span class=lnt>48
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>services</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>backend</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>build</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>context</span><span class=p>:</span><span class=w> </span><span class=l>.</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>dockerfile</span><span class=p>:</span><span class=w> </span><span class=l>backend/Dockerfile</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>container_name</span><span class=p>:</span><span class=w> </span><span class=l>knowledge-backend</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>restart</span><span class=p>:</span><span class=w> </span><span class=l>unless-stopped</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>env_file</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>./backend/.env</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>environment</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>DB_HOST</span><span class=p>:</span><span class=w> </span><span class=l>mysql</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>DB_PORT</span><span class=p>:</span><span class=w> </span><span class=m>3306</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>DB_USER</span><span class=p>:</span><span class=w> </span><span class=l>knowledge_user</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>DB_PASSWORD</span><span class=p>:</span><span class=w> </span><span class=l>Knowledge@123</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>DB_NAME</span><span class=p>:</span><span class=w> </span><span class=l>knowledge_system</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>volumes</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>./backend/uploads:/app/backend/uploads</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>./logs:/app/logs</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>networks</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>knowledge-net</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>healthcheck</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>test</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=s2>&#34;CMD&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;python&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;-c&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;import urllib.request; urllib.request.urlopen(&#39;http://localhost:8022/health&#39;)&#34;</span><span class=p>]</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>interval</span><span class=p>:</span><span class=w> </span><span class=l>30s</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>timeout</span><span class=p>:</span><span class=w> </span><span class=l>10s</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>retries</span><span class=p>:</span><span class=w> </span><span class=m>5</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>start_period</span><span class=p>:</span><span class=w> </span><span class=l>60s</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>frontend</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>build</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>context</span><span class=p>:</span><span class=w> </span><span class=l>./frontend</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>dockerfile</span><span class=p>:</span><span class=w> </span><span class=l>Dockerfile</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>container_name</span><span class=p>:</span><span class=w> </span><span class=l>knowledge-frontend</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>restart</span><span class=p>:</span><span class=w> </span><span class=l>unless-stopped</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>ports</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>     </span><span class=c># 服务器端口5173 映射 到docker容器内端口80</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=s2>&#34;5173:80&#34;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>volumes</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=c># 挂载本地构建好的 dist 目录（本地构建后直接生效，无需重新构建镜像）</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>./frontend/dist:/usr/share/nginx/html:ro</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>depends_on</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>backend</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>networks</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>knowledge-net</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=nt>networks</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>knowledge-net</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>driver</span><span class=p>:</span><span class=w> </span><span class=l>bridge</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>external</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
-</span></span></span></code></pre></td></tr></table></div></div><ul><li>backend/dockfile</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span><span class=lnt>27
-</span><span class=lnt>28
-</span><span class=lnt>29
-</span><span class=lnt>30
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dockerfile data-lang=dockerfile><span class=line><span class=cl><span class=k>FROM</span><span class=w> </span><span class=s>python:3.11-slim</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err>
-</span></span></span><span class=line><span class=cl><span class=c># 工作目录设为 /app，backend 代码放在 /app/backend/ 下，保持包路径 backend.main:app</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=k>WORKDIR</span><span class=w> </span><span class=s>/app</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err>
-</span></span></span><span class=line><span class=cl><span class=c># 安装系统依赖</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=k>RUN</span> apt-get update <span class=o>&amp;&amp;</span> apt-get install -y --no-install-recommends <span class=se>\
-</span></span></span><span class=line><span class=cl>    gcc <span class=se>\
-</span></span></span><span class=line><span class=cl>    default-libmysqlclient-dev <span class=se>\
-</span></span></span><span class=line><span class=cl>    pkg-config <span class=se>\
-</span></span></span><span class=line><span class=cl>    <span class=o>&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span class=err>
-</span></span></span><span class=line><span class=cl><span class=err>
-</span></span></span><span class=line><span class=cl><span class=c># 复制依赖文件并安装（build context 是项目根目录）</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=k>COPY</span> backend/requirements-docker.txt .<span class=err>
-</span></span></span><span class=line><span class=cl><span class=k>RUN</span> pip install --no-cache-dir -r requirements-docker.txt<span class=err>
-</span></span></span><span class=line><span class=cl><span class=err>
-</span></span></span><span class=line><span class=cl><span class=c># 复制 aerich 配置和迁移文件（需要在 /app 根目录，aerich 从这里读取）</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=k>COPY</span> pyproject.toml ./pyproject.toml<span class=err>
-</span></span></span><span class=line><span class=cl><span class=k>COPY</span> backend/migrations ./migrations<span class=err>
-</span></span></span><span class=line><span class=cl><span class=err>
-</span></span></span><span class=line><span class=cl><span class=c># 复制 backend 代码到 /app/backend/</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=k>COPY</span> backend ./backend<span class=err>
-</span></span></span><span class=line><span class=cl><span class=err>
-</span></span></span><span class=line><span class=cl><span class=c># 修复 entrypoint.sh 换行符（CRLF -&gt; LF）并设置可执行权限</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=k>RUN</span> sed -i <span class=s1>&#39;s/\r$//&#39;</span> ./backend/entrypoint.sh <span class=o>&amp;&amp;</span> <span class=se>\
-</span></span></span><span class=line><span class=cl>    chmod +x ./backend/entrypoint.sh<span class=err>
-</span></span></span><span class=line><span class=cl><span class=err>
-</span></span></span><span class=line><span class=cl><span class=k>EXPOSE</span><span class=w> </span><span class=s>8022</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err>
-</span></span></span><span class=line><span class=cl><span class=k>ENTRYPOINT</span> <span class=p>[</span><span class=s2>&#34;./backend/entrypoint.sh&#34;</span><span class=p>]</span><span class=err>
-</span></span></span></code></pre></td></tr></table></div></div><ul><li>frontend/dockerfile</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dockerfile data-lang=dockerfile><span class=line><span class=cl><span class=c># 生产阶段 - 直接使用本地构建好的 dist 目录</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=k>FROM</span><span class=w> </span><span class=s>nginx:alpine</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err>
-</span></span></span><span class=line><span class=cl><span class=c># 只复制 nginx.conf，dist 目录通过 docker-compose volumes 挂载</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=k>COPY</span> nginx.conf /etc/nginx/conf.d/default.conf<span class=err>
-</span></span></span><span class=line><span class=cl><span class=err>
-</span></span></span><span class=line><span class=cl><span class=k>EXPOSE</span><span class=w> </span><span class=s>80</span><span class=err>
-</span></span></span></code></pre></td></tr></table></div></div><h2 id=部署流程>部署流程</h2><ul><li>代码仓库https://github.com/muioo/knowledge-system.git</li><li>数据库迁移脚本. /backend/entrypoint.sh</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
-</span><span class=lnt>  2
-</span><span class=lnt>  3
-</span><span class=lnt>  4
-</span><span class=lnt>  5
-</span><span class=lnt>  6
-</span><span class=lnt>  7
-</span><span class=lnt>  8
-</span><span class=lnt>  9
-</span><span class=lnt> 10
-</span><span class=lnt> 11
-</span><span class=lnt> 12
-</span><span class=lnt> 13
-</span><span class=lnt> 14
-</span><span class=lnt> 15
-</span><span class=lnt> 16
-</span><span class=lnt> 17
-</span><span class=lnt> 18
-</span><span class=lnt> 19
-</span><span class=lnt> 20
-</span><span class=lnt> 21
-</span><span class=lnt> 22
-</span><span class=lnt> 23
-</span><span class=lnt> 24
-</span><span class=lnt> 25
-</span><span class=lnt> 26
-</span><span class=lnt> 27
-</span><span class=lnt> 28
-</span><span class=lnt> 29
-</span><span class=lnt> 30
-</span><span class=lnt> 31
-</span><span class=lnt> 32
-</span><span class=lnt> 33
-</span><span class=lnt> 34
-</span><span class=lnt> 35
-</span><span class=lnt> 36
-</span><span class=lnt> 37
-</span><span class=lnt> 38
-</span><span class=lnt> 39
-</span><span class=lnt> 40
-</span><span class=lnt> 41
-</span><span class=lnt> 42
-</span><span class=lnt> 43
-</span><span class=lnt> 44
-</span><span class=lnt> 45
-</span><span class=lnt> 46
-</span><span class=lnt> 47
-</span><span class=lnt> 48
-</span><span class=lnt> 49
-</span><span class=lnt> 50
-</span><span class=lnt> 51
-</span><span class=lnt> 52
-</span><span class=lnt> 53
-</span><span class=lnt> 54
-</span><span class=lnt> 55
-</span><span class=lnt> 56
-</span><span class=lnt> 57
-</span><span class=lnt> 58
-</span><span class=lnt> 59
-</span><span class=lnt> 60
-</span><span class=lnt> 61
-</span><span class=lnt> 62
-</span><span class=lnt> 63
-</span><span class=lnt> 64
-</span><span class=lnt> 65
-</span><span class=lnt> 66
-</span><span class=lnt> 67
-</span><span class=lnt> 68
-</span><span class=lnt> 69
-</span><span class=lnt> 70
-</span><span class=lnt> 71
-</span><span class=lnt> 72
-</span><span class=lnt> 73
-</span><span class=lnt> 74
-</span><span class=lnt> 75
-</span><span class=lnt> 76
-</span><span class=lnt> 77
-</span><span class=lnt> 78
-</span><span class=lnt> 79
-</span><span class=lnt> 80
-</span><span class=lnt> 81
-</span><span class=lnt> 82
-</span><span class=lnt> 83
-</span><span class=lnt> 84
-</span><span class=lnt> 85
-</span><span class=lnt> 86
-</span><span class=lnt> 87
-</span><span class=lnt> 88
-</span><span class=lnt> 89
-</span><span class=lnt> 90
-</span><span class=lnt> 91
-</span><span class=lnt> 92
-</span><span class=lnt> 93
-</span><span class=lnt> 94
-</span><span class=lnt> 95
-</span><span class=lnt> 96
-</span><span class=lnt> 97
-</span><span class=lnt> 98
-</span><span class=lnt> 99
-</span><span class=lnt>100
-</span><span class=lnt>101
-</span><span class=lnt>102
-</span><span class=lnt>103
-</span><span class=lnt>104
-</span><span class=lnt>105
-</span><span class=lnt>106
-</span><span class=lnt>107
-</span><span class=lnt>108
-</span><span class=lnt>109
-</span><span class=lnt>110
-</span><span class=lnt>111
-</span><span class=lnt>112
-</span><span class=lnt>113
-</span><span class=lnt>114
-</span><span class=lnt>115
-</span><span class=lnt>116
-</span><span class=lnt>117
-</span><span class=lnt>118
-</span><span class=lnt>119
-</span><span class=lnt>120
-</span><span class=lnt>121
-</span><span class=lnt>122
-</span><span class=lnt>123
-</span><span class=lnt>124
-</span><span class=lnt>125
-</span><span class=lnt>126
-</span><span class=lnt>127
-</span><span class=lnt>128
-</span><span class=lnt>129
-</span><span class=lnt>130
-</span><span class=lnt>131
-</span><span class=lnt>132
-</span><span class=lnt>133
-</span><span class=lnt>134
-</span><span class=lnt>135
-</span><span class=lnt>136
-</span><span class=lnt>137
-</span><span class=lnt>138
-</span><span class=lnt>139
-</span><span class=lnt>140
-</span><span class=lnt>141
-</span><span class=lnt>142
-</span><span class=lnt>143
-</span><span class=lnt>144
-</span><span class=lnt>145
-</span><span class=lnt>146
-</span><span class=lnt>147
-</span><span class=lnt>148
-</span><span class=lnt>149
-</span><span class=lnt>150
-</span><span class=lnt>151
-</span><span class=lnt>152
-</span><span class=lnt>153
-</span><span class=lnt>154
-</span><span class=lnt>155
-</span><span class=lnt>156
-</span><span class=lnt>157
-</span><span class=lnt>158
-</span><span class=lnt>159
-</span><span class=lnt>160
-</span><span class=lnt>161
-</span><span class=lnt>162
-</span><span class=lnt>163
-</span><span class=lnt>164
-</span><span class=lnt>165
-</span><span class=lnt>166
-</span><span class=lnt>167
-</span><span class=lnt>168
-</span><span class=lnt>169
-</span><span class=lnt>170
-</span><span class=lnt>171
-</span><span class=lnt>172
-</span><span class=lnt>173
-</span><span class=lnt>174
-</span><span class=lnt>175
-</span><span class=lnt>176
-</span><span class=lnt>177
-</span><span class=lnt>178
-</span><span class=lnt>179
-</span><span class=lnt>180
-</span><span class=lnt>181
-</span><span class=lnt>182
-</span><span class=lnt>183
-</span><span class=lnt>184
-</span><span class=lnt>185
-</span><span class=lnt>186
-</span><span class=lnt>187
-</span><span class=lnt>188
-</span><span class=lnt>189
-</span><span class=lnt>190
-</span><span class=lnt>191
-</span><span class=lnt>192
-</span><span class=lnt>193
-</span><span class=lnt>194
-</span><span class=lnt>195
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/sh
-</span></span></span><span class=line><span class=cl><span class=c1># 不使用 set -e，以便显示错误信息</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;=== Waiting for MySQL to be ready ===&#34;</span>
-</span></span><span class=line><span class=cl><span class=nv>MAX_RETRIES</span><span class=o>=</span><span class=m>30</span>
-</span></span><span class=line><span class=cl><span class=nv>RETRY</span><span class=o>=</span><span class=m>0</span>
-</span></span><span class=line><span class=cl><span class=k>while</span> true<span class=p>;</span> <span class=k>do</span>
-</span></span><span class=line><span class=cl>    <span class=k>if</span> python -c <span class=s2>&#34;
-</span></span></span><span class=line><span class=cl><span class=s2>import asyncio, sys
-</span></span></span><span class=line><span class=cl><span class=s2>from tortoise import Tortoise
-</span></span></span><span class=line><span class=cl><span class=s2>from backend.settings.config import TORTOISE_ORM
-</span></span></span><span class=line><span class=cl><span class=s2>async def check():
-</span></span></span><span class=line><span class=cl><span class=s2>    try:
-</span></span></span><span class=line><span class=cl><span class=s2>        await Tortoise.init(config=TORTOISE_ORM)
-</span></span></span><span class=line><span class=cl><span class=s2>        await Tortoise.close_connections()
-</span></span></span><span class=line><span class=cl><span class=s2>        print(&#39;OK&#39;)
-</span></span></span><span class=line><span class=cl><span class=s2>    except Exception as e:
-</span></span></span><span class=line><span class=cl><span class=s2>        print(f&#39;ERROR: {e}&#39;, file=sys.stderr)
-</span></span></span><span class=line><span class=cl><span class=s2>        sys.exit(1)
-</span></span></span><span class=line><span class=cl><span class=s2>asyncio.run(check())
-</span></span></span><span class=line><span class=cl><span class=s2>&#34;</span> 2&gt;<span class=p>&amp;</span>1<span class=p>;</span> <span class=k>then</span>
-</span></span><span class=line><span class=cl>        <span class=nb>break</span>
-</span></span><span class=line><span class=cl>    <span class=k>fi</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=nv>RETRY</span><span class=o>=</span><span class=k>$((</span>RETRY <span class=o>+</span> <span class=m>1</span><span class=k>))</span>
-</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=o>[</span> <span class=nv>$RETRY</span> -ge <span class=nv>$MAX_RETRIES</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
-</span></span><span class=line><span class=cl>        <span class=nb>echo</span> <span class=s2>&#34;MySQL not ready after </span><span class=si>${</span><span class=nv>MAX_RETRIES</span><span class=si>}</span><span class=s2> retries, exiting.&#34;</span>
-</span></span><span class=line><span class=cl>        <span class=nb>exit</span> <span class=m>1</span>
-</span></span><span class=line><span class=cl>    <span class=k>fi</span>
-</span></span><span class=line><span class=cl>    <span class=nb>echo</span> <span class=s2>&#34;  MySQL not ready yet, retrying in 2s... (</span><span class=nv>$RETRY</span><span class=s2>/</span><span class=nv>$MAX_RETRIES</span><span class=s2>)&#34;</span>
-</span></span><span class=line><span class=cl>    sleep <span class=m>2</span>
-</span></span><span class=line><span class=cl><span class=k>done</span>
-</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;MySQL is ready.&#34;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;=== Running aerich migrations ===&#34;</span>
-</span></span><span class=line><span class=cl><span class=c1># 使用 aerich CLI 但先读取迁移文件，分割后逐条执行</span>
-</span></span><span class=line><span class=cl>python <span class=s>&lt;&lt; &#39;PYTHON_SCRIPT&#39;
-</span></span></span><span class=line><span class=cl><span class=s>import asyncio
-</span></span></span><span class=line><span class=cl><span class=s>import sys
-</span></span></span><span class=line><span class=cl><span class=s>import traceback
-</span></span></span><span class=line><span class=cl><span class=s>import os
-</span></span></span><span class=line><span class=cl><span class=s>import re
-</span></span></span><span class=line><span class=cl><span class=s>from pathlib import Path
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>async def init_db_with_tortoise():
-</span></span></span><span class=line><span class=cl><span class=s>    &#34;&#34;&#34;使用 TortoiseORM 直接初始化数据库表（无 migrations 时）&#34;&#34;&#34;
-</span></span></span><span class=line><span class=cl><span class=s>    from tortoise import Tortoise
-</span></span></span><span class=line><span class=cl><span class=s>    from backend.settings.config import TORTOISE_ORM
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>    print(&#34;No migrations directory found, using TortoiseORM to initialize database...&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>    await Tortoise.init(config=TORTOISE_ORM)
-</span></span></span><span class=line><span class=cl><span class=s>    await Tortoise.generate_schemas()
-</span></span></span><span class=line><span class=cl><span class=s>    print(f&#34;Database tables created successfully!&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>    await Tortoise.close_connections()
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>async def migrate():
-</span></span></span><span class=line><span class=cl><span class=s>    try:
-</span></span></span><span class=line><span class=cl><span class=s>        from aerich import Command
-</span></span></span><span class=line><span class=cl><span class=s>        from aerich.models import Aerich
-</span></span></span><span class=line><span class=cl><span class=s>        from backend.settings.config import TORTOISE_ORM
-</span></span></span><span class=line><span class=cl><span class=s>        from tortoise import Tortoise, connections
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>        print(&#34;Initializing aerich...&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>        # 初始化 Tortoise 和 aerich
-</span></span></span><span class=line><span class=cl><span class=s>        await Tortoise.init(config=TORTOISE_ORM)
-</span></span></span><span class=line><span class=cl><span class=s>        command = Command(tortoise_config=TORTOISE_ORM, location=&#39;migrations&#39;)
-</span></span></span><span class=line><span class=cl><span class=s>        await command.init()
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>        print(&#34;Checking for pending migrations...&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>        # 检查是否有待执行的迁移
-</span></span></span><span class=line><span class=cl><span class=s>        migrations_path = Path(&#39;migrations/models&#39;)
-</span></span></span><span class=line><span class=cl><span class=s>        if not migrations_path.exists():
-</span></span></span><span class=line><span class=cl><span class=s>            print(&#39;No migrations directory found&#39;)
-</span></span></span><span class=line><span class=cl><span class=s>            # 使用 TortoiseORM 直接初始化数据库表
-</span></span></span><span class=line><span class=cl><span class=s>            await init_db_with_tortoise()
-</span></span></span><span class=line><span class=cl><span class=s>            return
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>        # 获取所有迁移文件
-</span></span></span><span class=line><span class=cl><span class=s>        migration_files = sorted(migrations_path.glob(&#39;*.py&#39;))
-</span></span></span><span class=line><span class=cl><span class=s>        if not migration_files:
-</span></span></span><span class=line><span class=cl><span class=s>            print(&#39;No migration files found&#39;)
-</span></span></span><span class=line><span class=cl><span class=s>            # 使用 TortoiseORM 直接初始化数据库表
-</span></span></span><span class=line><span class=cl><span class=s>            await init_db_with_tortoise()
-</span></span></span><span class=line><span class=cl><span class=s>            return
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>        # 获取已应用的迁移
-</span></span></span><span class=line><span class=cl><span class=s>        applied_versions = []
-</span></span></span><span class=line><span class=cl><span class=s>        try:
-</span></span></span><span class=line><span class=cl><span class=s>            applied = await Aerich.all().values(&#39;version&#39;)
-</span></span></span><span class=line><span class=cl><span class=s>            applied_versions = [a[&#39;version&#39;] for a in applied]
-</span></span></span><span class=line><span class=cl><span class=s>            print(f&#34;Already applied migrations: {applied_versions}&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>        except Exception as e:
-</span></span></span><span class=line><span class=cl><span class=s>            print(f&#34;No aerich table yet (first run): {e}&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>            pass  # 首次运行，aerich 表还不存在
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>        # 找出待执行的迁移
-</span></span></span><span class=line><span class=cl><span class=s>        pending = []
-</span></span></span><span class=line><span class=cl><span class=s>        for f in migration_files:
-</span></span></span><span class=line><span class=cl><span class=s>            if f.name.startswith(&#39;0_&#39;):
-</span></span></span><span class=line><span class=cl><span class=s>                # 初始迁移特殊处理
-</span></span></span><span class=line><span class=cl><span class=s>                if not applied_versions:
-</span></span></span><span class=line><span class=cl><span class=s>                    pending.append(f)
-</span></span></span><span class=line><span class=cl><span class=s>            else:
-</span></span></span><span class=line><span class=cl><span class=s>                # 检查完整文件名是否在已应用列表中
-</span></span></span><span class=line><span class=cl><span class=s>                if f.name not in applied_versions:
-</span></span></span><span class=line><span class=cl><span class=s>                    pending.append(f)
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>        if not pending:
-</span></span></span><span class=line><span class=cl><span class=s>            print(&#39;No new migrations to run&#39;)
-</span></span></span><span class=line><span class=cl><span class=s>            await Tortoise.close_connections()
-</span></span></span><span class=line><span class=cl><span class=s>            return
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>        print(f&#34;Found {len(pending)} pending migrations: {[f.name for f in pending]}&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>        # 逐个执行迁移
-</span></span></span><span class=line><span class=cl><span class=s>        for i, migration_file in enumerate(pending, 1):
-</span></span></span><span class=line><span class=cl><span class=s>            print(f&#34;  [{i}/{len(pending)}] Applying {migration_file.name}...&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>            # 动态导入迁移模块
-</span></span></span><span class=line><span class=cl><span class=s>            module_name = f&#34;migrations.models.{migration_file.stem}&#34;
-</span></span></span><span class=line><span class=cl><span class=s>            module = __import__(module_name, fromlist=[&#39;upgrade&#39;])
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>            # 获取升级 SQL
-</span></span></span><span class=line><span class=cl><span class=s>            conn = connections.get(&#39;default&#39;)
-</span></span></span><span class=line><span class=cl><span class=s>            upgrade_sql = await module.upgrade(conn)
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>            # 分割 SQL 语句
-</span></span></span><span class=line><span class=cl><span class=s>            # 简单方法：按分号分割，然后过滤空语句
-</span></span></span><span class=line><span class=cl><span class=s>            statements = []
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>            # 移除多行注释 /* ... */
-</span></span></span><span class=line><span class=cl><span class=s>            import re
-</span></span></span><span class=line><span class=cl><span class=s>            upgrade_sql = re.sub(r&#39;/\*.*?\*/&#39;, &#39;&#39;, upgrade_sql, flags=re.DOTALL)
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>            # 移除单行注释 --
-</span></span></span><span class=line><span class=cl><span class=s>            upgrade_sql = re.sub(r&#39;--.*?$&#39;, &#39;&#39;, upgrade_sql, flags=re.MULTILINE)
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>            # 按分号分割并清理
-</span></span></span><span class=line><span class=cl><span class=s>            raw_statements = upgrade_sql.split(&#39;;&#39;)
-</span></span></span><span class=line><span class=cl><span class=s>            for stmt in raw_statements:
-</span></span></span><span class=line><span class=cl><span class=s>                # 移除前后空白和空行
-</span></span></span><span class=line><span class=cl><span class=s>                cleaned = &#39;\n&#39;.join(line.strip() for line in stmt.split(&#39;\n&#39;) if line.strip())
-</span></span></span><span class=line><span class=cl><span class=s>                if cleaned:
-</span></span></span><span class=line><span class=cl><span class=s>                    statements.append(cleaned)
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>            print(f&#34;    Found {len(statements)} SQL statements to execute&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>            # 逐条执行 SQL
-</span></span></span><span class=line><span class=cl><span class=s>            for j, stmt in enumerate(statements, 1):
-</span></span></span><span class=line><span class=cl><span class=s>                try:
-</span></span></span><span class=line><span class=cl><span class=s>                    # 清理语句
-</span></span></span><span class=line><span class=cl><span class=s>                    stmt_clean = stmt.strip().rstrip(&#39;;&#39;)
-</span></span></span><span class=line><span class=cl><span class=s>                    if not stmt_clean:
-</span></span></span><span class=line><span class=cl><span class=s>                        continue
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>                    await conn.execute_script(stmt_clean)
-</span></span></span><span class=line><span class=cl><span class=s>                    print(f&#34;    [{j}/{len(statements)}] Executed successfully&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>                except Exception as e:
-</span></span></span><span class=line><span class=cl><span class=s>                    error_str = str(e)
-</span></span></span><span class=line><span class=cl><span class=s>                    # 跳过已存在的错误
-</span></span></span><span class=line><span class=cl><span class=s>                    if &#39;already exists&#39; in error_str or &#39;Duplicate column&#39; in error_str or &#39;Duplicate key&#39; in error_str:
-</span></span></span><span class=line><span class=cl><span class=s>                        print(f&#34;    [{j}/{len(statements)}] Skipped (already exists)&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>                        continue
-</span></span></span><span class=line><span class=cl><span class=s>                    print(f&#34;    [{j}/{len(statements)}] ERROR: {e}&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>                    print(f&#34;    SQL: {stmt_clean[:200]}...&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>                    # 不抛出异常，继续执行下一条语句
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>            # 记录迁移
-</span></span></span><span class=line><span class=cl><span class=s>            try:
-</span></span></span><span class=line><span class=cl><span class=s>                # 使用完整文件名作为版本
-</span></span></span><span class=line><span class=cl><span class=s>                version = migration_file.name
-</span></span></span><span class=line><span class=cl><span class=s>                await Aerich.create(
-</span></span></span><span class=line><span class=cl><span class=s>                    version=version,
-</span></span></span><span class=line><span class=cl><span class=s>                    app=&#39;models&#39;,
-</span></span></span><span class=line><span class=cl><span class=s>                    content=upgrade_sql
-</span></span></span><span class=line><span class=cl><span class=s>                )
-</span></span></span><span class=line><span class=cl><span class=s>                print(f&#34;  [{i}/{len(pending)}] Recorded migration: {migration_file.name}&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>            except Exception as e:
-</span></span></span><span class=line><span class=cl><span class=s>                if &#39;Duplicate entry&#39; in str(e):
-</span></span></span><span class=line><span class=cl><span class=s>                    print(f&#34;  [{i}/{len(pending)}] Migration already recorded&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>                else:
-</span></span></span><span class=line><span class=cl><span class=s>                    raise
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>        print(&#39;All migrations completed successfully&#39;)
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>    except Exception as e:
-</span></span></span><span class=line><span class=cl><span class=s>        print(f&#34;Migration error: {e}&#34;)
-</span></span></span><span class=line><span class=cl><span class=s>        traceback.print_exc()
-</span></span></span><span class=line><span class=cl><span class=s>        sys.exit(1)
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>asyncio.run(migrate())
-</span></span></span><span class=line><span class=cl><span class=s>PYTHON_SCRIPT</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;=== Migrations complete, starting server ===&#34;</span>
-</span></span><span class=line><span class=cl><span class=nb>exec</span> uvicorn backend.main:app --host 0.0.0.0 --port <span class=m>8022</span>
-</span></span></code></pre></td></tr></table></div></div><ul><li>数据库连接脚本./init-db.sh</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/bash
-</span></span></span><span class=line><span class=cl><span class=c1># 在服务器上运行此脚本初始化数据库</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;=== 初始化 MySQL 数据库 ===&#34;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># 连接到 MySQL 容器并创建数据库和用户(docker创建的mysql容器名)</span>
-</span></span><span class=line><span class=cl>docker <span class=nb>exec</span> -i mysql mysql -uroot -proot123456 <span class=s>&lt;&lt;EOF
-</span></span></span><span class=line><span class=cl><span class=s>-- 创建数据库
-</span></span></span><span class=line><span class=cl><span class=s>CREATE DATABASE IF NOT EXISTS knowledge_system CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>-- 创建用户（如果不存在）
-</span></span></span><span class=line><span class=cl><span class=s>CREATE USER IF NOT EXISTS &#39;knowledge_user&#39;@&#39;%&#39; IDENTIFIED BY &#39;Knowledge@123&#39;;
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>-- 授予权限
-</span></span></span><span class=line><span class=cl><span class=s>GRANT ALL PRIVILEGES ON knowledge_system.* TO &#39;knowledge_user&#39;@&#39;%&#39;;
-</span></span></span><span class=line><span class=cl><span class=s>FLUSH PRIVILEGES;
-</span></span></span><span class=line><span class=cl><span class=s>
-</span></span></span><span class=line><span class=cl><span class=s>-- 显示结果
-</span></span></span><span class=line><span class=cl><span class=s>SHOW DATABASES;
-</span></span></span><span class=line><span class=cl><span class=s>SELECT User, Host FROM mysql.user WHERE User=&#39;knowledge_user&#39;;
-</span></span></span><span class=line><span class=cl><span class=s>EOF</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;=== 数据库初始化完成 ===&#34;</span>
-</span></span></code></pre></td></tr></table></div></div><ul><li>拉取代码</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git clone -b production https://github.com/muioo/knowledge-system.git
-</span></span></code></pre></td></tr></table></div></div><ul><li>配置.env文件</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 应用配置</span>
-</span></span><span class=line><span class=cl><span class=nv>SECRET_KEY</span><span class=o>=</span>...
-</span></span><span class=line><span class=cl><span class=nv>DEBUG</span><span class=o>=</span><span class=nb>false</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># 数据库配置（连接已有的 MySQL 容器）</span>
-</span></span><span class=line><span class=cl><span class=nv>DB_HOST</span><span class=o>=</span>mysql
-</span></span><span class=line><span class=cl><span class=nv>DB_PORT</span><span class=o>=</span><span class=m>3306</span>
-</span></span><span class=line><span class=cl><span class=nv>DB_USER</span><span class=o>=</span>knowledge_user
-</span></span><span class=line><span class=cl><span class=nv>DB_PASSWORD</span><span class=o>=</span>Knowledge@123
-</span></span><span class=line><span class=cl><span class=nv>DB_NAME</span><span class=o>=</span>knowledge_system
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># CORS 配置（填写你的服务器 IP 和前端端口）</span>
-</span></span><span class=line><span class=cl><span class=nv>CORS_ORIGINS</span><span class=o>=[</span><span class=s2>&#34;ip:port&#34;</span><span class=o>]</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># 火山引擎 AI 配置</span>
-</span></span><span class=line><span class=cl><span class=nv>ARK_API_KEY</span><span class=o>=</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># 前端端口（docker-compose 使用）</span>
-</span></span><span class=line><span class=cl><span class=nv>FRONTEND_PORT</span><span class=o>=</span><span class=m>5173</span>
-</span></span></code></pre></td></tr></table></div></div><ul><li>构建项目</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker compose -d build
-</span></span></code></pre></td></tr></table></div></div><ul><li>后续更新代码</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git pull origin production
-</span></span><span class=line><span class=cl>docker compose up -d --build backend <span class=c1># 构建镜像 启动容器</span>
-</span></span><span class=line><span class=cl>docker compose up -d frontend <span class=c1># 启动容器 docker-compose.yml中的frontend</span>
-</span></span><span class=line><span class=cl>docker compose up -d backend
-</span></span></code></pre></td></tr></table></div></div></section><footer class=article-footer><section class=article-tags><a href=/tags/docker/>Docker</a>
-<a href=/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/>服务器部署</a></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>相关文章</h2><div class=related-content><div class="flex article-list--tile"><article><a href=/p/vue-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE%E5%88%B0linux%E6%9C%8D%E5%8A%A1%E5%99%A8/><div class=article-details><h2 class=article-title>【VUE 项目部署笔记】如何部署vue项目到linux服务器</h2></div></a></article></div></div></aside><section class=comments-section aria-label=评论 data-comments-section><div class=comments-container><h2 class=comments-title>评论</h2><link rel=preconnect href=https://giscus.app crossorigin><link rel=dns-prefetch href=https://giscus.app><div id=giscus-container class=giscus-placeholder><div class=giscus-loading><div class=loading-spinner></div><p class=loading-text>评论区加载中...</p></div></div><style>.giscus-placeholder{min-height:200px;display:flex;align-items:center;justify-content:center}.giscus-loading{display:flex;flex-direction:column;align-items:center;gap:1rem;padding:2rem 1rem;color:var(--text-secondary,#666);transition:opacity .3s ease}.loading-spinner{width:32px;height:32px;border:3px solid var(--border-color,#e0e0e0);border-top-color:var(--accent-color,#3b82f6);border-radius:50%;animation:giscus-spin .8s linear infinite}@keyframes giscus-spin{to{transform:rotate(360deg)}}.loading-text{font-size:.875rem;opacity:.7}.giscus-frame{min-height:200px;width:100%}#giscus-container:not(.giscus-placeholder){min-height:400px}#giscus-container iframe{width:100%!important;min-height:200px!important;border:none!important}</style></div></section><style>.comments-section{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border-color,#e0e0e0)}.comments-container{max-width:100%}.comments-title{font-size:1.5rem;font-weight:600;margin-bottom:1.5rem;color:var(--text-primary,#1a1a1a)}#giscus-container{margin-top:1rem}body.dark .comments-title{color:var(--text-primary,#e0e0e0)}body.dark .loading-text{color:var(--text-secondary,#999)}body.dark .loading-spinner{border-color:var(--border-color,#333);border-top-color:var(--accent-color,#60a5fa)}</style><footer class=site-footer><section class=copyright>&copy;
-2026 muioo</section><section class=powerby><div id=blog-stats style=margin-bottom:5px data-launch-date=2026-01-22>本站已稳定运行: <strong id=running-days>计算中...</strong> 天 |
-博客: <strong>21</strong> 篇 |
-字数: <strong>15895</strong> 字</div>使用 <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> 构建<br>主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.33.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计</section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-<button class="pswp__button pswp__button--share" title=Share></button>
-<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-</button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div></div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css><script src=https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js defer></script><script src=https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js defer></script><style>.aplayer.aplayer-fixed{left:auto!important;right:0!important;bottom:0!important}</style><meting-js server=netease type=playlist id=17704549797 fixed=true listfolded=true volume=0.5 preload=auto></meting-js><script>function initAutoPlay(){const e=new MutationObserver(function(e,t){const n=document.querySelector(".aplayer");if(n&&window.APlayer&&n.aplayer){t.disconnect();const e=n.aplayer;console.log("检测到 APlayer 已初始化");const s=()=>{const t=e.play();t&&t.then(()=>{console.log("音乐自动播放成功")}).catch(t=>{console.log("浏览器阻止了自动播放，等待用户交互");const n=function(){e.play().then(()=>{console.log("用户交互后开始播放")}).catch(e=>{console.log("播放失败:",e)}),document.removeEventListener("click",n),document.removeEventListener("touchstart",n),document.removeEventListener("keydown",n)};document.addEventListener("click",n),document.addEventListener("touchstart",n),document.addEventListener("keydown",n)})};e.on("ready",s),setTimeout(s,1e3)}});e.observe(document.body,{childList:!0,subtree:!0})}document.addEventListener("DOMContentLoaded",initAutoPlay),typeof swup!="undefined"&&swup.hooks.on("page:view",initAutoPlay)</script><script>(function(){window.giscusState={loaded:!1,ready:!1},document.addEventListener("giscus:loaded",function(){window.giscusState.ready=!0,console.log("[Giscus] 全局状态已更新为 ready")})})()</script><script>(function(){"use strict";console.log("[GISCUS-MAIN] Script loaded");var t={src:"https://giscus.app/client.js",repo:"muioo/muioo.github.io",repoId:"R_kgDOQ_pqAA",category:"Announcements",categoryId:"DIC_kwDOQ_pqAM4C2CEc",mapping:"pathname",strict:"0",reactionsEnabled:"1",emitMetadata:"0",inputPosition:"bottom",theme:"preferred_color_scheme",lang:"zh-CN"},n=!1,e=null,s=null;function o(o){if(n)return;n=!0,console.log("[GISCUS-MAIN] Loading giscus..."),e&&(e.disconnect(),e=null),s&&(clearTimeout(s),s=null);var a,c,i=document.createElement("script");i.src=t.src,i.async=!0,i.crossOrigin="anonymous";for(a in t)a!=="src"&&t.hasOwnProperty(a)&&(c="data-"+a.replace(/([A-Z])/g,"-$1").toLowerCase(),i.setAttribute(c,t[a]));i.onload=function(){console.log("[GISCUS-MAIN] giscus loaded successfully"),o.classList.remove("giscus-placeholder"),r()},i.onerror=function(){console.error("[GISCUS-MAIN] Failed to load giscus"),o.innerHTML='<p style="color: #ef4444; text-align: center; padding: 2rem;">评论加载失败，请刷新页面重试</p>'},o.innerHTML="",o.appendChild(i)}function r(){var e=new MutationObserver(function(e){e.forEach(function(e){if(e.attributeName==="class"){var n,s,t=document.querySelector('iframe[src*="giscus.app"]');if(t){n=document.body.classList.contains("dark"),s=n?"dark":"light";try{t.contentWindow.postMessage({giscus:{setConfig:{theme:s}}},"https://giscus.app")}catch{}}}})});e.observe(document.body,{attributes:!0,attributeFilter:["class"]}),setTimeout(function(){var t,n,e=document.querySelector('iframe[src*="giscus.app"]');if(e){t=document.body.classList.contains("dark"),n=t?"dark":"light";try{e.contentWindow.postMessage({giscus:{setConfig:{theme:n}}},"https://giscus.app")}catch{}}},1e3)}function c(e,t){var n=e.getBoundingClientRect(),s=window.innerHeight||document.documentElement.clientHeight;return n.top<=s+t}function i(){console.log("[GISCUS-MAIN] initLazyLoad called");var t=document.getElementById("giscus-container");if(!t){console.log("[GISCUS-MAIN] Container not found, will retry"),setTimeout(i,100);return}if(console.log("[GISCUS-MAIN] Container found"),c(t,200)){console.log("[GISCUS-MAIN] Container in viewport, loading immediately"),o(t);return}"IntersectionObserver"in window?(console.log("[GISCUS-MAIN] Using IntersectionObserver"),e=new IntersectionObserver(function(n){n.forEach(function(n){n.isIntersecting&&(console.log("[GISCUS-MAIN] IntersectionObserver triggered"),e.disconnect(),e=null,o(t))})},{root:null,rootMargin:"200px",threshold:0}),e.observe(t),s=setTimeout(function(){n||(console.log("[GISCUS-MAIN] Timeout fallback triggered"),e&&(e.disconnect(),e=null),o(t))},3e3)):(console.log("[GISCUS-MAIN] IntersectionObserver not supported, loading immediately"),o(t))}function a(){console.log("[GISCUS-MAIN] init() called"),i()}function l(){console.log("[GISCUS-MAIN] Swup page change, resetting"),n=!1;var e=document.getElementById("giscus-container");e&&(e.classList.add("giscus-placeholder"),e.innerHTML='<div class="giscus-loading"><div class="loading-spinner"></div><p class="loading-text">评论区加载中...</p></div>'),setTimeout(function(){i()},100)}document.readyState==="loading"?(console.log("[GISCUS-MAIN] Waiting for DOMContentLoaded"),document.addEventListener("DOMContentLoaded",a)):(console.log("[GISCUS-MAIN] DOM ready, calling init"),a()),document.addEventListener("swup:page:view",l),console.log("[GISCUS-MAIN] Script registered")})()</script><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js defer></script><script type=text/javascript src=/ts/custom.75bd80549499cce4e49b199cc0322b9c39c3202aefc1da9a8480b5a3926a1094.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><script>const swup=new Swup;document.addEventListener("swup:page:view",()=>{window.Stack&&window.Stack.init&&setTimeout(()=>{window.Stack.init()},100)})</script></body><script>function updateRunningDays(){const n="2026-01-22",s=new Date(n+"T00:00:00Z"),e=new Date,o=new Date(Date.UTC(e.getFullYear(),e.getMonth(),e.getDate())),i=o-s,a=Math.max(0,Math.floor(i/(1e3*60*60*24))),t=document.getElementById("running-days");t&&(t.textContent=a)}updateRunningDays(),document.addEventListener("swup:page:view",()=>{updateRunningDays()})</script></html>
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="记录阿里云Ubuntu服务器上Docker的安装、镜像加速和代理配置">
+<title>【docker项目部署】服务器部署Docker配置&#43;部署项目</title>
+
+<link rel='canonical' href='http://localhost:1313/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/'>
+
+<link rel="stylesheet" href="/scss/style.min.a9f8528cf21200d696e4551d1118c2c9d2f618cad09642e9fc9e99f3c9c3fc67.css"><meta property='og:title' content="【docker项目部署】服务器部署Docker配置+部署项目">
+<meta property='og:description' content="记录阿里云Ubuntu服务器上Docker的安装、镜像加速和代理配置">
+<meta property='og:url' content='http://localhost:1313/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/'>
+<meta property='og:site_name' content='muioo blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Docker' /><meta property='article:tag' content='服务器部署' /><meta property='article:published_time' content='2026-03-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-01T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/page.png' />
+<meta name="twitter:title" content="【docker项目部署】服务器部署Docker配置+部署项目">
+<meta name="twitter:description" content="记录阿里云Ubuntu服务器上Docker的安装、镜像加速和代理配置"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/page.png' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+<script>
+    
+
+
+
+
+const live2d_path = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/';
+
+
+
+
+function loadExternalResource(url, type) {
+  return new Promise((resolve, reject) => {
+    let tag;
+
+    if (type === 'css') {
+      tag = document.createElement('link');
+      tag.rel = 'stylesheet';
+      tag.href = url;
+    }
+    else if (type === 'js') {
+      tag = document.createElement('script');
+      tag.type = 'module';
+      tag.src = url;
+    }
+    if (tag) {
+      tag.onload = () => resolve(url);
+      tag.onerror = () => reject(url);
+      document.head.appendChild(tag);
+    }
+  });
+}
+
+(async () => {
+  
+  
+  
+
+  
+  
+  const OriginalImage = window.Image;
+  window.Image = function(...args) {
+    const img = new OriginalImage(...args);
+    img.crossOrigin = "anonymous";
+    return img;
+  };
+  window.Image.prototype = OriginalImage.prototype;
+  
+  
+  await Promise.all([
+    loadExternalResource(live2d_path + 'waifu.css', 'css'),
+    loadExternalResource(live2d_path + 'waifu-tips.js', 'js')
+  ]);
+  
+  
+  initWidget({
+    waifuPath: live2d_path + 'waifu-tips.json',
+    
+    cubism2Path: live2d_path + 'live2d.min.js',
+    cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
+    tools: ['hitokoto', 'asteroids', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
+    logLevel: 'warn',
+    drag: false,
+  });
+})();
+
+console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #ff5450; font-size: large; color: #eee;', '');
+
+
+
+
+
+</script>
+
+
+<style>
+     
+    .article-page .main-article,
+    main .main-article {
+        background: #fff !important;
+    }
+
+     
+    [data-scheme="dark"] .article-page .main-article,
+    [data-scheme="dark"] main .main-article {
+        background: #424242 !important;
+    }
+</style>
+
+
+<style>
+    #waifu {
+        left: auto !important;
+        right: 0 !important;
+        bottom: 0 !important;
+    }
+
+    #waifu-tips {
+        left: auto !important;
+        right: 0 !important;
+    }
+
+    #waifu-tool {
+        left: auto !important;
+        right: 0 !important;
+    }
+</style>
+
+        
+        
+        
+        
+
+        
+        <link rel="dns-prefetch" href="https://giscus.app">
+        <link rel="preconnect" href="https://giscus.app" crossorigin>
+        
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/swup@4"></script>
+        <style>
+             
+            .transition-fade {
+                transition: opacity 0.3s;
+                opacity: 1;
+            }
+
+            html.is-animating .transition-fade {
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+
+        <div id="swup" class="transition-fade">
+            <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+
+                    
+                        
+                        <img src="/img/avatar_hu_6827ff93fc5ecbf3.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">muioo blog</a></h1>
+            <h2 class="site-description">欢迎来到我的网站</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a
+                        href='https://github.com/muioo/muioo.github.io'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页 | Home</span>
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E-about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于 | About</span>
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档 | archives</span>
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索 | Search</span>
+            </a>
+        </li>
+        
+        
+        
+        
+            
+        
+        
+        
+        <li >
+            <a href='/ai-daily/2026-05-15/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>AI日报 | Daily</span>
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        <li >
+            <a href='/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>相关链接 | Links</span>
+            </a>
+        </li>
+        
+
+        <li class="ai-daily-item ">
+        <a href="/ai-daily/">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+            <span>日报总览</span>
+        </a>
+    </li><li class="ai-daily-month-group">
+            <details class="ai-daily-month-details" open>
+                <summary class="ai-daily-month-summary">
+                    <span>2026-05</span>
+                    <span>1</span>
+                </summary>
+                <ol class="ai-daily-month-menu"><li class="ai-daily-item ">
+                            <a href="/ai-daily/2026-05-15/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                                <span>05-15</span>
+                            </a>
+                        </li></ol>
+            </details>
+        </li>
+
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#阿里云服务器docker配置镜像加速">阿里云服务器docker配置镜像加速</a></li>
+    <li><a href="#阿里云服务器为docker配置本地代理">阿里云服务器为docker配置本地代理</a></li>
+    <li><a href="#docker部署网络图以知识库项目为例">Docker部署网络图（以知识库项目为例）</a></li>
+    <li><a href="#docker使用">Docker使用</a>
+      <ol>
+        <li><a href="#数据库使用">数据库使用</a></li>
+        <li><a href="#dockerfile文件使用">Dockerfile文件使用</a></li>
+      </ol>
+    </li>
+    <li><a href="#部署流程">部署流程</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+                <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/">
+                <img src="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/page_hu_537b6a526df434de.png"
+                        srcset="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/page_hu_537b6a526df434de.png 800w, /p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/page_hu_4acbb46c703ef190.png 1600w"
+                        width="800" 
+                        height="476" 
+                        loading="lazy"
+                        alt="Featured image of post 【docker项目部署】服务器部署Docker配置&#43;部署项目" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" >
+                项目部署
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/">【docker项目部署】服务器部署Docker配置&#43;部署项目</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            记录阿里云Ubuntu服务器上Docker的安装、镜像加速和代理配置
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2026-03-01T00:00:00Z'>2026-03-01</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="服务器部署">服务器部署
+</h1><h2 id="阿里云服务器docker配置镜像加速">阿里云服务器docker配置镜像加速
+</h2><ul>
+<li>创建/etc/docker目录</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p /etc/docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>写入镜像地址</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tee /etc/docker/daemon.json <span class="s">&lt;&lt;-&#39;EOF&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">{
+</span></span></span><span class="line"><span class="cl"><span class="s">  &#34;registry-mirrors&#34;: [
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;https://docker.m.daocloud.io&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">  ]
+</span></span></span><span class="line"><span class="cl"><span class="s">}
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>重启docker</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl daemon-reload <span class="o">&amp;&amp;</span> systemctl restart docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="阿里云服务器为docker配置本地代理">阿里云服务器为docker配置本地代理
+</h2><ul>
+<li>创建/etc/systemd/system/docker.service.d文件</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p /etc/systemd/system/docker.service.d
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>查看文件内容并且写入</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat &gt; /etc/systemd/system/docker.service.d/proxy.conf <span class="s">&lt;&lt; &#39;EOF&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">[Service]
+</span></span></span><span class="line"><span class="cl"><span class="s">Environment=&#34;HTTP_PROXY=http://127.0.0.1:7890&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">Environment=&#34;HTTPS_PROXY=http://127.0.0.1:7890&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>重启docker</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl daemon-reload <span class="o">&amp;&amp;</span> systemctl restart docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>验证代理是否生效</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl show --property<span class="o">=</span>Environment docker <span class="c1"># 出现这个表示成功Environment=HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="docker部署网络图以知识库项目为例">Docker部署网络图（以知识库项目为例）
+</h2><p><img src="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84.png"
+	width="482"
+	height="311"
+	srcset="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84_hu_6802adfe3697fabb.png 480w, /p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/docker%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84_hu_4f02172539d2568c.png 1024w"
+	loading="lazy"
+	
+		alt="docker网络架构"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="154"
+		data-flex-basis="371px"
+	
+></p>
+<h2 id="docker使用">Docker使用
+</h2><h3 id="数据库使用">数据库使用
+</h3><p><img src="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/mysql-docker1.png"
+	width="1610"
+	height="127"
+	srcset="/p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/mysql-docker1_hu_318b81c3888ab3.png 480w, /p/docker%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2docker%E9%85%8D%E7%BD%AE-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/mysql-docker1_hu_2191343c33bccd8f.png 1024w"
+	loading="lazy"
+	
+		alt="mysql-docker1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="1267"
+		data-flex-basis="3042px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 进入数据库（mysql为docker创建的mysql名称，建议不要像我这样同名）</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it mysql mysql -uroot -proot123456
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>docker中的数据库可以看到与宿主机的mysql是隔离的，当前没有映射宿主机端口。</p>
+<h3 id="dockerfile文件使用">Dockerfile文件使用
+</h3><ul>
+<li>docker-compose.yml（没有创建数据库）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">backend</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">dockerfile</span><span class="p">:</span><span class="w"> </span><span class="l">backend/Dockerfile</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">knowledge-backend</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">env_file</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./backend/.env</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">DB_HOST</span><span class="p">:</span><span class="w"> </span><span class="l">mysql</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">DB_PORT</span><span class="p">:</span><span class="w"> </span><span class="m">3306</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">DB_USER</span><span class="p">:</span><span class="w"> </span><span class="l">knowledge_user</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">DB_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l">Knowledge@123</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">DB_NAME</span><span class="p">:</span><span class="w"> </span><span class="l">knowledge_system</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./backend/uploads:/app/backend/uploads</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./logs:/app/logs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">knowledge-net</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">healthcheck</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;CMD&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;python&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;-c&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;import urllib.request; urllib.request.urlopen(&#39;http://localhost:8022/health&#39;)&#34;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l">30s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l">10s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">retries</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">start_period</span><span class="p">:</span><span class="w"> </span><span class="l">60s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">frontend</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l">./frontend</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">dockerfile</span><span class="p">:</span><span class="w"> </span><span class="l">Dockerfile</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">knowledge-frontend</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="c"># 服务器端口5173 映射 到docker容器内端口80</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;5173:80&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># 挂载本地构建好的 dist 目录（本地构建后直接生效，无需重新构建镜像）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./frontend/dist:/usr/share/nginx/html:ro</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">backend</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">knowledge-net</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">knowledge-net</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">bridge</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>backend/dockfile</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.11-slim</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># 工作目录设为 /app，backend 代码放在 /app/backend/ 下，保持包路径 backend.main:app</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># 安装系统依赖</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt-get install -y --no-install-recommends <span class="se">\
+</span></span></span><span class="line"><span class="cl">    gcc <span class="se">\
+</span></span></span><span class="line"><span class="cl">    default-libmysqlclient-dev <span class="se">\
+</span></span></span><span class="line"><span class="cl">    pkg-config <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="o">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># 复制依赖文件并安装（build context 是项目根目录）</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> backend/requirements-docker.txt .<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> pip install --no-cache-dir -r requirements-docker.txt<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># 复制 aerich 配置和迁移文件（需要在 /app 根目录，aerich 从这里读取）</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> pyproject.toml ./pyproject.toml<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> backend/migrations ./migrations<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># 复制 backend 代码到 /app/backend/</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> backend ./backend<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># 修复 entrypoint.sh 换行符（CRLF -&gt; LF）并设置可执行权限</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> sed -i <span class="s1">&#39;s/\r$//&#39;</span> ./backend/entrypoint.sh <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    chmod +x ./backend/entrypoint.sh<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">EXPOSE</span><span class="w"> </span><span class="s">8022</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&#34;./backend/entrypoint.sh&#34;</span><span class="p">]</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>frontend/dockerfile</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="c"># 生产阶段 - 直接使用本地构建好的 dist 目录</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">nginx:alpine</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># 只复制 nginx.conf，dist 目录通过 docker-compose volumes 挂载</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> nginx.conf /etc/nginx/conf.d/default.conf<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">EXPOSE</span><span class="w"> </span><span class="s">80</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="部署流程">部署流程
+</h2><ul>
+<li>代码仓库https://github.com/muioo/knowledge-system.git</li>
+<li>数据库迁移脚本. /backend/entrypoint.sh</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 不使用 set -e，以便显示错误信息</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=== Waiting for MySQL to be ready ===&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">MAX_RETRIES</span><span class="o">=</span><span class="m">30</span>
+</span></span><span class="line"><span class="cl"><span class="nv">RETRY</span><span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> true<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> python -c <span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">import asyncio, sys
+</span></span></span><span class="line"><span class="cl"><span class="s2">from tortoise import Tortoise
+</span></span></span><span class="line"><span class="cl"><span class="s2">from backend.settings.config import TORTOISE_ORM
+</span></span></span><span class="line"><span class="cl"><span class="s2">async def check():
+</span></span></span><span class="line"><span class="cl"><span class="s2">    try:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        await Tortoise.init(config=TORTOISE_ORM)
+</span></span></span><span class="line"><span class="cl"><span class="s2">        await Tortoise.close_connections()
+</span></span></span><span class="line"><span class="cl"><span class="s2">        print(&#39;OK&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    except Exception as e:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        print(f&#39;ERROR: {e}&#39;, file=sys.stderr)
+</span></span></span><span class="line"><span class="cl"><span class="s2">        sys.exit(1)
+</span></span></span><span class="line"><span class="cl"><span class="s2">asyncio.run(check())
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span> 2&gt;<span class="p">&amp;</span>1<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">RETRY</span><span class="o">=</span><span class="k">$((</span>RETRY <span class="o">+</span> <span class="m">1</span><span class="k">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$RETRY</span> -ge <span class="nv">$MAX_RETRIES</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;MySQL not ready after </span><span class="si">${</span><span class="nv">MAX_RETRIES</span><span class="si">}</span><span class="s2"> retries, exiting.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;  MySQL not ready yet, retrying in 2s... (</span><span class="nv">$RETRY</span><span class="s2">/</span><span class="nv">$MAX_RETRIES</span><span class="s2">)&#34;</span>
+</span></span><span class="line"><span class="cl">    sleep <span class="m">2</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;MySQL is ready.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=== Running aerich migrations ===&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用 aerich CLI 但先读取迁移文件，分割后逐条执行</span>
+</span></span><span class="line"><span class="cl">python <span class="s">&lt;&lt; &#39;PYTHON_SCRIPT&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">import asyncio
+</span></span></span><span class="line"><span class="cl"><span class="s">import sys
+</span></span></span><span class="line"><span class="cl"><span class="s">import traceback
+</span></span></span><span class="line"><span class="cl"><span class="s">import os
+</span></span></span><span class="line"><span class="cl"><span class="s">import re
+</span></span></span><span class="line"><span class="cl"><span class="s">from pathlib import Path
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">async def init_db_with_tortoise():
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;&#34;&#34;使用 TortoiseORM 直接初始化数据库表（无 migrations 时）&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">    from tortoise import Tortoise
+</span></span></span><span class="line"><span class="cl"><span class="s">    from backend.settings.config import TORTOISE_ORM
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">    print(&#34;No migrations directory found, using TortoiseORM to initialize database...&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">    await Tortoise.init(config=TORTOISE_ORM)
+</span></span></span><span class="line"><span class="cl"><span class="s">    await Tortoise.generate_schemas()
+</span></span></span><span class="line"><span class="cl"><span class="s">    print(f&#34;Database tables created successfully!&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">    await Tortoise.close_connections()
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">async def migrate():
+</span></span></span><span class="line"><span class="cl"><span class="s">    try:
+</span></span></span><span class="line"><span class="cl"><span class="s">        from aerich import Command
+</span></span></span><span class="line"><span class="cl"><span class="s">        from aerich.models import Aerich
+</span></span></span><span class="line"><span class="cl"><span class="s">        from backend.settings.config import TORTOISE_ORM
+</span></span></span><span class="line"><span class="cl"><span class="s">        from tortoise import Tortoise, connections
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        print(&#34;Initializing aerich...&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">        # 初始化 Tortoise 和 aerich
+</span></span></span><span class="line"><span class="cl"><span class="s">        await Tortoise.init(config=TORTOISE_ORM)
+</span></span></span><span class="line"><span class="cl"><span class="s">        command = Command(tortoise_config=TORTOISE_ORM, location=&#39;migrations&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">        await command.init()
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        print(&#34;Checking for pending migrations...&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">        # 检查是否有待执行的迁移
+</span></span></span><span class="line"><span class="cl"><span class="s">        migrations_path = Path(&#39;migrations/models&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">        if not migrations_path.exists():
+</span></span></span><span class="line"><span class="cl"><span class="s">            print(&#39;No migrations directory found&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 使用 TortoiseORM 直接初始化数据库表
+</span></span></span><span class="line"><span class="cl"><span class="s">            await init_db_with_tortoise()
+</span></span></span><span class="line"><span class="cl"><span class="s">            return
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        # 获取所有迁移文件
+</span></span></span><span class="line"><span class="cl"><span class="s">        migration_files = sorted(migrations_path.glob(&#39;*.py&#39;))
+</span></span></span><span class="line"><span class="cl"><span class="s">        if not migration_files:
+</span></span></span><span class="line"><span class="cl"><span class="s">            print(&#39;No migration files found&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 使用 TortoiseORM 直接初始化数据库表
+</span></span></span><span class="line"><span class="cl"><span class="s">            await init_db_with_tortoise()
+</span></span></span><span class="line"><span class="cl"><span class="s">            return
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        # 获取已应用的迁移
+</span></span></span><span class="line"><span class="cl"><span class="s">        applied_versions = []
+</span></span></span><span class="line"><span class="cl"><span class="s">        try:
+</span></span></span><span class="line"><span class="cl"><span class="s">            applied = await Aerich.all().values(&#39;version&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            applied_versions = [a[&#39;version&#39;] for a in applied]
+</span></span></span><span class="line"><span class="cl"><span class="s">            print(f&#34;Already applied migrations: {applied_versions}&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">        except Exception as e:
+</span></span></span><span class="line"><span class="cl"><span class="s">            print(f&#34;No aerich table yet (first run): {e}&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            pass  # 首次运行，aerich 表还不存在
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        # 找出待执行的迁移
+</span></span></span><span class="line"><span class="cl"><span class="s">        pending = []
+</span></span></span><span class="line"><span class="cl"><span class="s">        for f in migration_files:
+</span></span></span><span class="line"><span class="cl"><span class="s">            if f.name.startswith(&#39;0_&#39;):
+</span></span></span><span class="line"><span class="cl"><span class="s">                # 初始迁移特殊处理
+</span></span></span><span class="line"><span class="cl"><span class="s">                if not applied_versions:
+</span></span></span><span class="line"><span class="cl"><span class="s">                    pending.append(f)
+</span></span></span><span class="line"><span class="cl"><span class="s">            else:
+</span></span></span><span class="line"><span class="cl"><span class="s">                # 检查完整文件名是否在已应用列表中
+</span></span></span><span class="line"><span class="cl"><span class="s">                if f.name not in applied_versions:
+</span></span></span><span class="line"><span class="cl"><span class="s">                    pending.append(f)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        if not pending:
+</span></span></span><span class="line"><span class="cl"><span class="s">            print(&#39;No new migrations to run&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            await Tortoise.close_connections()
+</span></span></span><span class="line"><span class="cl"><span class="s">            return
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        print(f&#34;Found {len(pending)} pending migrations: {[f.name for f in pending]}&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        # 逐个执行迁移
+</span></span></span><span class="line"><span class="cl"><span class="s">        for i, migration_file in enumerate(pending, 1):
+</span></span></span><span class="line"><span class="cl"><span class="s">            print(f&#34;  [{i}/{len(pending)}] Applying {migration_file.name}...&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 动态导入迁移模块
+</span></span></span><span class="line"><span class="cl"><span class="s">            module_name = f&#34;migrations.models.{migration_file.stem}&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">            module = __import__(module_name, fromlist=[&#39;upgrade&#39;])
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 获取升级 SQL
+</span></span></span><span class="line"><span class="cl"><span class="s">            conn = connections.get(&#39;default&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            upgrade_sql = await module.upgrade(conn)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 分割 SQL 语句
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 简单方法：按分号分割，然后过滤空语句
+</span></span></span><span class="line"><span class="cl"><span class="s">            statements = []
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 移除多行注释 /* ... */
+</span></span></span><span class="line"><span class="cl"><span class="s">            import re
+</span></span></span><span class="line"><span class="cl"><span class="s">            upgrade_sql = re.sub(r&#39;/\*.*?\*/&#39;, &#39;&#39;, upgrade_sql, flags=re.DOTALL)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 移除单行注释 --
+</span></span></span><span class="line"><span class="cl"><span class="s">            upgrade_sql = re.sub(r&#39;--.*?$&#39;, &#39;&#39;, upgrade_sql, flags=re.MULTILINE)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 按分号分割并清理
+</span></span></span><span class="line"><span class="cl"><span class="s">            raw_statements = upgrade_sql.split(&#39;;&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            for stmt in raw_statements:
+</span></span></span><span class="line"><span class="cl"><span class="s">                # 移除前后空白和空行
+</span></span></span><span class="line"><span class="cl"><span class="s">                cleaned = &#39;\n&#39;.join(line.strip() for line in stmt.split(&#39;\n&#39;) if line.strip())
+</span></span></span><span class="line"><span class="cl"><span class="s">                if cleaned:
+</span></span></span><span class="line"><span class="cl"><span class="s">                    statements.append(cleaned)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            print(f&#34;    Found {len(statements)} SQL statements to execute&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 逐条执行 SQL
+</span></span></span><span class="line"><span class="cl"><span class="s">            for j, stmt in enumerate(statements, 1):
+</span></span></span><span class="line"><span class="cl"><span class="s">                try:
+</span></span></span><span class="line"><span class="cl"><span class="s">                    # 清理语句
+</span></span></span><span class="line"><span class="cl"><span class="s">                    stmt_clean = stmt.strip().rstrip(&#39;;&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">                    if not stmt_clean:
+</span></span></span><span class="line"><span class="cl"><span class="s">                        continue
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">                    await conn.execute_script(stmt_clean)
+</span></span></span><span class="line"><span class="cl"><span class="s">                    print(f&#34;    [{j}/{len(statements)}] Executed successfully&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">                except Exception as e:
+</span></span></span><span class="line"><span class="cl"><span class="s">                    error_str = str(e)
+</span></span></span><span class="line"><span class="cl"><span class="s">                    # 跳过已存在的错误
+</span></span></span><span class="line"><span class="cl"><span class="s">                    if &#39;already exists&#39; in error_str or &#39;Duplicate column&#39; in error_str or &#39;Duplicate key&#39; in error_str:
+</span></span></span><span class="line"><span class="cl"><span class="s">                        print(f&#34;    [{j}/{len(statements)}] Skipped (already exists)&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">                        continue
+</span></span></span><span class="line"><span class="cl"><span class="s">                    print(f&#34;    [{j}/{len(statements)}] ERROR: {e}&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">                    print(f&#34;    SQL: {stmt_clean[:200]}...&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">                    # 不抛出异常，继续执行下一条语句
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">            # 记录迁移
+</span></span></span><span class="line"><span class="cl"><span class="s">            try:
+</span></span></span><span class="line"><span class="cl"><span class="s">                # 使用完整文件名作为版本
+</span></span></span><span class="line"><span class="cl"><span class="s">                version = migration_file.name
+</span></span></span><span class="line"><span class="cl"><span class="s">                await Aerich.create(
+</span></span></span><span class="line"><span class="cl"><span class="s">                    version=version,
+</span></span></span><span class="line"><span class="cl"><span class="s">                    app=&#39;models&#39;,
+</span></span></span><span class="line"><span class="cl"><span class="s">                    content=upgrade_sql
+</span></span></span><span class="line"><span class="cl"><span class="s">                )
+</span></span></span><span class="line"><span class="cl"><span class="s">                print(f&#34;  [{i}/{len(pending)}] Recorded migration: {migration_file.name}&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">            except Exception as e:
+</span></span></span><span class="line"><span class="cl"><span class="s">                if &#39;Duplicate entry&#39; in str(e):
+</span></span></span><span class="line"><span class="cl"><span class="s">                    print(f&#34;  [{i}/{len(pending)}] Migration already recorded&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">                else:
+</span></span></span><span class="line"><span class="cl"><span class="s">                    raise
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">        print(&#39;All migrations completed successfully&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">    except Exception as e:
+</span></span></span><span class="line"><span class="cl"><span class="s">        print(f&#34;Migration error: {e}&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s">        traceback.print_exc()
+</span></span></span><span class="line"><span class="cl"><span class="s">        sys.exit(1)
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">asyncio.run(migrate())
+</span></span></span><span class="line"><span class="cl"><span class="s">PYTHON_SCRIPT</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=== Migrations complete, starting server ===&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">exec</span> uvicorn backend.main:app --host 0.0.0.0 --port <span class="m">8022</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>数据库连接脚本./init-db.sh</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 在服务器上运行此脚本初始化数据库</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=== 初始化 MySQL 数据库 ===&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 连接到 MySQL 容器并创建数据库和用户(docker创建的mysql容器名)</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -i mysql mysql -uroot -proot123456 <span class="s">&lt;&lt;EOF
+</span></span></span><span class="line"><span class="cl"><span class="s">-- 创建数据库
+</span></span></span><span class="line"><span class="cl"><span class="s">CREATE DATABASE IF NOT EXISTS knowledge_system CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">-- 创建用户（如果不存在）
+</span></span></span><span class="line"><span class="cl"><span class="s">CREATE USER IF NOT EXISTS &#39;knowledge_user&#39;@&#39;%&#39; IDENTIFIED BY &#39;Knowledge@123&#39;;
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">-- 授予权限
+</span></span></span><span class="line"><span class="cl"><span class="s">GRANT ALL PRIVILEGES ON knowledge_system.* TO &#39;knowledge_user&#39;@&#39;%&#39;;
+</span></span></span><span class="line"><span class="cl"><span class="s">FLUSH PRIVILEGES;
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">-- 显示结果
+</span></span></span><span class="line"><span class="cl"><span class="s">SHOW DATABASES;
+</span></span></span><span class="line"><span class="cl"><span class="s">SELECT User, Host FROM mysql.user WHERE User=&#39;knowledge_user&#39;;
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;=== 数据库初始化完成 ===&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>拉取代码</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone -b production https://github.com/muioo/knowledge-system.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>配置.env文件</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 应用配置</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SECRET_KEY</span><span class="o">=</span>...
+</span></span><span class="line"><span class="cl"><span class="nv">DEBUG</span><span class="o">=</span><span class="nb">false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 数据库配置（连接已有的 MySQL 容器）</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DB_HOST</span><span class="o">=</span>mysql
+</span></span><span class="line"><span class="cl"><span class="nv">DB_PORT</span><span class="o">=</span><span class="m">3306</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DB_USER</span><span class="o">=</span>knowledge_user
+</span></span><span class="line"><span class="cl"><span class="nv">DB_PASSWORD</span><span class="o">=</span>Knowledge@123
+</span></span><span class="line"><span class="cl"><span class="nv">DB_NAME</span><span class="o">=</span>knowledge_system
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># CORS 配置（填写你的服务器 IP 和前端端口）</span>
+</span></span><span class="line"><span class="cl"><span class="nv">CORS_ORIGINS</span><span class="o">=[</span><span class="s2">&#34;ip:port&#34;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 火山引擎 AI 配置</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ARK_API_KEY</span><span class="o">=</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 前端端口（docker-compose 使用）</span>
+</span></span><span class="line"><span class="cl"><span class="nv">FRONTEND_PORT</span><span class="o">=</span><span class="m">5173</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>构建项目</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker compose -d build
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>后续更新代码</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git pull origin production
+</span></span><span class="line"><span class="cl">docker compose up -d --build backend <span class="c1"># 构建镜像 启动容器</span>
+</span></span><span class="line"><span class="cl">docker compose up -d frontend <span class="c1"># 启动容器 docker-compose.yml中的frontend</span>
+</span></span><span class="line"><span class="cl">docker compose up -d backend
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/docker/">Docker</a>
+        
+            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/">服务器部署</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/vue-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE%E5%88%B0linux%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【VUE 项目部署笔记】如何部署vue项目到linux服务器</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+    <section class="comments-section" aria-label="评论" data-comments-section>
+        <div class="comments-container">
+            <h2 class="comments-title">评论</h2>
+            
+<link rel="preconnect" href="https://giscus.app" crossorigin>
+<link rel="dns-prefetch" href="https://giscus.app">
+
+
+<div id="giscus-container" class="giscus-placeholder">
+    <div class="giscus-loading">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">评论区加载中...</p>
+    </div>
+</div>
+
+
+<style>
+    .giscus-placeholder {
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .giscus-loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem 1rem;
+        color: var(--text-secondary, #666);
+        transition: opacity 0.3s ease;
+    }
+
+    .loading-spinner {
+        width: 32px;
+        height: 32px;
+        border: 3px solid var(--border-color, #e0e0e0);
+        border-top-color: var(--accent-color, #3b82f6);
+        border-radius: 50%;
+        animation: giscus-spin 0.8s linear infinite;
+    }
+
+    @keyframes giscus-spin {
+        to { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+        font-size: 0.875rem;
+        opacity: 0.7;
+    }
+
+    .giscus-frame {
+        min-height: 200px;
+        width: 100%;
+    }
+
+    #giscus-container:not(.giscus-placeholder) {
+        min-height: 400px;
+    }
+
+     
+    #giscus-container iframe {
+        width: 100% !important;
+        min-height: 200px !important;
+        border: none !important;
+    }
+</style>
+
+        </div>
+    </section>
+
+    <style>
+        .comments-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color, #e0e0e0);
+        }
+
+        .comments-container {
+            max-width: 100%;
+        }
+
+        .comments-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary, #1a1a1a);
+        }
+
+        #giscus-container {
+            margin-top: 1rem;
+        }
+
+        body.dark .comments-title {
+            color: var(--text-primary, #e0e0e0);
+        }
+
+        body.dark .loading-text {
+            color: var(--text-secondary, #999);
+        }
+
+        body.dark .loading-spinner {
+            border-color: var(--border-color, #333);
+            border-top-color: var(--accent-color, #60a5fa);
+        }
+    </style>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        
+        2026 muioo
+    </section>
+
+    <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
+            本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
+            博客: <strong>21</strong> 篇 |
+            字数: <strong>15895</strong> 字
+        </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+    
+
+                </main>
+            </div>
+        </div>
+
+        
+        
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" defer></script>
+
+
+<style>
+.aplayer.aplayer-fixed {
+    left: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+</style>
+
+<meting-js
+    server="netease"
+    type="playlist"
+    id="17704549797"
+    fixed="true"
+    listFolded="true"
+    volume="0.5"
+    preload="auto"
+>
+</meting-js>
+
+<script>
+
+function initAutoPlay() {
+    const observer = new MutationObserver(function(mutations, obs) {
+        const aplayerElement = document.querySelector('.aplayer');
+        
+        if (aplayerElement && window.APlayer && aplayerElement.aplayer) {
+            obs.disconnect();
+            const ap = aplayerElement.aplayer;
+            console.log('检测到 APlayer 已初始化');
+
+            
+            const playMusic = () => {
+                const playPromise = ap.play();
+                if (playPromise) {
+                    playPromise.then(() => {
+                        console.log('音乐自动播放成功');
+                    }).catch(error => {
+                        console.log('浏览器阻止了自动播放，等待用户交互');
+                        
+                        const playOnInteraction = function() {
+                            ap.play().then(() => {
+                                console.log('用户交互后开始播放');
+                            }).catch(e => {
+                                console.log('播放失败:', e);
+                            });
+                            
+                            document.removeEventListener('click', playOnInteraction);
+                            document.removeEventListener('touchstart', playOnInteraction);
+                            document.removeEventListener('keydown', playOnInteraction);
+                        };
+                        document.addEventListener('click', playOnInteraction);
+                        document.addEventListener('touchstart', playOnInteraction);
+                        document.addEventListener('keydown', playOnInteraction);
+                    });
+                }
+            };
+
+            
+            ap.on('ready', playMusic);
+            
+            setTimeout(playMusic, 1000);
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', initAutoPlay);
+
+
+if (typeof swup !== 'undefined') {
+    swup.hooks.on('page:view', initAutoPlay);
+}
+</script>
+
+        
+        
+        
+        
+
+        
+        <script>
+        (function() {
+            
+            window.giscusState = {
+                loaded: false,
+                ready: false
+            };
+
+            
+            document.addEventListener('giscus:loaded', function() {
+                window.giscusState.ready = true;
+                console.log('[Giscus] 全局状态已更新为 ready');
+            });
+        })();
+        </script>
+        
+
+        
+        <script>
+        (function() {
+            'use strict';
+
+            console.log('[GISCUS-MAIN] Script loaded');
+
+            var giscusConfig = {
+                src: 'https://giscus.app/client.js',
+                repo: 'muioo/muioo.github.io',
+                repoId: 'R_kgDOQ_pqAA',
+                category: 'Announcements',
+                categoryId: 'DIC_kwDOQ_pqAM4C2CEc',
+                mapping: 'pathname',
+                strict: '0',
+                reactionsEnabled: '1',
+                emitMetadata: '0',
+                inputPosition: 'bottom',
+                theme: 'preferred_color_scheme',
+                lang: 'zh-CN'
+            };
+
+            var loaded = false;
+            var observer = null;
+            var timeoutId = null;
+
+            function loadGiscus(container) {
+                if (loaded) return;
+                loaded = true;
+
+                console.log('[GISCUS-MAIN] Loading giscus...');
+
+                if (observer) {
+                    observer.disconnect();
+                    observer = null;
+                }
+                if (timeoutId) {
+                    clearTimeout(timeoutId);
+                    timeoutId = null;
+                }
+
+                var script = document.createElement('script');
+                script.src = giscusConfig.src;
+                script.async = true;
+                script.crossOrigin = 'anonymous';
+
+                for (var key in giscusConfig) {
+                    if (key !== 'src' && giscusConfig.hasOwnProperty(key)) {
+                        var dataKey = 'data-' + key.replace(/([A-Z])/g, '-$1').toLowerCase();
+                        script.setAttribute(dataKey, giscusConfig[key]);
+                    }
+                }
+
+                script.onload = function() {
+                    console.log('[GISCUS-MAIN] giscus loaded successfully');
+                    container.classList.remove('giscus-placeholder');
+                    initFeatures();
+                };
+
+                script.onerror = function() {
+                    console.error('[GISCUS-MAIN] Failed to load giscus');
+                    container.innerHTML = '<p style="color: #ef4444; text-align: center; padding: 2rem;">评论加载失败，请刷新页面重试</p>';
+                };
+
+                container.innerHTML = '';
+                container.appendChild(script);
+            }
+
+            function initFeatures() {
+                var observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.attributeName === 'class') {
+                            var iframe = document.querySelector('iframe[src*="giscus.app"]');
+                            if (iframe) {
+                                var isDark = document.body.classList.contains('dark');
+                                var theme = isDark ? 'dark' : 'light';
+                                try {
+                                    iframe.contentWindow.postMessage({
+                                        giscus: { setConfig: { theme: theme } }
+                                    }, 'https://giscus.app');
+                                } catch (e) {
+                                    
+                                }
+                            }
+                        }
+                    });
+                });
+
+                observer.observe(document.body, {
+                    attributes: true,
+                    attributeFilter: ['class']
+                });
+
+                setTimeout(function() {
+                    var iframe = document.querySelector('iframe[src*="giscus.app"]');
+                    if (iframe) {
+                        var isDark = document.body.classList.contains('dark');
+                        var theme = isDark ? 'dark' : 'light';
+                        try {
+                            iframe.contentWindow.postMessage({
+                                giscus: { setConfig: { theme: theme } }
+                            }, 'https://giscus.app');
+                        } catch (e) {}
+                    }
+                }, 1000);
+            }
+
+            function isNearViewport(el, margin) {
+                var rect = el.getBoundingClientRect();
+                var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                return rect.top <= windowHeight + margin;
+            }
+
+            function initLazyLoad() {
+                console.log('[GISCUS-MAIN] initLazyLoad called');
+
+                var container = document.getElementById('giscus-container');
+                if (!container) {
+                    console.log('[GISCUS-MAIN] Container not found, will retry');
+                    setTimeout(initLazyLoad, 100);
+                    return;
+                }
+
+                console.log('[GISCUS-MAIN] Container found');
+
+                if (isNearViewport(container, 200)) {
+                    console.log('[GISCUS-MAIN] Container in viewport, loading immediately');
+                    loadGiscus(container);
+                    return;
+                }
+
+                if ('IntersectionObserver' in window) {
+                    console.log('[GISCUS-MAIN] Using IntersectionObserver');
+                    observer = new IntersectionObserver(function(entries) {
+                        entries.forEach(function(entry) {
+                            if (entry.isIntersecting) {
+                                console.log('[GISCUS-MAIN] IntersectionObserver triggered');
+                                observer.disconnect();
+                                observer = null;
+                                loadGiscus(container);
+                            }
+                        });
+                    }, {
+                        root: null,
+                        rootMargin: '200px',
+                        threshold: 0
+                    });
+
+                    observer.observe(container);
+
+                    timeoutId = setTimeout(function() {
+                        if (!loaded) {
+                            console.log('[GISCUS-MAIN] Timeout fallback triggered');
+                            if (observer) {
+                                observer.disconnect();
+                                observer = null;
+                            }
+                            loadGiscus(container);
+                        }
+                    }, 3000);
+                } else {
+                    console.log('[GISCUS-MAIN] IntersectionObserver not supported, loading immediately');
+                    loadGiscus(container);
+                }
+            }
+
+            function init() {
+                console.log('[GISCUS-MAIN] init() called');
+                initLazyLoad();
+            }
+
+            function resetForNewPage() {
+                console.log('[GISCUS-MAIN] Swup page change, resetting');
+                loaded = false;
+
+                var container = document.getElementById('giscus-container');
+                if (container) {
+                    container.classList.add('giscus-placeholder');
+                    container.innerHTML = '<div class="giscus-loading"><div class="loading-spinner"></div><p class="loading-text">评论区加载中...</p></div>';
+                }
+
+                setTimeout(function() {
+                    initLazyLoad();
+                }, 100);
+            }
+
+            if (document.readyState === 'loading') {
+                console.log('[GISCUS-MAIN] Waiting for DOMContentLoaded');
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                console.log('[GISCUS-MAIN] DOM ready, calling init');
+                init();
+            }
+
+            document.addEventListener('swup:page:view', resetForNewPage);
+
+            console.log('[GISCUS-MAIN] Script registered');
+        })();
+        </script>
+        
+
+        
+        
+        
+
+        
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.a2ef757b04c7ff1530590ad66d1ad3567d3384e8b5cf14b551690fe7bc1d3512.js" defer></script><script type="text/javascript" src="/ts/custom.388b4c8555b925683490f851d96d246aca608f5b5a471b03653091790c45e904.js" defer></script>
+        <script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+        
+        <script>
+            const swup = new Swup();
+
+            
+            document.addEventListener('swup:page:view', () => {
+                if (window.Stack && window.Stack.init) {
+                    
+                    setTimeout(() => {
+                        window.Stack.init();
+                    }, 100);
+                }
+            });
+        </script>
+    </body>
+
+    
+    
+    
+    
+
+    <script>
+    
+    function updateRunningDays() {
+        const BLOG_LAUNCH_DATE = '2026-01-22';
+        const startDate = new Date(BLOG_LAUNCH_DATE + 'T00:00:00Z');
+        const today = new Date();
+        const utcToday = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
+        const timeDiff = utcToday - startDate;
+        const runningDays = Math.max(0, Math.floor(timeDiff / (1000 * 60 * 60 * 24)));
+
+        const daysElement = document.getElementById('running-days');
+        if (daysElement) {
+            daysElement.textContent = runningDays;
+        }
+    }
+
+    
+    updateRunningDays();
+
+    
+    document.addEventListener('swup:page:view', () => {
+        updateRunningDays();
+    });
+    </script>
+</html>
