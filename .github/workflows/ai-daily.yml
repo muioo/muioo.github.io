@@ -1,9 +1,14 @@
 name: Generate AI Daily
 
 on:
-  schedule:
-    - cron: "0 4 * * *"
+  # Disabled for automatic runs. The server cron job is responsible for
+  # generating and pushing AI Daily updates.
   workflow_dispatch:
+    inputs:
+      date:
+        description: "Optional target date, for example 2026-05-17"
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -36,7 +41,12 @@ jobs:
       - name: Generate daily content
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python scripts/ai-daily/fetch.py
+          AI_DAILY_TIMEZONE: Asia/Shanghai
+          AI_DAILY_DATE: ${{ github.event.inputs.date || '' }}
+        run: |
+          date -u
+          TZ=Asia/Shanghai date
+          python scripts/ai-daily/fetch.py
 
       - name: Commit generated files
         id: commit
