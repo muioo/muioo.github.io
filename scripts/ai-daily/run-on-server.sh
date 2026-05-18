@@ -10,7 +10,7 @@ git pull --rebase origin main
 
 export AI_DAILY_TIMEZONE="${AI_DAILY_TIMEZONE:-Asia/Shanghai}"
 
-python scripts/ai-daily/fetch.py
+/root/miniconda3/bin/python scripts/ai-daily/fetch.py
 
 git add content/ai-daily data/ai-daily
 
