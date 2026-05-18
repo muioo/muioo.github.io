@@ -297,7 +297,7 @@ def build_markdown(target_date: dt.date, projects: list[dict[str, str]]) -> str:
         f"title: {yaml_quote(title)}",
         f"date: {date_text}",
         f"slug: {target_date.isoformat()}",
-        f"description: {yaml_quote('Hex2077 开源 TOP 项目 AI 日报')}",
+        f"description: {yaml_quote('开源 TOP 项目 AI 日报')}",
         "comments: false",
         "---",
         "",

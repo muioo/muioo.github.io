@@ -1,73 +1,162 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI日报 on muioo blog</title><link>https://muioo.github.io/ai-daily/</link><description>Recent content in AI日报 on muioo blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>muioo</copyright><lastBuildDate>Sun, 17 May 2026 08:30:00 +0800</lastBuildDate><atom:link href="https://muioo.github.io/ai-daily/index.xml" rel="self" type="application/rss+xml"/><item><title>AI日报 | 2026-05-17</title><link>https://muioo.github.io/ai-daily/2026-05-17/</link><pubDate>Sun, 17 May 2026 08:30:00 +0800</pubDate><guid>https://muioo.github.io/ai-daily/2026-05-17/</guid><description>&lt;h2 id="开源-top-项目"&gt;开源 TOP 项目
-&lt;/h2&gt;&lt;h3 id="1-在开源平台霸榜"&gt;1. 在开源平台霸榜
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>AI日报 on muioo blog</title>
+        <link>http://localhost:1313/ai-daily/</link>
+        <description>Recent content in AI日报 on muioo blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>muioo</copyright>
+        <lastBuildDate>Mon, 18 May 2026 08:30:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/ai-daily/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI日报 | 2026-05-18</title>
+        <link>http://localhost:1313/ai-daily/2026-05-18/</link>
+        <pubDate>Mon, 18 May 2026 08:30:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/ai-daily/2026-05-18/</guid>
+        <description>&lt;h2 id=&#34;开源-top-项目&#34;&gt;开源 TOP 项目
+&lt;/h2&gt;&lt;h3 id=&#34;1-高效代码搜索开源库ai资讯&#34;&gt;1. 高效代码搜索开源库(AI资讯)
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;仓库链接：&lt;a class="link" href="https://github.com/obra/superpowers" target="_blank" rel="noopener"
-&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/MinishLab/semble&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：Semble 智能体代码搜索工具发布。 这个 高效代码搜索开源库(AI资讯) (⭐825) 非常实用。它号称能比传统工具减少 九成八 的算力。开发者们再也不用为 极高延迟 🙄 感到苦恼了。这是优化 智能体成本 的绝佳方案 (ﾟ▽ﾟ)/。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-软件转代理框架ai资讯&#34;&gt;2. 软件转代理框架(AI资讯)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/HKUDS/CLI-Anything&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：CLI-Anything 将软件转化为 AI 代理。 这个斩获了 (⭐35.5k) 星的 软件转代理框架(AI资讯) 已经火了。它能将 图形界面 自动翻译成终端命令行。AI 代理从此可以操纵世间 ✨ 所有传统软件。开发者们的提效神器终于 (๑•̀ㅂ•́)و✧ 隆重登场。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-开源个人智能平台ai资讯&#34;&gt;3. 开源个人智能平台(AI资讯)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/tinyhumansai/openhuman&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：openhuman 打造私密本地 AI 超脑。 这款 开源个人智能平台(AI资讯) (⭐13.1k) 主打极简配置。小白用户也能在本地部署属于自己的 大模型。它能完美保障用户数据的 隐私安全 🚀 不外泄。这才是真正的私人数字 🛡️ 智能助理。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-智能体落地实战教程ai资讯&#34;&gt;4. 智能体落地实战教程(AI资讯)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/NirDiamant/agents-towards-production&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：智能体生产级落地教程火爆社区。 很多研发人员苦于无法将 智能体 推向生产。这个 智能体落地实战教程(AI资讯) (⭐19.9k) 及时救场。它提供了从原型到 企业部署 的完整闭环。跟着代码一步步操作 💡 就能掌握精髓。\&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-硬核漏洞检测项目ai资讯&#34;&gt;5. 硬核漏洞检测项目(AI资讯)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/KeygraphHQ/shannon&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：Shannon 自动化安全渗透测试工具。 这个 硬核漏洞检测项目(AI资讯) 狂揽了四万星标。它能深度分析网页源码并 精准定位 漏洞。在产品发布前就能完成全部的 防线修补 (✪ω✪)。AI 正在成为网络安全领域的 ✨ 终极守护者。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;6-安全技能注册表ai资讯&#34;&gt;6. 安全技能注册表(AI资讯)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/tech-leads-club/agent-skills&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：agent-skills 智能体技能注册表开源。 运行未知脚本时利用这个 安全技能注册表(AI资讯) (⭐3.5k) 非常稳。它能为智能体执行外部操作提供 隔离保障。完美适配了 克劳德代码 等多款助手工具。编程过程中的安全性 🚀 终于得到了极大提升。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;7-开源情报分析终端ai资讯&#34;&gt;7. 开源情报分析终端(AI资讯)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/BigBodyCobain/Shadowbroker&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：Shadowbroker 赛博朋克风情报分析器。 这款 开源情报分析终端(AI资讯) (⭐7.0k) 酷毙了。它可以追踪间谍卫星数据并 挖掘隐秘线索。配合智能体能自动化处理那些 分散的数据。所有人现在都能 (๑•̀ㅂ•́)و✧ 免费获取这套系统。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>AI日报 | 2026-05-17</title>
+        <link>http://localhost:1313/ai-daily/2026-05-17/</link>
+        <pubDate>Sun, 17 May 2026 08:30:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/ai-daily/2026-05-17/</guid>
+        <description>&lt;h2 id=&#34;开源-top-项目&#34;&gt;开源 TOP 项目
+&lt;/h2&gt;&lt;h3 id=&#34;1-在开源平台霸榜&#34;&gt;1. 在开源平台霸榜
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/obra/superpowers&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;中文摘要：智能体框架 Superpowers 霸榜。 智能体技能框架(AI资讯) 在开源平台霸榜。该项目目前已突破惊人的 十九万星 ⭐。它旨在通过 Agentic架构 重塑开发流程。开发者 (๑•̀ㅂ•́)و✧ 涌入导致星数持续狂飙。这种模式解决了 自动化程度不高 的痛点。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="2-且效果拔群"&gt;2. 且效果拔群
+&lt;h3 id=&#34;2-且效果拔群&#34;&gt;2. 且效果拔群
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;仓库链接：&lt;a class="link" href="https://github.com/Anil-matcha/Open-Generative-AI" target="_blank" rel="noopener"
-&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Anil-matcha/Open-Generative-AI&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;中文摘要：开源视频生成平台发布。 它是 免费生成各类视频的利器(AI资讯) 且效果拔群。项目聚合了 Flux 和 Sora 主流架构。系统支持 私有化部署 🔒 且无任何限制。目前已斩获 ⭐14.4k 的惊人星标 📈。适合想摆脱闭源限制的 开发者 (・ω・)。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="3-极大降低消耗"&gt;3. 极大降低消耗
+&lt;h3 id=&#34;3-极大降低消耗&#34;&gt;3. 极大降低消耗
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;仓库链接：&lt;a class="link" href="https://github.com/colbymchenry/codegraph" target="_blank" rel="noopener"
-&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/colbymchenry/codegraph&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;中文摘要：本地代码图谱 codegraph 提升效率。 配合 Claude Code 使用，打造 本地索引利器(AI资讯) 极大降低消耗。该工具能够 预索引代码 🚀 减少 Token。项目实现 100% 本地运行 且完全免费。在 GitHub 斩获 ⭐2.5k 高分评价 (〃&amp;rsquo;▽&amp;rsquo;〃)。它能显著减少 工具调用 的等待时间。&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>AI日报 | 2026-05-16</title><link>https://muioo.github.io/ai-daily/2026-05-16/</link><pubDate>Sat, 16 May 2026 08:30:00 +0800</pubDate><guid>https://muioo.github.io/ai-daily/2026-05-16/</guid><description>&lt;h2 id="开源-top-项目"&gt;开源 TOP 项目
-&lt;/h2&gt;&lt;h3 id="1-n8n-mcp项目ai资讯"&gt;1. n8n-mcp项目(AI资讯)
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>AI日报 | 2026-05-16</title>
+        <link>http://localhost:1313/ai-daily/2026-05-16/</link>
+        <pubDate>Sat, 16 May 2026 08:30:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/ai-daily/2026-05-16/</guid>
+        <description>&lt;h2 id=&#34;开源-top-项目&#34;&gt;开源 TOP 项目
+&lt;/h2&gt;&lt;h3 id=&#34;1-n8n-mcp项目ai资讯&#34;&gt;1. n8n-mcp项目(AI资讯)
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;仓库链接：&lt;a class="link" href="https://github.com/czlonkowski/n8n-mcp" target="_blank" rel="noopener"
-&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/czlonkowski/n8n-mcp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;中文摘要：n8n-mcp：工作流构建新利器。 这里的 n8n-mcp项目(AI资讯) ⭐20.8k 简化了自动化流程。它能驱动 Claude (๑•̀ㅂ•́)و✧ 自动帮你生成工作流。开发者 👨‍💻 仅需描述需求就能快速实现 逻辑部署。MCP协议 扩展了 AI 处理复杂任务的上限。整个项目带来的 自动化体验 🚀 实在是震撼。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="2-anthropic技能库ai资讯"&gt;2. Anthropic技能库(AI资讯)
+&lt;h3 id=&#34;2-anthropic技能库ai资讯&#34;&gt;2. Anthropic技能库(AI资讯)
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;仓库链接：&lt;a class="link" href="https://github.com/anthropics/skills" target="_blank" rel="noopener"
-&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/anthropics/skills&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;中文摘要：Anthropic 发布 Agent 技能库。 由大厂发布的 Anthropic技能库(AI资讯) 🚀 狂揽 13.5 万星。项目专门为 智能体技能 ⭐135k 打造基础。开发者能快速调取 核心组件 🛠️ 实现交互。社区活跃度极高简直是目前最火 开源项目。这套工具助力 (๑•̀ㅂ•́)و✧ Agent生态 迈向成熟。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="3-视频检索架构ai资讯"&gt;3. 视频检索架构(AI资讯)
+&lt;h3 id=&#34;3-视频检索架构ai资讯&#34;&gt;3. 视频检索架构(AI资讯)
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;仓库链接：&lt;a class="link" href="https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization" target="_blank" rel="noopener"
-&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;中文摘要：英伟达发布视频搜索摘要蓝图。 该 视频检索架构(AI资讯) ⭐1.1k 助推构建智能体。利用 GPU加速 ⚡ 能够应对各种视频分析任务。项目在社区极受追捧 🏗️ 显著降低了门槛。这套 标准架构 (๑•̀ㅂ•́)u✧ 让开发变得更简单。英伟达正通过 开源蓝图 锁定视觉应用生态。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="4-lecun的世界模型ai资讯"&gt;4. LeCun的世界模型(AI资讯)
+&lt;h3 id=&#34;4-lecun的世界模型ai资讯&#34;&gt;4. LeCun的世界模型(AI资讯)
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;仓库链接：&lt;a class="link" href="https://github.com/keon/jepa" target="_blank" rel="noopener"
-&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/keon/jepa&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;中文摘要：160 行代码复刻 JEPA 模型。 开发者复刻了 LeCun的世界模型(AI资讯) 🚀 仅需 160 行代码。项目支持 五大变体 且普通电脑 (^_−)☆ 就能运行。核心机制 掩码预测 🎯 被精准拆解为算法本体。开发者还提供 可视化工具 ✨ 观察特征分离。这为研究 世界模型 提供了极简的入门路径。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="5-乔木全能助手ai资讯"&gt;5. 乔木全能助手(AI资讯)
+&lt;h3 id=&#34;5-乔木全能助手ai资讯&#34;&gt;5. 乔木全能助手(AI资讯)
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;仓库链接：&lt;a class="link" href="https://github.com/joeseesun/qiaomu-anything-to-notebooklm" target="_blank" rel="noopener"
-&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/joeseesun/qiaomu-anything-to-notebooklm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;中文摘要：全能助手乔木实现一键转换。 开源项目 乔木全能助手(AI资讯) ⭐2.6k 在社区彻底火了。它能把微信文章与网页视频 🚀 喂给 笔记本模型。瞬间生成 播客草稿 或者脑图 🎨 非常省心。该工具已经狂揽两千多颗星星 🌟 真的很顶。它极大地优化了 知识管理 的信息输入流程。&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>AI日报 | 2026-05-15</title><link>https://muioo.github.io/ai-daily/2026-05-15/</link><pubDate>Fri, 15 May 2026 08:30:00 +0800</pubDate><guid>https://muioo.github.io/ai-daily/2026-05-15/</guid><description>&lt;h2 id="开源-top-项目"&gt;开源 TOP 项目
-&lt;/h2&gt;&lt;h3 id="1-wifi捕捉人体ai资讯"&gt;1. WiFi捕捉人体(AI资讯)
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>AI日报 | 2026-05-15</title>
+        <link>http://localhost:1313/ai-daily/2026-05-15/</link>
+        <pubDate>Fri, 15 May 2026 08:30:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/ai-daily/2026-05-15/</guid>
+        <description>&lt;h2 id=&#34;开源-top-项目&#34;&gt;开源 TOP 项目
+&lt;/h2&gt;&lt;h3 id=&#34;1-wifi捕捉人体ai资讯&#34;&gt;1. WiFi捕捉人体(AI资讯)
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;仓库链接：&lt;a class="link" href="https://github.com/ruvnet/RuView" target="_blank" rel="noopener"
-&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/ruvnet/RuView&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;中文摘要：WiFi信号秒变空间智能。 开源项目 RuView 实现了 WiFi捕捉人体(AI资讯) 的建模突破。 这种 非侵入 技术 ✧(≖ 连 ≖✿) 竟能监测体征。 项目在 GitHub 狂砍 ⭐55.9k 星标 🚀 极其火爆。 无需相机的方案将彻底颠富 智慧养老 体验。 隐私安全与智能感知的平衡 (〃&amp;rsquo;▽&amp;rsquo;〃) 终于实现了。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="2-多角色编程套件ai资讯"&gt;2. 多角色编程套件(AI资讯)
+&lt;h3 id=&#34;2-多角色编程套件ai资讯&#34;&gt;2. 多角色编程套件(AI资讯)
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;仓库链接：&lt;a class="link" href="https://github.com/garrytan/gstack" target="_blank" rel="noopener"
-&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/garrytan/gstack&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;中文摘要：gstack 编程套件火爆全网。 硅谷大咖专属的 多角色编程套件(AI资讯) 获九万星。 项目集成了 二十多款 🚀 辅助工具非常全面。 开发者 ⚡ 可让 Claude 变身为全能的虚拟团队。 此方案 ฅʕ•̫͡•ʔ诺 极度简化了 多人协作 流程。 个人开发者通过它能轻松 执掌整家公司 ✨。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="3-开源隐身浏览器ai资讯"&gt;3. 开源隐身浏览器(AI资讯)
+&lt;h3 id=&#34;3-开源隐身浏览器ai资讯&#34;&gt;3. 开源隐身浏览器(AI资讯)
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;仓库链接：&lt;a class="link" href="https://github.com/CloakHQ/CloakBrowser" target="_blank" rel="noopener"
-&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/CloakHQ/CloakBrowser&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;中文摘要：CloakBrowser绕过指纹检测。 这款 开源隐身浏览器(AI资讯) ⭐10.8k 表现非常惊人。 它基于源码级修改 🕵️ 成功修复了 所有指纹泄露。 在机器人检测中通关 三十项测试 (๑•̀ㅂ•́)诺 堪称完美。 开发者能直接替换 Playwright 🛠️ 框架应对爬虫。 该项目已成为 自动化采集 🚀 圈里的超级新宠。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="4-ai编码智能体ai资讯"&gt;4. AI编码智能体(AI资讯)
+&lt;h3 id=&#34;4-ai编码智能体ai资讯&#34;&gt;4. AI编码智能体(AI资讯)
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;仓库链接：&lt;a class="link" href="https://github.com/rohitg00/agentmemory" target="_blank" rel="noopener"
-&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/rohitg00/agentmemory&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;中文摘要：AgentMemory持久化内存系统。 该项目为 AI编码智能体(AI资讯) 提供了持久化的强悍内存。 开发者通过它优化了代码编写的 上下文一致性 🚀。 工具在 GitHub 斩获 ⭐8.9k 高星 (〃&amp;rsquo;▽&amp;rsquo;〃) 真火。 它解决了长周期任务中 AI记忆丢失 的痛点。 这种 存储机制 ⚡ 让复杂编程流程变得极其丝滑。&lt;/li&gt;
-&lt;/ul&gt;</description></item></channel></rss>
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
