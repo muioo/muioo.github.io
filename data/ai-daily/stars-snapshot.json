@@ -1,0 +1,95 @@
+{
+  "generated_at": "2026-05-15T09:29:43Z",
+  "repos": {
+    "Significant-Gravitas/AutoGPT": {
+      "stars": 184318,
+      "updated_at": "2026-05-15T09:23:11Z",
+      "pushed_at": "2026-05-15T08:38:20Z"
+    },
+    "affaan-m/everything-claude-code": {
+      "stars": 182623,
+      "updated_at": "2026-05-15T09:28:28Z",
+      "pushed_at": "2026-05-15T08:46:41Z"
+    },
+    "ollama/ollama": {
+      "stars": 171435,
+      "updated_at": "2026-05-15T09:23:37Z",
+      "pushed_at": "2026-05-15T00:53:17Z"
+    },
+    "huggingface/transformers": {
+      "stars": 160639,
+      "updated_at": "2026-05-15T08:59:02Z",
+      "pushed_at": "2026-05-15T09:05:53Z"
+    },
+    "anomalyco/opencode": {
+      "stars": 160554,
+      "updated_at": "2026-05-15T09:28:52Z",
+      "pushed_at": "2026-05-15T09:24:32Z"
+    },
+    "NousResearch/hermes-agent": {
+      "stars": 151136,
+      "updated_at": "2026-05-15T09:29:06Z",
+      "pushed_at": "2026-05-15T09:16:24Z"
+    },
+    "langflow-ai/langflow": {
+      "stars": 148108,
+      "updated_at": "2026-05-15T09:20:45Z",
+      "pushed_at": "2026-05-15T05:47:48Z"
+    },
+    "langgenius/dify": {
+      "stars": 141459,
+      "updated_at": "2026-05-15T09:24:09Z",
+      "pushed_at": "2026-05-15T09:12:44Z"
+    },
+    "x1xhlol/system-prompts-and-models-of-ai-tools": {
+      "stars": 137416,
+      "updated_at": "2026-05-15T09:28:12Z",
+      "pushed_at": "2026-05-10T15:03:26Z"
+    },
+    "open-webui/open-webui": {
+      "stars": 137147,
+      "updated_at": "2026-05-15T09:27:58Z",
+      "pushed_at": "2026-05-15T00:34:23Z"
+    },
+    "langchain-ai/langchain": {
+      "stars": 136788,
+      "updated_at": "2026-05-15T09:23:29Z",
+      "pushed_at": "2026-05-14T22:35:32Z"
+    },
+    "anthropics/skills": {
+      "stars": 134543,
+      "updated_at": "2026-05-15T09:28:53Z",
+      "pushed_at": "2026-05-09T00:34:37Z"
+    },
+    "firecrawl/firecrawl": {
+      "stars": 120030,
+      "updated_at": "2026-05-15T09:28:00Z",
+      "pushed_at": "2026-05-15T07:16:50Z"
+    },
+    "microsoft/generative-ai-for-beginners": {
+      "stars": 110827,
+      "updated_at": "2026-05-15T09:19:47Z",
+      "pushed_at": "2026-05-14T03:44:00Z"
+    },
+    "rasbt/LLMs-from-scratch": {
+      "stars": 94804,
+      "updated_at": "2026-05-15T09:28:24Z",
+      "pushed_at": "2026-05-11T14:14:00Z"
+    },
+    "browser-use/browser-use": {
+      "stars": 94019,
+      "updated_at": "2026-05-15T09:28:35Z",
+      "pushed_at": "2026-05-15T00:09:18Z"
+    },
+    "farion1231/cc-switch": {
+      "stars": 71332,
+      "updated_at": "2026-05-15T09:29:12Z",
+      "pushed_at": "2026-05-14T18:41:39Z"
+    },
+    "microsoft/ai-agents-for-beginners": {
+      "stars": 61501,
+      "updated_at": "2026-05-15T09:27:08Z",
+      "pushed_at": "2026-05-13T16:10:25Z"
+    }
+  }
+}

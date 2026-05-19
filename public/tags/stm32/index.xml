@@ -218,14 +218,6 @@
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>【stm32】FreeRTOS实时操作系统1</title>
-        <link>http://localhost:1313/p/stm32freertos%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1/</link>
-        <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/stm32freertos%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>【stm32】STM32中HAL库系统定时器以及中断的实现</title>
         <link>http://localhost:1313/p/stm32stm32%E4%B8%ADhal%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%AE%9A%E6%97%B6%E5%99%A8%E4%BB%A5%E5%8F%8A%E4%B8%AD%E6%96%AD%E7%9A%84%E5%AE%9E%E7%8E%B0/</link>
         <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
