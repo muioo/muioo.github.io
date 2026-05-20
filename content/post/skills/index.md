@@ -1,3 +1,19 @@
+---
+author: muioo
+
+title: "【CODEX】记录一些常用的skills"
+
+date: 2026-04-21
+
+description: "一些常用skills安装"
+
+tags: [ "SKILLS"]
+
+categories: ["Ai编程"]
+
+
+---
+
 ## 开源skills安装（通用可以用于codex）
 
 ### skills的使用

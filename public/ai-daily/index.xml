@@ -7,7 +7,40 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Tue, 19 May 2026 08:30:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/ai-daily/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 20 May 2026 08:30:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/ai-daily/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI日报 | 2026-05-20</title>
+        <link>http://localhost:1313/ai-daily/2026-05-20/</link>
+        <pubDate>Wed, 20 May 2026 08:30:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/ai-daily/2026-05-20/</guid>
+        <description>&lt;h2 id=&#34;开源-top-项目&#34;&gt;开源 TOP 项目
+&lt;/h2&gt;&lt;h3 id=&#34;1-forge让小模型任务成功率直逼sonnet调用失败&#34;&gt;1. Forge让小模型任务成功率直逼Sonnet。调用失败
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/antoinezambelli/forge&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：Forge让小模型任务成功率直逼Sonnet。 该 高效工具约束层(AI资讯) 能拯救罢工的小模型。它在 调用失败 时 🛠️ 引导模型自动修复。成功率从百分之五十三 (•̀ᴗ•́)و 狂飙至九十九。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-verl发布统一开源智能体框架安全沙盒&#34;&gt;2. veRL发布统一开源智能体框架。安全沙盒
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/verl-project/uni-agent&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：veRL发布统一开源智能体框架。 该 智能体项目(AI资讯) 已在社区狂揽百颗星。底层集成 安全沙盒 🚀 让运行环境变得非常给力。异步训练机制能让 (๑•̀ㅂ•́)و✧ 任务效率轻松翻倍。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-学术研究自动化辅助工具github爆火&#34;&gt;3. 学术研究自动化辅助工具GitHub爆火。
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Imbad0202/academic-research-skills&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：学术研究自动化辅助工具GitHub爆火。 它能主打 科研全流程闭环(AI资讯) 的自动化协作。这个 🚀 专属助手可以极速生成高质量学术论文。原本繁琐的流程在 (¯▽¯) 这里变得极其简单。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-独立站seo检测迎来新玩法克劳德代码死链移动得分&#34;&gt;4. 独立站SEO检测迎来新玩法。克劳德代码死链移动得分
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/coreyhaines31/marketingskills&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：独立站SEO检测迎来新玩法。 用网页检测工具（AI资讯）查收录漏洞。 利用🔧克劳德代码便能实现即刻修改并上线。 利用开源网站营销优化工具轻松查出死链。 配合官方网站速度测试平台提升(๑•̀ㅂ•́)و✧移动得分。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>AI日报 | 2026-05-19</title>
         <link>http://localhost:1313/ai-daily/2026-05-19/</link>
         <pubDate>Tue, 19 May 2026 08:30:00 +0800</pubDate>
