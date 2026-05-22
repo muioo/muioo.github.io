@@ -1,17 +1,15 @@
 ---
 author: muioo
 
-title: "【CODEX】记录一些常用的skills"
+title: "【Ai编程】记录一些常用的skills以及一些ai辅助工具"
 
-date: 2026-04-21
+date: 2026-05-21
 
 description: "一些常用skills安装"
 
 tags: [ "SKILLS"]
 
 categories: ["Ai编程"]
-
-
 ---
 
 ## 开源skills安装（通用可以用于codex）
@@ -102,5 +100,15 @@ git clone https://github.com/anthropics/skills.git
 
 ```git
 git clone https://github.com/ComposioHQ/awesome-codex-skills.git
+```
+
+## 插件
+
+### CodeGraph
+
+**[下载地址](https://github.com/colbymchenry/codegraph)**
+
+```bash
+npx @colbymchenry/codegraph
 ```
 
