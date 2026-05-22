@@ -7,7 +7,52 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>muioo</copyright>
-        <lastBuildDate>Wed, 20 May 2026 08:30:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 21 May 2026 08:30:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI日报 | 2026-05-21</title>
+        <link>http://localhost:1313/ai-daily/2026-05-21/</link>
+        <pubDate>Thu, 21 May 2026 08:30:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/ai-daily/2026-05-21/</guid>
+        <description>&lt;h2 id=&#34;开源-top-项目&#34;&gt;开源 TOP 项目
+&lt;/h2&gt;&lt;h3 id=&#34;1-卡帕西编程技巧在社区走红14万星&#34;&gt;1. 卡帕西编程技巧在社区走红。⭐14万星
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/multica-ai/andrej-karpathy-skills&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：卡帕西编程技巧在社区走红。 项目已狂卷 ⭐14万星 关注。 快用 高效调试秘籍(AI资讯) 学神技。 它针对编码 👾 过程中的逻辑坑。 单文件配置 (￣▽￣) 效率起飞。 开发者们 (•̀ᴗ•́) 都在抢着学。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-vimax全能视频生成器开源60k&#34;&gt;2. ViMax全能视频生成器开源。⭐6.0k
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/HKUDS/ViMax&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：ViMax全能视频生成器开源。 系统在社区揽获 ⭐6.0k 星。 视频生成系统(AI资讯) 非常全能。 编剧与导演 🚀 角色被完美融合。 繁琐流程 ⊙﹏⊙ 变得非常简单。 创作生态 (๑•̀ㅂ•́)و✧ 迎来重构。\&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-官方克劳德插件目录发布207k&#34;&gt;3. 官方克劳德插件目录发布。⭐20.7k
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/anthropics/claude-plugins-official&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：官方克劳德插件目录发布。 该项目目前已狂揽 ⭐20.7k 星。 官方插件仓库(AI资讯) 搞定痛点。 仓库由 ૮ • ﻌ • あ 官方维护。 极大赋能 🚀 终端代码助手。 开发者 (•̀ᴗ•́) 必备的利器。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-开源ai代理天团强势登场1028k&#34;&gt;4. 开源AI代理天团强势登场。⭐102.8k
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/msitarzewski/agency-agents&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：开源AI代理天团强势登场。 项目成功斩获 ⭐102.8k 关注。 开源代理工具(AI资讯) 解决痛点。 平台提供 💥 全套虚拟专家。 定制员工 (๑•̀ㅂ•́)و✧ 变得更简单。 协同工作 (￣▽￣) 效率翻倍。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-终端免费编程工具问世26k&#34;&gt;5. 终端免费编程工具问世。⭐26k
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Alishahryar1/free-claude-code&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：终端免费编程工具问世。 它在开源平台斩获 ⭐26k 关注。 终端编程助手(AI资讯) 支持语音。 程序员 🚀 能够免费体验智能。 省钱神器 (°∀°)b 效果非常惊艳。 降本增效 (•̀ᴗ•́) 就靠它了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;6-activegraph正式开源&#34;&gt;6. ActiveGraph正式开源。
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;仓库链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/yoheinakajima/activegraph&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文摘要：ActiveGraph正式开源。 这款极简系统攻克运行痛点。 前沿创新技术(AI资讯) 极具动能。 响应式架构 ⚡ 吸引了众多粉丝。 技术项目 ᕙ(⇀‸↼‶)ᕗ 特色非常鲜明。 智能体 🔄 运行更加高效稳定。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>AI日报 | 2026-05-20</title>
         <link>http://localhost:1313/ai-daily/2026-05-20/</link>
         <pubDate>Wed, 20 May 2026 08:30:00 +0800</pubDate>
@@ -5050,14 +5095,6 @@
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/archives/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title></title>
-        <link>http://localhost:1313/p/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/</guid>
         <description></description>
         </item>
         <item>
