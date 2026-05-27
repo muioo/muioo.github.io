@@ -151,6 +151,134 @@
 &lt;/div&gt;</description>
         </item>
         <item>
+        <title>【Linux应用层开发】文件IO</title>
+        <link>http://localhost:1313/p/linux%E5%BA%94%E7%94%A8%E5%B1%82%E5%BC%80%E5%8F%91%E6%96%87%E4%BB%B6io/</link>
+        <pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/linux%E5%BA%94%E7%94%A8%E5%B1%82%E5%BC%80%E5%8F%91%E6%96%87%E4%BB%B6io/</guid>
+        <description>&lt;h2 id=&#34;struct-file-结构体逐字段解析&#34;&gt;struct file 结构体逐字段解析
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;file&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;atomic_long_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f_count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;          &lt;span class=&#34;c1&#34;&gt;// 文件对象引用计数（核心！）
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mutex&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f_pos_lock&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;        &lt;span class=&#34;c1&#34;&gt;// 读写位置的互斥锁，多进程/线程读写时保护偏移量
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;loff_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f_pos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                   &lt;span class=&#34;c1&#34;&gt;// 当前文件读写偏移位置（光标位置）
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f_path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;             &lt;span class=&#34;c1&#34;&gt;// 记录文件路径信息
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;inode&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f_inode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;          &lt;span class=&#34;c1&#34;&gt;// 指向磁盘inode（文件本体，存权限、硬链接数、大小）
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;file_operations&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f_op&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 文件操作函数集：read/write/open/close 等内核实现
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;private_data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;             &lt;span class=&#34;c1&#34;&gt;// 驱动/模块私有数据（设备文件专用）
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;f_count&lt;/code&gt; 引用计数
+&lt;ul&gt;
+&lt;li&gt;作用：管理&lt;code&gt;struct file&lt;/code&gt;生命周期&lt;/li&gt;
+&lt;li&gt;变化：&lt;code&gt;open()&lt;/code&gt; → +1；&lt;code&gt;close()&lt;/code&gt; → -1；减到 0 时内核释放该&lt;code&gt;struct file&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;和 inode 硬链接计数&lt;strong&gt;完全独立&lt;/strong&gt;：&lt;code&gt;ls -l&lt;/code&gt;看到的是 inode 计数，不是这个&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;f_pos&lt;/code&gt; 文件偏移
+&lt;ul&gt;
+&lt;li&gt;每个打开的文件 fd，&lt;strong&gt;独立拥有自己的读写位置&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;例：两个进程同时&lt;code&gt;open(&amp;quot;io.txt&amp;quot;)&lt;/code&gt;，&lt;code&gt;f_pos&lt;/code&gt;互不干扰；硬链接共享 inode 但独立&lt;code&gt;struct file&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;f_inode&lt;/code&gt; 指向 inode
+&lt;ul&gt;
+&lt;li&gt;多个&lt;code&gt;struct file&lt;/code&gt;可以指向&lt;strong&gt;同一个 inode&lt;/strong&gt;（硬链接、多进程打开同一文件）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;f_op&lt;/code&gt; 函数集
+&lt;ul&gt;
+&lt;li&gt;用户态&lt;code&gt;read/write&lt;/code&gt;最终调用这里的内核函数，是 Linux 一切文件（普通文件、设备、管道）的统一接口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;文件描述符-fd-核心知识点用户态重点&#34;&gt;文件描述符 fd 核心知识点（用户态重点）
+&lt;/h2&gt;&lt;h3 id=&#34;1-标准文件描述符默认打开&#34;&gt;1. 标准文件描述符（默认打开）
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;fd 值&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;名称&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;作用&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;0&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;STDIN_FILENO&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;标准输入（键盘）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;STDOUT_FILENO&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;标准输出（屏幕）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;STDERR_FILENO&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;标准错误（屏幕）&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;2-fd-本质&#34;&gt;2. fd 本质
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;是&lt;strong&gt;进程私有的数组下标&lt;/strong&gt;，数组叫&lt;code&gt;files_struct&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;进程打开文件越多，fd 数字越大（3、4、5…）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;进程间 fd 相互独立&lt;/strong&gt;，A 进程的 fd=3 和 B 进程的 fd=3 毫无关系&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-fdstruct-fileinode-三者关系&#34;&gt;3. fd、struct file、inode 三者关系
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;进程 fd → 找到内核&lt;code&gt;struct file&lt;/code&gt;（1 次 open 对应 1 个）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;struct file&lt;/code&gt; → 指向磁盘&lt;code&gt;inode&lt;/code&gt;（文件本体）&lt;/li&gt;
+&lt;li&gt;多个 fd 可以指向&lt;strong&gt;同一个 struct file&lt;/strong&gt;（父子进程继承）&lt;/li&gt;
+&lt;li&gt;多个 struct file 可以指向&lt;strong&gt;同一个 inode&lt;/strong&gt;（多进程打开同一文件）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;引用计数完整区分&#34;&gt;引用计数完整区分
+&lt;/h2&gt;&lt;h3 id=&#34;1-inode-硬链接计数磁盘层ls--l第二列&#34;&gt;1. inode 硬链接计数（磁盘层，&lt;code&gt;ls -l&lt;/code&gt;第二列）
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;变化：&lt;code&gt;ln&lt;/code&gt;硬链接 + 1，&lt;code&gt;rm&lt;/code&gt;删除文件名 - 1&lt;/li&gt;
+&lt;li&gt;减到 0：磁盘文件数据真正删除&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;open/fopen 不改变它&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-struct-file-的f_count内核打开计数&#34;&gt;2. struct file 的&lt;code&gt;f_count&lt;/code&gt;（内核打开计数）
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;变化：&lt;code&gt;open&lt;/code&gt;+1，&lt;code&gt;close&lt;/code&gt;-1&lt;/li&gt;
+&lt;li&gt;减到 0：释放内核文件对象&lt;/li&gt;
+&lt;li&gt;例：打开文件后&lt;code&gt;rm&lt;/code&gt;删除文件名，只要不 close，文件数据还在！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-进程-fd-引用&#34;&gt;3. 进程 fd 引用
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;进程复制 fd（&lt;code&gt;fork&lt;/code&gt;/&lt;code&gt;dup&lt;/code&gt;）：&lt;code&gt;f_count&lt;/code&gt;+1&lt;/li&gt;
+&lt;li&gt;所有 fd 都 close 后，&lt;code&gt;f_count&lt;/code&gt;归零&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;用户态常用系统调用对应-struct-file-操作&#34;&gt;用户态常用系统调用（对应 struct file 操作）
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;open()&lt;/code&gt;：分配 fd，创建 / 获取&lt;code&gt;struct file&lt;/code&gt;，&lt;code&gt;f_count=1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;read/write()&lt;/code&gt;：操作&lt;code&gt;f_pos&lt;/code&gt;偏移，调用&lt;code&gt;f_op-&amp;gt;read/write&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;lseek()&lt;/code&gt;：修改&lt;code&gt;f_pos&lt;/code&gt;读写位置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;close()&lt;/code&gt;：&lt;code&gt;f_count--&lt;/code&gt;，为 0 则释放 struct file&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dup()&lt;/code&gt;：复制 fd，&lt;code&gt;f_count++&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>【Maven 安装】Maven安装以及springboot&#43;maven初始化项目</title>
         <link>http://localhost:1313/p/maven-%E5%AE%89%E8%A3%85maven%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Aspringboot-maven%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE/</link>
         <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>

@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="开源 TOP 项目 AI 日报">
+<title>AI日报 | 2026-05-25</title>
+
+<link rel='canonical' href='http://localhost:1313/ai-daily/2026-05-25/'>
+
+<link rel="stylesheet" href="/scss/style.min.a9f8528cf21200d696e4551d1118c2c9d2f618cad09642e9fc9e99f3c9c3fc67.css"><meta property='og:title' content="AI日报 | 2026-05-25">
+<meta property='og:description' content="开源 TOP 项目 AI 日报">
+<meta property='og:url' content='http://localhost:1313/ai-daily/2026-05-25/'>
+<meta property='og:site_name' content='muioo blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Ai-Daily' /><meta property='article:published_time' content='2026-05-25T08:30:00&#43;08:00'/><meta property='article:modified_time' content='2026-05-25T08:30:00&#43;08:00'/>
+<meta name="twitter:title" content="AI日报 | 2026-05-25">
+<meta name="twitter:description" content="开源 TOP 项目 AI 日报">
+    <link rel="shortcut icon" href="/favicon.ico" />
+<script>
+    
+
+
+
+
+const live2d_path = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/';
+
+
+
+
+function loadExternalResource(url, type) {
+  return new Promise((resolve, reject) => {
+    let tag;
+
+    if (type === 'css') {
+      tag = document.createElement('link');
+      tag.rel = 'stylesheet';
+      tag.href = url;
+    }
+    else if (type === 'js') {
+      tag = document.createElement('script');
+      tag.type = 'module';
+      tag.src = url;
+    }
+    if (tag) {
+      tag.onload = () => resolve(url);
+      tag.onerror = () => reject(url);
+      document.head.appendChild(tag);
+    }
+  });
+}
+
+(async () => {
+  
+  
+  
+
+  
+  
+  const OriginalImage = window.Image;
+  window.Image = function(...args) {
+    const img = new OriginalImage(...args);
+    img.crossOrigin = "anonymous";
+    return img;
+  };
+  window.Image.prototype = OriginalImage.prototype;
+  
+  
+  await Promise.all([
+    loadExternalResource(live2d_path + 'waifu.css', 'css'),
+    loadExternalResource(live2d_path + 'waifu-tips.js', 'js')
+  ]);
+  
+  
+  initWidget({
+    waifuPath: live2d_path + 'waifu-tips.json',
+    
+    cubism2Path: live2d_path + 'live2d.min.js',
+    cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
+    tools: ['hitokoto', 'asteroids', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
+    logLevel: 'warn',
+    drag: false,
+  });
+})();
+
+console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #ff5450; font-size: large; color: #eee;', '');
+
+
+
+
+
+</script>
+
+
+<style>
+     
+    .article-page .main-article,
+    main .main-article {
+        background: #fff !important;
+    }
+
+     
+    [data-scheme="dark"] .article-page .main-article,
+    [data-scheme="dark"] main .main-article {
+        background: #424242 !important;
+    }
+</style>
+
+
+<style>
+    #waifu {
+        left: auto !important;
+        right: 0 !important;
+        bottom: 0 !important;
+    }
+
+    #waifu-tips {
+        left: auto !important;
+        right: 0 !important;
+    }
+
+    #waifu-tool {
+        left: auto !important;
+        right: 0 !important;
+    }
+</style>
+
+        
+        
+        
+        
+
+        
+        <link rel="dns-prefetch" href="https://giscus.app">
+        <link rel="preconnect" href="https://giscus.app" crossorigin>
+        
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/swup@4"></script>
+        <style>
+             
+            .transition-fade {
+                transition: opacity 0.3s;
+                opacity: 1;
+            }
+
+            html.is-animating .transition-fade {
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+
+        <div id="swup" class="transition-fade">
+            <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+
+                    
+                        
+                        <img src="/img/avatar_hu_6827ff93fc5ecbf3.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">muioo blog</a></h1>
+            <h2 class="site-description">欢迎来到我的网站</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a
+                        href='https://github.com/muioo/muioo.github.io'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页 | Home</span>
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E-about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于 | About</span>
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档 | archives</span>
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索 | Search</span>
+            </a>
+        </li>
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        <li  class='current' >
+            <a href='/ai-daily/2026-05-27/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>AI日报 | Daily</span>
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        <li >
+            <a href='/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5-links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>相关链接 | Links</span>
+            </a>
+        </li>
+        
+
+        <li class="ai-daily-item ">
+        <a href="/ai-daily/">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+            <span>日报总览</span>
+        </a>
+    </li><li class="ai-daily-month-group">
+            <details class="ai-daily-month-details" open>
+                <summary class="ai-daily-month-summary">
+                    <span>2026-05</span>
+                    <span>12</span>
+                </summary>
+                <ol class="ai-daily-month-menu"><li class="ai-daily-item ">
+                            <a href="/ai-daily/2026-05-27/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                                <span>05-27</span>
+                            </a>
+                        </li><li class="ai-daily-item ">
+                            <a href="/ai-daily/2026-05-26/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                                <span>05-26</span>
+                            </a>
+                        </li><li class="ai-daily-item current">
+                            <a href="/ai-daily/2026-05-25/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                                <span>05-25</span>
+                            </a>
+                        </li><li class="ai-daily-item ">
+                            <a href="/ai-daily/2026-05-23/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                                <span>05-23</span>
+                            </a>
+                        </li><li class="ai-daily-item ">
+                            <a href="/ai-daily/2026-05-22/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                                <span>05-22</span>
+                            </a>
+                        </li><li class="ai-daily-item ">
+                            <a href="/ai-daily/2026-05-21/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                                <span>05-21</span>
+                            </a>
+                        </li><li class="ai-daily-item ">
+                            <a href="/ai-daily/2026-05-20/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                                <span>05-20</span>
+                            </a>
+                        </li><li class="ai-daily-item ">
+                            <a href="/ai-daily/2026-05-19/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                                <span>05-19</span>
+                            </a>
+                        </li><li class="ai-daily-item ">
+                            <a href="/ai-daily/2026-05-18/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                                <span>05-18</span>
+                            </a>
+                        </li><li class="ai-daily-item ">
+                            <a href="/ai-daily/2026-05-17/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                                <span>05-17</span>
+                            </a>
+                        </li><li class="ai-daily-item ">
+                            <a href="/ai-daily/2026-05-16/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                                <span>05-16</span>
+                            </a>
+                        </li><li class="ai-daily-item ">
+                            <a href="/ai-daily/2026-05-15/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                                <span>05-15</span>
+                            </a>
+                        </li></ol>
+            </details>
+        </li>
+
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#开源-top-项目">开源 TOP 项目</a>
+      <ol>
+        <li><a href="#1-首个多模态并行思考框架问世注意力隔离">1. 首个多模态并行思考框架问世。注意力隔离</a></li>
+        <li><a href="#2-零基础ai工程实战课在github爆火159k">2. 零基础AI工程实战课在GitHub爆火。⭐15.9k</a></li>
+        <li><a href="#3-极速本地代码图谱工具爆火219kcursor">3. 极速本地代码图谱工具爆火。⭐21.9kCursor</a></li>
+        <li><a href="#4-开源智能代理平台正式发布智能代理324k">4. 开源智能代理平台正式发布。智能代理⭐32.4k</a></li>
+        <li><a href="#5-群体智能预测引擎mirofish开源621k复杂人性">5. 群体智能预测引擎MiroFish开源。⭐62.1k复杂人性</a></li>
+        <li><a href="#6-anthropic官方上线插件目录权威目录272k">6. Anthropic官方上线插件目录。权威目录⭐27.2k</a></li>
+        <li><a href="#7-网络安全技能标准项目开源83k安全框架">7. 网络安全技能标准项目开源。⭐8.3k安全框架</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+                <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/ai-daily/2026-05-25/">AI日报 | 2026-05-25</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            开源 TOP 项目 AI 日报
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2026-05-25T08:30:00&#43;08:00'>2026-05-25</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="开源-top-项目">开源 TOP 项目
+</h2><h3 id="1-首个多模态并行思考框架问世注意力隔离">1. 首个多模态并行思考框架问世。注意力隔离
+</h3><ul>
+<li>仓库链接：<a class="link" href="https://github.com/xuhaoran1/Visual-Para-Thinker"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li>中文摘要：首个多模态并行思考框架问世。 研究团队发布了 学术界并行推理成果 解决视觉痛点。该机制 👁️ 能有效缓解多模态模型常有的视觉幻觉。框架主要采用了 注意力隔离 技术，并已在开源仓库发布。新架构 🚀 极大改善了复杂视觉感知任务的执行效率。开发者可以在 开源仓库 获取该框架的最新代码。</li>
+</ul>
+<h3 id="2-零基础ai工程实战课在github爆火159k">2. 零基础AI工程实战课在GitHub爆火。⭐15.9k
+</h3><ul>
+<li>仓库链接：<a class="link" href="https://github.com/rohitg00/ai-engineering-from-scratch"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li>中文摘要：零基础AI工程实战课在GitHub爆火。 空谈架构不如编写底层代码，该课程在社区 🦾 迅速走红。这个 手撕大模型课(AI资讯) 帮助无数人完成了入门。它狂揽 ⭐15.9k 星，让算法小白也能轻松实现逆袭。课程模块涵盖了模型构建的 (๑•̀ㅂ•́)و✧ 每一个核心细节。这种实战导向的 🔥 教学方式深受广大开发者喜爱。</li>
+</ul>
+<h3 id="3-极速本地代码图谱工具爆火219kcursor">3. 极速本地代码图谱工具爆火。⭐21.9kCursor
+</h3><ul>
+<li>仓库链接：<a class="link" href="https://github.com/colbymchenry/codegraph"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li>中文摘要：极速本地代码图谱工具爆火。 这款 ⭐21.9k 关注的 代码图谱工具 专为代理定制。它能配合 Cursor 等工具 🦾 深入分析项目工程结构。百分百本地处理 💖 能够极大地减少敏感数据流量消耗。开发者终于 (✧∀✧) 实现了高效且隐私的代码安全管理。该工具目前已成为开源社区 🚀 必备的开发辅助神器。</li>
+</ul>
+<h3 id="4-开源智能代理平台正式发布智能代理324k">4. 开源智能代理平台正式发布。智能代理⭐32.4k
+</h3><ul>
+<li>仓库链接：<a class="link" href="https://github.com/multica-ai/multica"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li>中文摘要：开源智能代理平台正式发布。 该平台 🚀 旨在将 智能代理 转化为真实的团队队友。快点击 协作管理平台 体验自动化协作流程。项目至今已狂揽 ⭐32.4k 关注，其实力简直是不容小觑。它完美解决了多智能体 (•̀ᴗ•́)و 难以协同工作的痛点。未来的团队管理必将由机器人主导 🦾 我们的工作方式。</li>
+</ul>
+<h3 id="5-群体智能预测引擎mirofish开源621k复杂人性">5. 群体智能预测引擎MiroFish开源。⭐62.1k复杂人性
+</h3><ul>
+<li>仓库链接：<a class="link" href="https://github.com/666ghj/MiroFish"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li>中文摘要：群体智能预测引擎MiroFish开源。 该项目在社区狂斩 ⭐62.1k 高星，能模拟 复杂人性。快看 预测万物系统 震撼发布后的详细技术细节。该技术表现极其惊艳 (•̀ᴗ•́) 让人对预测未来充满期待。全球群体智能生态 📈 恐将因此项突破而重新面临洗牌。科学家们正在利用该引擎 🤯 探索社会运行的新逻辑。</li>
+</ul>
+<h3 id="6-anthropic官方上线插件目录权威目录272k">6. Anthropic官方上线插件目录。权威目录⭐27.2k
+</h3><ul>
+<li>仓库链接：<a class="link" href="https://github.com/anthropics/claude-plugins-official"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li>中文摘要：Anthropic官方上线插件目录。 继此前建立官方插件库后，其质量库的 权威目录 正式上线。开发者可以点击 官方插件库(AI资讯) 寻找趁手工具。获赞 ⭐27.2k 说明生态系统已迈向了非常成熟的阶段。单日 🚀 收藏数量已经轻松突破了千次的历史大关。这标志着整个工具链 (✧∀✧) 已经进入了高速扩张期。</li>
+</ul>
+<h3 id="7-网络安全技能标准项目开源83k安全框架">7. 网络安全技能标准项目开源。⭐8.3k安全框架
+</h3><ul>
+<li>仓库链接：<a class="link" href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li>中文摘要：网络安全技能标准项目开源。 该 安全技能标准 斩获 ⭐8.3k 星关注。项目 (•̀ᴗ•́)و 提供了七百余个针对安全代理的核心技能。技能库完美映射了五大国际 安全框架 的详细指标。该工具已兼容二十多种主流平台 (✧∀✧) 具有极强适应性。安全代理的落地方案 🚀 已经在开发者社区变得清晰。</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        
+        2026 muioo
+    </section>
+
+    <section class="powerby"><div id="blog-stats" style="margin-bottom: 5px;" data-launch-date="2026-01-22">
+            本站已稳定运行: <strong id="running-days">计算中...</strong> 天 |
+            博客: <strong>22</strong> 篇 |
+            字数: <strong>17991</strong> 字
+        </div>使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+    
+
+                </main>
+            </div>
+        </div>
+
+        
+        
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" defer></script>
+
+
+<style>
+.aplayer.aplayer-fixed {
+    left: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+</style>
+
+<meting-js
+    server="netease"
+    type="playlist"
+    id="17704549797"
+    fixed="true"
+    listFolded="true"
+    volume="0.5"
+    preload="auto"
+>
+</meting-js>
+
+<script>
+
+function initAutoPlay() {
+    const observer = new MutationObserver(function(mutations, obs) {
+        const aplayerElement = document.querySelector('.aplayer');
+        
+        if (aplayerElement && window.APlayer && aplayerElement.aplayer) {
+            obs.disconnect();
+            const ap = aplayerElement.aplayer;
+            console.log('检测到 APlayer 已初始化');
+
+            
+            const playMusic = () => {
+                const playPromise = ap.play();
+                if (playPromise) {
+                    playPromise.then(() => {
+                        console.log('音乐自动播放成功');
+                    }).catch(error => {
+                        console.log('浏览器阻止了自动播放，等待用户交互');
+                        
+                        const playOnInteraction = function() {
+                            ap.play().then(() => {
+                                console.log('用户交互后开始播放');
+                            }).catch(e => {
+                                console.log('播放失败:', e);
+                            });
+                            
+                            document.removeEventListener('click', playOnInteraction);
+                            document.removeEventListener('touchstart', playOnInteraction);
+                            document.removeEventListener('keydown', playOnInteraction);
+                        };
+                        document.addEventListener('click', playOnInteraction);
+                        document.addEventListener('touchstart', playOnInteraction);
+                        document.addEventListener('keydown', playOnInteraction);
+                    });
+                }
+            };
+
+            
+            ap.on('ready', playMusic);
+            
+            setTimeout(playMusic, 1000);
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', initAutoPlay);
+
+
+if (typeof swup !== 'undefined') {
+    swup.hooks.on('page:view', initAutoPlay);
+}
+</script>
+
+        
+        
+        
+        
+
+        
+        <script>
+        (function() {
+            
+            window.giscusState = {
+                loaded: false,
+                ready: false
+            };
+
+            
+            document.addEventListener('giscus:loaded', function() {
+                window.giscusState.ready = true;
+                console.log('[Giscus] 全局状态已更新为 ready');
+            });
+        })();
+        </script>
+        
+
+        
+        <script>
+        (function() {
+            'use strict';
+
+            console.log('[GISCUS-MAIN] Script loaded');
+
+            var giscusConfig = {
+                src: 'https://giscus.app/client.js',
+                repo: 'muioo/muioo.github.io',
+                repoId: 'R_kgDOQ_pqAA',
+                category: 'Announcements',
+                categoryId: 'DIC_kwDOQ_pqAM4C2CEc',
+                mapping: 'pathname',
+                strict: '0',
+                reactionsEnabled: '1',
+                emitMetadata: '0',
+                inputPosition: 'bottom',
+                theme: 'preferred_color_scheme',
+                lang: 'zh-CN'
+            };
+
+            var loaded = false;
+            var observer = null;
+            var timeoutId = null;
+
+            function loadGiscus(container) {
+                if (loaded) return;
+                loaded = true;
+
+                console.log('[GISCUS-MAIN] Loading giscus...');
+
+                if (observer) {
+                    observer.disconnect();
+                    observer = null;
+                }
+                if (timeoutId) {
+                    clearTimeout(timeoutId);
+                    timeoutId = null;
+                }
+
+                var script = document.createElement('script');
+                script.src = giscusConfig.src;
+                script.async = true;
+                script.crossOrigin = 'anonymous';
+
+                for (var key in giscusConfig) {
+                    if (key !== 'src' && giscusConfig.hasOwnProperty(key)) {
+                        var dataKey = 'data-' + key.replace(/([A-Z])/g, '-$1').toLowerCase();
+                        script.setAttribute(dataKey, giscusConfig[key]);
+                    }
+                }
+
+                script.onload = function() {
+                    console.log('[GISCUS-MAIN] giscus loaded successfully');
+                    container.classList.remove('giscus-placeholder');
+                    initFeatures();
+                };
+
+                script.onerror = function() {
+                    console.error('[GISCUS-MAIN] Failed to load giscus');
+                    container.innerHTML = '<p style="color: #ef4444; text-align: center; padding: 2rem;">评论加载失败，请刷新页面重试</p>';
+                };
+
+                container.innerHTML = '';
+                container.appendChild(script);
+            }
+
+            function initFeatures() {
+                var observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.attributeName === 'class') {
+                            var iframe = document.querySelector('iframe[src*="giscus.app"]');
+                            if (iframe) {
+                                var isDark = document.body.classList.contains('dark');
+                                var theme = isDark ? 'dark' : 'light';
+                                try {
+                                    iframe.contentWindow.postMessage({
+                                        giscus: { setConfig: { theme: theme } }
+                                    }, 'https://giscus.app');
+                                } catch (e) {
+                                    
+                                }
+                            }
+                        }
+                    });
+                });
+
+                observer.observe(document.body, {
+                    attributes: true,
+                    attributeFilter: ['class']
+                });
+
+                setTimeout(function() {
+                    var iframe = document.querySelector('iframe[src*="giscus.app"]');
+                    if (iframe) {
+                        var isDark = document.body.classList.contains('dark');
+                        var theme = isDark ? 'dark' : 'light';
+                        try {
+                            iframe.contentWindow.postMessage({
+                                giscus: { setConfig: { theme: theme } }
+                            }, 'https://giscus.app');
+                        } catch (e) {}
+                    }
+                }, 1000);
+            }
+
+            function isNearViewport(el, margin) {
+                var rect = el.getBoundingClientRect();
+                var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                return rect.top <= windowHeight + margin;
+            }
+
+            function initLazyLoad() {
+                console.log('[GISCUS-MAIN] initLazyLoad called');
+
+                var container = document.getElementById('giscus-container');
+                if (!container) {
+                    console.log('[GISCUS-MAIN] Container not found, will retry');
+                    setTimeout(initLazyLoad, 100);
+                    return;
+                }
+
+                console.log('[GISCUS-MAIN] Container found');
+
+                if (isNearViewport(container, 200)) {
+                    console.log('[GISCUS-MAIN] Container in viewport, loading immediately');
+                    loadGiscus(container);
+                    return;
+                }
+
+                if ('IntersectionObserver' in window) {
+                    console.log('[GISCUS-MAIN] Using IntersectionObserver');
+                    observer = new IntersectionObserver(function(entries) {
+                        entries.forEach(function(entry) {
+                            if (entry.isIntersecting) {
+                                console.log('[GISCUS-MAIN] IntersectionObserver triggered');
+                                observer.disconnect();
+                                observer = null;
+                                loadGiscus(container);
+                            }
+                        });
+                    }, {
+                        root: null,
+                        rootMargin: '200px',
+                        threshold: 0
+                    });
+
+                    observer.observe(container);
+
+                    timeoutId = setTimeout(function() {
+                        if (!loaded) {
+                            console.log('[GISCUS-MAIN] Timeout fallback triggered');
+                            if (observer) {
+                                observer.disconnect();
+                                observer = null;
+                            }
+                            loadGiscus(container);
+                        }
+                    }, 3000);
+                } else {
+                    console.log('[GISCUS-MAIN] IntersectionObserver not supported, loading immediately');
+                    loadGiscus(container);
+                }
+            }
+
+            function init() {
+                console.log('[GISCUS-MAIN] init() called');
+                initLazyLoad();
+            }
+
+            function resetForNewPage() {
+                console.log('[GISCUS-MAIN] Swup page change, resetting');
+                loaded = false;
+
+                var container = document.getElementById('giscus-container');
+                if (container) {
+                    container.classList.add('giscus-placeholder');
+                    container.innerHTML = '<div class="giscus-loading"><div class="loading-spinner"></div><p class="loading-text">评论区加载中...</p></div>';
+                }
+
+                setTimeout(function() {
+                    initLazyLoad();
+                }, 100);
+            }
+
+            if (document.readyState === 'loading') {
+                console.log('[GISCUS-MAIN] Waiting for DOMContentLoaded');
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                console.log('[GISCUS-MAIN] DOM ready, calling init');
+                init();
+            }
+
+            document.addEventListener('swup:page:view', resetForNewPage);
+
+            console.log('[GISCUS-MAIN] Script registered');
+        })();
+        </script>
+        
+
+        
+        
+        
+
+        
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.a2ef757b04c7ff1530590ad66d1ad3567d3384e8b5cf14b551690fe7bc1d3512.js" defer></script><script type="text/javascript" src="/ts/custom.388b4c8555b925683490f851d96d246aca608f5b5a471b03653091790c45e904.js" defer></script>
+        <script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+        
+        <script>
+            const swup = new Swup();
+
+            
+            document.addEventListener('swup:page:view', () => {
+                if (window.Stack && window.Stack.init) {
+                    
+                    setTimeout(() => {
+                        window.Stack.init();
+                    }, 100);
+                }
+            });
+        </script>
+    </body>
+
+    
+    
+    
+    
+
+    <script>
+    
+    function updateRunningDays() {
+        const BLOG_LAUNCH_DATE = '2026-01-22';
+        const startDate = new Date(BLOG_LAUNCH_DATE + 'T00:00:00Z');
+        const today = new Date();
+        const utcToday = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
+        const timeDiff = utcToday - startDate;
+        const runningDays = Math.max(0, Math.floor(timeDiff / (1000 * 60 * 60 * 24)));
+
+        const daysElement = document.getElementById('running-days');
+        if (daysElement) {
+            daysElement.textContent = runningDays;
+        }
+    }
+
+    
+    updateRunningDays();
+
+    
+    document.addEventListener('swup:page:view', () => {
+        updateRunningDays();
+    });
+    </script>
+</html>
