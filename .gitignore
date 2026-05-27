@@ -1,4 +1,15 @@
-hugo.exe 
-.claude
+hugo.exe
+.claude/
 CLAUDE.md
-AGENT.mdai-daily.log
+AGENT.md
+
+# Hugo 本地构建产物和缓存，不提交到仓库。
+public/
+resources/
+.hugo_cache/
+.hugo_build.lock
+
+# AI 日报运行日志和 Python 缓存，不提交到仓库。
+ai-daily.log
+scripts/ai-daily/__pycache__/
+*.pyc
