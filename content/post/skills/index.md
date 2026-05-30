@@ -43,12 +43,6 @@ categories: ["Ai编程"]
 /plugin install superpowers@superpowers-marketplace
 ```
 
-##### 使用方法
-
-- 可以直接使用调用这个skills
-
-{{< figure src="1.png" title="superpowers skills 使用示例" >}}
-
 ##### 可能出现的问题（安装通病）
 
 - 1、安装提示网络有问题，这个一般是没有开代理 或者 没有配置全局代理 
