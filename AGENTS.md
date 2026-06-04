@@ -13,7 +13,7 @@
 - 每个函数必须有简短中文注释或 docstring，复杂解析逻辑需要补充关键步骤说明。
 - 只修改与当前需求直接相关的代码，不做无关重构或格式化。
 - 端口、URL、超时、数量等配置优先使用环境变量，避免硬编码业务配置。
-- AI 日报浏览器兜底等待策略使用 `AI_DAILY_BROWSER_WAIT_UNTIL`、`AI_DAILY_BROWSER_CONTENT_TIMEOUT` 和 `AI_DAILY_FETCH_TIMEOUT` 配置。
+- AI 日报浏览器兜底等待策略使用 `AI_DAILY_BROWSER_WAIT_UNTIL`、`AI_DAILY_BROWSER_CONTENT_TIMEOUT`、`AI_DAILY_BROWSER_DISMISS_TIMEOUT` 和 `AI_DAILY_FETCH_TIMEOUT` 配置。
 - 不静默吞掉异常；需要忽略的兼容性错误必须有明确原因，业务错误要记录到错误列表或标准错误。
 - 文件超过 300 行时，应优先拆分职责清晰的新文件，而不是继续堆叠逻辑。
 - 服务器脚本不得自动提交 `content/post/` 等手写笔记；发现普通源码或笔记有未提交改动时应停止并提示。

@@ -33,6 +33,7 @@ BROWSER_WAIT_UNTIL = (
     os.getenv("AI_DAILY_BROWSER_WAIT_UNTIL", "domcontentloaded").strip().lower() or "domcontentloaded"
 )
 BROWSER_CONTENT_TIMEOUT = int(os.getenv("AI_DAILY_BROWSER_CONTENT_TIMEOUT", str(FETCH_TIMEOUT)))
+BROWSER_DISMISS_TIMEOUT = int(os.getenv("AI_DAILY_BROWSER_DISMISS_TIMEOUT", "5"))
 BROWSER_PROJECT_LINK_SELECTOR = "a[href*='github.com/']"
 
 GLOBAL_NOTIFICATION_ID = "domain_update_v1"
@@ -87,7 +88,6 @@ def is_blocked_page(html: str) -> bool:
         "attention required",
         "verify you are human",
         "访问过于频繁",
-        "安全验证",
         "请完成验证",
     ]
     lower_html = html.lower()
@@ -175,8 +175,8 @@ def fetch_source_html_with_browser(url: str) -> str:
 
 
 def dismiss_global_notification(page: object) -> None:
-    # The site shows a client-side domain update modal. Prefer storage bypass,
-    # then fall back to text-based clicks so layout changes do not break us.
+    """关闭来源站的入口弹层，允许后续读取页面正文内容。"""
+    # 来源站会显示“进入站点 / ENTER SITE”入口弹层；先写入存储位，再用文本按钮兜底点击。
     try:
         page.evaluate(
             """
@@ -191,16 +191,18 @@ def dismiss_global_notification(page: object) -> None:
         pass
 
     for selector in [
+        "button:has-text('进入站点 / ENTER SITE')",
         "button:has-text('进入站点')",
         "button:has-text('ENTER SITE')",
+        "[role='button']:has-text('进入站点 / ENTER SITE')",
         "[role='button']:has-text('进入站点')",
         "[role='button']:has-text('ENTER SITE')",
     ]:
         try:
             locator = page.locator(selector).first
-            if locator.is_visible(timeout=1500):
-                locator.click(timeout=1500)
-                return
+            locator.wait_for(state="visible", timeout=BROWSER_DISMISS_TIMEOUT * 1000)
+            locator.click(timeout=BROWSER_DISMISS_TIMEOUT * 1000)
+            return
         except Exception:
             continue
 
