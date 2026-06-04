@@ -29,6 +29,11 @@ MAX_ITEMS = int(os.getenv("AI_DAILY_MAX_ITEMS", "12"))
 FETCH_RETRIES = int(os.getenv("AI_DAILY_FETCH_RETRIES", "4"))
 FETCH_TIMEOUT = int(os.getenv("AI_DAILY_FETCH_TIMEOUT", "30"))
 BROWSER_FALLBACK = os.getenv("AI_DAILY_BROWSER_FALLBACK", "auto").strip().lower()
+BROWSER_WAIT_UNTIL = (
+    os.getenv("AI_DAILY_BROWSER_WAIT_UNTIL", "domcontentloaded").strip().lower() or "domcontentloaded"
+)
+BROWSER_CONTENT_TIMEOUT = int(os.getenv("AI_DAILY_BROWSER_CONTENT_TIMEOUT", str(FETCH_TIMEOUT)))
+BROWSER_PROJECT_LINK_SELECTOR = "a[href*='github.com/']"
 
 GLOBAL_NOTIFICATION_ID = "domain_update_v1"
 GLOBAL_NOTIFICATION_LOCAL_STORAGE_KEY = f"hide_global_notif_{GLOBAL_NOTIFICATION_ID}"
@@ -90,18 +95,43 @@ def is_blocked_page(html: str) -> bool:
 
 
 def should_try_browser_fallback() -> bool:
+    """判断是否启用 Playwright 浏览器兜底抓取。"""
     return BROWSER_FALLBACK not in {"0", "false", "off", "no"}
 
 
 def browser_fallback_error() -> RuntimeError:
+    """生成缺少 Playwright 或浏览器依赖时的安装提示。"""
     return RuntimeError(
         "browser fallback requires Playwright. Install with: "
-        "python -m pip install playwright && python -m playwright install chromium"
+        "python -m pip install playwright && python -m playwright install --with-deps chromium"
     )
 
 
-def fetch_source_html_with_browser(url: str) -> str:
+def wait_for_browser_project_links(page: object) -> None:
+    """等待浏览器渲染出 GitHub 项目链接，避免过早读取空壳 HTML。"""
     try:
+        page.wait_for_selector(BROWSER_PROJECT_LINK_SELECTOR, timeout=BROWSER_CONTENT_TIMEOUT * 1000)
+    except Exception as exc:  # noqa: BLE001
+        try:
+            html = page.content()
+        except Exception as content_exc:  # noqa: BLE001
+            raise RuntimeError(
+                "browser fallback could not read page content after waiting for project links"
+            ) from content_exc
+
+        if is_blocked_page(html):
+            raise RuntimeError("source page returned a verification or anti-bot page") from exc
+
+        raise RuntimeError(
+            "browser fallback loaded the page, but no GitHub project link appeared "
+            f"within {BROWSER_CONTENT_TIMEOUT}s"
+        ) from exc
+
+
+def fetch_source_html_with_browser(url: str) -> str:
+    """使用 Playwright 渲染来源页，并在项目链接出现后返回完整 HTML。"""
+    try:
+        from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
         from playwright.sync_api import sync_playwright
     except ImportError as exc:
         raise browser_fallback_error() from exc
@@ -127,8 +157,15 @@ def fetch_source_html_with_browser(url: str) -> str:
                 """
             )
             page = context.new_page()
-            page.goto(url, wait_until="networkidle", timeout=FETCH_TIMEOUT * 1000)
+            try:
+                page.goto(url, wait_until=BROWSER_WAIT_UNTIL, timeout=FETCH_TIMEOUT * 1000)
+            except PlaywrightTimeoutError as exc:
+                raise RuntimeError(
+                    "browser fallback timed out waiting for "
+                    f"'{BROWSER_WAIT_UNTIL}' page load state within {FETCH_TIMEOUT}s"
+                ) from exc
             dismiss_global_notification(page)
+            wait_for_browser_project_links(page)
             html = page.content()
             if is_blocked_page(html):
                 raise RuntimeError("source page returned a verification or anti-bot page")
