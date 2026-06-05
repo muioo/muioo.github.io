@@ -88,12 +88,22 @@ git clone https://github.com/affaan-m/everything-claude-code.git
 git clone https://github.com/anthropics/skills.git
 ```
 
-### skill5： awesome-codex-skills
+### skill5：awesome-codex-skills
 
 **[下载地址](https://github.com/ComposioHQ/awesome-codex-skills)**
 
 ```git
 git clone https://github.com/ComposioHQ/awesome-codex-skills.git
+```
+
+### skill6：gsap-skills
+
+- 前端动画样式skills
+
+[下载地址](https://github.com/greensock/gsap-skills)
+
+```bash
+npx skills add https://github.com/greensock/gsap-skills
 ```
 
 ## 插件
