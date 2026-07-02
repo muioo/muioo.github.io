@@ -5,13 +5,19 @@ title: "【Win11磁盘清理】清理c盘"
 
 date: 2026-07-02
 
-description: "win11清理C:\ProgramData\Microsoft\Windows\CapabilityAccessManager下sqlite缓存文件"
+description: "win11清理CapabilityAccessManager下sqlite缓存文件"
 
 tags: [ "win11 c盘清理"]
 
 categories: ["杂七杂八应用"]
 
 ---
+
+## 问题
+
+C:\ProgramData\Microsoft\Windows\CapabilityAccessManager目录下占用内存过大
+
+- 查看文件占用工具https://wiztree.world/zh/download/
 
 ## 清理方法
 
