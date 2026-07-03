@@ -9,7 +9,7 @@ import unittest
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 
-from markdown_builder import slugify, build_item_markdown, build_daily_index, build_item_pages
+from markdown_builder import slugify, build_item_markdown, build_daily_index, build_item_pages, _truncate_description
 
 
 class TestSlugify(unittest.TestCase):
@@ -111,6 +111,41 @@ class TestBuildItemMarkdown(unittest.TestCase):
         item = {**self.item, "sourceUrl": ""}
         md = build_item_markdown(self.target_date, item, "产品发布/更新")
         self.assertNotIn("[IT之家（RSS）]()", md)
+
+    def test_short_summary_not_truncated(self) -> None:
+        """短 summary（≤150 字符）不应被截断，不含省略号。"""
+        short_item = {**self.item, "summary": "短摘要，不应被截断。"}
+        md = build_item_markdown(self.target_date, short_item, "产品发布/更新")
+        for line in md.splitlines():
+            if line.startswith("description:"):
+                value = line[len("description: "):].strip('"')
+                self.assertFalse(value.endswith("..."))
+                self.assertEqual(value, "短摘要，不应被截断。")
+                break
+        else:
+            self.fail("description line not found")
+
+
+class TestTruncateDescription(unittest.TestCase):
+    """验证 _truncate_description 内部辅助函数。"""
+
+    def test_short_text_returned_as_is(self) -> None:
+        """短文本（≤150 字符）原样返回。"""
+        text = "这是一段短摘要。"
+        self.assertEqual(_truncate_description(text), "这是一段短摘要。")
+
+    def test_long_text_truncated_with_ellipsis(self) -> None:
+        """超长文本截断到 150 字符并加省略号。"""
+        text = "字" * 200
+        result = _truncate_description(text)
+        self.assertEqual(len(result), 153)  # 150 + "..."
+        self.assertTrue(result.endswith("..."))
+        self.assertEqual(result[:150], "字" * 150)
+
+    def test_whitespace_normalized_to_single_space(self) -> None:
+        """换行和连续空格被归一化为单个空格。"""
+        text = "第一行\n\n第二行\t\t第三行  末尾"
+        self.assertEqual(_truncate_description(text), "第一行 第二行 第三行 末尾")
 
 
 class TestBuildDailyIndex(unittest.TestCase):

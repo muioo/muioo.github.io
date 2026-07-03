@@ -36,8 +36,11 @@ def slugify(title: str, permalink: str) -> str:
     return item_id[:12] if item_id else "untitled"
 
 
-def truncate_description(text: str) -> str:
-    """截断 description 到 150 字符，超长加省略号。"""
+def _truncate_description(text: str) -> str:
+    """截断 description 到 150 字符，超长加省略号。
+
+    内部辅助函数，仅供 build_item_markdown 使用。
+    """
     text = " ".join(text.split())
     if len(text) <= MAX_DESCRIPTION_LENGTH:
         return text
@@ -66,7 +69,7 @@ def build_item_markdown(target_date: dt.date, item: dict, category: str) -> str:
         "---",
         f"title: {json.dumps(title, ensure_ascii=False)}",
         f"date: {date_text}",
-        f"description: {json.dumps(truncate_description(summary), ensure_ascii=False)}",
+        f"description: {json.dumps(_truncate_description(summary), ensure_ascii=False)}",
         f"category: {json.dumps(category, ensure_ascii=False)}",
         f"source_url: {source_url}",
         f"source_name: {json.dumps(source_name, ensure_ascii=False)}",
