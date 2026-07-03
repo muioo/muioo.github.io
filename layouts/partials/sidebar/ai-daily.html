@@ -1,5 +1,6 @@
 {{- $dailyPage := .Site.GetPage "/ai-daily" -}}
-{{- $dailyPages := where .Site.RegularPages "Section" "ai-daily" -}}
+{{- $dailyPages := slice -}}
+{{- if $dailyPage -}}{{- $dailyPages = $dailyPage.Pages -}}{{- end -}}
 {{- if and $dailyPage (gt (len $dailyPages) 0) -}}
     <li class="ai-daily-item {{ if eq $.RelPermalink $dailyPage.RelPermalink }}current{{ end }}">
         <a href="{{ $dailyPage.RelPermalink }}">

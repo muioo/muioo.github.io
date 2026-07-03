@@ -59,7 +59,9 @@
 
     <ol class="menu" id="main-menu">
         {{ $currentPage := . }}
-        {{ $dailyPages := where .Site.RegularPages "Section" "ai-daily" }}
+        {{ $dailyPage := .Site.GetPage "/ai-daily" }}
+        {{ $dailyPages := slice }}
+        {{ if $dailyPage }}{{ $dailyPages = $dailyPage.Pages }}{{ end }}
         {{ $latestDaily := "" }}
         {{ if gt (len $dailyPages) 0 }}
             {{ $latestDaily = (index ($dailyPages.ByDate.Reverse) 0).RelPermalink }}
