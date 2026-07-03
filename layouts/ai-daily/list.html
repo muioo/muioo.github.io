@@ -1,4 +1,9 @@
 {{ define "main" }}
+    {{/* 判断是否为某一天的日报索引页（URL 形如 /ai-daily/2026-07-03/），
+          区分于顶层 /ai-daily/ 列表页。日报索引页显示文章标题+摘要预览，
+          顶层列表页保持原有的日期+标题格式。 */ -}}
+    {{ $isDailyIndex := findRE `^/ai-daily/\d{4}-\d{2}-\d{2}/?$` .RelPermalink -}}
+
     <header>
         <h3 class="section-title">AI日报</h3>
         <div class="section-card">
@@ -26,9 +31,16 @@
                     {{ range $group.Pages }}
                         <article class="ai-daily-month-item">
                             <a href="{{ .RelPermalink }}" class="ai-daily-month-link">
-                                <span class="ai-daily-month-date">{{ .Date.Format "2006-01-02" }}</span>
+                                {{ if not $isDailyIndex }}
+                                    <span class="ai-daily-month-date">{{ .Date.Format "2006-01-02" }}</span>
+                                {{ end }}
                                 <span class="ai-daily-month-title">{{ .Title }}</span>
                             </a>
+                            {{ if $isDailyIndex }}
+                                {{ with .Description }}
+                                    <p class="ai-daily-item-summary">{{ . }}</p>
+                                {{ end }}
+                            {{ end }}
                         </article>
                     {{ end }}
                 </div>
