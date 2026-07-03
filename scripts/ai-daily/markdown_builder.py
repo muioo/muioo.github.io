@@ -147,7 +147,8 @@ def build_daily_index(target_date: dt.date, sections: list[dict]) -> str:
         filename = f"{index:02d}-{slug}"
         lines.append(f"### {index}. [{item_title}](./{filename}/)")
         lines.append("")
-        lines.append(summary)
+        # 索引页只显示截断预览，全文在单篇详情页
+        lines.append(_truncate_description(summary))
         lines.append("")
 
     # lines 末尾始终为 ""（来自 append("")），"\n".join 会产生尾随换行

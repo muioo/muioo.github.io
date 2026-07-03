@@ -209,6 +209,23 @@ class TestBuildDailyIndex(unittest.TestCase):
         self.assertIn("](./02-google-health-api-cli/)", md)
         self.assertIn("](./03-senior-swe-bench/)", md)
 
+    def test_long_summary_truncated_in_index(self) -> None:
+        """索引页摘要应截断到 150 字符+省略号，不显示全文。"""
+        long_summary = "字" * 300
+        sections = [
+            {
+                "label": "分类",
+                "items": [
+                    {"title": "测试标题", "summary": long_summary, "permalink": "https://x/aaa"},
+                ],
+            }
+        ]
+        md = build_daily_index(self.target_date, sections)
+        # 截断后的预览应出现在索引页
+        self.assertIn("字" * 150 + "...", md)
+        # 全文（300 字）不应完整出现
+        self.assertNotIn("字" * 300, md)
+
     def test_empty_sections_produce_no_content(self) -> None:
         """空 sections 列表只生成 frontmatter。"""
         md = build_daily_index(self.target_date, [])
