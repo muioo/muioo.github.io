@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import datetime as dt
 import json
-import os
 import pathlib
 import re
 
@@ -26,7 +25,7 @@ def rebuild_latest_json() -> None:
     - 旧：content/ai-daily/YYYY-MM-DD.md（hex2077 历史文件）
     - 新：content/ai-daily/YYYY-MM-DD/（branch bundle 目录）
 
-    同日期两者并存时去重，目录结构优先。
+    同日期两者并存时按日期字符串去重，仅保留一条。
     """
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
