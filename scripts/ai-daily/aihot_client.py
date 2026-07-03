@@ -12,8 +12,6 @@ import urllib.error
 import urllib.request
 
 
-API_BASE = os.getenv("AIHOT_API_BASE", "https://aihot.virxact.com").rstrip("/")
-
 HTTP_HEADERS = {
     "User-Agent": "ai-daily-bot/1.0 (+https://github.com/wangbanglei/firstblog)",
     "Accept": "application/json",
@@ -22,7 +20,9 @@ HTTP_HEADERS = {
 
 def build_api_url(target_date: dt.date) -> str:
     """构建指定日期的 aihot 日报 API URL。"""
-    return f"{API_BASE}/api/public/daily?date={target_date.isoformat()}"
+    # 每次调用时读取环境变量，避免模块重载后状态污染其它测试
+    api_base = os.getenv("AIHOT_API_BASE", "https://aihot.virxact.com").rstrip("/")
+    return f"{api_base}/api/public/daily?date={target_date.isoformat()}"
 
 
 def fetch_daily(target_date: dt.date) -> dict | None:
@@ -53,7 +53,8 @@ def fetch_daily(target_date: dt.date) -> dict | None:
             last_error = exc
 
         if attempt < retries:
-            sleep_seconds = min(20, attempt * 3 + random.uniform(0.5, 1.5))
+            # 指数退避：3s/6s/12s/24s（上限 20s），叠加随机抖动避免惊群
+            sleep_seconds = min(20, 3 * (2 ** (attempt - 1)) + random.uniform(0.5, 1.5))
             time.sleep(sleep_seconds)
 
     raise RuntimeError(

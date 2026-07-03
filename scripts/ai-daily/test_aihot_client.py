@@ -18,19 +18,17 @@ class TestBuildApiUrl(unittest.TestCase):
     """验证 API URL 构建。"""
 
     def test_build_api_url_with_default_base(self) -> None:
-        """默认 base 时 URL 应包含日期。"""
+        """默认 base 时 URL 应包含日期和正确 base。"""
         date = dt.date(2026, 7, 3)
         url = build_api_url(date)
         self.assertIn("2026-07-03", url)
+        self.assertTrue(url.startswith("https://aihot.virxact.com/"))
         self.assertTrue(url.endswith("/api/public/daily?date=2026-07-03"))
 
     def test_build_api_url_with_custom_base(self) -> None:
         """自定义 base 应被使用。"""
         with mock.patch.dict("os.environ", {"AIHOT_API_BASE": "https://example.com"}):
-            from importlib import reload
-            import aihot_client
-            reload(aihot_client)
-            url = aihot_client.build_api_url(dt.date(2026, 7, 3))
+            url = build_api_url(dt.date(2026, 7, 3))
             self.assertTrue(url.startswith("https://example.com/"))
 
 
@@ -52,11 +50,7 @@ class TestFetchDaily(unittest.TestCase):
         """HTTP 404 应返回 None，不抛异常。"""
         error = HTTPError("http://x", 404, "Not Found", {}, None)
         with mock.patch("urllib.request.urlopen", side_effect=error):
-            with mock.patch.dict("os.environ", {"AI_DAILY_FETCH_RETRIES": "1"}):
-                from importlib import reload
-                import aihot_client
-                reload(aihot_client)
-                result = aihot_client.fetch_daily(dt.date(2025, 1, 1))
+            result = fetch_daily(dt.date(2025, 1, 1))
         self.assertIsNone(result)
 
     def test_fetch_daily_retries_on_network_error(self) -> None:
