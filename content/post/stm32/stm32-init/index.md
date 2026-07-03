@@ -73,7 +73,7 @@ categories: ["开发技术"]
 
 #### 使用CUBEMX初始化FreeRTOS项目
 
-- <a href="/freertos-tutorial.html">FreeRTOS移植教程</a>
+- <a href="https://blog.csdn.net/xddwg521125/article/details/134540203" target="_blank" rel="noopener">FreeRTOS移植教程</a>
 
 ##### FreeRTOS
 
