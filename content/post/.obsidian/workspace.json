@@ -1,0 +1,197 @@
+{
+  "main": {
+    "id": "b9071152131b5a43",
+    "type": "split",
+    "children": [
+      {
+        "id": "95dab1fe6ad9e547",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "29cc179db66f0001",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "node/install/image-20260609205642334.png"
+              },
+              "icon": "lucide-image",
+              "title": "image-20260609205642334"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "853a6a00280f7723",
+    "type": "split",
+    "children": [
+      {
+        "id": "f6050d2c3b940521",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "522b341e6275099f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "8c6df0e1554c1c5c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "f66e4e3506f50749",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "eeb5d00cc3b1e1e6",
+    "type": "split",
+    "children": [
+      {
+        "id": "5f2c7492dff88f06",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4af55f2127fa6ede",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "node/install/image-20260609205642334.png",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "image-20260609205642334 的反向链接列表"
+            }
+          },
+          {
+            "id": "4dc35645523629a1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "node/install/image-20260609205642334.png",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "image-20260609205642334 的出链列表"
+            }
+          },
+          {
+            "id": "1c55ac60455f5b04",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "e68b39f8cd4d3f65",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "1e5c4156fa873171",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "node/install/image-20260609205642334.png",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "image-20260609205642334 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "522b341e6275099f",
+  "lastOpenFiles": [
+    "node/install/index.md",
+    "node/install/image-20260609205642334.png",
+    "docker/deployment2-docker/page.png",
+    "docker/deployment2-docker/net.png",
+    "docker/deployment2-docker/mysql-docker1.png",
+    "docker/deployment2-docker/index.md",
+    "docker/deployment2-docker/docker网络架构.png",
+    "docker/deployment2-docker/docker.png",
+    "crawler-note1/index.md",
+    "crawler-note1/1.png"
+  ]
+}

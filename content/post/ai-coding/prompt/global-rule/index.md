@@ -9,7 +9,7 @@ description: "可以让Claude Code更好用的规则"
 
 tags: ["Claude Code"]
 
-categories: ["ai编程"]
+categories: ["Ai编程"]
 
 ---
 
