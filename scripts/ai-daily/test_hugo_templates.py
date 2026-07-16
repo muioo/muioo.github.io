@@ -142,6 +142,61 @@ class TestHugoAIDailyTemplates(unittest.TestCase):
         self.assertIn(self.latest_url, archive_section)
         self.assertNotIn('<section class="article-content">', archive_html)
 
+    def test_navigation_and_redirect_use_latest_date_page(self) -> None:
+        """导航与备用入口都应使用 latest.json 对应的日报日期 URL。"""
+        home_html = self._read_output("index.html")
+        redirect_html = self._read_output("ai-daily-entry", "index.html")
+
+        self.assertIn(f"<a href='{self.latest_url}'", home_html)
+        self.assertIn("<span>AI日报 | Daily</span>", home_html)
+        self.assertIn(
+            f'window.location.replace("{self.latest_url}");',
+            redirect_html,
+        )
+
+    def test_redirect_without_daily_pages_shows_empty_state(self) -> None:
+        """没有任何日报日期页时应提示无内容，且不得执行跳转。"""
+        fixture_root = pathlib.Path(self.temporary_directory.name) / "empty-content"
+        entry_directory = fixture_root / "page" / "ai-daily"
+        daily_directory = fixture_root / "ai-daily"
+        entry_directory.mkdir(parents=True)
+        daily_directory.mkdir(parents=True)
+        (entry_directory / "index.md").write_text(
+            """---
+title: AI日报 | Daily
+slug: ai-daily-entry
+layout: ai-daily-redirect
+menu:
+    main:
+        identifier: ai-daily-entry
+        weight: -55
+        params:
+            icon: messages
+comments: false
+---
+""",
+            encoding="utf-8",
+        )
+        (daily_directory / "_index.md").write_text(
+            """---
+title: AI日报
+comments: false
+---
+""",
+            encoding="utf-8",
+        )
+        empty_output = pathlib.Path(self.temporary_directory.name) / "empty-public"
+
+        _run_hugo_build(empty_output, "--contentDir", str(fixture_root))
+        home_html = (empty_output / "index.html").read_text(encoding="utf-8")
+        redirect_html = (
+            empty_output / "ai-daily-entry" / "index.html"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("href='/ai-daily-entry/'", home_html)
+        self.assertIn("当前还没有可用的 AI 日报内容。", redirect_html)
+        self.assertNotIn("window.location.replace", redirect_html)
+
 
 if __name__ == "__main__":
     unittest.main()

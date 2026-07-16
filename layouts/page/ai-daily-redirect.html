@@ -1,5 +1,10 @@
 {{ define "main" }}
-    {{- $dailyPages := where .Site.RegularPages "Section" "ai-daily" -}}
+    {{- /* 只读取 /ai-daily 的直接子页面，避免把单条新闻详情当成最新日报。 */ -}}
+    {{- $dailyPage := .Site.GetPage "/ai-daily" -}}
+    {{- $dailyPages := slice -}}
+    {{- if $dailyPage -}}
+        {{- $dailyPages = $dailyPage.Pages -}}
+    {{- end -}}
     {{- $latestDaily := "" -}}
     {{- if gt (len $dailyPages) 0 -}}
         {{- $latestDaily = (index ($dailyPages.ByDate.Reverse) 0).RelPermalink -}}
