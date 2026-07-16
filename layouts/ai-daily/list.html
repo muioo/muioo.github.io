@@ -1,56 +1,81 @@
+{{ define "body-class" }}
+    {{- /* 日期 section 复用文章页 body class 与目录状态；顶层归档保持列表页状态。 */ -}}
+    {{- $isDailyIndex := gt (len (findRE `^/ai-daily/\d{4}-\d{2}-\d{2}/?$` .RelPermalink)) 0 -}}
+    {{- if $isDailyIndex -}}
+        article-page
+        {{- $hasWidgetNotTOC := false -}}
+        {{- $tocWidgetEnabled := false -}}
+        {{- range .Site.Params.widgets.page -}}
+            {{- if ne .type "toc" -}}
+                {{- $hasWidgetNotTOC = true -}}
+            {{- else -}}
+                {{- $tocWidgetEnabled = true -}}
+            {{- end -}}
+        {{- end -}}
+        {{- $tocEnabled := and (not (eq .Params.toc false)) $tocWidgetEnabled -}}
+        {{- $hasTOC := ge (len .TableOfContents) 100 -}}
+        {{- .Scratch.Set "TOCEnabled" (and $tocEnabled $hasTOC) -}}
+        {{- .Scratch.Set "hasWidget" (or $hasWidgetNotTOC (and $tocEnabled $hasTOC)) -}}
+    {{- end -}}
+{{ end }}
+
 {{ define "main" }}
-    {{/* 判断是否为某一天的日报索引页（URL 形如 /ai-daily/2026-07-03/），
-          区分于顶层 /ai-daily/ 列表页。日报索引页显示文章标题+摘要预览，
-          顶层列表页保持原有的日期+标题格式。 */ -}}
-    {{ $isDailyIndex := findRE `^/ai-daily/\d{4}-\d{2}-\d{2}/?$` .RelPermalink -}}
+    {{- /* 日期页直接渲染已生成的 _index.md 正文；顶层 /ai-daily/ 继续显示历史归档。 */ -}}
+    {{- $isDailyIndex := gt (len (findRE `^/ai-daily/\d{4}-\d{2}-\d{2}/?$` .RelPermalink)) 0 -}}
 
-    <header>
-        <h3 class="section-title">AI日报</h3>
-        <div class="section-card">
-            <div class="section-details">
-                <h3 class="section-count">共 {{ len .RegularPages }} 篇</h3>
-                <h1 class="section-term">{{ .Title }}</h1>
-                {{ with .Params.description }}
-                    <h2 class="section-description">{{ . }}</h2>
-                {{ end }}
-            </div>
-        </div>
-    </header>
-
-    {{ $pages := .RegularPages.ByDate.Reverse }}
-    {{ $grouped := $pages.GroupByDate "2006-01" }}
-
-    <section class="ai-daily-archive">
-        {{ range $index, $group := $grouped }}
-            <details class="ai-daily-month" {{ if eq $index 0 }}open{{ end }}>
-                <summary class="ai-daily-month-summary">
-                    <span>{{ $group.Key }}</span>
-                    <span>{{ len $group.Pages }} 篇</span>
-                </summary>
-                <div class="ai-daily-month-list">
-                    {{ range $group.Pages }}
-                        <article class="ai-daily-month-item">
-                            <a href="{{ .RelPermalink }}" class="ai-daily-month-link">
-                                {{ if not $isDailyIndex }}
-                                    <span class="ai-daily-month-date">{{ .Date.Format "2006-01-02" }}</span>
-                                {{ end }}
-                                <span class="ai-daily-month-title">{{ .Title }}</span>
-                            </a>
-                            {{ if $isDailyIndex }}
-                                {{ with .Description }}
-                                    <p class="ai-daily-item-summary">{{ . }}</p>
-                                {{ end }}
-                            {{ end }}
-                        </article>
+    {{ if $isDailyIndex }}
+        {{ partial "article/article.html" . }}
+    {{ else }}
+        <header>
+            <h3 class="section-title">AI日报</h3>
+            <div class="section-card">
+                <div class="section-details">
+                    <h3 class="section-count">共 {{ len .Pages }} 篇</h3>
+                    <h1 class="section-term">{{ .Title }}</h1>
+                    {{ with .Params.description }}
+                        <h2 class="section-description">{{ . }}</h2>
                     {{ end }}
                 </div>
-            </details>
-        {{ end }}
-    </section>
+            </div>
+        </header>
+
+        {{/* 直接子页面同时覆盖旧日期 Markdown 和新日期 section，不包含单条新闻详情。 */}}
+        {{ $pages := .Pages.ByDate.Reverse }}
+        {{ $grouped := $pages.GroupByDate "2006-01" }}
+
+        <section class="ai-daily-archive">
+            {{ range $index, $group := $grouped }}
+                <details class="ai-daily-month" {{ if eq $index 0 }}open{{ end }}>
+                    <summary class="ai-daily-month-summary">
+                        <span>{{ $group.Key }}</span>
+                        <span>{{ len $group.Pages }} 篇</span>
+                    </summary>
+                    <div class="ai-daily-month-list">
+                        {{ range $group.Pages }}
+                            <article class="ai-daily-month-item">
+                                <a href="{{ .RelPermalink }}" class="ai-daily-month-link">
+                                    <span class="ai-daily-month-date">{{ .Date.Format "2006-01-02" }}</span>
+                                    <span class="ai-daily-month-title">{{ .Title }}</span>
+                                </a>
+                            </article>
+                        {{ end }}
+                    </div>
+                </details>
+            {{ end }}
+        </section>
+    {{ end }}
 
     {{ partialCached "footer/footer" . }}
 {{ end }}
 
 {{ define "right-sidebar" }}
-    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+    {{- /* 日期页使用文章目录，归档页继续使用首页小组件。 */ -}}
+    {{- $isDailyIndex := gt (len (findRE `^/ai-daily/\d{4}-\d{2}-\d{2}/?$` .RelPermalink)) 0 -}}
+    {{ if $isDailyIndex }}
+        {{ if .Scratch.Get "hasWidget" }}
+            {{ partial "sidebar/right.html" (dict "Context" . "Scope" "page") }}
+        {{ end }}
+    {{ else }}
+        {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+    {{ end }}
 {{ end }}
