@@ -499,7 +499,14 @@ docker compose up -d frontend # 启动容器 docker-compose.yml中的frontend
 docker compose up -d backend
 ```
 
+- 查看日志
 
+```bash
+# 输入 -f 是指定文件 这条指定 docker-compose-app.yml
+docker-compose -f docker-compose-app.yml logs -f 
+#  查看backend容器的日志 1000条
+docker logs --tail=1000 backend
+```
 
 
 
