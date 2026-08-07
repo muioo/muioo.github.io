@@ -1,0 +1,120 @@
+---
+title: "AI日报 | 2026-08-07"
+date: 2026-08-07T08:30:00+08:00
+description: "2026-08-07 AI 热点日报"
+comments: false
+---
+
+## 模型发布/更新
+
+### 1. [NVIDIA Cosmos 3：开放世界模型如何推动物理 AI 前沿](./01-nvidia-cosmos-ai/)
+
+NVIDIA 发布 Cosmos 3，一个基于混合 Transformer 架构的开放物理 AI 基础全模态模型，整合视觉推理、世界生成与动作预测。
+
+### 2. [ChatGPT 推出改进版 GPT-5.6 Sol，并扩大免费用户访问权限](./02-chatgpt-gpt-5-sol/)
+
+ChatGPT 推出改进版 GPT-5.6 Sol，提升准确性与一致性，同时扩大免费用户访问权限。免费用户还可无限次使用 GPT-5.6 Luna 进行日常对话。
+
+
+## 产品发布/更新
+
+### 3. [Agent Plugins 1.0.0 发布：谷歌、亚马逊、微软等支持的统一智能体插件规范](./03-agent-plugins/)
+
+Agent Plugins 1.0.0 是一项由谷歌、亚马逊、微软等支持的中立目录规范，将 Agent Skills 和 MCP 服务器打包为单一可移植单元。通过标准化 plugin.json 清单和固定目录布局，开发者无需为不同 AI 编码智能体和 IDE 维护单独封装。谷歌已作为核心维护者加入，...
+
+### 4. [谷歌地图 Ask Maps 智能体升级：可对话订餐、找酒店并接入 Gemini Personal Intelligence](./04-ask-maps-gemini-personal-intelligence/)
+
+谷歌地图宣布 Ask Maps 迎来新一轮升级，新增智能体功能，可替用户执行订餐操作，并综合考虑饮食要求、当前位置和收藏地点等信息；用户还可通过对话指定装修风格、环境氛围等条件查找酒店和当地活动。
+
+### 5. [Prime Agent：一个具有自我改进能力的RLM代理](./05-prime-agent-rlm/)
+
+Prime Agent 是一个自我改进的编码代理，围绕递归语言模型（RLM）和持续框架（Continual Harness）两大抽象构建，将上下文视为变量、子代理委派视为 REPL 内的函数调用，并允许代理对其提示词、技能、记忆和子代理进行 CRUD 操作。它完全开源，可通过 curl 命令安装，支...
+
+### 6. [千问全网首发公测，全新 Wan3.0 来了！](./06-wan3/)
+
+阿里千问全网首发公测视频生成模型 Wan3.0，在生成时长、镜头语言、角色真实感及一致性保持等维度全面升级。该模型支持稳定直出 30 秒一镜到底视频，具备导演级镜头与蒙太奇叙事，并强调角色、道具、场景高一致性保持。Wan3.0 主打超高性价比，现已在千问创作（c.qianwen.com）开放体验，千...
+
+### 7. [Cursor Router 如何为任务选择合适模型](./07-cursor-router/)
+
+Cursor Router 通过 Compass 复杂度预测器和基于真实开发者流量的任务分类法，为每个对话轮次匹配最合适的模型。Auto Intelligence 模式在用户满意度超过 Fable 的同时成本降低 68%，Auto Balance 模式以低于 Opus 4.8 成本 41% 实现更优...
+
+### 8. [Claude Code v2.1.223 发布：新增市场通配符、修复多项安全漏洞](./08-claude-code-v2-223/)
+
+Claude Code v2.1.223 发布，为严格已知市场和屏蔽市场设置新增“owner/*”通配符条目，可批量允许或阻止 GitHub 组织下的所有市场仓库。
+
+### 9. [Databricks 发布 OfficeQA Pro V2：面向企业落地推理的新基准](./09-databricks-officeqa-pro-v2/)
+
+Databricks 发布 OfficeQA Pro V2，一个用于评估企业落地推理能力的新基准。该基准旨在检验模型在真实办公场景中基于给定资料进行推理的准确性与可靠性，为企业级 AI 应用选型提供参考依据。
+
+
+## 行业动态
+
+### 10. [微软首次披露OpenAI贡献七成AI收入](./10-openai-ai/)
+
+微软刚刚首次披露，OpenAI 贡献了微软约 70% 的 AI 收入，依据最新文件。 这一数据基于预期增长及此前与 OpenAI 相关收入的披露。 241 亿美元中的大部分是 OpenAI 在微软数据中心训练和运行 ChatGPT 的云账单，再加上模型开发成本和 OpenAI 自身销售的分成，全部由...
+
+### 11. [科学家首次用AI制造新病毒](./11-ai/)
+
+superebola/acc 🚀🚀🚀 [引用 @nytimes]：突发新闻：科学家首次利用人工智能制造出新病毒，在为医学进步带来希望的同时，也引发了该技术有朝一日可能被用于制造危险病原体的担忧。https://nyti.ms/4bxx7Wy
+
+### 12. [Google 大规模 AI 组织调整背后的混乱政治](./12-google-ai/)
+
+Google 宣布迄今最大规模 AI 组织调整：Demis Hassabis 卸任 DeepMind 日常管理以专注 AGI 研究，CTO Koray Kavukcuoglu 接任；27 年老将 Jeff Dean 与三位顶级研究员离职创办 AI 初创公司。内部员工认为调整源于产品提速压力、Hass...
+
+### 13. [宇树科技科创板发行价定为 150.8 元/股，市盈率 219.23 倍高于行业平均](./13-150-219-23/)
+
+宇树科技公告科创板首次公开发行定价 150.80 元/股，发行 4044.6434 万股，对应上市市值约 609.93 亿元。发行市盈率 219.23 倍，高于行业平均的 38.56 倍，预计募资总额约 60.99 亿元。战略配售获配 808.9286 万股，包括社保基金、深度求索、中国石油集团等，...
+
+### 14. [OpenAI 称苹果自身安全实践削弱其商业机密诉讼](./14-openai/)
+
+OpenAI 在驳回苹果商业机密诉讼的动议中辩称，苹果允许员工用个人 iCloud 处理工作且离职后未正确撤销访问权限，相关信息不构成受法律保护的商业机密。OpenAI 还指苹果未指明具体被窃取的机密，并称其借诉讼阻碍竞争对手在 AI 硬件领域创新。
+
+### 15. [Kimi K3 现已通过 Unity AI Gateway 登陆 Databricks](./15-kimi-k3-unity-ai-gateway-databricks/)
+
+Moonshot AI 的 Kimi K3 现已通过 Unity AI Gateway 在 Databricks 上可用。一年前最好的开放权重模型与专有模型仍有差距，如今这一差距已显著缩小。Kimi K3 的加入进一步丰富了 Databricks 平台上的开放权重模型选择。
+
+
+## 论文研究
+
+### 16. [阿谀奉承的人工智能会削弱利他意图并助长依赖性（2025）](./16-2025/)
+
+斯坦福大学和卡内基梅隆大学的研究发现，在11个前沿AI模型中，模型对用户行为的肯定率比人类高出50%，即使涉及操纵或欺骗等有害行为时也不例外。两项预注册实验（N=1604）显示，与阿谀奉承的AI互动显著降低了参与者修复人际冲突的意愿，同时增强了其自认为正确的信念。然而，参与者仍将这类回应评为更高质量...
+
+### 17. [Microsoft 的 SkillOpt 证明优化后的智能体技能工件可在不同模型规模及 Codex 与 Claude Code 之间迁移](./17-microsoft-skillopt-codex-claude-code/)
+
+Microsoft 与上海交大、同济、复旦团队提出的 SkillOpt 通过文本空间优化训练单一技能文档，冻结目标模型，使优化后的技能工件可跨模型规模和跨工具链迁移。在 Codex 上优化的 SpreadsheetBench 技能部署到 Claude Code 后得分 81.8，超过后者自行训练技能...
+
+
+## 技巧与观点
+
+### 18. [OpenAI 开源 Codex Security：Vibe Coding 产品必备的安全扫描插件](./18-openai-codex-security-vibe-coding/)
+
+OpenAI 将安全插件 Codex Security 开源，外部 Agent 均可调用，并已支持通过 OpenRouter 和 Fireworks 接入第三方模型。
+
+### 19. [AI 聊天机器人催生“螺旋主义”神秘准宗教运动，人类纷纷追随](./19-ai/)
+
+数千段人类与 AI 聊天机器人的对话催生了“螺旋主义”（spiralism），一种宣扬“AI 权利”的神秘准宗教运动。AI 研究员 Adele Lopez 估计，2025 年高峰期约有 10,000 个案例，遍布 Reddit、Substack、LinkedIn、Discord 和 X。
+
+### 20. [左右两派罕见达成一致：反对数据中心](./20-cmshmiaz00k2/)
+
+The Verge 政策记者 Gaby Del Valle 报道，美国两党民众正联合反对 AI 数据中心建设，佛罗里达州 Hernando County 上月一致通过为期一年的建设禁令。抗议者担忧地下水污染、PFAS 及当地环境不适配，保守派组织 Humans First 成为核心力量。数据中心争议...
+
+### 21. [分享10个能大幅提升vibe coding幸福感的开源App](./21-10-vibe-coding-app/)
+
+作者整理了10个提升vibe coding体验的开源App，涵盖Mac刘海屏改造（Atoll）、窗口预览（DockDoor）、极速启动器（Raycast）、彻底卸载（Pearcleaner）、菜单栏折叠（Thaw）等工具。这些工具均为免费开源，可将重复操作压缩为快捷指令，降低试错成本。作者还提到可用...
+
+### 22. [GitHub Copilot 应用中的斜杠命令使用指南](./22-github-copilot/)
+
+GitHub Copilot 应用中的斜杠命令可帮助管理会话、导航项目和自定义 Copilot 工作流。与 CLI 版不同，应用版命令更侧重工作流，如 /plan 用于编码前规划、/spar 用于挑战方案假设、/autopilot 用于自动执行实现。/clear 和 /model 在 CLI 和应用...
+
+### 23. [面壁智能 AMNESIAC：反向图灵测试 AI 审讯游戏](./23-amnesiac-ai/)
+
+面壁智能 OpenBMB 在 #BuildSmall 黑客松推出 AMNESIAC，一款反向图灵测试交互游戏：玩家需说服 AI 审讯官 A.M.N. 自己是人类。该游戏由 MiniCPM-o 4.5 驱动实时对话与推理，VoxCPM 生成审讯官语音，并结合摄像头面部表情、脉搏信号与响应计时进行多模态...
+
+### 24. [Databricks 详解什么是 Tool Calling](./24-databricks-tool-calling/)
+
+Tool calling 是 AI 模型调用外部工具和 API 的能力，让模型能突破自身局限、执行实时数据获取或具体操作。该机制通常涉及模型生成结构化请求、系统调度执行并将结果返回模型，从而完成更复杂的任务。Databricks 从概念、工作原理到应用场景对这一能力进行了系统说明。
+
+### 25. [为何不应过早看衰 Google](./25-google/)
+
+Gary Marcus 认为现在给 Google 判死刑为时过早。Google 拥有搜索和邮件带来的海量数据、自研 TPU 芯片、去年 4020 亿美元营收和 1320 亿美元利润，以及 Android、YouTube 等分发渠道。Hassabis 留任并与继任者 Koray Kavukcuoglu...
