@@ -1,0 +1,19 @@
+---
+title: "LangChain 详解：什么是 AI 智能体？"
+date: 2026-08-13T08:30:00+08:00
+description: "AI 智能体是在大语言模型循环中自主运行的系统，通过反复调用模型、观察结果并调整下一步行动来完成复杂任务。工作流（workflow）则是对固定步骤的预编排，两者互补：工作流保证确定性，智能体提供灵活性。理解二者差异是构建可靠、可投入生产的自主系统的关键。"
+category: "技巧与观点"
+source_url: https://www.langchain.com/blog/what-is-an-agent
+source_name: "LangChain：Blog（RSS）"
+external_permalink: https://aihot.virxact.com/items/cmsppq8pe01dxrog7ppmbaug9
+comments: false
+---
+
+## 摘要
+
+AI 智能体是在大语言模型循环中自主运行的系统，通过反复调用模型、观察结果并调整下一步行动来完成复杂任务。工作流（workflow）则是对固定步骤的预编排，两者互补：工作流保证确定性，智能体提供灵活性。理解二者差异是构建可靠、可投入生产的自主系统的关键。
+
+## 原文链接
+
+- [LangChain：Blog（RSS）](https://www.langchain.com/blog/what-is-an-agent)
+- [AI HOT 详情页](https://aihot.virxact.com/items/cmsppq8pe01dxrog7ppmbaug9)
