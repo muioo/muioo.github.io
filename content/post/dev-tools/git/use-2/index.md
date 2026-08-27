@@ -89,5 +89,8 @@ git ls-remote --heads upstream
 
 # 看 origin 上有哪些分支（fork 时可能带过来一个没用的 master）
 git ls-remote --heads origin
+
+git checkout main
+git merge --no-ff feature/xxx -m "merge: 合并xxx功能"
 ```
 
