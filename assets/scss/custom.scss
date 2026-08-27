@@ -185,3 +185,31 @@ html.is-animating .main-article {
 .ai-daily-month-title {
     text-align: right;
 }
+
+/* ================= 紧凑布局：缩小内容区与两边的间隔 ================= */
+
+/* 1. 缩小内容区与页面左右边缘、以及与左右侧边栏之间的空白 */
+.main-container {
+    padding-left: 10px;  /* 原 15px(手机)/20px(md+) */
+    padding-right: 10px;
+    column-gap: 20px;    /* 原 --section-separation(40px)，只收紧水平间距，垂直间距不变 */
+}
+
+/* 2. 提高容器最大宽度，让内容区在宽屏下更贴近屏幕两侧 */
+@media (min-width: 1024px) {
+    .container.extended { max-width: 1360px; } /* 原 1280px */
+    .container.compact  { max-width: 1152px; } /* 原 1024px */
+}
+@media (min-width: 1280px) {
+    .container.extended { max-width: 1720px; } /* 原 1536px */
+    .container.compact  { max-width: 1440px; } /* 原 1280px */
+}
+@media (min-width: 1536px) {
+    .container.extended { max-width: 1840px; }
+    .container.compact  { max-width: 1536px; }
+}
+
+/* 3. 缩小文章卡片内部文字与卡片边缘的内边距，让正文更紧凑 */
+:root { --card-padding: 18px; } /* 原 20px */
+@media (min-width: 768px)  { :root { --card-padding: 20px; } } /* 原 25px */
+@media (min-width: 1280px) { :root { --card-padding: 24px; } } /* 原 30px */
