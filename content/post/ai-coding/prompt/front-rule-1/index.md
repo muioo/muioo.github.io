@@ -3,7 +3,7 @@ author: muioo
 title: "【前端Vue+Ts开发规则】Vue+Ts常用项目结构以及开发框架规则"
 date: 2026-02-26
 description: "vue+ts前端开发规则"
-categories: ["Ai编程"]
+categories: ["AI编程"]
 ---
 
 # 前端设计规则2（vue+ts）

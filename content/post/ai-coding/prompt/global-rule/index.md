@@ -9,8 +9,7 @@ description: "可以让Claude Code更好用的规则"
 
 tags: ["Claude Code"]
 
-categories: ["Ai编程"]
-
+categories: ["AI编程"]
 ---
 
 # 全局规则
