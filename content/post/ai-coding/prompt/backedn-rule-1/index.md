@@ -3,7 +3,7 @@ author: muioo
 title: "【后端FastApi开发规则】FastAPI 后端开发规则"
 date: 2026-01-26
 description: "FastAPI 可扩展 API 开发的核心规则、目录结构及实践指南"
-categories: ["Ai编程"]
+categories: ["AI编程"]
 ---
 
 # 后端开发规则（fastapi）

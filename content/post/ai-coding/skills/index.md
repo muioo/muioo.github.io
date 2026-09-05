@@ -9,7 +9,7 @@ description: "一些常用skills安装"
 
 tags: [ "SKILLS"]
 
-categories: ["Ai编程"]
+categories: ["AI编程"]
 ---
 
 ## 开源skills安装（通用可以用于codex）
