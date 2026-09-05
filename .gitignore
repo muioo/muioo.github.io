@@ -3,6 +3,10 @@ hugo.exe
 CLAUDE.md
 AGENT.md
 
+# IDE 本地配置和 AI 工具本地文件，不提交到仓库。
+.idea/
+.agents/
+
 # Hugo 本地构建产物和缓存，不提交到仓库。
 public/
 resources/
