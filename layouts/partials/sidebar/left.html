@@ -59,21 +59,32 @@
 
     <ol class="menu" id="main-menu">
         {{ $currentPage := . }}
-        {{ $dailyPage := .Site.GetPage "/ai-daily" }}
-        {{ $dailyPages := slice }}
-        {{ if $dailyPage }}{{ $dailyPages = $dailyPage.Pages }}{{ end }}
-        {{ $latestDaily := "" }}
-        {{ if gt (len $dailyPages) 0 }}
-            {{ $latestDaily = (index ($dailyPages.ByDate.Reverse) 0).RelPermalink }}
-        {{ end }}
+        {{- /* 入口菜单项（AI 日报、GitHub 趋势）指向各自 section 的最新日期页，日期必须动态获取。 */ -}}
+        {{- $entrySections := dict "ai-daily" "/ai-daily-entry/" "github-trending" "/github-trending-entry/" -}}
+        {{- $latestBySection := dict -}}
+        {{- range $section, $entryURL := $entrySections -}}
+            {{- $sectionPage := $.Site.GetPage (printf "/%s" $section) -}}
+            {{- $sectionPages := slice -}}
+            {{- if $sectionPage -}}{{- $sectionPages = $sectionPage.Pages -}}{{- end -}}
+            {{- if gt (len $sectionPages) 0 -}}
+                {{- $latestBySection = merge $latestBySection (dict $section (index ($sectionPages.ByDate.Reverse) 0).RelPermalink) -}}
+            {{- end -}}
+        {{- end -}}
         {{ range .Site.Menus.main }}
         {{ $targetURL := .URL }}
-        {{ $isAIDailyEntry := or (eq .URL "/ai-daily-entry/") (eq .Identifier "ai-daily-entry") }}
-        {{ if and $isAIDailyEntry $latestDaily }}
-            {{ $targetURL = $latestDaily }}
+        {{ $entrySection := "" }}
+        {{ if or (eq .URL "/ai-daily-entry/") (eq .Identifier "ai-daily-entry") }}
+            {{ $entrySection = "ai-daily" }}
+        {{ else if or (eq .URL "/github-trending-entry/") (eq .Identifier "github-trending-entry") }}
+            {{ $entrySection = "github-trending" }}
+        {{ end }}
+        {{ with $entrySection }}
+            {{ with index $latestBySection . }}
+                {{ $targetURL = . }}
+            {{ end }}
         {{ end }}
         {{ $active := or (eq $currentPage.RelPermalink $targetURL) (or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)) }}
-        {{ if and $isAIDailyEntry (eq $currentPage.Section "ai-daily") }}
+        {{ if and $entrySection (eq $currentPage.Section $entrySection) }}
             {{ $active = true }}
         {{ end }}
         <li {{ if $active }} class='current' {{ end }}>
@@ -90,7 +101,8 @@
         </li>
         {{ end }}
 
-        {{ partial "sidebar/ai-daily.html" . }}
+        {{ partial "sidebar/overview.html" (dict "Context" . "Section" "ai-daily" "Label" "日报总览" "Icon" "news") }}
+        {{ partial "sidebar/overview.html" (dict "Context" . "Section" "github-trending" "Label" "趋势总览" "Icon" "trending-up") }}
 
         <li class="menu-bottom-section">
             <ol class="menu">

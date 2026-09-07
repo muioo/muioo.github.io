@@ -1,0 +1,36 @@
+{{ define "main" }}
+    {{- /* 只读取 /github-trending 的直接子页面，避免把非日期页面当成最新趋势。 */ -}}
+    {{- $trendingPage := .Site.GetPage "/github-trending" -}}
+    {{- $trendingPages := slice -}}
+    {{- if $trendingPage -}}
+        {{- $trendingPages = $trendingPage.Pages -}}
+    {{- end -}}
+    {{- $latestTrending := "" -}}
+    {{- if gt (len $trendingPages) 0 -}}
+        {{- $latestTrending = (index ($trendingPages.ByDate.Reverse) 0).RelPermalink -}}
+    {{- end -}}
+
+    <article class="main-article">
+        <header class="article-header">
+            <h1 class="article-title">{{ .Title }}</h1>
+            <h2 class="article-subtitle">正在跳转到最新趋势</h2>
+        </header>
+
+        <section class="article-content">
+            {{ if $latestTrending }}
+                <p>如果没有自动跳转，请点击：<a href="{{ $latestTrending }}">查看最新 GitHub 趋势</a></p>
+                <script>
+                    window.location.replace({{ printf "%q" $latestTrending | safeJS }});
+                </script>
+            {{ else }}
+                <p>当前还没有可用的 GitHub 趋势内容。</p>
+            {{ end }}
+        </section>
+    </article>
+
+    {{ partialCached "footer/footer" . }}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "page") }}
+{{ end }}

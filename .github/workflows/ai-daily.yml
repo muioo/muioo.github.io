@@ -1,8 +1,8 @@
-name: Generate AI Daily
+name: Generate AI Daily and GitHub Trending
 
 on:
   # Disabled for automatic runs. The server cron job is responsible for
-  # generating and pushing AI Daily updates.
+  # generating and pushing daily content updates.
   workflow_dispatch:
     inputs:
       date:
@@ -38,24 +38,28 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           AI_DAILY_TIMEZONE: Asia/Shanghai
           AI_DAILY_DATE: ${{ github.event.inputs.date || '' }}
+          GH_TRENDING_TIMEZONE: Asia/Shanghai
+          GH_TRENDING_DATE: ${{ github.event.inputs.date || '' }}
         run: |
           date -u
           TZ=Asia/Shanghai date
           python scripts/ai-daily/fetch.py
+          python -m pip install -q beautifulsoup4
+          python scripts/github-trending/fetch.py
 
       - name: Commit generated files
         id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content/ai-daily data/ai-daily
+          git add content/ai-daily data/ai-daily content/github-trending data/github-trending
 
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          git commit -m "chore: update ai daily"
+          git commit -m "chore: update ai daily and github trending"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
 

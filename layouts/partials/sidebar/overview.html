@@ -1,0 +1,12 @@
+{{- $context := .Context -}}
+{{- $sectionPage := $context.Site.GetPage (printf "/%s" .Section) -}}
+{{- $sectionPages := slice -}}
+{{- if $sectionPage -}}{{- $sectionPages = $sectionPage.Pages -}}{{- end -}}
+{{- if and $sectionPage (gt (len $sectionPages) 0) -}}
+    <li class="ai-daily-item {{ if eq $context.RelPermalink $sectionPage.RelPermalink }}current{{ end }}">
+        <a href="{{ $sectionPage.RelPermalink }}">
+            {{ partial "helper/icon" .Icon }}
+            <span>{{ .Label }}</span>
+        </a>
+    </li>
+{{- end -}}

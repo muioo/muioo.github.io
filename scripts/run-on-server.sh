@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-ROOT_DIR="$(cd -- "${SCRIPT_DIR}/../.." && pwd)"
+ROOT_DIR="$(cd -- "${SCRIPT_DIR}/.." && pwd)"
 
 cd "${ROOT_DIR}"
 
@@ -12,8 +12,8 @@ PYTHON_BIN="${AI_DAILY_PYTHON:-/root/miniconda3/bin/python}"
 
 # 清理 Hugo 构建产物和运行缓存，让服务器可以拉取本地推送的最新笔记。
 cleanup_generated_files() {
-  git restore -- public resources content/ai-daily data/ai-daily .hugo_build.lock ai-daily.log 2>/dev/null || true
-  git clean -fd -- public resources content/ai-daily data/ai-daily .hugo_cache scripts/ai-daily/__pycache__ 2>/dev/null || true
+  git restore -- public resources content/ai-daily data/ai-daily content/github-trending data/github-trending .hugo_build.lock ai-daily.log 2>/dev/null || true
+  git clean -fd -- public resources content/ai-daily data/ai-daily content/github-trending data/github-trending .hugo_cache scripts/ai-daily/__pycache__ scripts/github-trending/__pycache__ 2>/dev/null || true
 }
 
 # 拉取前确认没有普通源码或笔记的未提交改动。
@@ -35,20 +35,26 @@ ensure_clean_source_tree
 git pull --rebase "${GIT_REMOTE}" "${GIT_BRANCH}"
 
 export AI_DAILY_TIMEZONE="${AI_DAILY_TIMEZONE:-Asia/Shanghai}"
+export GH_TRENDING_TIMEZONE="${GH_TRENDING_TIMEZONE:-Asia/Shanghai}"
 
 "${PYTHON_BIN}" scripts/ai-daily/fetch.py
 
-git add -A content/ai-daily data/ai-daily
+# GitHub 趋势解析依赖 beautifulsoup4，缺失时自动安装。
+"${PYTHON_BIN}" -c "import bs4" 2>/dev/null || "${PYTHON_BIN}" -m pip install -q beautifulsoup4
+
+"${PYTHON_BIN}" scripts/github-trending/fetch.py
+
+git add -A content/ai-daily data/ai-daily content/github-trending data/github-trending
 
 if git diff --cached --quiet; then
-  echo "No AI Daily changes."
+  echo "No daily content changes."
   exit 0
 fi
 
 git config user.name "${AI_DAILY_GIT_NAME:-ai-daily-bot}"
 git config user.email "${AI_DAILY_GIT_EMAIL:-ai-daily-bot@example.com}"
 
-git commit -m "chore: update ai daily"
+git commit -m "chore: update ai daily and github trending"
 git push "${GIT_REMOTE}" "${GIT_BRANCH}" || {
   git pull --rebase "${GIT_REMOTE}" "${GIT_BRANCH}"
   git push "${GIT_REMOTE}" "${GIT_BRANCH}"

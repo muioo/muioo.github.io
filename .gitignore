@@ -16,4 +16,5 @@ resources/
 # AI 日报运行日志和 Python 缓存，不提交到仓库。
 ai-daily.log
 scripts/ai-daily/__pycache__/
+scripts/github-trending/__pycache__/
 *.pyc

@@ -1,0 +1,45 @@
+{{ define "main" }}
+    {{- /* 顶层归档视图：按月份分组列出每日趋势页；日期页为叶子页面，由主题文章模板渲染。 */ -}}
+    <header>
+        <h3 class="section-title">GitHub 趋势</h3>
+        <div class="section-card">
+            <div class="section-details">
+                <h3 class="section-count">共 {{ len .Pages }} 篇</h3>
+                <h1 class="section-term">{{ .Title }}</h1>
+                {{ with .Params.description }}
+                    <h2 class="section-description">{{ . }}</h2>
+                {{ end }}
+            </div>
+        </div>
+    </header>
+
+    {{ $pages := .Pages.ByDate.Reverse }}
+    {{ $grouped := $pages.GroupByDate "2006-01" }}
+
+    <section class="ai-daily-archive">
+        {{ range $index, $group := $grouped }}
+            <details class="ai-daily-month" {{ if eq $index 0 }}open{{ end }}>
+                <summary class="ai-daily-month-summary">
+                    <span>{{ $group.Key }}</span>
+                    <span>{{ len $group.Pages }} 篇</span>
+                </summary>
+                <div class="ai-daily-month-list">
+                    {{ range $group.Pages }}
+                        <article class="ai-daily-month-item">
+                            <a href="{{ .RelPermalink }}" class="ai-daily-month-link">
+                                <span class="ai-daily-month-date">{{ .Date.Format "2006-01-02" }}</span>
+                                <span class="ai-daily-month-title">{{ .Title }}</span>
+                            </a>
+                        </article>
+                    {{ end }}
+                </div>
+            </details>
+        {{ end }}
+    </section>
+
+    {{ partialCached "footer/footer" . }}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+{{ end }}
