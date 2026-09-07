@@ -38,7 +38,7 @@ export AI_DAILY_TIMEZONE="${AI_DAILY_TIMEZONE:-Asia/Shanghai}"
 
 "${PYTHON_BIN}" scripts/ai-daily/fetch.py
 
-git add content/ai-daily data/ai-daily
+git add -A content/ai-daily data/ai-daily
 
 if git diff --cached --quiet; then
   echo "No AI Daily changes."

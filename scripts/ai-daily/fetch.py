@@ -12,6 +12,7 @@ from __future__ import annotations
 import datetime as dt
 import os
 import pathlib
+import shutil
 import sys
 from zoneinfo import ZoneInfo
 
@@ -72,6 +73,39 @@ def write_daily_pages(
     return len(pages), date_dir
 
 
+def cleanup_expired_daily(
+    content_dir: pathlib.Path | None = None,
+    retention_days: int | None = None,
+) -> int:
+    """删除超过保留期限的历史 AI 日报目录，返回删除的目录个数。
+
+    仅处理形如 'YYYY-MM-DD' 命名、且日期早于（今天 - 保留期限）的目录；
+    非法命名或非历史目录一律跳过。清理不中断主流程，临时异常仅记录到标准错误。
+    """
+    if content_dir is None:
+        content_dir = CONTENT_DIR
+    if retention_days is None:
+        retention_days = int(os.getenv("AI_DAILY_RETENTION_DAYS", "90"))
+
+    now = dt.datetime.now(ZoneInfo(TIMEZONE)).date()
+    cutoff = now - dt.timedelta(days=retention_days)
+    removed = 0
+
+    for path in sorted(content_dir.glob("*")):
+        # 只清理目录；日历归档单文件 _index 之类跳过
+        if not path.is_dir():
+            continue
+        try:
+            candidate = dt.date.fromisoformat(path.name)
+        except ValueError:
+            # 非日期命名的目录（如资源、临时目录），不参与清理
+            continue
+        if candidate < cutoff:
+            shutil.rmtree(path)
+            removed += 1
+    return removed
+
+
 def main() -> int:
     """主入口：取日期→拉数据→写文件→更新 latest.json。"""
     target_date = get_target_date()
@@ -88,10 +122,13 @@ def main() -> int:
 
     count, date_dir = write_daily_pages(target_date, sections)
     rebuild_latest_json()
+    removed = cleanup_expired_daily()
     print(
         f"Generated AI daily for {target_date.isoformat()}: "
         f"{count} items in {date_dir.relative_to(ROOT)}"
     )
+    if removed:
+        print(f"Cleaned up {removed} expired AI daily folder(s).")
     return 0
 
 
