@@ -49,4 +49,84 @@ apt install -y docker-ce docker-ce-cli containerd.io
 docker --version
 ```
 
+## 阿里云服务器docker配置镜像加速
+
+- 创建/etc/docker目录
+
+```bash
+mkdir -p /etc/docker
+```
+
+- 写入镜像地址
+
+```bash
+tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": [
+    "https://docker.m.daocloud.io"
+  ]
+}
+EOF
+```
+
+- 重启docker
+
+```bash
+systemctl daemon-reload && systemctl restart docker
+```
+
+## 阿里云服务器为docker配置本地代理
+
+- 创建/etc/systemd/system/docker.service.d文件
+
+```bash
+mkdir -p /etc/systemd/system/docker.service.d
+```
+
+- 查看文件内容并且写入
+
+```bash
+cat > /etc/systemd/system/docker.service.d/proxy.conf << 'EOF'
+[Service]
+Environment="HTTP_PROXY=http://127.0.0.1:7890"
+Environment="HTTPS_PROXY=http://127.0.0.1:7890"
+EOF
+```
+
+- 重启docker
+
+```bash
+systemctl daemon-reload && systemctl restart docker
+```
+
+- 验证代理是否生效
+
+```bash
+systemctl show --property=Environment docker # 出现这个表示成功Environment=HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890
+```
+
 ## Windows安装
+
+- 安装WSL
+- [下载docker桌面版 并且配置镜像源](https://www.docker.com/products/docker-desktop/)
+
+```bash
+{
+  "builder": {
+    "gc": {
+      "defaultKeepStorage": "20GB",
+      "enabled": true
+    }
+  },
+  "experimental": false,
+  "registry-mirrors": [
+    "https://docker.m.daocloud.io",
+    "https://lispy.org",
+    "https://docker-0.unsee.tech",
+    "https://docker.xuanyuan.me"
+  ]
+}
+```
+
+
+
