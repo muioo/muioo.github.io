@@ -1,0 +1,131 @@
+{{/* ================= 鼠标拖尾动画（简约字符） ================= */}}
+{{/* 全屏透明 canvas 覆盖层，鼠标路径上飘落随机数字/字母（主题文字灰），不拦截任何鼠标事件 */}}
+<canvas id="cursor-trail" aria-hidden="true"></canvas>
+
+<script>
+(function () {
+    'use strict';
+
+    // 系统开启"减少动态效果"时直接禁用，尊重用户偏好
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
+
+    // 触屏设备无鼠标指针，无需运行动画
+    if (window.matchMedia && window.matchMedia('(hover: none)').matches) {
+        return;
+    }
+
+    const canvas = document.getElementById('cursor-trail');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // 视口尺寸自适应（含高分屏 DPR）
+    let width = 0;
+    let height = 0;
+    let dpr = 1;
+    function resize() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    // 拖尾字符：x/y 位置、正文字号、不透明度、字符、XY 漂移速度
+    const particles = [];
+    const MAX_PARTICLES = 300;
+
+    // 参与绘制的字符集：数字 + 大小写英文字母
+    const CHARS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+    // 随机取一个字符
+    function randomChar() {
+        return CHARS[Math.floor(Math.random() * CHARS.length)];
+    }
+
+    // 读取主题文字色（--body-text-color），跟随明暗模式；读不到时用中性灰兜底
+    function getBodyColor() {
+        const c = window.getComputedStyle(document.body).getPropertyValue('--body-text-color').trim();
+        return c || 'rgba(90, 90, 90, 1)';
+    }
+
+    // 鼠标移动时沿路径生成字符
+    function spawnTrail(x, y) {
+        // 同一次生成共用同一主题色，保证简约统一
+        const color = getBodyColor();
+        // 每次移动只生成 1 个字符，配合下方距离阈值，避免拖尾过于密集
+        particles.push({
+            x: x + (Math.random() - 0.5) * 12,
+            y: y + (Math.random() - 0.5) * 12,
+            size: 12 + Math.random() * 10,   // 字号即字符大小
+            alpha: 0.85,
+            vx: (Math.random() - 0.5) * 0.4,
+            vy: -(0.2 + Math.random() * 0.5), // 轻微上浮，像字符轻轻飘起
+            char: randomChar(),
+            color: color
+        });
+        while (particles.length > MAX_PARTICLES) {
+            particles.shift();
+        }
+    }
+
+    // 记录上次生成位置；只有鼠标移动足够距离时才生成新字符，否则保持稀疏
+    let lastX = NaN;
+    let lastY = NaN;
+    const MIN_MOVE = 12; // 触发生成的最小移动距离（像素）
+    window.addEventListener('mousemove', function (e) {
+        const dx = e.clientX - lastX;
+        const dy = e.clientY - lastY;
+        if (Math.sqrt(dx * dx + dy * dy) < MIN_MOVE) {
+            return;
+        }
+        lastX = e.clientX;
+        lastY = e.clientY;
+        spawnTrail(e.clientX, e.clientY);
+    });
+
+    // 隐藏/离开页面时清除拖尾，避免残留
+    document.addEventListener('mouseleave', function () {
+        particles.length = 0;
+    });
+
+    // 逐帧渲染：字符缓慢漂移、字号逐渐缩小并淡出
+    function tick() {
+        ctx.clearRect(0, 0, width, height);
+        // 字符居中绘制
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
+        for (let i = particles.length - 1; i >= 0; i--) {
+            const p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy;
+            p.size *= 0.96;    // 字号每帧缩小
+            p.alpha *= 0.94;   // 透明度每帧降低
+
+            if (p.size < 2 || p.alpha < 0.02) {
+                particles.splice(i, 1);
+                continue;
+            }
+
+            ctx.fillStyle = p.color;
+            ctx.globalAlpha = p.alpha;
+            ctx.font = p.size + 'px sans-serif';
+            ctx.fillText(p.char, p.x, p.y);
+        }
+
+        ctx.globalAlpha = 1;
+        requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+
+    // 兼容 Swup 无刷新切换页面：canvas 在 body 级，不会重建，无需额外处理
+})();
+</script>

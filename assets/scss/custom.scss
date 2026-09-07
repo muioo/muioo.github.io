@@ -213,3 +213,56 @@ html.is-animating .main-article {
 :root { --card-padding: 18px; } /* 原 20px */
 @media (min-width: 768px)  { :root { --card-padding: 20px; } } /* 原 25px */
 @media (min-width: 1280px) { :root { --card-padding: 24px; } } /* 原 30px */
+
+/* ================= 鼠标拖尾动画画布 ================= */
+/* 全屏固定、不拦截任何鼠标事件、置于所有内容之上 */
+#cursor-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* ================= 笔记卡片：玻璃感 + 选中感 悬停 ================= */
+/* 悬停时背景变半透明并轻微模糊，露出背景图形成毛玻璃；阴影加重、外框高亮、轻微上浮，
+   营造"被选中/拾起"的感觉。浅色与深色主题分别配色。 */
+.article-list article {
+    /* 预留 border 位，避免 hover 改变 border 导致卡片跳动 */
+    border: 1px solid transparent;
+    will-change: transform, box-shadow, background-color;
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+                background-color 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+        transform: translateY(-4px); /* 轻微上浮，产生"被拾起"感 */
+        border-color: rgba(255, 255, 255, 0.35); /* 半透明白色细外框，玻璃感高亮边 */
+        /* 底部重投影制造浮动，内部 1px 高亮描边带来通透的边缘光 */
+        box-shadow:
+            0 14px 34px rgba(0, 0, 0, 0.25),
+            0 4px 10px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(0, 0, 0, 0.06);
+        /* 轻量毛玻璃背景 + 背景模糊 */
+        background-color: rgba(255, 255, 255, 0.62);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+    }
+}
+
+/* 深色主题下的玻璃配色：更暗的半透明背景 */
+[data-scheme="dark"] .article-list article:hover {
+    background-color: rgba(46, 46, 46, 0.66);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.55),
+        0 4px 10px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* 用户开启"减少动态效果"时，去掉上浮过渡，仅保留玻璃静态效果 */
+@media (prefers-reduced-motion: reduce) {
+    .article-list article {
+        transition: none;
+        transform: none;
+    }
+}
