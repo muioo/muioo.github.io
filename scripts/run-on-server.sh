@@ -54,7 +54,7 @@ fi
 git config user.name "${AI_DAILY_GIT_NAME:-ai-daily-bot}"
 git config user.email "${AI_DAILY_GIT_EMAIL:-ai-daily-bot@example.com}"
 
-git commit -m "chore: update ai daily and github trending"
+git commit -m "chore: 更新AI日报与GitHub趋势"
 git push "${GIT_REMOTE}" "${GIT_BRANCH}" || {
   git pull --rebase "${GIT_REMOTE}" "${GIT_BRANCH}"
   git push "${GIT_REMOTE}" "${GIT_BRANCH}"
