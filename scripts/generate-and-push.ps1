@@ -27,8 +27,8 @@ if (git diff --cached --quiet) {
 }
 
 # 4) Commit and push; rebase first to avoid non-fast-forward rejection
-git config user.name "local-daily-bot"
-git config user.email "local-daily-bot@example.com"
+git config user.name "muioo"
+git config user.email "wangbanglei59@gmail.com"
 git commit -m "chore: update ai daily and github trending"
 git pull --rebase origin main
 git push origin main
