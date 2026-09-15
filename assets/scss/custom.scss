@@ -7,17 +7,6 @@
     gap: var(--menu-icon-separation);
     margin-bottom: 30px;
 }
-body {
-    background-image: url("/images/watercolor.png") !important; /* 对应static/images/watercolor.png */
-    background-size: cover !important; /* 背景图覆盖整个页面 */
-    background-position: center !important; /* 背景图居中显示 */
-    background-attachment: fixed !important; /* 背景图固定（滚动时不跟随） */
-    background-repeat: no-repeat !important; /* 禁止背景图重复 */
-    /* 可选：添加半透明遮罩，避免背景干扰文字 */
-    background-color: rgba(255, 255, 255, 0.8) !important;
-    background-blend-mode: overlay !important;
-}
-
 /* 修复文章背景首次加载透明问题 */
 .article-page .main-article {
     background: #fff !important;
