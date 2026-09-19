@@ -1,9 +1,9 @@
-/* 全站背景图（对应 static/images/background1.jpg） */
+/* 全站背景图（对应 static/images/background2.jpg） */
 body {
-    background-image: url("/images/background1.jpg") !important; /* 对应static/images/background1.jpg */
-    background-size: cover !important; /* 背景图覆盖整个页面 */
-    background-position: center !important; /* 背景图居中显示 */
-    background-attachment: fixed !important; /* 背景图固定（滚动时不跟随） */
+    background-image: url("/images/background2.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
 }
 
 #dark-mode-toggle {
