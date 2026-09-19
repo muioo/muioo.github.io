@@ -4,6 +4,10 @@ body {
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
+    background-repeat: no-repeat !important; /* 禁止背景图重复 */
+    /* 可选：添加半透明遮罩，避免背景干扰文字 */
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    background-blend-mode: overlay !important;
 }
 
 #dark-mode-toggle {
