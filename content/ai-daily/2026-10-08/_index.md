@@ -1,0 +1,68 @@
+---
+title: "AI日报 | 2026-10-08"
+date: 2026-10-08T08:30:00+08:00
+description: "2026-10-08 AI 热点日报"
+comments: false
+---
+
+## 模型发布/更新
+
+### 1. [Anthropic 发布 Claude Haiku 5.5，运行成本平均降低约 75%](./01-anthropic-claude-haiku-75/)
+
+Anthropic 发布 Claude Haiku 5.5，定位为迄今最便宜、最快的小模型，适合摘要、压缩、数据库查询、分类等高吞吐任务，并可搭配 Opus 5.5 和 Sonnet 5.5 担任编码子智能体。
+
+
+## 产品发布/更新
+
+### 2. [OpenAI 向全部 ChatGPT 用户推出 GPT-6 与 Intelligent UI](./02-openai-chatgpt-gpt-6-intelligent-ui/)
+
+OpenAI 发布面向更广泛用户的 GPT-6，并随 GPT-6 在 ChatGPT 中引入 Intelligent UI，可生成图形、按钮、表单、图表和可交互组件来回答问题。
+
+### 3. [Anthropic 为 Claude Max 和 Team 套餐推出月度 Platform API 额度](./03-anthropic-claude-max-team-platform-api/)
+
+Anthropic 正在为 Claude Max 和 Team 套餐推出月度 Claude Platform API 额度：Max 5x 为 $100，Max 20x 为 $200，Team 最多 $500 且可共享。额度适用于任何模型，包括 Haiku 5.5，可在自己的代码或第三方 harnes...
+
+### 4. [OpenAI Decisions API 公测上线](./04-openai-decisions-api/)
+
+OpenAI 推出 Decisions API 公开测试版，向所有开发者开放，可让应用在接近实时的速度下选择合适的模型、工具或动作。官方称其决策速度最高比通过 Responses API 的 GPT-6 Luna 快 10 倍，作者表示团队将自用该 API 以多种方式改进体验。
+
+### 5. [Claude Code v2.1.293 发布：新增 Claude Haiku 5.5 并修复大量问题](./05-claude-code-v2-293-claude-haiku/)
+
+Claude Code 发布 v2.1.293，新增 Claude Haiku 5.5（claude-haiku-5-5）作为 Anthropic API 默认 Haiku 模型，支持 1M 上下文，价格为 $0.10/$0.50 每百万 token（超 100K 提示为 $0.50/$2.50）。
+
+### 6. [NVIDIA 与 Microsoft 发布 RTX Spark 及 DGX Station for Windows，推动 AI Agent 落地 Windows PC](./06-nvidia-microsoft-rtx-spark-dgx-station-f/)
+
+NVIDIA 与 Microsoft 在旧金山 Windows AI 和 Surface 活动上宣布为 Windows PC 引入 AI Agent 硬件与软件。
+
+### 7. [Google 推出实验性游戏平台 Playground，用提示词即可创建游戏](./07-google-playground/)
+
+Google 推出实验性游戏平台 Playground，用户通过文本提示词即可创建、游玩和分享自定义游戏，无需编程经验。
+
+
+## 行业动态
+
+### 8. [亚利桑那州法院裁定 AI 生成受害者视频带有不当情感分量 将重新量刑](./08-ai/)
+
+亚利桑那州上诉法院裁定，Gabriel Horcasitas 2021 年路怒枪杀 Christopher Pelkey 一案维持过失杀人定罪，但因量刑听证中播放的 AI 生成受害者视频带有不当情感分量，法官须重新考虑刑期。
+
+
+## 论文研究
+
+### 9. [Google Research 三个月专利起草实验发现AI辅助未必能培养初级律师的专业判断](./09-google-research-ai/)
+
+Google Research 在 NBER 发表的论文报告了一项三个月随机田野实验，向11家知识产权律所的133名律师随机开放当时未发布的 AI 专利写作助手（现属 Gemini Notebook）。
+
+### 10. [Microsoft Research Asia 开源 Agent Lightning v1.0：3,500 行代码的真实 harness 智能体 RL 训练框架](./10-microsoft-research-asia-agent-lightning-/)
+
+Microsoft Research Asia 提出 Harnessed Agentic RL 训练范式并开源重建的 Agent Lightning v1.0，让部署时使用的同一 agent harness 直接参与强化学习，无需在训练框架内重写 agent。
+
+
+## 技巧与观点
+
+### 11. [Google 开放 SynthID Detector 门户，可检测图片、视频和音频是否由 AI 生成](./11-google-synthid-detector-ai/)
+
+Google 介绍检测媒体是否由 AI 生成的方法：访问 https://synthid.com 上传图片、视频或音频文件，门户会扫描文件是否包含来自 Google 或其合作伙伴的 SynthID 水印。
+
+### 12. [a16z 解析德州为何让数据中心排队等电](./12-a16z/)
+
+a16z 的 Ryan McEntush 分析德州电网暂停审批数据中心的原因：并网队列从 2024 年底的 63 GW 激增到今年 6 月的 474 GW，约 90% 是数据中心，开发商大量投机性申请且社区沟通不足。
