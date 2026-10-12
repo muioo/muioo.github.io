@@ -1,6 +1,11 @@
 {
-  "updated_at": "2026-10-11T01:30:07Z",
+  "updated_at": "2026-10-12T01:30:10Z",
   "days": [
+    {
+      "date": "2026-10-12",
+      "title": "GitHub 趋势 | 2026-10-12",
+      "url": "/github-trending/2026-10-12/"
+    },
     {
       "date": "2026-10-11",
       "title": "GitHub 趋势 | 2026-10-11",
@@ -30,11 +35,6 @@
       "date": "2026-10-05",
       "title": "GitHub 趋势 | 2026-10-05",
       "url": "/github-trending/2026-10-05/"
-    },
-    {
-      "date": "2026-10-04",
-      "title": "GitHub 趋势 | 2026-10-04",
-      "url": "/github-trending/2026-10-04/"
     }
   ]
 }
