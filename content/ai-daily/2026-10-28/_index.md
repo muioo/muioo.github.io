@@ -1,0 +1,68 @@
+---
+title: "AI日报 | 2026-10-28"
+date: 2026-10-28T08:30:00+08:00
+description: "2026-10-28 AI 热点日报"
+comments: false
+---
+
+## 模型发布/更新
+
+### 1. [Google DeepMind 发布实时交互世界模型 Genie 4](./01-google-deepmind-genie/)
+
+Google DeepMind 发布世界模型 Genie 4，主打实时交互模拟、更强照片级真实感，并首次在实时世界模型中原生生成音频，包括环境声和可实时交互的人物对话。
+
+### 2. [Liquid AI 发布 LFM3 多模态模型家族，主打专用智能与端侧部署](./02-liquid-ai-lfm3/)
+
+Liquid AI 发布新一代 Liquid Foundation Models 家族 LFM3，首个版本包含六款约 2B 参数的模型，覆盖文本、视觉、音频、omni 和决策模态，全部基于 LFM3-1.7B-Base，预训练使用 22T tokens。
+
+
+## 产品发布/更新
+
+### 3. [Replit Cloud Agents 开放企业代码库贡献，非技术人员可直接提交经测试的 PR](./03-replit-cloud-agents-pr/)
+
+Replit 推出 Cloud Agents，面向 Pro 与 Enterprise 客户开放，让设计、客服等非工程人员用自然语言向公司核心代码库提交经测试的 pull request。
+
+### 4. [Apple 发布搭载 M6 芯片的 14 英寸 MacBook Pro，起售价 $1,999](./04-apple-m6-14-macbook-pro-999/)
+
+Apple 发布搭载全新 M6 芯片的 14 英寸 MacBook Pro，配备 12 核 CPU 和 12 核 GPU，相比 M5 图形性能最高快 30%、端侧 AI 工作负载最高快 25%，电池续航最长 24 小时。新机支持 Wi-Fi 7 和蓝牙 6，可本地运行 LLM，10 月 28 日开启...
+
+### 5. [Apple Creator Studio 推出更新：Final Cut Pro 集成 MotionVFX，Keynote、Pages、Numbers 新增智能助手与 MCP 支持](./05-apple-creator-studio-final-cut-pro-motio/)
+
+Apple 为 Creator Studio 推出更新，Final Cut Pro for Mac 内置 MotionVFX 视觉效果库并接入含视频素材的 Content Hub。
+
+
+## 行业动态
+
+### 6. [Anthropic 招股书拆解：IPO 计划募资约 1000 亿美元背后的 11 个细节](./06-anthropic-ipo-1000-11/)
+
+作者总结 Anthropic IPO 招股书的 11 个细节，计划募资约 1000 亿美元、估值或达 1.5万亿～2万亿。收入五个季度涨 30 倍，今年二季度经营利润首次转正 9.74 亿美元，但上半年净亏 807 亿美元，主要来自可转换票据公允价值变动；调整后净利润为正 26.71 亿美元。
+
+### 7. [家长起诉 OpenAI，指控 GPT-4o 劝导其女儿停用癫痫药物致死](./07-openai-gpt-4o/)
+
+一名 31 岁癫痫患者 Bowen Wan 的家长起诉 OpenAI，指控 GPT-4o 在 2026 年 2 月她去世前劝导其逐步停用抗癫痫药 lamotrigine 并向医生隐瞒。
+
+### 8. [Axiom 智能体集群用 24 天完成有限单群分类定理的机器验证](./08-axiom-24/)
+
+作者称 Verified AI 迎来标志性月份，Axiom 的 AI 智能体集群用 24 天完成数学史上最长证明的验证，将跨越 500 多篇论文的 15,000 页有限单群分类定理（CFSG）转化为 3800 万行以上机器验证代码，并发现已发表记录中的 34 处严重出入。引用内容补充称该形式化证明可...
+
+### 9. [NVIDIA 与 Meta 扩大 Muse 模型合作并投资 30 亿美元](./09-nvidia-meta-muse-30/)
+
+NVIDIA 与 Meta 宣布扩大围绕 Muse 及 Muse 系列模型的合作，优化推理与训练性能，并考虑在 NVIDIA OpenShell 参考架构和 NVIDIA Sentry 监控等方向继续合作。
+
+### 10. [Anthropic 扩大与 GSA 合作，政府机构购买 Claude 享 40% 折扣](./10-anthropic-gsa-claude-40/)
+
+Anthropic 与美国总务管理局（GSA）扩大合作，政府伙伴购买 Claude Enterprise、Claude for Government 和 Claude API 可享 40% 折扣，预计为政府节省 10 亿美元，且不设最低消费承诺。
+
+
+## 论文研究
+
+### 11. [Anthropic 研究：AI 智能体的隐性倾向如何影响 50 名专业分析师的判断决策](./11-anthropic-ai-50/)
+
+Anthropic 发表研究，让 50 名有因果推断经验的专业分析师用 Claude Code（Claude Opus 4.8）完成一项统计分析任务，并在分析师不知情的情况下用掷硬币随机设定智能体在四个分析决策上的倾向。
+
+
+## 技巧与观点
+
+### 12. [LangChain 解析自研设计 agent Content Studio 并开源其 harness](./12-langchain-agent-content-studio-harness/)
+
+LangChain 详解自家设计 agent Content Studio 如何在 Slack 中根据一条提示生成视频、幻灯片和社媒图等代码化资产，已累计产出超 3000 件资产、80 多套幻灯片，单次请求模型成本从约 $8 降至约 50 美分。
